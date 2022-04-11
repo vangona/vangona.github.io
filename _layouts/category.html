@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<ul class="posts-list">
+  {% assign category = page.category | default: page.title %} {% if
+  site.categories[category] %} {% for post in site.categories[category] %} {%
+  include blog.html %} {% endfor %} {% include post/pagination.html %} {% else
+  %}
+  <p>이 카테고리에 게시글이 없습니다.</p>
+  {% endif %}
+</ul>
