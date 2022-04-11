@@ -3,10 +3,5 @@ layout: default
 title: "Blog"
 ---
 
-{% for post in paginator.posts %}
-
-{% include blog.html %}
-
-{% endfor %}
-
-{% include post/pagination.html %}
+{% for post in paginator.posts %} {% include blog.html %} {% endfor %} {%
+include post/pagination.html %}

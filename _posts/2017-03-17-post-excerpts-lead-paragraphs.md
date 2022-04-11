@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Post excerpts and leading paragraphs
+categories: Algorithm
 tags:
   - dactl
   - howto
-hero: 'https://source.unsplash.com/collection/261936/'
+hero: "https://source.unsplash.com/collection/261936/"
 overlay: blue
 published: true
 ---
@@ -13,13 +14,16 @@ By default, dactl's blog layout displays post excerpts which are leading paragra
 {: .lead}
 
 ## Post excerpts
+
 First, let's see how this and the above paragraph looks like in markdown:
 <!–-break-–>
+
 ```markdown
 By default, dactl's blog layout displays post excerpts which are leading paragraphs as well. This requires some manual work on your part when writing a post but don't worry - it's really easy. Read on for more info.
 {: .lead}
 
 ## Post excerpts
+
 First, let's see how this and the above paragraph looks like in markdown:
 <!–-break-–>
 ```

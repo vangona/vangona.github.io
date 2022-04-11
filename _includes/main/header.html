@@ -11,22 +11,92 @@
       </object>
     </div>
 
-    <ul>
-      {% assign pages_list = site.pages %} {% for node in pages_list %} {% if
-      node.title != null %} {% if node.layout == "category" %}
-      <li>
+    <!-- 모바일 버젼 -->
+    <input id="mobile-nav__toggle" type="checkbox" />
+    <ul class="mobile-nav">
+      <label class="toggle-nav" for="mobile-nav__toggle">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      <hr />
+      <div class="nav__profile">{{ site.blog.title }}</div>
+      {%- for link in site.data.navigation.main -%} {% assign class = nil %} {%
+      if page.url contains link.url %} {% assign class = 'active' %} {% endif %}
+      {% if link.sublinks %}
+      <li class="dropdown {{ class }}">
         <a
-          class="category-link {% if page.url == node.url %} active{% endif %}"
-          href="{{ site.baseurl }}{{ node.url }}"
-          >{{ node.title }}</a
-        >
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="{{ site.baseurl }}{{ link.url }}"
+          >{{ link.title }}
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+
+        <ul class="dropdown-content">
+          {% for sublink in link.sublinks %}
+          <a class="dropdown-item" href="{{ site.baseurl }}{{ sublink.url }}">
+            - {{ sublink.title }}</a
+          >
+          {% endfor %}
+        </ul>
       </li>
-      {% endif %} {% endif %} {% endfor %}
+      {% else %}
+      <li class="masthead__menu-item">
+        <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+
+    <!-- PC 버젼 -->
+    <ul class="visible-links">
+      {%- for link in site.data.navigation.main -%} {% assign class = nil %} {%
+      if page.url contains link.url %} {% assign class = 'active' %} {% endif %}
+      {% if link.sublinks %}
+      <li class="dropdown {{ class }}">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="{{ site.baseurl }}{{ link.url }}"
+          >{{ link.title }}
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+
+        <ul class="dropdown-content">
+          {% for sublink in link.sublinks %}
+          <a class="dropdown-item" href="{{ site.baseurl }}{{ sublink.url }}">
+            {{ sublink.title }}</a
+          >
+          {% endfor %}
+        </ul>
+      </li>
+      {% else %}
+      <li class="masthead__menu-item">
+        <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+      </li>
+      {% endif %} {% endfor %}
     </ul>
   </div>
+
   <div class="social">
     <ul>
-      {% if site.author.youtube %}
+      {% if site.author.github %}
+      <li>
+        <a
+          href="https://github.com/{{ site.author.github }}"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-github"></span>
+        </a>
+      </li>
+      {% endif %} {% if site.author.youtube %}
       <li>
         <a
           href="https://youtube.com/{{ site.author.youtube }}"
@@ -36,14 +106,14 @@
           <span class="icon-youtube"></span>
         </a>
       </li>
-      {% endif %} {% if site.author.stackoverflow %}
+      {% endif %} {% if site.author.instagram %}
       <li>
         <a
-          href="https://stackoverflow.com/{{ site.author.stackoverflow }}"
+          href="https://instagram.com/{{ site.author.instagram }}"
           target="_blank"
           class="smaller"
         >
-          <span class="icon-stackoverflow"></span>
+          <i class="fa-brands fa-instagram"></i>
         </a>
       </li>
       {% endif %} {% if site.author.twitter %}
@@ -56,26 +126,10 @@
           <span class="icon-twitter"></span>
         </a>
       </li>
-      {% endif %} {% if site.author.github %}
-      <li>
-        <a
-          href="https://github.com/{{ site.author.github }}"
-          target="_blank"
-          class="smaller"
-        >
-          <span class="icon-github"></span>
-        </a>
-      </li>
       {% endif %} {% if site.author.mail %}
       <li>
         <a href="mailto:{{ site.author.mail }}" target="_blank">
           <span class="icon-mail_outline"></span>
-        </a>
-      </li>
-      {% endif %} {% if site.author.rss == true %}
-      <li>
-        <a href="{{ '/feed.xml' | prepend: site.baseurl }}" target="_blank">
-          <span class="icon-rss_feed"></span>
         </a>
       </li>
       {% endif %}
