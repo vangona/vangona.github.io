@@ -98,7 +98,12 @@
 }
 
 @media (max-width: 48rem) {
-    .post-title-container-nohero h1 {
-      font-size: 2rem;
-      }
+  .post-title-container-nohero h1 {
+    font-size: 2rem;
+  }
+  .post-title-container, .page-title-container {
+    h1 {
+      font-size: $mobile-post-title-size;
     }
+  }
+}

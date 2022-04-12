@@ -33,10 +33,7 @@ header {
 	      }
         a {
           color: var(--text-color-light);
-    	    font-size: $base-font-size;
-    	    font-weight: $base-font-weight;
     	    display: block;
-          height: 2rem; // reset
           .smaller {
             font-size: 0.85em;
           }

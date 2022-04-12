@@ -3,51 +3,42 @@ main:
     url: /humanities
     sublinks:
       - title: 코딩과 인문학
-        url: /humanities/coding
+        url: /tag/humanities-coding
       - title: 컴퓨터공학과 인문학
-        url: /humanities/computerscience
+        url: /tag/humanities-cs
   - title: "ALGORITHM"
     url: /algorithm
     sublinks:
       - title: 백준 문제풀이
-        url: /algorithm/boj
+        url: /tag/boj
       - title: 프로그래머스 문제풀이
-        url: /algorithm/programmers
+        url: /tag/programmers
       - title: 알고리즘 & 자료구조 이론
-        url: /algorithm/theory
+        url: /tag/theory
   - title: "LANGUAGES"
     url: /languages
     sublinks:
       - title: HTML & CSS
-        url: /languages/html-css
+        url: /tag/html-css
       - title: Javascript
-        url: /languages/js
+        url: /tag/js
       - title: 이외
-        url: /languages/etc
-  - title: "CS"
+        url: /tag/etc
+  - title: "SCIENCE"
     url: /cs
     sublinks:
       - title: Network
-        url: /cs/network
+        url: /tag/network
       - title: OS
-        url: /cs/os
+        url: /tag/os
       - title: Convention
-        url: /cs/convention
-  - title: "LECTURES"
-    url: /lectures
-    sublinks:
-      - title: Nomad Coder
-        url: /lectures/nomad-coder
-      - title: Egoing
-        url: /cs/egoing
-      - title: 멋쟁이 사자처럼
-        url: /cs/likelion
+        url: /tag/convention
   - title: "PROJECTS"
     url: /projects
     sublinks:
       - title: 나만의 서랍장
-        url: /projects/myowndrawer
+        url: /tag/myowndrawer
       - title: 청사진제작소
-        url: /projects/blueprint-maker
+        url: /tag/blueprint-maker
       - title: 나를 표현하는 단어들
-        url: /projects/word-dictionary
+        url: /tag/word-dictionary
