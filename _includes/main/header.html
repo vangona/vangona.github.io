@@ -17,7 +17,6 @@
       <label class="toggle-nav" for="mobile-nav__toggle">
         <i class="fa-solid fa-bars"></i>
       </label>
-      <hr />
       <div class="nav__profile">{{ site.blog.title }}</div>
       {%- for link in site.data.navigation.main -%} {% assign class = nil %} {%
       if page.url contains link.url %} {% assign class = 'active' %} {% endif %}
@@ -31,9 +30,7 @@
           aria-expanded="false"
           href="{{ site.baseurl }}{{ link.url }}"
           >{{ link.title }}
-          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
-          ><span class="caret"></span
-        ></a>
+        </a>
 
         <ul class="dropdown-content">
           {% for sublink in link.sublinks %}

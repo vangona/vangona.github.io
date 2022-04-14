@@ -5,11 +5,17 @@ article {
     &.blog {
       margin-bottom: 2em;
 
+      h1 {
+        font-size: $mobile-post-title-size;
+      }
+
       &:last-of-type {
         margin-bottom: 6em;
       }
 
       p {
+        text-indent: 10px;
+        font-size: $mobile-font-size;
         margin-bottom: .5rem;
       }
     }

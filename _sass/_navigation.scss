@@ -2,31 +2,32 @@
   .dropdown {
     width: auto;
     box-sizing: border-box;
+    font-family: SCDream Light;
   }
 
   .dropdown-content {
     display: none;
     flex-direction: column;
-    gap: 10px;
+    padding: 0 10px;
 
     position: absolute;
     background-color: var(--bg-color);
     border-radius: 10px;
     box-sizing: border-box;
 
-    transition: 0.3s all ease-out;
-    opacity: 0;
     z-index: 1;
+  }
+
+  .dropdown-toggle {
+    font-family: SCDream;
   }
 
   .dropdown:hover .dropdown-content {
     display: flex;
-    opacity: 1;
     // font-size: 17px;
   }
 
   .dropdown-item {
-    font-family: Jeju myeongjo;
     font-size: 1rem;
     padding: 5px 10px;
   }
@@ -83,11 +84,6 @@
 
 // 모바일 버젼
 
-.nav__profile {
-  font-size: 2rem;
-  font-weight: bolder;
-}
-
 .toggle-nav {
   border: none;
   display: none;
@@ -107,15 +103,24 @@
   display: none;
 }
 
+.nav__profile {
+  font-family: $JejuMyeongjo;
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
 .mobile-nav {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 20px;
   position: fixed;
 
   top: 0;
-  height: 100%;
+  height: 50px;
   width: 350px;
+  overflow: hidden;
 
   background-color: transparent;
 
@@ -124,46 +129,48 @@
   z-index: 20;
 
   .dropdown {
-    width: 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px 30px;
   }
   
   .dropdown-toggle {
-    display:block;
+    display: block;
+    justify-self: flex-start;
+    align-self: flex-start;
+    border-bottom: 1px solid $border-color;
   }
 
   .dropdown-content {
-    padding: 10px;
-    height: 0;
-    opacity: 0;
-    position: relative;
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s all ease-in-out;
+    text-align: end;
+    padding: 10px;
+    position: relative;
+    opacity: 0;
   }
 
   .dropdown-item {
+    width: 100%;
     font-size: 1rem;
-    :hover {
-      background-color: var(--bg-color);
-    }
   }
 }
 
 #mobile-nav__toggle:checked ~ .mobile-nav {
+  height: 100vh;
+  width: auto;
   background-color: var(--bg-color);
-  transform: translateX(-30px);
+  transform: translateX(-10px);
+  overflow: auto;
+
   .dropdown {
-    width: 350px;
+    width: 300px;
   }
 
   .dropdown-content {
     display: flex;
-  }
-
-  .dropdown:hover .dropdown-content {
     opacity: 1;
-    height: 150px;
   }
 }
 
