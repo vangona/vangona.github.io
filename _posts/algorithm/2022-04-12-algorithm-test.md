@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Algorithm test
+title: 알고리즘 문제 휴식기
 categories: Algorithm
 tags:
   - algorithm
   - boj
+  - dfs
 hero: "https://source.unsplash.com/collection/261936/"
 overlay: purple
 published: true
