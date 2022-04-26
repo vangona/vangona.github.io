@@ -5,8 +5,8 @@ categories: Algorithm
 tags:
   - algorithm
   - boj
-  - dfs
-hero: "https://source.unsplash.com/collection/261936/"
+  - gold
+hero: "https://source.unsplash.com/random"
 overlay: purple
 published: true
 ---
