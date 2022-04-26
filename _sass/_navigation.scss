@@ -1,86 +1,84 @@
-  // to be shared by both hidden link and visible link
-  .dropdown {
-    width: auto;
-    box-sizing: border-box;
-    font-family: SCDream Light;
+// to be shared by both hidden link and visible link
+.dropdown {
+  width: auto;
+  box-sizing: border-box;
+  font-family: SCDream Light;
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  padding: 0 10px;
+
+  position: absolute;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  z-index: 1;
+}
+
+.dropdown-toggle {
+  font-family: SCDream;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  // font-size: 17px;
+}
+
+.dropdown-item {
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+.visible-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  font-family: sans-serif;
+
+  li {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    display: list-item;
+    text-align: -webkit-match-parent;
   }
 
-  .dropdown-content {
-    display: none;
-    flex-direction: column;
-    padding: 0 10px;
+  a {
+    position: relative;
+  }
+}
 
-    position: absolute;
-    background-color: var(--bg-color);
-    border-radius: 10px;
-    box-sizing: border-box;
+.hidden-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 15px;
+  padding: 5px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background: var(--bg-color);
 
-    z-index: 1;
+  a {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: $type-size-5;
   }
 
-  .dropdown-toggle {
-    font-family: SCDream;
+  li {
+    display: block;
+    border-bottom: 1px solid $border-color;
   }
-
-  .dropdown:hover .dropdown-content {
-    display: flex;
-    // font-size: 17px;
-  }
-
-  .dropdown-item {
-    font-size: 1rem;
-    padding: 5px 10px;
-  }
-
-
-  .visible-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    overflow: hidden;
-    font-family: sans-serif;
-
-    li {
-      -webkit-box-flex: 0;
-      -ms-flex: none;
-      flex: none;
-      display: list-item;
-      text-align: -webkit-match-parent;
-    }
-
-    a {
-      position: relative;
-    }
-  }
-
-
-  .hidden-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 15px;
-    padding: 5px;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    background: var(--bg-color);
-
-    a {
-      margin: 0;
-      padding: 10px 20px;
-      font-size: $type-size-5;
-    }
-
-    li {
-      display: block;
-      border-bottom: 1px solid $border-color;
-    }
-  }//hidden link
+} //hidden link
 
 // 모바일 버젼
 
@@ -112,7 +110,7 @@
 }
 
 .mobile-nav {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 20px;
   position: fixed;
@@ -133,7 +131,7 @@
     flex-direction: column;
     padding: 0 10px 10px 30px;
   }
-  
+
   .dropdown-toggle {
     display: block;
     justify-self: flex-start;
@@ -161,7 +159,7 @@
   height: 100vh;
   width: auto;
   background-color: var(--bg-color);
-  transform: translateX(-10px);
+  transform: translateX(-2.5rem);
   overflow: auto;
 
   .dropdown {
