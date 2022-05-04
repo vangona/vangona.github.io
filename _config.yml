@@ -44,6 +44,7 @@ author:
 
 # Gems
 plugins:
+  - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
 
@@ -111,4 +112,4 @@ compress_html:
   blanklines: true
   profile: false
   ignore:
-  envs: [local]
+    envs: []
