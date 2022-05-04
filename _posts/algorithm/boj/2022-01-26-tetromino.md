@@ -53,8 +53,6 @@ published: true
 
 ## 풀이 코드
 
-{% row %}
-
 ```js
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
@@ -166,5 +164,3 @@ function checkAwesomeShape(x, y) {
   }
 }
 ```
-
-{% endrow %}
