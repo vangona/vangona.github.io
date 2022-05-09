@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+   <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+   </style>
+   <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+/>
+<title>
+  백준 문제풀이 1712번 손익분기점 &#9642; vanGona
+</title>
+<!--
+<meta name="description" content="[백준 문제풀이] 1712번 손익분기점 1712번 손익분기점 (Bronze 4) 문제 https://www.acmicpc.net/problem/1712 월드전자는 노트북을 제조하고 판매하는 회사이다. 노트북 판매 대수에 상관없이 매년 임대료, 재산세, 보험료, 급여 등 A만원의 고정 비용이 들며, 한 대의 노트북을 생산하는 데에는 재료비와 인건비 등 총 B만원의 가변 비용이 든다고 한다. 예를 들어 A=1,000, B=70이라고 하자. 이 경우...">
+-->
+<link rel="icon" href="/assets/img/dactl.svg" />
+<meta
+  name="description"
+  content="임상심리학자가 개발을 추구하는 건에 대해서
+"
+/>
+<meta
+  name="keywords"
+  content="algorithm, boj, bronze, basic-math"
+/>
+<link
+  rel="canonical"
+  href="http://localhost:4000/posts/boj-break-even-point"
+/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="백준 문제풀이 1712번 손익분기점" />
+<meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta name="twitter:image" content="http://localhost:4000" />
+<meta name="author" content="" />
+<link rel="author" href="" />
+<meta property="og:locale" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="백준 문제풀이 1712번 손익분기점" />
+<meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta
+  property="og:url"
+  content="http://localhost:4000/posts/boj-break-even-point"
+/>
+<meta property="og:site_name" content="vanGona" />
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic"
+/>
+<style>
+  html {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  }
+</style>
+<link rel="stylesheet"
+href="/assets/css/bf.css"> 
+ <body>
+   <div class="wrapper" id="blep">
+    <header>
+ <div class="menu">
+   <div class="logo">
+      <a href="/">vanGona</a>
+      <object
+        type="image/svg+xml"
+        data="/assets/img/dactl.svg"
+        class="logosvg"
+      >
+        Your browser does not support svg images
+      </object>
+   </div>
+    <input id="mobile-nav__toggle" type="checkbox" />
+   <ul class="mobile-nav">
+      <label class="toggle-nav" for="mobile-nav__toggle">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+     <div class="nav__profile">vanGona</div>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/humanities-coding">
+            - 코딩과 인문학</a
+          >
+          <a class="dropdown-item" href="/tag/humanities-cs">
+            - 컴퓨터공학과 인문학</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/boj">
+            - 백준 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/programmers">
+            - 프로그래머스 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/theory">
+            - 알고리즘 & 자료구조 이론</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/html-css">
+            - HTML & CSS</a
+          >
+          <a class="dropdown-item" href="/tag/js">
+            - Javascript</a
+          >
+          <a class="dropdown-item" href="/tag/etc">
+            - 이외</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/network">
+            - Network</a
+          >
+          <a class="dropdown-item" href="/tag/os">
+            - OS</a
+          >
+          <a class="dropdown-item" href="/tag/convention">
+            - Convention</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/myowndrawer">
+            - 나만의 서랍장</a
+          >
+          <a class="dropdown-item" href="/tag/blueprint-maker">
+            - 청사진제작소</a
+          >
+          <a class="dropdown-item" href="/tag/word-dictionary">
+            - 나를 표현하는 단어들</a
+          >
+       </ul>
+   </ul>
+   <ul class="visible-links"> 
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/humanities-coding">
+            - 코딩과 인문학</a
+          >
+          <a class="dropdown-item" href="/tag/humanities-cs">
+            - 컴퓨터공학과 인문학</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/boj">
+            - 백준 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/programmers">
+            - 프로그래머스 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/theory">
+            - 알고리즘 & 자료구조 이론</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/html-css">
+            - HTML & CSS</a
+          >
+          <a class="dropdown-item" href="/tag/js">
+            - Javascript</a
+          >
+          <a class="dropdown-item" href="/tag/etc">
+            - 이외</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/network">
+            - Network</a
+          >
+          <a class="dropdown-item" href="/tag/os">
+            - OS</a
+          >
+          <a class="dropdown-item" href="/tag/convention">
+            - Convention</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/myowndrawer">
+            - 나만의 서랍장</a
+          >
+          <a class="dropdown-item" href="/tag/blueprint-maker">
+            - 청사진제작소</a
+          >
+          <a class="dropdown-item" href="/tag/word-dictionary">
+            - 나를 표현하는 단어들</a
+          >
+       </ul>
+   </ul>
+ </div>
+ <div class="social">
+   <ul>
+     <li>
+        <a
+          href="https://github.com/vangona"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-github"></span>
+        </a>
+     <li>
+        <a
+          href="https://youtube.com/뜬구름 공작소"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-youtube"></span>
+        </a>
+     <li>
+        <a
+          href="https://instagram.com/my_own_drawer_"
+          target="_blank"
+          class="smaller"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+     <li>
+        <a href="mailto:rlarhksrud14@gmail.com" target="_blank">
+          <span class="icon-mail_outline"></span>
+        </a>
+     <li>
+        <a href="#" onclick="switchTheme()" title="Switch theme?">
+          <span class="icon-invert_colors" id="theme-switcher"></span>
+        </a>
+   </ul>
+ </div>
+</header>
+<article class="post">
+<style>
+  .boj-break-even-point {
+    margin-bottom: 2em;
+  }
+  .boj-break-even-point::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .boj-break-even-point::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .boj-break-even-point-container,
+  .boj-break-even-point-container::before,
+  .boj-break-even-point-container::after {
+    height: 25rem;
+  }
+  .boj-break-even-point-bleed-container,
+  .boj-break-even-point-bleed-container::before,
+  .boj-break-even-point-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .boj-break-even-point-container,
+        .boj-break-even-point-container::before,
+        .boj-break-even-point-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  boj-break-even-point boj-break-even-point-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          백준 문제풀이 1712번 손익분기점
+     </h1>
+     <div class="post-meta">
+        <span>09/11/2021</span>
+        <span>
+              <a href="/tag/algorithm">#algorithm</a>
+              <a href="/tag/boj">#boj</a>
+              <a href="/tag/bronze">#bronze</a>
+              <a href="/tag/basic-math">#basic-math</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="백준-문제풀이-1712번-손익분기점"><center>[백준 문제풀이] 1712번 손익분기점</center></h1>
+
+<hr />
+
+<h2 id="1712번-손익분기점-bronze-4">1712번 손익분기점 (Bronze 4)</h2>
+
+<h3 id="문제">문제</h3>
+
+<p>https://www.acmicpc.net/problem/1712
+
+<p>월드전자는 노트북을 제조하고 판매하는 회사이다. 노트북 판매 대수에 상관없이 매년 임대료, 재산세, 보험료, 급여 등 A만원의 고정 비용이 들며, 한 대의 노트북을 생산하는 데에는 재료비와 인건비 등 총 B만원의 가변 비용이 든다고 한다.
+
+<p>예를 들어 A=1,000, B=70이라고 하자. 이 경우 노트북을 한 대 생산하는 데는 총 1,070만원이 들며, 열 대 생산하는 데는 총 1,700만원이 든다.
+
+<p>노트북 가격이 C만원으로 책정되었다고 한다. 일반적으로 생산 대수를 늘려 가다 보면 어느 순간 총 수입(판매비용)이 총 비용(=고정비용+가변비용)보다 많아지게 된다. 최초로 총 수입이 총 비용보다 많아져 이익이 발생하는 지점을 손익분기점(BREAK-EVEN POINT)이라고 한다.
+
+<p>A, B, C가 주어졌을 때, 손익분기점을 구하는 프로그램을 작성하시오.
+
+<h3 id="첫-번째-풀이">첫 번째 풀이</h3>
+
+<p>A : 고정 비용, B : 생산당 가변 비용, C : 매출
+
+<p>손익분기점을 구하라.
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="err">매출</span> <span class="o">=</span> <span class="o">-</span><span class="nx">A</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">B</span> <span class="o">&gt;</span> <span class="nx">C</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+	<span class="k">while</span> <span class="p">(</span><span class="err">매출</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+		<span class="err">매출</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">C</span> <span class="err">–</span> <span class="nx">B</span><span class="p">);</span>
+		<span class="nx">answer</span><span class="o">++</span>
+	<span class="p">};</span>
+<span class="p">};</span>
+</pre></table>
+</div>
+</div>
+
+<p>이와 같이 접근했다.
+=&gt; 시간초과
+
+<h3 id="두-번째-풀이">두 번째 풀이</h3>
+
+<p>이 문제가 ‘수학 능력’ 카테고리에 있었다는 것을 간과했었다.
+
+<p>반복문을 써서 풀면 당연히 늦어질 수 밖에 없고, 개당 수익으로 고정 손해 나눠준 뒤 반올림 해준 뒤 +1 해주면 되는 일이었다.
+
+<h3 id="풀이-소스코드">풀이 소스코드</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="kr">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="kr">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">b</span> <span class="o">&gt;=</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">answer</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">answer</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">a</span> <span class="o">/</span> <span class="p">(</span><span class="nx">c</span> <span class="o">-</span> <span class="nx">b</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answer</span><span class="p">);</span>
+</pre></table>
+</div>
+</div>
+
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dactl';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+   <li>
+    <a href="/posts/tetromino">
+        <span>boj_14500 테트로미노</span>
+        <small>26/01</small>
+    </a>
+   <li>
+    <a href="/posts/boj-reverse-word-2">
+        <span>백준 문제풀이 17413번 단어 뒤집기 2</span>
+        <small>30/11</small>
+    </a>
+   <li>
+    <a href="/posts/boj-deque">
+        <span>백준 문제풀이 10866번 덱</span>
+        <small>29/11</small>
+    </a>
+   <li>
+    <a href="/posts/boj-stack-sequence">
+        <span>백준 문제풀이 1874번 스택수열</span>
+        <small>28/11</small>
+    </a>
+</aside>
+<footer>
+    <span>임상심리학자가 개발을 추구하는 건에 대해서
+</span>
+    <span>written by Kim Kwan-kyoung</span>
+</footer>
+   </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+  

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+   <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+   </style>
+   <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+/>
+<title>
+  Post excerpts and leading paragraphs &#9642; vanGona
+</title>
+<!--
+<meta name="description" content="By default, dactl’s blog layout displays post excerpts which are leading paragraphs as well. This requires some manual work on your part when writing a post but don’t worry - it’s really easy. Read on for more info. Post excerpts First, let’s see how this and the above paragraph looks...">
+-->
+<link rel="icon" href="/assets/img/dactl.svg" />
+<meta
+  name="description"
+  content="임상심리학자가 개발을 추구하는 건에 대해서
+"
+/>
+<meta
+  name="keywords"
+  content="dactl, howto"
+/>
+<link
+  rel="canonical"
+  href="http://localhost:4000/posts/post-excerpts-lead-paragraphs"
+/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Post excerpts and leading paragraphs" />
+<meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta name="twitter:image" content="http://localhost:4000" />
+<meta name="author" content="" />
+<link rel="author" href="" />
+<meta property="og:locale" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Post excerpts and leading paragraphs" />
+<meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta
+  property="og:url"
+  content="http://localhost:4000/posts/post-excerpts-lead-paragraphs"
+/>
+<meta property="og:site_name" content="vanGona" />
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic"
+/>
+<style>
+  html {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  }
+</style>
+<link rel="stylesheet"
+href="/assets/css/bf.css"> 
+ <body>
+   <div class="wrapper" id="blep">
+    <header>
+ <div class="menu">
+   <div class="logo">
+      <a href="/">vanGona</a>
+      <object
+        type="image/svg+xml"
+        data="/assets/img/dactl.svg"
+        class="logosvg"
+      >
+        Your browser does not support svg images
+      </object>
+   </div>
+    <input id="mobile-nav__toggle" type="checkbox" />
+   <ul class="mobile-nav">
+      <label class="toggle-nav" for="mobile-nav__toggle">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+     <div class="nav__profile">vanGona</div>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/humanities-coding">
+            - 코딩과 인문학</a
+          >
+          <a class="dropdown-item" href="/tag/humanities-cs">
+            - 컴퓨터공학과 인문학</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/boj">
+            - 백준 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/programmers">
+            - 프로그래머스 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/theory">
+            - 알고리즘 & 자료구조 이론</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/html-css">
+            - HTML & CSS</a
+          >
+          <a class="dropdown-item" href="/tag/js">
+            - Javascript</a
+          >
+          <a class="dropdown-item" href="/tag/etc">
+            - 이외</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/network">
+            - Network</a
+          >
+          <a class="dropdown-item" href="/tag/os">
+            - OS</a
+          >
+          <a class="dropdown-item" href="/tag/convention">
+            - Convention</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/myowndrawer">
+            - 나만의 서랍장</a
+          >
+          <a class="dropdown-item" href="/tag/blueprint-maker">
+            - 청사진제작소</a
+          >
+          <a class="dropdown-item" href="/tag/word-dictionary">
+            - 나를 표현하는 단어들</a
+          >
+       </ul>
+   </ul>
+   <ul class="visible-links"> 
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/humanities-coding">
+            - 코딩과 인문학</a
+          >
+          <a class="dropdown-item" href="/tag/humanities-cs">
+            - 컴퓨터공학과 인문학</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/boj">
+            - 백준 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/programmers">
+            - 프로그래머스 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/theory">
+            - 알고리즘 & 자료구조 이론</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/html-css">
+            - HTML & CSS</a
+          >
+          <a class="dropdown-item" href="/tag/js">
+            - Javascript</a
+          >
+          <a class="dropdown-item" href="/tag/etc">
+            - 이외</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/network">
+            - Network</a
+          >
+          <a class="dropdown-item" href="/tag/os">
+            - OS</a
+          >
+          <a class="dropdown-item" href="/tag/convention">
+            - Convention</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/myowndrawer">
+            - 나만의 서랍장</a
+          >
+          <a class="dropdown-item" href="/tag/blueprint-maker">
+            - 청사진제작소</a
+          >
+          <a class="dropdown-item" href="/tag/word-dictionary">
+            - 나를 표현하는 단어들</a
+          >
+       </ul>
+   </ul>
+ </div>
+ <div class="social">
+   <ul>
+     <li>
+        <a
+          href="https://github.com/vangona"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-github"></span>
+        </a>
+     <li>
+        <a
+          href="https://youtube.com/뜬구름 공작소"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-youtube"></span>
+        </a>
+     <li>
+        <a
+          href="https://instagram.com/my_own_drawer_"
+          target="_blank"
+          class="smaller"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+     <li>
+        <a href="mailto:rlarhksrud14@gmail.com" target="_blank">
+          <span class="icon-mail_outline"></span>
+        </a>
+     <li>
+        <a href="#" onclick="switchTheme()" title="Switch theme?">
+          <span class="icon-invert_colors" id="theme-switcher"></span>
+        </a>
+   </ul>
+ </div>
+</header>
+<article class="post">
+<style>
+  .post-excerpts-lead-paragraphs {
+    margin-bottom: 2em;
+  }
+  .post-excerpts-lead-paragraphs::before {
+    background-image: url('https://source.unsplash.com/collection/261936/');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .post-excerpts-lead-paragraphs::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,100,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .post-excerpts-lead-paragraphs-container,
+  .post-excerpts-lead-paragraphs-container::before,
+  .post-excerpts-lead-paragraphs-container::after {
+    height: 25rem;
+  }
+  .post-excerpts-lead-paragraphs-bleed-container,
+  .post-excerpts-lead-paragraphs-bleed-container::before,
+  .post-excerpts-lead-paragraphs-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .post-excerpts-lead-paragraphs-container,
+        .post-excerpts-lead-paragraphs-container::before,
+        .post-excerpts-lead-paragraphs-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  post-excerpts-lead-paragraphs post-excerpts-lead-paragraphs-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          Post excerpts and leading paragraphs
+     </h1>
+     <div class="post-meta">
+        <span>17/03/2017</span>
+        <span>
+              <a href="/tag/dactl">#dactl</a>
+              <a href="/tag/howto">#howto</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <p class="lead">By default, dactl’s blog layout displays post excerpts which are leading paragraphs as well. This requires some manual work on your part when writing a post but don’t worry - it’s really easy. Read on for more info.
+
+<h2 id="post-excerpts">Post excerpts</h2>
+
+<p>First, let’s see how this and the above paragraph looks like in markdown:
+
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre><td class="code"><pre>By default, dactl's blog layout displays post excerpts which are leading paragraphs as well. This requires some manual work on your part when writing a post but don't worry - it's really easy. Read on for more info.
+{: .lead}
+
+<span class="gu">## Post excerpts</span>
+
+First, let's see how this and the above paragraph looks like in markdown:
+<span class="err">&lt;</span>!–-break-–&gt;
+</pre></table>
+</div>
+</div>
+
+<p>As you can see above there are two things which are visible only in the post’s markdown version. You won’t see them here because they got processed by Jekyll and ‘thrown out’ while generating html version of this post.
+
+<p><code class="language-plaintext highlighter-rouge">{: .lead}</code> inserted on a new line after a paragraphtells Jekyll’s markdown processor (dactl uses <a href="https://kramdown.gettalong.org/">kramdown</a>) to add class <code class="language-plaintext highlighter-rouge">.lead</code> to the above <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> tag which results in a leading paragraph.
+
+<p><code class="language-plaintext highlighter-rouge">&lt;!--break--&gt;</code>, inserted on a new line after <code class="language-plaintext highlighter-rouge">{: .lead}</code>, tells Jekyll that it should <a href="https://media.giphy.com/media/l46CxpYSFoFtN11ug/giphy.gif">‘break’</a> the post content at this point, so everything above it will become a post excerpt.
+
+<p class="notice-alert">The order is important here - <code class="language-plaintext highlighter-rouge">&lt;!--break--&gt;</code> comes <strong>after</strong> <code class="language-plaintext highlighter-rouge">{: .lead}</code> and because of that the leading paragraph/ post excerpt has it’s font enlarged both on blog and post pages.
+
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dactl';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+   <li>
+    <a href="/posts/notices">
+        <span>Notice blocks</span>
+        <small>20/03</small>
+    </a>
+   <li>
+    <a href="/posts/config-settings">
+        <span>Layout settings and more in _config.yml</span>
+        <small>20/03</small>
+    </a>
+   <li>
+    <a href="/posts/yaml-frontmatter">
+        <span>YAML front matter in posts</span>
+        <small>19/03</small>
+    </a>
+   <li>
+    <a href="/posts/tags-in-dactyl">
+        <span>Tags in dactl</span>
+        <small>18/03</small>
+    </a>
+</aside>
+<footer>
+    <span>임상심리학자가 개발을 추구하는 건에 대해서
+</span>
+    <span>written by Kim Kwan-kyoung</span>
+</footer>
+   </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+  

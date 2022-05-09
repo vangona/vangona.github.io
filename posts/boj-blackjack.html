@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+   <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+   </style>
+   <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+/>
+<title>
+  백준 문제풀이 2798번 블랙잭 &#9642; vanGona
+</title>
+<!--
+<meta name="description" content="[백준 문제풀이] 2798번 블랙잭 2798번 블랙잭 (Bronze 2) 문제 https://www.acmicpc.net/problem/2798 카지노에서 제일 인기 있는 게임 블랙잭의 규칙은 상당히 쉽다. 카드의 합이 21을 넘지 않는 한도 내에서, 카드의 합을 최대한 크게 만드는 게임이다. 블랙잭은 카지노마다 다양한 규정이 있다. 한국 최고의 블랙잭 고수 김정인은 새로운 블랙잭 규칙을 만들어 상근, 창영이와 게임하려고 한다....">
+-->
+<link rel="icon" href="/assets/img/dactl.svg" />
+<meta
+  name="description"
+  content="임상심리학자가 개발을 추구하는 건에 대해서
+"
+/>
+<meta
+  name="keywords"
+  content="algorithm, boj, bronze, recursion"
+/>
+<link
+  rel="canonical"
+  href="http://localhost:4000/posts/boj-blackjack"
+/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="백준 문제풀이 2798번 블랙잭" />
+<meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta name="twitter:image" content="http://localhost:4000" />
+<meta name="author" content="" />
+<link rel="author" href="" />
+<meta property="og:locale" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="백준 문제풀이 2798번 블랙잭" />
+<meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta
+  property="og:url"
+  content="http://localhost:4000/posts/boj-blackjack"
+/>
+<meta property="og:site_name" content="vanGona" />
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic"
+/>
+<style>
+  html {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  }
+</style>
+<link rel="stylesheet"
+href="/assets/css/bf.css"> 
+ <body>
+   <div class="wrapper" id="blep">
+    <header>
+ <div class="menu">
+   <div class="logo">
+      <a href="/">vanGona</a>
+      <object
+        type="image/svg+xml"
+        data="/assets/img/dactl.svg"
+        class="logosvg"
+      >
+        Your browser does not support svg images
+      </object>
+   </div>
+    <input id="mobile-nav__toggle" type="checkbox" />
+   <ul class="mobile-nav">
+      <label class="toggle-nav" for="mobile-nav__toggle">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+     <div class="nav__profile">vanGona</div>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/humanities-coding">
+            - 코딩과 인문학</a
+          >
+          <a class="dropdown-item" href="/tag/humanities-cs">
+            - 컴퓨터공학과 인문학</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/boj">
+            - 백준 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/programmers">
+            - 프로그래머스 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/theory">
+            - 알고리즘 & 자료구조 이론</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/html-css">
+            - HTML & CSS</a
+          >
+          <a class="dropdown-item" href="/tag/js">
+            - Javascript</a
+          >
+          <a class="dropdown-item" href="/tag/etc">
+            - 이외</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/network">
+            - Network</a
+          >
+          <a class="dropdown-item" href="/tag/os">
+            - OS</a
+          >
+          <a class="dropdown-item" href="/tag/convention">
+            - Convention</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/myowndrawer">
+            - 나만의 서랍장</a
+          >
+          <a class="dropdown-item" href="/tag/blueprint-maker">
+            - 청사진제작소</a
+          >
+          <a class="dropdown-item" href="/tag/word-dictionary">
+            - 나를 표현하는 단어들</a
+          >
+       </ul>
+   </ul>
+   <ul class="visible-links"> 
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/humanities-coding">
+            - 코딩과 인문학</a
+          >
+          <a class="dropdown-item" href="/tag/humanities-cs">
+            - 컴퓨터공학과 인문학</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/boj">
+            - 백준 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/programmers">
+            - 프로그래머스 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/theory">
+            - 알고리즘 & 자료구조 이론</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/html-css">
+            - HTML & CSS</a
+          >
+          <a class="dropdown-item" href="/tag/js">
+            - Javascript</a
+          >
+          <a class="dropdown-item" href="/tag/etc">
+            - 이외</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/network">
+            - Network</a
+          >
+          <a class="dropdown-item" href="/tag/os">
+            - OS</a
+          >
+          <a class="dropdown-item" href="/tag/convention">
+            - Convention</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/myowndrawer">
+            - 나만의 서랍장</a
+          >
+          <a class="dropdown-item" href="/tag/blueprint-maker">
+            - 청사진제작소</a
+          >
+          <a class="dropdown-item" href="/tag/word-dictionary">
+            - 나를 표현하는 단어들</a
+          >
+       </ul>
+   </ul>
+ </div>
+ <div class="social">
+   <ul>
+     <li>
+        <a
+          href="https://github.com/vangona"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-github"></span>
+        </a>
+     <li>
+        <a
+          href="https://youtube.com/뜬구름 공작소"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-youtube"></span>
+        </a>
+     <li>
+        <a
+          href="https://instagram.com/my_own_drawer_"
+          target="_blank"
+          class="smaller"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+     <li>
+        <a href="mailto:rlarhksrud14@gmail.com" target="_blank">
+          <span class="icon-mail_outline"></span>
+        </a>
+     <li>
+        <a href="#" onclick="switchTheme()" title="Switch theme?">
+          <span class="icon-invert_colors" id="theme-switcher"></span>
+        </a>
+   </ul>
+ </div>
+</header>
+<article class="post">
+<style>
+  .boj-blackjack {
+    margin-bottom: 2em;
+  }
+  .boj-blackjack::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .boj-blackjack::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .boj-blackjack-container,
+  .boj-blackjack-container::before,
+  .boj-blackjack-container::after {
+    height: 25rem;
+  }
+  .boj-blackjack-bleed-container,
+  .boj-blackjack-bleed-container::before,
+  .boj-blackjack-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .boj-blackjack-container,
+        .boj-blackjack-container::before,
+        .boj-blackjack-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  boj-blackjack boj-blackjack-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          백준 문제풀이 2798번 블랙잭
+     </h1>
+     <div class="post-meta">
+        <span>20/11/2021</span>
+        <span>
+              <a href="/tag/algorithm">#algorithm</a>
+              <a href="/tag/boj">#boj</a>
+              <a href="/tag/bronze">#bronze</a>
+              <a href="/tag/recursion">#recursion</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="백준-문제풀이-2798번-블랙잭"><center>[백준 문제풀이] 2798번 블랙잭</center></h1>
+
+<hr />
+
+<h2 id="2798번-블랙잭-bronze-2">2798번 블랙잭 (Bronze 2)</h2>
+
+<h3 id="문제">문제</h3>
+
+<p>https://www.acmicpc.net/problem/2798
+
+<p>카지노에서 제일 인기 있는 게임 블랙잭의 규칙은 상당히 쉽다. 카드의 합이 21을 넘지 않는 한도 내에서, 카드의 합을 최대한 크게 만드는 게임이다. 블랙잭은 카지노마다 다양한 규정이 있다.
+
+<p>한국 최고의 블랙잭 고수 김정인은 새로운 블랙잭 규칙을 만들어 상근, 창영이와 게임하려고 한다.
+
+<p>김정인 버전의 블랙잭에서 각 카드에는 양의 정수가 쓰여 있다. 그 다음, 딜러는 N장의 카드를 모두 숫자가 보이도록 바닥에 놓는다. 그런 후에 딜러는 숫자 M을 크게 외친다.
+
+<p>이제 플레이어는 제한된 시간 안에 N장의 카드 중에서 3장의 카드를 골라야 한다. 블랙잭 변형 게임이기 때문에, 플레이어가 고른 카드의 합은 M을 넘지 않으면서 M과 최대한 가깝게 만들어야 한다.
+
+<p>N장의 카드에 써져 있는 숫자가 주어졌을 때, M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 구해 출력하시오.
+
+<h3 id="입력">입력</h3>
+
+<p>첫째 줄에 카드의 개수 N(3 ≤ N ≤ 100)과 M(10 ≤ M ≤ 300,000)이 주어진다. 둘째 줄에는 카드에 쓰여 있는 수가 주어지며, 이 값은 100,000을 넘지 않는 양의 정수이다.
+
+<p>합이 M을 넘지 않는 카드 3장을 찾을 수 있는 경우만 입력으로 주어진다.
+
+<h3 id="출력">출력</h3>
+
+<p>첫째 줄에 M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 출력한다.
+
+<h3 id="배운-것">배운 것</h3>
+
+<p>조합을 위한 알고리즘은 재귀를 사용해서 만든다.
+
+<p>forEach의 parameter는 element, index, array가 있다.
+element는 각각의 원소이고, index는 해당 원소의 위치, array는 forEach가 진행되는 배열을 말한다.
+
+<h3 id="소스코드">소스코드</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
+
+<span class="nx">input</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span>
+<span class="kr">const</span> <span class="nx">M</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+<span class="kr">const</span> <span class="nx">cards</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">card</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">card</span><span class="p">));</span>
+<span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">getCombinations</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">selectNumber</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">selectNumber</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">element</span><span class="p">]);</span>
+  <span class="p">}</span>
+
+  <span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">fixed</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">origin</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">rest</span> <span class="o">=</span> <span class="nx">origin</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">combinations</span> <span class="o">=</span> <span class="nx">getCombinations</span><span class="p">(</span><span class="nx">rest</span><span class="p">,</span> <span class="nx">selectNumber</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">attached</span> <span class="o">=</span> <span class="nx">combinations</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">fixed</span><span class="p">,</span> <span class="p">...</span><span class="nx">element</span><span class="p">]);</span>
+    <span class="nx">results</span><span class="p">.</span><span class="nx">push</span><span class="p">(...</span><span class="nx">attached</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">results</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">getCombinations</span><span class="p">(</span><span class="nx">cards</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nx">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="nx">result</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">&lt;=</span> <span class="nx">M</span> <span class="o">&amp;&amp;</span> <span class="nx">answer</span> <span class="o">&lt;=</span> <span class="nx">sum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span> <span class="o">=</span> <span class="nx">sum</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answer</span><span class="p">);</span>
+</pre></table>
+</div>
+</div>
+
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dactl';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+   <li>
+    <a href="/posts/tetromino">
+        <span>boj_14500 테트로미노</span>
+        <small>26/01</small>
+    </a>
+   <li>
+    <a href="/posts/boj-reverse-word-2">
+        <span>백준 문제풀이 17413번 단어 뒤집기 2</span>
+        <small>30/11</small>
+    </a>
+   <li>
+    <a href="/posts/boj-deque">
+        <span>백준 문제풀이 10866번 덱</span>
+        <small>29/11</small>
+    </a>
+   <li>
+    <a href="/posts/boj-stack-sequence">
+        <span>백준 문제풀이 1874번 스택수열</span>
+        <small>28/11</small>
+    </a>
+</aside>
+<footer>
+    <span>임상심리학자가 개발을 추구하는 건에 대해서
+</span>
+    <span>written by Kim Kwan-kyoung</span>
+</footer>
+   </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+  
