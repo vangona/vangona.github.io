@@ -1,0 +1,22 @@
+{
+  "name": "vangona.github.io",
+  "version": "1.0.0",
+  "description": "dactl is a fast, modern and configurable [Jekyll](http://jekyllrb.com/) theme with some tricks up it's sleeve. It has a live theme switcher and it's main blog layout display prominent hero images for posts with colored overlays and nice animations.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d _site"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vangona/vangona.github.io.git"
+  },
+  "author": "vangona",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vangona/vangona.github.io/issues"
+  },
+  "homepage": "https://github.com/vangona/vangona.github.io",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
