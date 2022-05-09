@@ -357,8 +357,97 @@ href="/assets/css/bf.css">
   </span>
  </div>
 </div>
-<p>There are no posts in this tag.
-<div class="tag-box">
+<article class="blog">
+<style>
+  .js-closure {
+    margin-bottom: 2em;
+  }
+  .js-closure::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .js-closure::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .js-closure-container,
+  .js-closure-container::before,
+  .js-closure-container::after {
+    height: 25rem;
+  }
+  .js-closure-bleed-container,
+  .js-closure-bleed-container::before,
+  .js-closure-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .js-closure-container,
+        .js-closure-container::before,
+        .js-closure-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        js-closure js-closure-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/js-closure" title="실행 컨텍스트와 클로져에 담긴 철학"
+          >실행 컨텍스트와 클로져에 담긴 철학</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2022/04/08</span>
+        <span>
+          <a href="/tag/js">#js</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="인간이-언제-죽는다고-생각하나"><center>인간이 언제 죽는다고 생각하나?</center></h1>
+
+<h1 id="맹독-버섯-스프를-마셨을-때"><center>맹독 버섯 스프를 마셨을 때?</center></h1>
+
+<hr />
+
+<h2 id="실행-컨텍스트">실행 컨텍스트</h2>
+
+<h2 id="유효-범위-렉시컬-스코프---lexical-scope">유효 범위 (렉시컬 스코프 - Lexical Scope)</h2>
+
+<h2 id="자유-변수">자유 변수</h2>
+
+<h2 id="클로져">클로져</h2>
+
+ <div class="readmore">
+    <a href="/posts/js-closure" role="button">Read more</a>
+ </div>
+</article>
+  <div class="tag-box">
 <hr/>
 <span>Check out other tags:</span>
 <ul>
@@ -369,9 +458,15 @@ href="/assets/css/bf.css">
   <li>
      <a href="/tag/boj/">#boj</a>
   <li>
+     <a href="/tag/boostcourse/">#boostcourse</a>
+  <li>
      <a href="/tag/bronze/">#bronze</a>
   <li>
      <a href="/tag/bruteforce/">#bruteforce</a>
+  <li>
+     <a href="/tag/cs/">#cs</a>
+  <li>
+     <a href="/tag/cs50/">#cs50</a>
   <li>
      <a href="/tag/dactl/">#dactl</a>
   <li>
@@ -384,6 +479,8 @@ href="/assets/css/bf.css">
      <a href="/tag/howto/">#howto</a>
   <li>
      <a href="/tag/jekyll/">#jekyll</a>
+  <li>
+     <a href="/tag/js/">#js</a>
   <li>
      <a href="/tag/recursion/">#recursion</a>
   <li>
