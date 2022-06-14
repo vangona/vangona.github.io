@@ -346,10 +346,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
-  .boj-deque {
+  .boj-1063 {
     margin-bottom: 2em;
   }
-  .boj-deque::before {
+  .boj-1063::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -360,7 +360,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .boj-deque::after {
+  .boj-1063::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -373,20 +373,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .boj-deque-container,
-  .boj-deque-container::before,
-  .boj-deque-container::after {
+  .boj-1063-container,
+  .boj-1063-container::before,
+  .boj-1063-container::after {
     height: 25rem;
   }
-  .boj-deque-bleed-container,
-  .boj-deque-bleed-container::before,
-  .boj-deque-bleed-container::after {
+  .boj-1063-bleed-container,
+  .boj-1063-bleed-container::before,
+  .boj-1063-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .boj-deque-container,
-        .boj-deque-container::before,
-        .boj-deque-container::after{
+        .boj-1063-container,
+        .boj-1063-container::before,
+        .boj-1063-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -395,64 +395,66 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        boj-deque boj-deque-container hero-hov
+        boj-1063 boj-1063-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/boj-deque" title="백준 문제풀이 10866번 덱"
-          >백준 문제풀이 10866번 덱</a
+        <a href="/posts/boj-1063" title="백준 문제풀이 1063번 킹"
+          >백준 문제풀이 1063번 킹</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2021/11/29</span>
+        <span>2022/05/09</span>
         <span>
           <a href="/tag/algorithm">#algorithm</a>
           <a href="/tag/boj">#boj</a>
           <a href="/tag/silver">#silver</a>
-          <a href="/tag/stack&queue">#stack&queue</a>
+          <a href="/tag/implementation">#implementation</a>
+          <a href="/tag/simulation">#simulation</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="백준-문제풀이-10866번-덱"><center>[백준 문제풀이] 10866번 덱</center></h1>
+   <h1 id="백준-문제풀이-1063번-킹"><center>[백준 문제풀이] 1063번 킹</center></h1>
 
 <hr />
 
-<h2 id="10866번-덱-silver-4">10866번 덱 (Silver 4)</h2>
+<h2 id="1063번-킹-silver-3">1063번 킹 (Silver 3)</h2>
 
 <h3 id="문제">문제</h3>
 
-<p>https://www.acmicpc.net/problem/10866
+<p>https://www.acmicpc.net/problem/1063
 
-<p>정수를 저장하는 덱(Deque)를 구현한 다음, 입력으로 주어지는 명령을 처리하는 프로그램을 작성하시오.
+<p>8*8크기의 체스판에 왕이 하나 있다. 킹의 현재 위치가 주어진다. 체스판에서 말의 위치는 다음과 같이 주어진다. 알파벳 하나와 숫자 하나로 이루어져 있는데, 알파벳은 열을 상징하고, 숫자는 행을 상징한다. 열은 가장 왼쪽 열이 A이고, 가장 오른쪽 열이 H까지 이고, 행은 가장 아래가 1이고 가장 위가 8이다. 예를 들어, 왼쪽 아래 코너는 A1이고, 그 오른쪽 칸은 B1이다.
 
-<p>명령은 총 여덟 가지이다.
+<p>킹은 다음과 같이 움직일 수 있다.
 
-<p>push_front X: 정수 X를 덱의 앞에 넣는다.
-push_back X: 정수 X를 덱의 뒤에 넣는다.
-pop_front: 덱의 가장 앞에 있는 수를 빼고, 그 수를 출력한다. 만약, 덱에 들어있는 정수가 없는 경우에는 -1을 출력한다.
-pop_back: 덱의 가장 뒤에 있는 수를 빼고, 그 수를 출력한다. 만약, 덱에 들어있는 정수가 없는 경우에는 -1을 출력한다.
-size: 덱에 들어있는 정수의 개수를 출력한다.
-empty: 덱이 비어있으면 1을, 아니면 0을 출력한다.
-front: 덱의 가장 앞에 있는 정수를 출력한다. 만약 덱에 들어있는 정수가 없는 경우에는 -1을 출력한다.
-back: 덱의 가장 뒤에 있는 정수를 출력한다. 만약 덱에 들어있는 정수가 없는 경우에는 –1을 출력한다.
+<p>R : 한 칸 오른쪽으로
+L : 한 칸 왼쪽으로
+B : 한 칸 아래로
+T : 한 칸 위로
+RT : 오른쪽 위 대각선으로
+LT : 왼쪽 위 대각선으로
+RB : 오른쪽 아래 대각선으로
+LB : 왼쪽 아래 대각선으로
+체스판에는 돌이 하나 있는데, 돌과 같은 곳으로 이동할 때는, 돌을 킹이 움직인 방향과 같은 방향으로 한 칸 이동시킨다. 아래 그림을 참고하자.
+
+<p>입력으로 킹이 어떻게 움직여야 하는지 주어진다. 입력으로 주어진 대로 움직여서 킹이나 돌이 체스판 밖으로 나갈 경우에는 그 이동은 건너 뛰고 다음 이동을 한다.
+
+<p>킹과 돌의 마지막 위치를 구하는 프로그램을 작성하시오.
 
 <h3 id="입력">입력</h3>
 
-<p>첫째 줄에 주어지는 명령의 수 N (1 ≤ N ≤ 10,000)이 주어진다. 둘째 줄부터 N개의 줄에는 명령이 하나씩 주어진다. 주어지는 정수는 1보다 크거나 같고, 100,000보다 작거나 같다. 문제에 나와있지 않은 명령이 주어지는 경우는 없다.
+<p>첫째 줄에 킹의 위치, 돌의 위치, 움직이는 횟수 N이 주어진다. 둘째 줄부터 N개의 줄에는 킹이 어떻게 움직여야 하는지 주어진다. N은 50보다 작거나 같은 자연수이고, 움직이는 정보는 위에 쓰여 있는 8가지 중 하나이다.
 
 <h3 id="출력">출력</h3>
 
-<p>출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.
-
-<h3 id="풀이">풀이</h3>
-
-<p>N이 10,000 이하라서 배열을 만들고 shift, pop을 사용해서 풀이했다.
+<p>첫째 줄에 킹의 마지막 위치, 둘째 줄에 돌의 마지막 위치를 출력한다.
 
 <h3 id="소스코드">소스코드</h3>
 
@@ -497,371 +499,227 @@ back: 덱의 가장 뒤에 있는 정수를 출력한다. 만약 덱에 들어�
 39
 40
 41
-42</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">chessPieces</span><span class="p">,</span> <span class="p">...</span><span class="nx">commands</span><span class="p">]</span> <span class="o">=</span> <span class="nx">fs</span>
+  <span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">trim</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<span class="kr">const</span> <span class="nx">answerArr</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="kr">const</span> <span class="nx">deque</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">chessPieces</span> <span class="o">=</span> <span class="nx">chessPieces</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">chessPieces</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
 
-<span class="kr">const</span> <span class="nx">workDeque</span> <span class="o">=</span> <span class="p">(</span><span class="nx">lineData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">lineData</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">"pop_front"</span><span class="p">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">deque</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">deque</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"pop_back"</span><span class="p">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">deque</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">deque</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"size"</span><span class="p">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">deque</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"empty"</span><span class="p">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">deque</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="mi">1</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"front"</span><span class="p">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">deque</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">deque</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"back"</span><span class="p">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">deque</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">deque</span><span class="p">[</span><span class="nx">deque</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"push_back"</span><span class="p">:</span>
-      <span class="nx">deque</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">lineData</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="nx">deque</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">lineData</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-      <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+<span class="nx">solveProblem</span><span class="p">();</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
-  <span class="nx">workDeque</span><span class="p">(</span><span class="nx">line</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">solveProblem</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 이동을 숫자의 증감으로 표현할 수 있도록</span>
+  <span class="c1">// 열을 숫자로 변환함.</span>
+  <span class="nx">chessPieces</span> <span class="o">=</span> <span class="nx">positionToAscii</span><span class="p">(</span><span class="nx">chessPieces</span><span class="p">);</span>
+
+  <span class="c1">// 명령 배열을 돌며 명령 수행</span>
+  <span class="nx">commands</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">command</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">chessPieces</span> <span class="o">=</span> <span class="nx">handleCommand</span><span class="p">(</span><span class="nx">chessPieces</span><span class="p">,</span> <span class="nx">command</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="c1">// 출력을 위해 다시 체스 포지션 문자열로 변경</span>
+  <span class="nx">chessPieces</span> <span class="o">=</span> <span class="nx">asciiToPosition</span><span class="p">(</span><span class="nx">chessPieces</span><span class="p">);</span>
+
+  <span class="c1">// 결과 출력</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chessPieces</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
 <span class="p">}</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answerArr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
-</pre></table>
-</div>
-</div>
+<span class="c1">// 명령 수행</span>
+<span class="c1">// @chessPieces {Array}: king, stone의 위치 정보를 담은 이차원 배열</span>
+<span class="c1">// @command {String}: 명령 문자열</span>
+<span class="c1">// @return {Array}: king, stone의 위치 정보를 담고 있는 이차원 배열</span>
+<span class="kd">function</span> <span class="nx">handleCommand</span><span class="p">(</span><span class="nx">chessPieces</span><span class="p">,</span> <span class="nx">command</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">king</span><span class="p">,</span> <span class="nx">stone</span><span class="p">]</span> <span class="o">=</span> <span class="nx">chessPieces</span><span class="p">;</span>
 
- <div class="readmore">
-    <a href="/posts/boj-deque" role="button">Read more</a>
- </div>
-</article>
-<hr />
-<article class="blog">
-<style>
-  .boj-stack-sequence {
-    margin-bottom: 2em;
-  }
-  .boj-stack-sequence::before {
-    background-image: url('https://source.unsplash.com/random');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .boj-stack-sequence::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(100,0,255,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .boj-stack-sequence-container,
-  .boj-stack-sequence-container::before,
-  .boj-stack-sequence-container::after {
-    height: 25rem;
-  }
-  .boj-stack-sequence-bleed-container,
-  .boj-stack-sequence-bleed-container::before,
-  .boj-stack-sequence-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .boj-stack-sequence-container,
-        .boj-stack-sequence-container::before,
-        .boj-stack-sequence-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        boj-stack-sequence boj-stack-sequence-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/boj-stack-sequence" title="백준 문제풀이 1874번 스택수열"
-          >백준 문제풀이 1874번 스택수열</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2021/11/28</span>
-        <span>
-          <a href="/tag/algorithm">#algorithm</a>
-          <a href="/tag/boj">#boj</a>
-          <a href="/tag/silver">#silver</a>
-          <a href="/tag/stack&queue">#stack&queue</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <h1 id="백준-문제풀이-1874번-스택수열"><center>[백준 문제풀이] 1874번 스택수열</center></h1>
+  <span class="c1">// king 이동.</span>
+  <span class="nx">king</span> <span class="o">=</span> <span class="nx">moveChessPiece</span><span class="p">(</span><span class="nx">king</span><span class="p">,</span> <span class="nx">command</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">king</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="nx">stone</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">king</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="nx">stone</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+    <span class="c1">// king과 store의 위치가 같으면,</span>
+    <span class="c1">// stone도 이동시킴.</span>
+    <span class="nx">stone</span> <span class="o">=</span> <span class="nx">moveChessPiece</span><span class="p">(</span><span class="nx">stone</span><span class="p">,</span> <span class="nx">command</span><span class="p">);</span>
+  <span class="p">}</span>
 
-<hr />
+  <span class="c1">// 두 말의 위치가 보드 내에 있다면,</span>
+  <span class="c1">// 변경된 위치 정보 반환</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">checkPosition</span><span class="p">(...</span><span class="nx">king</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">checkPosition</span><span class="p">(...</span><span class="nx">stone</span><span class="p">))</span> <span class="k">return</span> <span class="p">[</span><span class="nx">king</span><span class="p">,</span> <span class="nx">stone</span><span class="p">];</span>
 
-<h2 id="1874번-스택수열-silver-3">1874번 스택수열 (Silver 3)</h2>
+  <span class="c1">// 두 말의 위치가 보드 밖에 있다면,</span>
+  <span class="c1">// 변경전 위치 정보 반환</span>
+  <span class="k">return</span> <span class="nx">chessPieces</span><span class="p">;</span>
+<span class="p">}</span>
 
-<h3 id="문제">문제</h3>
+<span class="c1">// 체스말 이동 함수</span>
+<span class="c1">// @chessPiece {Array} : 이동할 체스말 위치 정보</span>
+<span class="c1">// @command {String}: 명령 문자열</span>
+<span class="kd">function</span> <span class="nx">moveChessPiece</span><span class="p">(</span><span class="nx">chessPiece</span><span class="p">,</span> <span class="nx">command</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">movedColumn</span><span class="p">,</span> <span class="nx">movedRow</span><span class="p">]</span> <span class="o">=</span> <span class="nx">chessPiece</span><span class="p">;</span>
 
-<p>https://www.acmicpc.net/problem/1874
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">command</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s2">"R"</span><span class="p">:</span>
+      <span class="nx">movedColumn</span><span class="o">++</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="s2">"L"</span><span class="p">:</span>
+      <span class="nx">movedColumn</span><span class="o">--</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="s2">"T"</span><span class="p">:</span>
+      <span class="nx">movedRow</span><span class="o">++</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="s2">"B"</span><span class="p">:</span>
+      <span class="nx">movedRow</span><span class="o">--</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
 
-<p>스택 (stack)은 기본적인 자료구조 중 하나로, 컴퓨터 프로그램을 작성할 때 자주 이용되는 개념이다. 스택은 자료를 넣는 (push) 입구와 자료를 뽑는 (pop) 입구가 같아 제일 나중에 들어간 자료가 제일 먼저 나오는 (LIFO, Last in First out) 특성을 가지고 있다.
-
-<p>1부터 n까지의 수를 스택에 넣었다가 뽑아 늘어놓음으로써, 하나의 수열을 만들 수 있다. 이때, 스택에 push하는 순서는 반드시 오름차순을 지키도록 한다고 하자. 임의의 수열이 주어졌을 때 스택을 이용해 그 수열을 만들 수 있는지 없는지, 있다면 어떤 순서로 push와 pop 연산을 수행해야 하는지를 알아낼 수 있다. 이를 계산하는 프로그램을 작성하라.
-
-<h3 id="입력">입력</h3>
-
-<p>첫 줄에 n (1 ≤ n ≤ 100,000)이 주어진다. 둘째 줄부터 n개의 줄에는 수열을 이루는 1이상 n이하의 정수가 하나씩 순서대로 주어진다. 물론 같은 정수가 두 번 나오는 일은 없다.
-
-<h3 id="출력">출력</h3>
-
-<p>입력된 수열을 만들기 위해 필요한 연산을 한 줄에 한 개씩 출력한다. push연산은 +로, pop 연산은 -로 표현하도록 한다. 불가능한 경우 NO를 출력한다.
-
-<h3 id="첫번째-풀이">첫번째 풀이</h3>
-
-<p>입력 숫자가 n번째 수보다 크면 같아질 때까지 push하고, 작으면 pop을 하는 방법으로 풀이했다. 방법이 없을때를 고려해서 try, catch를 사용했다.
-
-<h3 id="첫번째-풀이-소스코드-메모리-초과">첫번째 풀이 소스코드 (메모리 초과)</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
-
-<span class="kr">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">());</span>
-<span class="kr">const</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="kr">const</span> <span class="nx">answerArr</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="kd">let</span> <span class="nx">isExist</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&lt;=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span> <span class="p">{</span>
-      <span class="k">while</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&lt;=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span> <span class="p">{</span>
-        <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
-        <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">"+"</span><span class="p">);</span>
-        <span class="nx">num</span><span class="o">++</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">try</span> <span class="p">{</span>
-        <span class="k">while</span> <span class="p">(</span><span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!==</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span> <span class="p">{</span>
-          <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-          <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">"-"</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-        <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">"-"</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-        <span class="nx">isExist</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-      <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">command</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">command</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="s2">"T"</span><span class="p">:</span>
+        <span class="nx">movedRow</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="s2">"B"</span><span class="p">:</span>
+        <span class="nx">movedRow</span><span class="o">--</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">[</span><span class="nx">movedColumn</span><span class="p">,</span> <span class="nx">movedRow</span><span class="p">];</span>
 <span class="p">}</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isExist</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"NO"</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answerArr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
-<span class="p">}</span>
-</pre></table>
-</div>
-</div>
+<span class="c1">// 위치 확인 함수</span>
+<span class="c1">// 체스말의 위치가 보드 내에 있는지 확인</span>
+<span class="c1">// @column, row {String}: 체스말 열, 행 정보</span>
+<span class="c1">// @return {Boolean}</span>
+<span class="kd">function</span> <span class="nx">checkPosition</span><span class="p">(</span><span class="nx">column</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">column</span> <span class="o">&gt;=</span> <span class="mi">65</span> <span class="o">&amp;&amp;</span> <span class="nx">column</span> <span class="o">&lt;=</span> <span class="mi">72</span> <span class="o">&amp;&amp;</span> <span class="nx">row</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">row</span> <span class="o">&lt;=</span> <span class="mi">8</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 
-<h3 id="최종-풀이">최종 풀이</h3>
-
-<p>문제에서 요구하는 로직을 다시 정리해보자면,
-
-<ol>
- <li>1부터 n까지의 수를 오름차순으로 스택에 넣어야한다.
- <li>그 과정에서 제시되는 숫자 순서대로 스택에서 숫자를 pop 한다.
- <li>이것이 가능하다면 push와 pop의 로그를 출력하고,
- <li>불가능하다면 ‘NO’를 출력해라.
-</ol>
-
-<p>라고 정리할 수 있겠다.
-
-<p>이 알고리즘은
-
-<ol>
- <li>stack에 순서대로 push 하고 pop하는 알고리즘
- <li>해당 숫자열이 스택 수열로 가능한지 확인하는 조건문
-</ol>
-
-<p>두 가지로 나눠볼 수 있겠다.
-
-<h4 id="1-stack에-순서대로-push-하고-pop하는-알고리즘">1. stack에 순서대로 push 하고 pop하는 알고리즘</h4>
-
-<p>먼저 오름차순대로 스택에 입력하고, 제시되는 순서대로 pop 하는 알고리즘을 생각해본다면.
-
-<ol>
- <li>1부터 첫번째 제시된 숫자까지 stack에 push 한다.
- <li>두번째로 제시된 숫자가 첫번째로 제시된 숫자보다 작으면, 두번째로 제시된 숫자까지 pop한다.
- <li>두번째로 제시된 숫자가 첫번째로 제시된 숫자보다 크면, 두번째로 제시된 숫자까지 stack에 push 한다.
-</ol>
-
-<p>위의 과정을 반복하면 된다.
-
-<h4 id="2-해당-숫자열이-스택-수열로-가능한지-확인하는-조건문">2. 해당 숫자열이 스택 수열로 가능한지 확인하는 조건문</h4>
-
-<p>stack에 순서대로 push 하고 pop하는 알고리즘이 진행될 때, 스택 수열로 가능한지에 대한 조건문이 사용되어야한다.
-
-<p>스택 수열이 불가능한 경우를 생각해보면
-
-<p>push 해야할 수가 제시된 숫자보다 더 크고, 제시된 숫자보다 stack에 있는 수가 제시된 수보다 경우이다.
-
-<p>이 경우에는, stack에서 아무리 pop 하더라도 제시된 수를 만들 수 없다.
-
-<h3 id="최종-소스코드">최종 소스코드</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
-
-<span class="kr">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">());</span>
-<span class="kr">const</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="kr">const</span> <span class="nx">answerArr</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="kd">let</span> <span class="nx">isExist</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// 가능 / 불가능 확인을 위한 flag</span>
-<span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// push 해야할 수</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&lt;=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span> <span class="p">{</span>
-    <span class="c1">// push 해야 할 수가 제시된 수보다 작으면</span>
-    <span class="c1">// 제시된 수까지 push 한다.</span>
-    <span class="k">while</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&lt;=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span> <span class="p">{</span>
-      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">"+"</span><span class="p">);</span>
-      <span class="nx">num</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">stack</span><span class="p">[</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span> <span class="p">{</span>
-    <span class="c1">// push 해야 할 수가 제시된 수보다 크고,</span>
-    <span class="c1">// stack에 있는 수가 제시된 수보다 크면</span>
-    <span class="c1">// 아무리 pop해도 스택 수열을 만들 수 없다.</span>
-    <span class="nx">isExist</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="c1">// 제시된 수까지 push 되었기 때문에,</span>
-  <span class="c1">// pop 해주면 된다.</span>
-  <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-  <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">"-"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isExist</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"NO"</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answerArr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
+<span class="c1">// 체스판 위치 =&gt; 아스키코드 변환 함수</span>
+<span class="c1">// @return {Array} : 아스키코드로 변환된 king, stone의 위치 정보 이차원 배열</span>
+<span class="kd">function</span> <span class="nx">positionToAscii</span><span class="p">(</span><span class="nx">chessPieces</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">chessPieces</span> <span class="o">=</span> <span class="nx">chessPieces</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">chessPiece</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">chessPiece</span> <span class="o">=</span> <span class="nx">chessPiece</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+    <span class="nx">chessPiece</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">chessPiece</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">charCodeAt</span><span class="p">();</span>
+    <span class="nx">chessPiece</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">chessPiece</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">chessPiece</span><span class="p">;</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="nx">chessPieces</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 아스키코드 =&gt; 체스판 위치 변환 함수</span>
+<span class="c1">// @return {Array} : 문자열로 변환된 king, stone의 위치 정보 배열</span>
+<span class="kd">function</span> <span class="nx">asciiToPosition</span><span class="p">(</span><span class="nx">chessPieces</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">chessPieces</span> <span class="o">=</span> <span class="nx">chessPieces</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">chessPiece</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">chessPiece</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">chessPiece</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="nx">chessPiece</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">chessPiece</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">chessPiece</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="nx">chessPieces</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></table>
 </div>
 </div>
 
  <div class="readmore">
-    <a href="/posts/boj-stack-sequence" role="button">Read more</a>
+    <a href="/posts/boj-1063" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .boj-queue {
+  .boostcourse-cs50-chapter1 {
     margin-bottom: 2em;
   }
-  .boj-queue::before {
+  .boostcourse-cs50-chapter1::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -872,7 +730,7 @@ back: 덱의 가장 뒤에 있는 정수를 출력한다. 만약 덱에 들어�
     top: 0;
     z-index: -2;
   }
-  .boj-queue::after {
+  .boostcourse-cs50-chapter1::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -885,20 +743,20 @@ back: 덱의 가장 뒤에 있는 정수를 출력한다. 만약 덱에 들어�
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .boj-queue-container,
-  .boj-queue-container::before,
-  .boj-queue-container::after {
+  .boostcourse-cs50-chapter1-container,
+  .boostcourse-cs50-chapter1-container::before,
+  .boostcourse-cs50-chapter1-container::after {
     height: 25rem;
   }
-  .boj-queue-bleed-container,
-  .boj-queue-bleed-container::before,
-  .boj-queue-bleed-container::after {
+  .boostcourse-cs50-chapter1-bleed-container,
+  .boostcourse-cs50-chapter1-bleed-container::before,
+  .boostcourse-cs50-chapter1-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .boj-queue-container,
-        .boj-queue-container::before,
-        .boj-queue-container::after{
+        .boostcourse-cs50-chapter1-container,
+        .boostcourse-cs50-chapter1-container::before,
+        .boostcourse-cs50-chapter1-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -907,147 +765,54 @@ back: 덱의 가장 뒤에 있는 정수를 출력한다. 만약 덱에 들어�
  <div
     class="
     post-title-container
-        boj-queue boj-queue-container hero-hov
+        boostcourse-cs50-chapter1 boostcourse-cs50-chapter1-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/boj-queue" title="백준 문제풀이 10845번 큐"
-          >백준 문제풀이 10845번 큐</a
+        <a href="/posts/boostcourse-cs50-chapter1" title="CS50 Chapter 1. 컴퓨팅 사고"
+          >CS50 Chapter 1. 컴퓨팅 사고</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2021/11/28</span>
+        <span>2022/05/08</span>
         <span>
-          <a href="/tag/algorithm">#algorithm</a>
-          <a href="/tag/boj">#boj</a>
-          <a href="/tag/silver">#silver</a>
-          <a href="/tag/stack&queue">#stack&queue</a>
+          <a href="/tag/boostcourse">#boostcourse</a>
+          <a href="/tag/cs50">#cs50</a>
+          <a href="/tag/cs">#cs</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="백준-문제풀이-10845번-큐"><center>[백준 문제풀이] 10845번 큐</center></h1>
+   <h1 id="cs50-chapter-1-컴퓨팅-사고"><center>[CS50] Chapter 1. 컴퓨팅 사고</center></h1>
 
 <hr />
 
-<h2 id="10845번-큐-silver-4">10845번 큐 (Silver 4)</h2>
+<h2 id="1-2진법">1) 2진법</h2>
 
-<h3 id="문제">문제</h3>
+<h2 id="2-정보의-표현">2) 정보의 표현</h2>
 
-<p>https://www.acmicpc.net/problem/10845
+<h2 id="3-알고리즘">3) 알고리즘</h2>
 
-<p>정수를 저장하는 큐를 구현한 다음, 입력으로 주어지는 명령을 처리하는 프로그램을 작성하시오.
+<h2 id="4-scratch">4) Scratch</h2>
 
-<p>명령은 총 여섯 가지이다.
-
-<p>push X: 정수 X를 큐에 넣는 연산이다.
-pop: 큐에서 가장 앞에 있는 정수를 빼고, 그 수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.
-size: 큐에 들어있는 정수의 개수를 출력한다.
-empty: 큐가 비어있으면 1, 아니면 0을 출력한다.
-front: 큐의 가장 앞에 있는 정수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.
-back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 –1을 출력한다.
-
-<h3 id="입력">입력</h3>
-
-<p>첫째 줄에 주어지는 명령의 수 N (1 ≤ N ≤ 10,000)이 주어진다. 둘째 줄부터 N개의 줄에는 명령이 하나씩 주어진다. 주어지는 정수는 1보다 크거나 같고, 100,000보다 작거나 같다. 문제에 나와있지 않은 명령이 주어지는 경우는 없다.
-
-<h3 id="출력">출력</h3>
-
-<p>출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.
-
-<h3 id="풀이">풀이</h3>
-
-<p>배열로 Queue를 만들어서 풀이했다.
-
-<h3 id="첫번째-풀이-소스코드-시간-초과">첫번째 풀이 소스코드 (시간 초과)</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<span class="kr">const</span> <span class="nx">que</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="kr">const</span> <span class="nx">answerArr</span> <span class="o">=</span> <span class="p">[];</span>
-
-<span class="kd">function</span> <span class="nx">workQue</span><span class="p">(</span><span class="nx">cmd</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">cmd</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">"pop"</span><span class="err">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">que</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">que</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"size"</span><span class="err">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">que</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"empty"</span><span class="err">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">que</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="mi">1</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"front"</span><span class="err">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">que</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">que</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"back"</span><span class="err">:</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">que</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">que</span><span class="p">[</span><span class="nx">que</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="kr">const</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">cmd</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
-      <span class="nx">que</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">workQue</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answerArr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
-</pre></table>
-</div>
-</div>
+<h2 id="5-scratch-심화">5) Scratch 심화</h2>
 
  <div class="readmore">
-    <a href="/posts/boj-queue" role="button">Read more</a>
+    <a href="/posts/boostcourse-cs50-chapter1" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .boj-josephus {
+  .boj-10798 {
     margin-bottom: 2em;
   }
-  .boj-josephus::before {
+  .boj-10798::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -1058,7 +823,7 @@ back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어�
     top: 0;
     z-index: -2;
   }
-  .boj-josephus::after {
+  .boj-10798::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -1071,20 +836,20 @@ back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어�
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .boj-josephus-container,
-  .boj-josephus-container::before,
-  .boj-josephus-container::after {
+  .boj-10798-container,
+  .boj-10798-container::before,
+  .boj-10798-container::after {
     height: 25rem;
   }
-  .boj-josephus-bleed-container,
-  .boj-josephus-bleed-container::before,
-  .boj-josephus-bleed-container::after {
+  .boj-10798-bleed-container,
+  .boj-10798-bleed-container::before,
+  .boj-10798-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .boj-josephus-container,
-        .boj-josephus-container::before,
-        .boj-josephus-container::after{
+        .boj-10798-container,
+        .boj-10798-container::before,
+        .boj-10798-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -1093,59 +858,67 @@ back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어�
  <div
     class="
     post-title-container
-        boj-josephus boj-josephus-container hero-hov
+        boj-10798 boj-10798-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/boj-josephus" title="백준 문제풀이 1158번 요세푸스 문제"
-          >백준 문제풀이 1158번 요세푸스 문제</a
+        <a href="/posts/boj-10798" title="백준 문제풀이 10798번 세로읽기"
+          >백준 문제풀이 10798번 세로읽기</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2021/11/28</span>
+        <span>2022/04/28</span>
         <span>
           <a href="/tag/algorithm">#algorithm</a>
           <a href="/tag/boj">#boj</a>
-          <a href="/tag/silver">#silver</a>
-          <a href="/tag/stack&queue">#stack&queue</a>
+          <a href="/tag/bronze">#bronze</a>
+          <a href="/tag/implementation">#implementation</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="백준-문제풀이-1158번-요세푸스-문제"><center>[백준 문제풀이] 1158번 요세푸스 문제</center></h1>
+   <h1 id="백준-문제풀이-10798번-세로읽기"><center>[백준 문제풀이] 10798번 세로읽기</center></h1>
 
 <hr />
 
-<h2 id="1158번-요세푸스-문제-silver-4">1158번 요세푸스 문제 (Silver 4)</h2>
+<h2 id="10798번-세로읽기-bronze-1">10798번 세로읽기 (Bronze 1)</h2>
 
 <h3 id="문제">문제</h3>
 
-<p>https://www.acmicpc.net/problem/1158
+<p>https://www.acmicpc.net/problem/10798
 
-<p>요세푸스 문제는 다음과 같다.
+<p>아직 글을 모르는 영석이가 벽에 걸린 칠판에 자석이 붙어있는 글자들을 붙이는 장난감을 가지고 놀고 있다.
 
-<p>1번부터 N번까지 N명의 사람이 원을 이루면서 앉아있고, 양의 정수 K(≤ N)가 주어진다. 이제 순서대로 K번째 사람을 제거한다. 한 사람이 제거되면 남은 사람들로 이루어진 원을 따라 이 과정을 계속해 나간다. 이 과정은 N명의 사람이 모두 제거될 때까지 계속된다. 원에서 사람들이 제거되는 순서를 (N, K)-요세푸스 순열이라고 한다. 예를 들어 (7, 3)-요세푸스 순열은 &lt;3, 6, 2, 7, 5, 1, 4&gt;이다.
+<p>이 장난감에 있는 글자들은 영어 대문자 ‘A’부터 ‘Z’, 영어 소문자 ‘a’부터 ‘z’, 숫자 ‘0’부터 ‘9’이다. 영석이는 칠판에 글자들을 수평으로 일렬로 붙여서 단어를 만든다. 다시 그 아래쪽에 글자들을 붙여서 또 다른 단어를 만든다. 이런 식으로 다섯 개의 단어를 만든다. 아래 그림 1은 영석이가 칠판에 붙여 만든 단어들의 예이다.
 
-<p>N과 K가 주어지면 (N, K)-요세푸스 순열을 구하는 프로그램을 작성하시오.
+<p>A A B C D D
+a f z z
+0 9 1 2 1
+a 8 E W g 6
+P 5 h 3 k x
+
+<p>한 줄의 단어는 글자들을 빈칸 없이 연속으로 나열해서 최대 15개의 글자들로 이루어진다. 또한 만들어진 다섯 개의 단어들의 글자 개수는 서로 다를 수 있다.
+
+<p>심심해진 영석이는 칠판에 만들어진 다섯 개의 단어를 세로로 읽으려 한다. 세로로 읽을 때, 각 단어의 첫 번째 글자들을 위에서 아래로 세로로 읽는다. 다음에 두 번째 글자들을 세로로 읽는다. 이런 식으로 왼쪽에서 오른쪽으로 한 자리씩 이동 하면서 동일한 자리의 글자들을 세로로 읽어 나간다. 위의 그림 1의 다섯 번째 자리를 보면 두 번째 줄의 다섯 번째 자리의 글자는 없다. 이런 경우처럼 세로로 읽을 때 해당 자리의 글자가 없으면, 읽지 않고 그 다음 글자를 계속 읽는다. 그림 1의 다섯 번째 자리를 세로로 읽으면 D1gk로 읽는다.
+
+<p>그림 1에서 영석이가 세로로 읽은 순서대로 글자들을 공백 없이 출력하면 다음과 같다:
+
+<p>Aa0aPAf985Bz1EhCz2W3D1gkD6x
+
+<p>칠판에 붙여진 단어들이 주어질 때, 영석이가 세로로 읽은 순서대로 글자들을 출력하는 프로그램을 작성하시오.
 
 <h3 id="입력">입력</h3>
 
-<p>첫째 줄에 N과 K가 빈 칸을 사이에 두고 순서대로 주어진다. (1 ≤ K ≤ N ≤ 5,000)
+<p>총 다섯줄의 입력이 주어진다. 각 줄에는 최소 1개, 최대 15개의 글자들이 빈칸 없이 연속으로 주어진다. 주어지는 글자는 영어 대문자 ‘A’부터 ‘Z’, 영어 소문자 ‘a’부터 ‘z’, 숫자 ‘0’부터 ‘9’ 중 하나이다. 각 줄의 시작과 마지막에 빈칸은 없다.
 
 <h3 id="출력">출력</h3>
 
-<p>예제와 같이 요세푸스 순열을 출력한다.
-
-<h3 id="풀이">풀이</h3>
-
-<p>에디터 때와 같이 두 개의 배열을 통해 풀려고 했는데, 하나의 큐를 만들어서 풀 수 있을 것 같았다. N도 5000 이하로 크지 않아서, 시도해보기로 했다.
-
-<p><a href="https://vangona.github.io/posts/boj-editor/">에디터 문제 보러가기</a>
+<p>영석이가 세로로 읽은 순서대로 글자들을 출력한다. 이때, 글자들을 공백 없이 연속해서 출력한다.
 
 <h3 id="소스코드">소스코드</h3>
 
@@ -1165,72 +938,38 @@ back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어�
 14
 15
 16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
+17</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">fs</span>
+  <span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">trim</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">el</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">));</span>
 
-<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<span class="kr">const</span> <span class="nx">K</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
 
-<span class="kd">let</span> <span class="nx">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">N</span><span class="p">);</span>
-<span class="nx">queue</span> <span class="o">=</span> <span class="nx">queue</span><span class="p">.</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">el</span> <span class="o">=</span> <span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
-
-<span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">answerArr</span> <span class="o">=</span> <span class="p">[];</span>
-
-<span class="c1">// K번째 있는 사람을 죽이는 함수</span>
-<span class="c1">// length가 K보다 클 때와 작을 때를 나누어 구현했다.</span>
-<span class="kd">function</span> <span class="nx">kill</span><span class="p">(</span><span class="nx">cnt</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">while</span> <span class="p">(</span><span class="nx">cnt</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;=</span> <span class="nx">cnt</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">queue</span><span class="p">.</span><span class="nx">push</span><span class="p">(...</span><span class="nx">queue</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">cnt</span><span class="p">));</span>
-      <span class="nx">answerArr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
-      <span class="nx">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">cnt</span> <span class="o">-=</span> <span class="nx">queue</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">words</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">words</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">])</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">words</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">];</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">while</span> <span class="p">(</span><span class="nx">count</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">kill</span><span class="p">(</span><span class="nx">K</span><span class="p">);</span>
-  <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="o">&lt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">answerArr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">", "</span><span class="p">)}</span><span class="o">&gt;</span><span class="err">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answer</span><span class="p">);</span>
 </pre></table>
 </div>
 </div>
 
-<h3 id="사족">사족</h3>
-
-<p>다른 사람들의 풀이를 확인해보니, shift를 사용해서 한 사람들은 시간이 더 걸렸고, 배열로 큐나 스택을 직접 구현 하지 않고, index로만 값에 접근 하면 더 빠른 코드를 구현할 수 있었다.
-
  <div class="readmore">
-    <a href="/posts/boj-josephus" role="button">Read more</a>
+    <a href="/posts/boj-10798" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .boj-editor {
+  .js-closure {
     margin-bottom: 2em;
   }
-  .boj-editor::before {
+  .js-closure::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -1241,7 +980,7 @@ back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어�
     top: 0;
     z-index: -2;
   }
-  .boj-editor::after {
+  .js-closure::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -1254,20 +993,20 @@ back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어�
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .boj-editor-container,
-  .boj-editor-container::before,
-  .boj-editor-container::after {
+  .js-closure-container,
+  .js-closure-container::before,
+  .js-closure-container::after {
     height: 25rem;
   }
-  .boj-editor-bleed-container,
-  .boj-editor-bleed-container::before,
-  .boj-editor-bleed-container::after {
+  .js-closure-bleed-container,
+  .js-closure-bleed-container::before,
+  .js-closure-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .boj-editor-container,
-        .boj-editor-container::before,
-        .boj-editor-container::after{
+        .js-closure-container,
+        .js-closure-container::before,
+        .js-closure-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -1276,152 +1015,161 @@ back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어�
  <div
     class="
     post-title-container
-        boj-editor boj-editor-container hero-hov
+        js-closure js-closure-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/boj-editor" title="백준 문제풀이 1406번 에디터"
-          >백준 문제풀이 1406번 에디터</a
+        <a href="/posts/js-closure" title="실행 컨텍스트와 클로져에 담긴 철학"
+          >실행 컨텍스트와 클로져에 담긴 철학</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2021/11/28</span>
+        <span>2022/04/08</span>
         <span>
-          <a href="/tag/algorithm">#algorithm</a>
-          <a href="/tag/boj">#boj</a>
-          <a href="/tag/silver">#silver</a>
-          <a href="/tag/stack&queue">#stack&queue</a>
+          <a href="/tag/js">#js</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="백준-문제풀이-1406번-에디터"><center>[백준 문제풀이] 1406번 에디터</center></h1>
+   <h1 id="인간이-언제-죽는다고-생각하나"><center>인간이 언제 죽는다고 생각하나?</center></h1>
+
+<h1 id="맹독-버섯-스프를-마셨을-때"><center>맹독 버섯 스프를 마셨을 때?</center></h1>
 
 <hr />
 
-<h2 id="1406번-에디터-silver-2">1406번 에디터 (Silver 2)</h2>
+<h2 id="실행-컨텍스트">실행 컨텍스트</h2>
 
-<h3 id="문제">문제</h3>
+<h2 id="유효-범위-렉시컬-스코프---lexical-scope">유효 범위 (렉시컬 스코프 - Lexical Scope)</h2>
 
-<p>https://www.acmicpc.net/problem/1406
+<h2 id="자유-변수">자유 변수</h2>
 
-<p>한 줄로 된 간단한 에디터를 구현하려고 한다. 이 편집기는 영어 소문자만을 기록할 수 있는 편집기로, 최대 600,000글자까지 입력할 수 있다.
+<h2 id="클로져">클로져</h2>
 
-<p>이 편집기에는 ‘커서’라는 것이 있는데, 커서는 문장의 맨 앞(첫 번째 문자의 왼쪽), 문장의 맨 뒤(마지막 문자의 오른쪽), 또는 문장 중간 임의의 곳(모든 연속된 두 문자 사이)에 위치할 수 있다. 즉 길이가 L인 문자열이 현재 편집기에 입력되어 있으면, 커서가 위치할 수 있는 곳은 L+1가지 경우가 있다.
+ <div class="readmore">
+    <a href="/posts/js-closure" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
+  .tetromino {
+    margin-bottom: 2em;
+  }
+  .tetromino::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .tetromino::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .tetromino-container,
+  .tetromino-container::before,
+  .tetromino-container::after {
+    height: 25rem;
+  }
+  .tetromino-bleed-container,
+  .tetromino-bleed-container::before,
+  .tetromino-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .tetromino-container,
+        .tetromino-container::before,
+        .tetromino-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        tetromino tetromino-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/tetromino" title="boj_14500 테트로미노"
+          >boj_14500 테트로미노</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2022/01/26</span>
+        <span>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/boj">#boj</a>
+          <a href="/tag/dfs">#dfs</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="boj_14500-테트로미노"><center>boj_14500 테트로미노</center></h1>
 
-<p>이 편집기가 지원하는 명령어는 다음과 같다.
+<hr />
 
-<p>L 커서를 왼쪽으로 한 칸 옮김 (커서가 문장의 맨 앞이면 무시됨)
-D 커서를 오른쪽으로 한 칸 옮김 (커서가 문장의 맨 뒤이면 무시됨)
-B 커서 왼쪽에 있는 문자를 삭제함 (커서가 문장의 맨 앞이면 무시됨)
-삭제로 인해 커서는 한 칸 왼쪽으로 이동한 것처럼 나타나지만, 실제로 커서의 오른쪽에 있던 문자는 그대로임
-P $ $라는 문자를 커서 왼쪽에 추가함
-초기에 편집기에 입력되어 있는 문자열이 주어지고, 그 이후 입력한 명령어가 차례로 주어졌을 때, 모든 명령어를 수행하고 난 후 편집기에 입력되어 있는 문자열을 구하는 프로그램을 작성하시오. 단, 명령어가 수행되기 전에 커서는 문장의 맨 뒤에 위치하고 있다고 한다.
+<h2 id="문제">문제</h2>
 
-<h3 id="입력">입력</h3>
+<p>폴리오미노란 크기가 1×1인 정사각형을 여러 개 이어서 붙인 도형이며, 다음과 같은 조건을 만족해야 한다.
 
-<p>첫째 줄에는 초기에 편집기에 입력되어 있는 문자열이 주어진다. 이 문자열은 길이가 N이고, 영어 소문자로만 이루어져 있으며, 길이는 100,000을 넘지 않는다. 둘째 줄에는 입력할 명령어의 개수를 나타내는 정수 M(1 ≤ M ≤ 500,000)이 주어진다. 셋째 줄부터 M개의 줄에 걸쳐 입력할 명령어가 순서대로 주어진다. 명령어는 위의 네 가지 중 하나의 형태로만 주어진다.
+<p>정사각형은 서로 겹치면 안 된다.
+도형은 모두 연결되어 있어야 한다.
+정사각형의 변끼리 연결되어 있어야 한다. 즉, 꼭짓점과 꼭짓점만 맞닿아 있으면 안 된다.
+정사각형 4개를 이어 붙인 폴리오미노는 테트로미노라고 하며, 다음과 같은 5가지가 있다.
 
-<h3 id="출력">출력</h3>
+<p><img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/14500/1.png" alt="tetromino" />
 
-<p>첫째 줄에 모든 명령어를 수행하고 난 후 편집기에 입력되어 있는 문자열을 출력한다.
+<p>아름이는 크기가 N×M인 종이 위에 테트로미노 하나를 놓으려고 한다. 종이는 1×1 크기의 칸으로 나누어져 있으며, 각각의 칸에는 정수가 하나 쓰여 있다.
 
-<h3 id="첫번째-풀이">첫번째 풀이</h3>
+<p>테트로미노 하나를 적절히 놓아서 테트로미노가 놓인 칸에 쓰여 있는 수들의 합을 최대로 하는 프로그램을 작성하시오.
 
-<p>배열로 만든 뒤 cursor의 index를 사용해서 문제를 풀려고 시도했다.
+<p>테트로미노는 반드시 한 정사각형이 정확히 하나의 칸을 포함하도록 놓아야 하며, 회전이나 대칭을 시켜도 된다.
 
-<h3 id="첫번째-풀이-소스코드-시간-초과">첫번째 풀이 소스코드 (시간 초과)</h3>
+<h2 id="입력">입력</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
+<p>첫째 줄에 종이의 세로 크기 N과 가로 크기 M이 주어진다. (4 ≤ N, M ≤ 500)
 
-<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
-<span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">());</span>
-<span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">str</span><span class="p">.</span><span class="nx">legnth</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">);</span>
+<p>둘째 줄부터 N개의 줄에 종이에 쓰여 있는 수가 주어진다. i번째 줄의 j번째 수는 위에서부터 i번째 칸, 왼쪽에서부터 j번째 칸에 쓰여 있는 수이다. 입력으로 주어지는 수는 1,000을 넘지 않는 자연수이다.
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">trim</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">"L"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">index</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"D"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">!==</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">index</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"B"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">str</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="kr">const</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
-      <span class="nx">str</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<h2 id="출력">출력</h2>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">));</span>
-</pre></table>
-</div>
-</div>
+<p>첫째 줄에 테트로미노가 놓인 칸에 쓰인 수들의 합의 최댓값을 출력한다.
 
-<h3 id="최종-풀이">최종 풀이</h3>
+<h2 id="느낀-점">느낀 점</h2>
 
-<p>단순 배열로 풀이하면, 중간에 추가하는 동안의 시간 복잡도가 최대 O(n)으로 시간 초과가 날 수 밖에 없었다.
+<p>참 쉽지 않았다.
 
-<p>자료구조로 접근하기로 했다. cursor의 왼쪽과 오른쪽을 배열로 만들어서 오른쪽은 Que, 왼쪽은 Stack의 자료구조로 구현하면 가능할 것이라고 생각했다.
+<p>내 코드에 대한 자신감이 많이 떨어져 있던 것 같다.
+전체적으로 우울감이 동반되는 바람에 논리성이 부족해졌다고 생각할 수 있었다.
 
-<p>이 경우도 시간 초과가 떠서 찾아보니 pop / push 메서드가 시간복잡도가 O(1)인 것과 달리, shift / unshift 메서드는 배열 맨 앞 요소를 빼야하기 때문에 시간복잡도가 O(n)이어서였다.
+<p>처음부터 끝까지 머리써서 다시 푸니 괜찮았다.
 
-<p>이 경우는 두 가지 방법을 생각해볼 수 있었다.
-
-<ol>
- <li>양쪽 다 스택으로 구현하여 풀이한 뒤, right 배열을 뒤집어서 쓴다.
- <li>class를 통해서 유사 배열 객체로 queue를 생성하여서 시간복잡도를 O(1)로 만들어서 푼다.
-</ol>
-
-<p>나는 양쪽 다 스택으로 구현한 뒤 커서 오른쪽의 배열을 뒤집어서 쓰는 방법을 사용했다.
-
-<h3 id="최종-소스코드">최종 소스코드</h3>
+<h2 id="풀이-코드">풀이 코드</h2>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -1456,46 +1204,196 @@ P $ $라는 문자를 커서 왼쪽에 추가함
 31
 32
 33
-34</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
-<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">());</span>
-<span class="kr">const</span> <span class="nx">cursorLeft</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">cursorRight</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">N</span><span class="p">,</span> <span class="nx">M</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span>
+  <span class="p">.</span><span class="nx">shift</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">el</span><span class="p">));</span>
+<span class="kr">const</span> <span class="nx">board</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">line</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">line</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">el</span><span class="p">)));</span>
+
+<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">N</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">visited</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">M</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">awesomeVisited</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">N</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">awesomeVisited</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">M</span><span class="p">);</span>
+<span class="p">}</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">"L"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">cursorRight</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"D"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">cursorRight</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">cursorRight</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"B"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="kr">const</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
-      <span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">M</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">cursorRight</span> <span class="o">=</span> <span class="nx">cursorRight</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">max</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([...</span><span class="nx">cursorLeft</span><span class="p">,</span> <span class="p">...</span><span class="nx">cursorRight</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">));</span>
+<span class="kd">function</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">depth</span><span class="p">,</span> <span class="nx">answer</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">depth</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">max</span> <span class="o">&lt;</span> <span class="nx">answer</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">max</span> <span class="o">=</span> <span class="nx">answer</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">let</span> <span class="nx">dx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+  <span class="kd">let</span> <span class="nx">dy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+
+  <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">];</span>
+  <span class="nx">visited</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+  <span class="nx">checkAwesomeShape</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">newX</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">dx</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="kr">const</span> <span class="nx">newY</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">dy</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isRange</span><span class="p">(</span><span class="nx">newX</span><span class="p">,</span> <span class="nx">newY</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">visited</span><span class="p">[</span><span class="nx">newX</span><span class="p">][</span><span class="nx">newY</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="nx">checkAwesomeShape</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+      <span class="nx">dfs</span><span class="p">(</span><span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">answer</span><span class="p">,</span> <span class="nx">newX</span><span class="p">,</span> <span class="nx">newY</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">answer</span> <span class="o">-=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">];</span>
+  <span class="nx">visited</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">isRange</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">y</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">N</span> <span class="o">&amp;&amp;</span> <span class="nx">y</span> <span class="o">&lt;</span> <span class="nx">M</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">checkAwesomeShape</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">upward</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">downward</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">right</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">left</span><span class="p">;</span>
+
+  <span class="c1">// 윗방향</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isRange</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">upward</span> <span class="o">=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="c1">// 아랫방향</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isRange</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">downward</span> <span class="o">=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="c1">// 오른쪽방향</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isRange</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">right</span> <span class="o">=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="nx">y</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="c1">// 왼쪽방향</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isRange</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">left</span> <span class="o">=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="nx">y</span><span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">upward</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span> <span class="o">&amp;&amp;</span> <span class="nx">left</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">upwardShape</span> <span class="o">=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">]</span> <span class="o">+</span> <span class="nx">upward</span> <span class="o">+</span> <span class="nx">right</span> <span class="o">+</span> <span class="nx">left</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">max</span> <span class="o">&lt;</span> <span class="nx">upwardShape</span><span class="p">)</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">upwardShape</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">upward</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span> <span class="o">&amp;&amp;</span> <span class="nx">downward</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">rightShape</span> <span class="o">=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">]</span> <span class="o">+</span> <span class="nx">upward</span> <span class="o">+</span> <span class="nx">right</span> <span class="o">+</span> <span class="nx">downward</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">max</span> <span class="o">&lt;</span> <span class="nx">rightShape</span><span class="p">)</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">rightShape</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span> <span class="o">&amp;&amp;</span> <span class="nx">downward</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">downShape</span> <span class="o">=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">]</span> <span class="o">+</span> <span class="nx">left</span> <span class="o">+</span> <span class="nx">right</span> <span class="o">+</span> <span class="nx">downward</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">max</span> <span class="o">&lt;</span> <span class="nx">downShape</span><span class="p">)</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">downShape</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">upward</span> <span class="o">&amp;&amp;</span> <span class="nx">left</span> <span class="o">&amp;&amp;</span> <span class="nx">downward</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">leftShape</span> <span class="o">=</span> <span class="nx">board</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">]</span> <span class="o">+</span> <span class="nx">left</span> <span class="o">+</span> <span class="nx">upward</span> <span class="o">+</span> <span class="nx">downward</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">max</span> <span class="o">&lt;</span> <span class="nx">leftShape</span><span class="p">)</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">leftShape</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></table>
 </div>
 </div>
 
  <div class="readmore">
-    <a href="/posts/boj-editor" role="button">Read more</a>
+    <a href="/posts/tetromino" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">
