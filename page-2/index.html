@@ -346,6 +346,91 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
+  .waglewagle-bff-deploy {
+    margin-bottom: 2em;
+  }
+  .waglewagle-bff-deploy::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .waglewagle-bff-deploy::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .waglewagle-bff-deploy-container,
+  .waglewagle-bff-deploy-container::before,
+  .waglewagle-bff-deploy-container::after {
+    height: 25rem;
+  }
+  .waglewagle-bff-deploy-bleed-container,
+  .waglewagle-bff-deploy-bleed-container::before,
+  .waglewagle-bff-deploy-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .waglewagle-bff-deploy-container,
+        .waglewagle-bff-deploy-container::before,
+        .waglewagle-bff-deploy-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        waglewagle-bff-deploy waglewagle-bff-deploy-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/waglewagle-bff-deploy" title="와글와글 Next.js 서버 배포와 CI / CD 적용기"
+          >와글와글 Next.js 서버 배포와 CI / CD 적용기</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2022/12/06</span>
+        <span>
+          <a href="/tag/와글와글">#와글와글</a>
+          <a href="/tag/Next.js">#Next.js</a>
+          <a href="/tag/CI / CD">#CI / CD</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="nextjs">Next.js</h1>
+
+<h1 id="bff">BFF</h1>
+
+<h1 id="ci--cd">CI / CD</h1>
+
+ <div class="readmore">
+    <a href="/posts/waglewagle-bff-deploy" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
   .typescript-eslint-static-test {
     margin-bottom: 2em;
   }
@@ -679,97 +764,6 @@ href="/assets/css/bf.css">
 
  <div class="readmore">
     <a href="/posts/circlepacker-physics" role="button">Read more</a>
- </div>
-</article>
-<hr />
-<article class="blog">
-<style>
-  .as-project-leader {
-    margin-bottom: 2em;
-  }
-  .as-project-leader::before {
-    background-image: url('https://source.unsplash.com/random');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .as-project-leader::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(100,0,255,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .as-project-leader-container,
-  .as-project-leader-container::before,
-  .as-project-leader-container::after {
-    height: 25rem;
-  }
-  .as-project-leader-bleed-container,
-  .as-project-leader-bleed-container::before,
-  .as-project-leader-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .as-project-leader-container,
-        .as-project-leader-container::before,
-        .as-project-leader-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        as-project-leader as-project-leader-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/as-project-leader" title="프로젝트 리더"
-          >프로젝트 리더</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2022/12/06</span>
-        <span>
-          <a href="/tag/와글와글">#와글와글</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <h1 id="인간이-언제-죽는다고-생각하나"><center>인간이 언제 죽는다고 생각하나?</center></h1>
-
-<h1 id="맹독-버섯-스프를-마셨을-때"><center>맹독 버섯 스프를 마셨을 때?</center></h1>
-
-<hr />
-
-<h2 id="실행-컨텍스트">실행 컨텍스트</h2>
-
-<h2 id="유효-범위-렉시컬-스코프---lexical-scope">유효 범위 (렉시컬 스코프 - Lexical Scope)</h2>
-
-<h2 id="자유-변수">자유 변수</h2>
-
-<h2 id="클로져">클로져</h2>
-
- <div class="readmore">
-    <a href="/posts/as-project-leader" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">

@@ -346,6 +346,97 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
+  .as-project-leader {
+    margin-bottom: 2em;
+  }
+  .as-project-leader::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .as-project-leader::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .as-project-leader-container,
+  .as-project-leader-container::before,
+  .as-project-leader-container::after {
+    height: 25rem;
+  }
+  .as-project-leader-bleed-container,
+  .as-project-leader-bleed-container::before,
+  .as-project-leader-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .as-project-leader-container,
+        .as-project-leader-container::before,
+        .as-project-leader-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        as-project-leader as-project-leader-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/as-project-leader" title="프로젝트 리더"
+          >프로젝트 리더</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2022/12/06</span>
+        <span>
+          <a href="/tag/와글와글">#와글와글</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="인간이-언제-죽는다고-생각하나"><center>인간이 언제 죽는다고 생각하나?</center></h1>
+
+<h1 id="맹독-버섯-스프를-마셨을-때"><center>맹독 버섯 스프를 마셨을 때?</center></h1>
+
+<hr />
+
+<h2 id="실행-컨텍스트">실행 컨텍스트</h2>
+
+<h2 id="유효-범위-렉시컬-스코프---lexical-scope">유효 범위 (렉시컬 스코프 - Lexical Scope)</h2>
+
+<h2 id="자유-변수">자유 변수</h2>
+
+<h2 id="클로져">클로져</h2>
+
+ <div class="readmore">
+    <a href="/posts/as-project-leader" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
   .api-call-optimization {
     margin-bottom: 2em;
   }
@@ -953,101 +1044,6 @@ L = 2인 경우에 경사로를 놓을 수 있는 경우를 그림으로 나타�
 
  <div class="readmore">
     <a href="/posts/boj-14890" role="button">Read more</a>
- </div>
-</article>
-<hr />
-<article class="blog">
-<style>
-  .boostcourse-cs50-chapter2 {
-    margin-bottom: 2em;
-  }
-  .boostcourse-cs50-chapter2::before {
-    background-image: url('https://source.unsplash.com/random');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .boostcourse-cs50-chapter2::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(100,0,255,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .boostcourse-cs50-chapter2-container,
-  .boostcourse-cs50-chapter2-container::before,
-  .boostcourse-cs50-chapter2-container::after {
-    height: 25rem;
-  }
-  .boostcourse-cs50-chapter2-bleed-container,
-  .boostcourse-cs50-chapter2-bleed-container::before,
-  .boostcourse-cs50-chapter2-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .boostcourse-cs50-chapter2-container,
-        .boostcourse-cs50-chapter2-container::before,
-        .boostcourse-cs50-chapter2-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        boostcourse-cs50-chapter2 boostcourse-cs50-chapter2-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/boostcourse-cs50-chapter2" title="CS50 Chapter 2. C언어"
-          >CS50 Chapter 2. C언어</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2022/05/09</span>
-        <span>
-          <a href="/tag/boostcourse">#boostcourse</a>
-          <a href="/tag/cs50">#cs50</a>
-          <a href="/tag/cs">#cs</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <h1 id="cs50-chapter-2-c언어"><center>[CS50] Chapter 2. C언어</center></h1>
-
-<hr />
-
-<h2 id="1-c언어-기초">1) C언어 기초</h2>
-
-<h2 id="2-문자열">2) 문자열</h2>
-
-<h2 id="3-조건문과-루프">3) 조건문과 루프</h2>
-
-<h2 id="4-자료형-형식-지정자-연산자">4) 자료형, 형식 지정자, 연산자</h2>
-
-<h2 id="5-사용자-정의-함수-중첩-루프">5) 사용자 정의 함수, 중첩 루프</h2>
-
-<h2 id="6-하드웨어의-한계">6) 하드웨어의 한계</h2>
-
- <div class="readmore">
-    <a href="/posts/boostcourse-cs50-chapter2" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">

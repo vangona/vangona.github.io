@@ -6,8 +6,8 @@
 </description>
     <link>http://vangona.github.io/</link>
     <atom:link href="http://vangona.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 06 Dec 2022 12:51:35 +0900</pubDate>
-    <lastBuildDate>Tue, 06 Dec 2022 12:51:35 +0900</lastBuildDate>
+    <pubDate>Tue, 06 Dec 2022 13:00:10 +0900</pubDate>
+    <lastBuildDate>Tue, 06 Dec 2022 13:00:10 +0900</lastBuildDate>
     <generator>Jekyll v3.9.2</generator>
     
       <item>
@@ -48,6 +48,27 @@
         <category>2차원 배치</category>
         
         <category>물리엔진</category>
+        
+        
+        <category>Projects</category>
+        
+      </item>
+    
+      <item>
+        <title>와글와글 Parellex 스크롤</title>
+        <description>&lt;h1 id=&quot;scroll-animation&quot;&gt;Scroll Animation&lt;/h1&gt;
+
+&lt;h1 id=&quot;parellex-스크롤과-ux&quot;&gt;Parellex 스크롤과 UX&lt;/h1&gt;
+</description>
+        <pubDate>Tue, 06 Dec 2022 00:00:00 +0900</pubDate>
+        <link>http://vangona.github.io/posts/waglewagle-parellex-scroll</link>
+        <guid isPermaLink="true">http://vangona.github.io/posts/waglewagle-parellex-scroll</guid>
+        
+        <category>와글와글</category>
+        
+        <category>Parellex</category>
+        
+        <category>UX</category>
         
         
         <category>Projects</category>
@@ -201,33 +222,6 @@
         <category>2차원 배치</category>
         
         <category>물리엔진</category>
-        
-        
-        <category>Projects</category>
-        
-      </item>
-    
-      <item>
-        <title>프로젝트 리더</title>
-        <description>&lt;h1 id=&quot;인간이-언제-죽는다고-생각하나&quot;&gt;&lt;center&gt;인간이 언제 죽는다고 생각하나?&lt;/center&gt;&lt;/h1&gt;
-
-&lt;h1 id=&quot;맹독-버섯-스프를-마셨을-때&quot;&gt;&lt;center&gt;맹독 버섯 스프를 마셨을 때?&lt;/center&gt;&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;실행-컨텍스트&quot;&gt;실행 컨텍스트&lt;/h2&gt;
-
-&lt;h2 id=&quot;유효-범위-렉시컬-스코프---lexical-scope&quot;&gt;유효 범위 (렉시컬 스코프 - Lexical Scope)&lt;/h2&gt;
-
-&lt;h2 id=&quot;자유-변수&quot;&gt;자유 변수&lt;/h2&gt;
-
-&lt;h2 id=&quot;클로져&quot;&gt;클로져&lt;/h2&gt;
-</description>
-        <pubDate>Tue, 06 Dec 2022 00:00:00 +0900</pubDate>
-        <link>http://vangona.github.io/posts/as-project-leader</link>
-        <guid isPermaLink="true">http://vangona.github.io/posts/as-project-leader</guid>
-        
-        <category>와글와글</category>
         
         
         <category>Projects</category>

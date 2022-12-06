@@ -346,6 +346,216 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
+  .boj-reverse-word-2 {
+    margin-bottom: 2em;
+  }
+  .boj-reverse-word-2::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .boj-reverse-word-2::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .boj-reverse-word-2-container,
+  .boj-reverse-word-2-container::before,
+  .boj-reverse-word-2-container::after {
+    height: 25rem;
+  }
+  .boj-reverse-word-2-bleed-container,
+  .boj-reverse-word-2-bleed-container::before,
+  .boj-reverse-word-2-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .boj-reverse-word-2-container,
+        .boj-reverse-word-2-container::before,
+        .boj-reverse-word-2-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        boj-reverse-word-2 boj-reverse-word-2-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/boj-reverse-word-2" title="백준 문제풀이 17413번 단어 뒤집기 2"
+          >백준 문제풀이 17413번 단어 뒤집기 2</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2021/11/30</span>
+        <span>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/boj">#boj</a>
+          <a href="/tag/silver">#silver</a>
+          <a href="/tag/stack&queue">#stack&queue</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="백준-문제풀이-17413번-단어-뒤집기-2"><center>[백준 문제풀이] 17413번 단어 뒤집기 2</center></h1>
+
+<hr />
+
+<h2 id="17413번-단어-뒤집기-2-silver-3">17413번 단어 뒤집기 2 (Silver 3)</h2>
+
+<h3 id="문제">문제</h3>
+
+<p>https://www.acmicpc.net/problem/17413
+
+<p>문자열 S가 주어졌을 때, 이 문자열에서 단어만 뒤집으려고 한다.
+
+<p>먼저, 문자열 S는 아래와과 같은 규칙을 지킨다.
+
+<p>알파벳 소문자(‘a’-‘z’), 숫자(‘0’-‘9’), 공백(‘ ‘), 특수 문자(‘&lt;’, ‘&gt;’)로만 이루어져 있다.
+문자열의 시작과 끝은 공백이 아니다.
+‘&lt;’와 ‘&gt;’가 문자열에 있는 경우 번갈아가면서 등장하며, ‘&lt;’이 먼저 등장한다. 또, 두 문자의 개수는 같다.
+태그는 ‘&lt;’로 시작해서 ‘&gt;’로 끝나는 길이가 3 이상인 부분 문자열이고, ‘&lt;’와 ‘&gt;’ 사이에는 알파벳 소문자와 공백만 있다. 단어는 알파벳 소문자와 숫자로 이루어진 부분 문자열이고, 연속하는 두 단어는 공백 하나로 구분한다. 태그는 단어가 아니며, 태그와 단어 사이에는 공백이 없다.
+
+<h3 id="입력">입력</h3>
+
+<p>첫째 줄에 문자열 S가 주어진다. S의 길이는 100,000 이하이다.
+
+<h3 id="출력">출력</h3>
+
+<p>첫째 줄에 문자열 S의 단어를 뒤집어서 출력한다.
+
+<h3 id="풀이">풀이</h3>
+
+<p>switch case로 stack을 만들어서 풀었다.
+
+<h3 id="소스코드">소스코드</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">();</span>
+
+<span class="kr">const</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">let</span> <span class="nx">isTag</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">answerStr</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">reverseStr</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s2">"&lt;"</span><span class="err">:</span>
+      <span class="k">while</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">answerStr</span> <span class="o">+=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="nx">answerStr</span> <span class="o">+=</span> <span class="nx">str</span><span class="p">;</span>
+      <span class="nx">isTag</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="s2">"&gt;"</span><span class="err">:</span>
+      <span class="nx">answerStr</span> <span class="o">+=</span> <span class="nx">str</span><span class="p">;</span>
+      <span class="nx">isTag</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="s2">" "</span><span class="err">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isTag</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">answerStr</span> <span class="o">+=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="nx">answerStr</span> <span class="o">+=</span> <span class="nx">str</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="kc">undefined</span><span class="err">:</span>
+      <span class="k">while</span> <span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">answerStr</span> <span class="o">+=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="nl">default</span><span class="p">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">isTag</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">answerStr</span> <span class="o">+=</span> <span class="nx">str</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">reverseStr</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answerStr</span><span class="p">);</span>
+</pre></table>
+</div>
+</div>
+
+ <div class="readmore">
+    <a href="/posts/boj-reverse-word-2" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
   .boj-deque {
     margin-bottom: 2em;
   }
@@ -1222,280 +1432,6 @@ back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어�
 
  <div class="readmore">
     <a href="/posts/boj-josephus" role="button">Read more</a>
- </div>
-</article>
-<hr />
-<article class="blog">
-<style>
-  .boj-editor {
-    margin-bottom: 2em;
-  }
-  .boj-editor::before {
-    background-image: url('https://source.unsplash.com/random');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .boj-editor::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(100,0,255,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .boj-editor-container,
-  .boj-editor-container::before,
-  .boj-editor-container::after {
-    height: 25rem;
-  }
-  .boj-editor-bleed-container,
-  .boj-editor-bleed-container::before,
-  .boj-editor-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .boj-editor-container,
-        .boj-editor-container::before,
-        .boj-editor-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        boj-editor boj-editor-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/boj-editor" title="백준 문제풀이 1406번 에디터"
-          >백준 문제풀이 1406번 에디터</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2021/11/28</span>
-        <span>
-          <a href="/tag/algorithm">#algorithm</a>
-          <a href="/tag/boj">#boj</a>
-          <a href="/tag/silver">#silver</a>
-          <a href="/tag/stack&queue">#stack&queue</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <h1 id="백준-문제풀이-1406번-에디터"><center>[백준 문제풀이] 1406번 에디터</center></h1>
-
-<hr />
-
-<h2 id="1406번-에디터-silver-2">1406번 에디터 (Silver 2)</h2>
-
-<h3 id="문제">문제</h3>
-
-<p>https://www.acmicpc.net/problem/1406
-
-<p>한 줄로 된 간단한 에디터를 구현하려고 한다. 이 편집기는 영어 소문자만을 기록할 수 있는 편집기로, 최대 600,000글자까지 입력할 수 있다.
-
-<p>이 편집기에는 ‘커서’라는 것이 있는데, 커서는 문장의 맨 앞(첫 번째 문자의 왼쪽), 문장의 맨 뒤(마지막 문자의 오른쪽), 또는 문장 중간 임의의 곳(모든 연속된 두 문자 사이)에 위치할 수 있다. 즉 길이가 L인 문자열이 현재 편집기에 입력되어 있으면, 커서가 위치할 수 있는 곳은 L+1가지 경우가 있다.
-
-<p>이 편집기가 지원하는 명령어는 다음과 같다.
-
-<p>L 커서를 왼쪽으로 한 칸 옮김 (커서가 문장의 맨 앞이면 무시됨)
-D 커서를 오른쪽으로 한 칸 옮김 (커서가 문장의 맨 뒤이면 무시됨)
-B 커서 왼쪽에 있는 문자를 삭제함 (커서가 문장의 맨 앞이면 무시됨)
-삭제로 인해 커서는 한 칸 왼쪽으로 이동한 것처럼 나타나지만, 실제로 커서의 오른쪽에 있던 문자는 그대로임
-P $ $라는 문자를 커서 왼쪽에 추가함
-초기에 편집기에 입력되어 있는 문자열이 주어지고, 그 이후 입력한 명령어가 차례로 주어졌을 때, 모든 명령어를 수행하고 난 후 편집기에 입력되어 있는 문자열을 구하는 프로그램을 작성하시오. 단, 명령어가 수행되기 전에 커서는 문장의 맨 뒤에 위치하고 있다고 한다.
-
-<h3 id="입력">입력</h3>
-
-<p>첫째 줄에는 초기에 편집기에 입력되어 있는 문자열이 주어진다. 이 문자열은 길이가 N이고, 영어 소문자로만 이루어져 있으며, 길이는 100,000을 넘지 않는다. 둘째 줄에는 입력할 명령어의 개수를 나타내는 정수 M(1 ≤ M ≤ 500,000)이 주어진다. 셋째 줄부터 M개의 줄에 걸쳐 입력할 명령어가 순서대로 주어진다. 명령어는 위의 네 가지 중 하나의 형태로만 주어진다.
-
-<h3 id="출력">출력</h3>
-
-<p>첫째 줄에 모든 명령어를 수행하고 난 후 편집기에 입력되어 있는 문자열을 출력한다.
-
-<h3 id="첫번째-풀이">첫번째 풀이</h3>
-
-<p>배열로 만든 뒤 cursor의 index를 사용해서 문제를 풀려고 시도했다.
-
-<h3 id="첫번째-풀이-소스코드-시간-초과">첫번째 풀이 소스코드 (시간 초과)</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
-<span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">());</span>
-<span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">str</span><span class="p">.</span><span class="nx">legnth</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">);</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">trim</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">"L"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">index</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"D"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">!==</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">index</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"B"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">str</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="kr">const</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
-      <span class="nx">str</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">));</span>
-</pre></table>
-</div>
-</div>
-
-<h3 id="최종-풀이">최종 풀이</h3>
-
-<p>단순 배열로 풀이하면, 중간에 추가하는 동안의 시간 복잡도가 최대 O(n)으로 시간 초과가 날 수 밖에 없었다.
-
-<p>자료구조로 접근하기로 했다. cursor의 왼쪽과 오른쪽을 배열로 만들어서 오른쪽은 Que, 왼쪽은 Stack의 자료구조로 구현하면 가능할 것이라고 생각했다.
-
-<p>이 경우도 시간 초과가 떠서 찾아보니 pop / push 메서드가 시간복잡도가 O(1)인 것과 달리, shift / unshift 메서드는 배열 맨 앞 요소를 빼야하기 때문에 시간복잡도가 O(n)이어서였다.
-
-<p>이 경우는 두 가지 방법을 생각해볼 수 있었다.
-
-<ol>
- <li>양쪽 다 스택으로 구현하여 풀이한 뒤, right 배열을 뒤집어서 쓴다.
- <li>class를 통해서 유사 배열 객체로 queue를 생성하여서 시간복잡도를 O(1)로 만들어서 푼다.
-</ol>
-
-<p>나는 양쪽 다 스택으로 구현한 뒤 커서 오른쪽의 배열을 뒤집어서 쓰는 방법을 사용했다.
-
-<h3 id="최종-소스코드">최종 소스코드</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
-<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">());</span>
-<span class="kr">const</span> <span class="nx">cursorLeft</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">cursorRight</span> <span class="o">=</span> <span class="p">[];</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">"L"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">cursorRight</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"D"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">cursorRight</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">cursorRight</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"B"</span><span class="err">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-      <span class="p">}</span>
-      <span class="k">break</span><span class="p">;</span>
-    <span class="nl">default</span><span class="p">:</span>
-      <span class="kr">const</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
-      <span class="nx">cursorLeft</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">cursorRight</span> <span class="o">=</span> <span class="nx">cursorRight</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([...</span><span class="nx">cursorLeft</span><span class="p">,</span> <span class="p">...</span><span class="nx">cursorRight</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">));</span>
-</pre></table>
-</div>
-</div>
-
- <div class="readmore">
-    <a href="/posts/boj-editor" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">

@@ -27,21 +27,30 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  Projects &#9642; vanGona
+  와글와글 Parellex 스크롤 &#9642; vanGona
 </title>
-<!---->
+<!--
+<meta name="description" content="Scroll Animation
+
+Parellex 스크롤과 UX
+">
+-->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
   name="description"
   content="임상심리학자가 개발을 추구하는 건에 대해서
 "
 />
+<meta
+  name="keywords"
+  content="와글와글, Parellex, UX"
+/>
 <link
   rel="canonical"
-  href="http://vangona.github.io/projects"
+  href="http://vangona.github.io/posts/waglewagle-parellex-scroll"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Projects" />
+<meta name="twitter:title" content="와글와글 Parellex 스크롤" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta name="twitter:image" content="http://vangona.github.io" />
@@ -49,12 +58,12 @@
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Projects" />
+<meta property="og:title" content="와글와글 Parellex 스크롤" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://vangona.github.io/projects"
+  content="http://vangona.github.io/posts/waglewagle-parellex-scroll"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -170,7 +179,7 @@ href="/assets/css/bf.css">
             - Convention</a
           >
        </ul>
-     <li class="dropdown active">
+     <li class="dropdown ">
         <a
           class="dropdown-toggle"
           role="button"
@@ -282,7 +291,7 @@ href="/assets/css/bf.css">
             - Convention</a
           >
        </ul>
-     <li class="dropdown active">
+     <li class="dropdown ">
         <a
           class="dropdown-toggle"
           role="button"
@@ -344,90 +353,93 @@ href="/assets/css/bf.css">
    </ul>
  </div>
 </header>
-<ul class="posts-list">
-  <div class="page-title-container">
- <div class="heading-container">
-   <h1>Projects.md</h1>
-    <span>  <strong>‘Projects’</strong> 관련 게시물
-     </span>
+<article class="post">
+<style>
+  .waglewagle-parellex-scroll {
+    margin-bottom: 2em;
+  }
+  .waglewagle-parellex-scroll::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .waglewagle-parellex-scroll::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .waglewagle-parellex-scroll-container,
+  .waglewagle-parellex-scroll-container::before,
+  .waglewagle-parellex-scroll-container::after {
+    height: 25rem;
+  }
+  .waglewagle-parellex-scroll-bleed-container,
+  .waglewagle-parellex-scroll-bleed-container::before,
+  .waglewagle-parellex-scroll-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .waglewagle-parellex-scroll-container,
+        .waglewagle-parellex-scroll-container::before,
+        .waglewagle-parellex-scroll-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  waglewagle-parellex-scroll waglewagle-parellex-scroll-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          와글와글 Parellex 스크롤
+     </h1>
+     <div class="post-meta">
+        <span>06/12/2022</span>
+        <span>
+              <a href="/tag/와글와글">#와글와글</a>
+              <a href="/tag/Parellex">#Parellex</a>
+              <a href="/tag/UX">#UX</a>
+        </span>
+     </div>
+   </div>
  </div>
-</div>
-     <h2 id="y2022/12">
-    December 2022
-</h2>
-     <ul class="related-posts">
-     <li>
-        <a href="/posts/your-own-drawer">
-        <span>누군가의 서랍장</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/waglewagle-unit-test">
-        <span>와글와글 단위 테스트</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/waglewagle-parellex-scroll">
-        <span>와글와글 Parellex 스크롤</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/waglewagle-optimization">
-        <span>와글와글 성능 최적화</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/waglewagle-code-quality">
-        <span>와글와글 프론트엔드 코드 품질 관리</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/waglewagle-bff-deploy">
-        <span>와글와글 Next.js 서버 배포와 CI / CD 적용기</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/typescript-eslint-static-test">
-        <span>와글와글 정적 테스트와 코딩 스타일</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/trie-search-engine">
-        <span>Trie 자료구조를 활용한 검색엔진 만들기</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/jeju-guide">
-        <span>제주 가이드, 제주 로컬 맛집 가이드</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/circlepacker-physics">
-        <span>와글와글 데이터 시각화를 위한 2차원 배치 물리엔진 만들기</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/as-project-leader">
-        <span>프로젝트 리더</span>
-        <small>12/06</small>
-        </a>
-     <li>
-        <a href="/posts/api-call-optimization">
-        <span>API 호출 최적화</span>
-        <small>12/06</small>
-        </a>
-     </ul>
-<nav class="pagination" role="navigation">
-<hr/>
- <ul>
-   <li class="pagination-item-prev" >
-      <span>&laquo; Previous</span>
-   <li class="pagination-item-next" >
-      <span>Next &raquo;</span>
- </ul>
-<hr/>
-</nav>
-</ul>
+   <h1 id="scroll-animation">Scroll Animation</h1>
+
+<h1 id="parellex-스크롤과-ux">Parellex 스크롤과 UX</h1>
+
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dactl';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+</aside>
 <footer>
     <span>임상심리학자가 개발을 추구하는 건에 대해서
 </span>
