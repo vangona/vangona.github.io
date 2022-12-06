@@ -346,6 +346,90 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
+  .config-settings {
+    margin-bottom: 2em;
+  }
+  .config-settings::before {
+    background-image: url('https://source.unsplash.com/collection/582860/');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .config-settings::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255,0,100,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .config-settings-container,
+  .config-settings-container::before,
+  .config-settings-container::after {
+    height: 25rem;
+  }
+  .config-settings-bleed-container,
+  .config-settings-bleed-container::before,
+  .config-settings-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .config-settings-container,
+        .config-settings-container::before,
+        .config-settings-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        config-settings config-settings-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/config-settings" title="Layout settings and more in _config.yml"
+          >Layout settings and more in _config.yml</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2017/03/20</span>
+        <span>
+          <a href="/tag/jekyll">#jekyll</a>
+          <a href="/tag/dactl">#dactl</a>
+          <a href="/tag/howto">#howto</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <p class="lead">All of the dactl’s configurations has to be set in <code class="language-plaintext highlighter-rouge">_config.yml</code> file. Read on for explanation of all of the features that you can toggle, including configuring the layout.
+
+<p>I’ve split dactl’s <code class="language-plaintext highlighter-rouge">_config.yml</code> into two parts. First part should be configured by you, second contains important Jekyll &amp; build settings and you should leave it alone, unless you know what you are doing.
+
+
+ <div class="readmore">
+    <a href="/posts/config-settings" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
   .yaml-frontmatter {
     margin-bottom: 2em;
   }
@@ -690,96 +774,13 @@ Read on for more information about how to add footnotes to your posts and how to
     <a href="/posts/footnotes-in-dactl" role="button">Read more</a>
  </div>
 </article>
-<hr />
-<article class="blog">
-<style>
-  .example-content {
-    margin-bottom: 2em;
-  }
-  .example-content::before {
-    background-image: url('https://source.unsplash.com/collection/145103/');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .example-content::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(100,255,0,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .example-content-container,
-  .example-content-container::before,
-  .example-content-container::after {
-    height: 25rem;
-  }
-  .example-content-bleed-container,
-  .example-content-bleed-container::before,
-  .example-content-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .example-content-container,
-        .example-content-container::before,
-        .example-content-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        example-content example-content-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/example-content" title="Example content"
-          >Example content</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2017/01/20</span>
-        <span>
-          <a href="/tag/jekyll">#jekyll</a>
-          <a href="/tag/dactl">#dactl</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <p class="lead">Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
-
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-
-
- <div class="readmore">
-    <a href="/posts/example-content" role="button">Read more</a>
- </div>
-</article>
 <nav class="pagination" role="navigation">
 <hr/>
  <ul>
    <li class="pagination-item-prev" >
         <a rel="prev" href="/page-14/">&laquo; Previous</a>
    <li class="pagination-item-next" >
-      <span>Next &raquo;</span>
+      <a rel="next" href="/page-16/">Next &raquo;</a>
  </ul>
 <hr/>
 </nav>

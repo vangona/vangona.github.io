@@ -3,6 +3,21 @@
   
     
     <url>
+      <loc>http://localhost:4000/posts/as-project-leader/</loc>
+      
+        <lastmod>2022-12-06T00:00:00+09:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
       <loc>http://localhost:4000/posts/boostcourse-cs50-chapter4/</loc>
       
         <lastmod>2022-05-22T00:00:00+09:00</lastmod>
@@ -1133,7 +1148,7 @@
     <url>
       <loc>http://localhost:4000/algorithm</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1148,7 +1163,7 @@
     <url>
       <loc>http://localhost:4000/cs</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1163,7 +1178,7 @@
     <url>
       <loc>http://localhost:4000/humanities</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1178,7 +1193,7 @@
     <url>
       <loc>http://localhost:4000/languages</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1193,7 +1208,7 @@
     <url>
       <loc>http://localhost:4000/lectures</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1208,7 +1223,7 @@
     <url>
       <loc>http://localhost:4000/projects</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1223,7 +1238,7 @@
     <url>
       <loc>http://localhost:4000/about/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1238,7 +1253,7 @@
     <url>
       <loc>http://localhost:4000/archive/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1257,7 +1272,7 @@
     <url>
       <loc>http://localhost:4000/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1278,7 +1293,7 @@
     <url>
       <loc>http://localhost:4000/page-2/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1293,7 +1308,7 @@
     <url>
       <loc>http://localhost:4000/page-3/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1308,7 +1323,7 @@
     <url>
       <loc>http://localhost:4000/page-4/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1323,7 +1338,7 @@
     <url>
       <loc>http://localhost:4000/page-5/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1338,7 +1353,7 @@
     <url>
       <loc>http://localhost:4000/page-6/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1353,7 +1368,7 @@
     <url>
       <loc>http://localhost:4000/page-7/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1368,7 +1383,7 @@
     <url>
       <loc>http://localhost:4000/page-8/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1383,7 +1398,7 @@
     <url>
       <loc>http://localhost:4000/page-9/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1398,7 +1413,7 @@
     <url>
       <loc>http://localhost:4000/page-10/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1413,7 +1428,7 @@
     <url>
       <loc>http://localhost:4000/page-11/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1428,7 +1443,7 @@
     <url>
       <loc>http://localhost:4000/page-12/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1443,7 +1458,7 @@
     <url>
       <loc>http://localhost:4000/page-13/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1458,7 +1473,7 @@
     <url>
       <loc>http://localhost:4000/page-14/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -1473,7 +1488,22 @@
     <url>
       <loc>http://localhost:4000/page-15/</loc>
       
-        <lastmod>2022-06-14T15:56:42+09:00</lastmod>
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/page-16/</loc>
+      
+        <lastmod>2022-12-06T12:16:31+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>

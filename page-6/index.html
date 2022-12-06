@@ -346,6 +346,139 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
+  .boj-sorting-by-chun-choo {
+    margin-bottom: 2em;
+  }
+  .boj-sorting-by-chun-choo::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .boj-sorting-by-chun-choo::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .boj-sorting-by-chun-choo-container,
+  .boj-sorting-by-chun-choo-container::before,
+  .boj-sorting-by-chun-choo-container::after {
+    height: 25rem;
+  }
+  .boj-sorting-by-chun-choo-bleed-container,
+  .boj-sorting-by-chun-choo-bleed-container::before,
+  .boj-sorting-by-chun-choo-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .boj-sorting-by-chun-choo-container,
+        .boj-sorting-by-chun-choo-container::before,
+        .boj-sorting-by-chun-choo-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        boj-sorting-by-chun-choo boj-sorting-by-chun-choo-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/boj-sorting-by-chun-choo" title="백준 문제풀이 10814번 나이순 정렬"
+          >백준 문제풀이 10814번 나이순 정렬</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2021/11/25</span>
+        <span>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/boj">#boj</a>
+          <a href="/tag/silver">#silver</a>
+          <a href="/tag/sorting">#sorting</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="백준-문제풀이-10814번-나이순-정렬"><center>[백준 문제풀이] 10814번 나이순 정렬</center></h1>
+
+<hr />
+
+<h2 id="10814번-나이순-정렬-silver-5">10814번 나이순 정렬 (Silver 5)</h2>
+
+<h3 id="문제">문제</h3>
+
+<p>https://www.acmicpc.net/problem/10814
+
+<p>온라인 저지에 가입한 사람들의 나이와 이름이 가입한 순서대로 주어진다. 이때, 회원들을 나이가 증가하는 순으로, 나이가 같으면 먼저 가입한 사람이 앞에 오는 순서로 정렬하는 프로그램을 작성하시오.
+
+<h3 id="입력">입력</h3>
+
+<p>첫째 줄에 온라인 저지 회원의 수 N이 주어진다. (1 ≤ N ≤ 100,000)
+
+<p>둘째 줄부터 N개의 줄에는 각 회원의 나이와 이름이 공백으로 구분되어 주어진다. 나이는 1보다 크거나 같으며, 200보다 작거나 같은 정수이고, 이름은 알파벳 대소문자로 이루어져 있고, 길이가 100보다 작거나 같은 문자열이다. 입력은 가입한 순서로 주어진다.
+
+<h3 id="출력">출력</h3>
+
+<p>첫째 줄부터 총 N개의 줄에 걸쳐 온라인 저지 회원을 나이 순, 나이가 같으면 가입한 순으로 한 줄에 한 명씩 나이와 이름을 공백으로 구분해 출력한다.
+
+<h3 id="풀이">풀이</h3>
+
+<p>가입순으로 이미 정렬되어있기 때문에, 나이 순으로만 정렬할 수 있도록 sort() 메서드를 사용했다.
+
+<h3 id="소스코드">소스코드</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+<span class="nx">input</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">el</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">));</span>
+
+<span class="nx">input</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+
+<span class="nx">input</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">el</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">" "</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
+</pre></table>
+</div>
+</div>
+
+ <div class="readmore">
+    <a href="/posts/boj-sorting-by-chun-choo" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
   .boj-sorting-coordinate {
     margin-bottom: 2em;
   }
@@ -1001,184 +1134,6 @@ href="/assets/css/bf.css">
 
  <div class="readmore">
     <a href="/posts/boj-repainting-chessboard" role="button">Read more</a>
- </div>
-</article>
-<hr />
-<article class="blog">
-<style>
-  .boj-number-sorting {
-    margin-bottom: 2em;
-  }
-  .boj-number-sorting::before {
-    background-image: url('https://source.unsplash.com/random');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .boj-number-sorting::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(100,0,255,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .boj-number-sorting-container,
-  .boj-number-sorting-container::before,
-  .boj-number-sorting-container::after {
-    height: 25rem;
-  }
-  .boj-number-sorting-bleed-container,
-  .boj-number-sorting-bleed-container::before,
-  .boj-number-sorting-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .boj-number-sorting-container,
-        .boj-number-sorting-container::before,
-        .boj-number-sorting-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        boj-number-sorting boj-number-sorting-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/boj-number-sorting" title="백준 문제풀이 2750번 수 정렬하기"
-          >백준 문제풀이 2750번 수 정렬하기</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2021/11/22</span>
-        <span>
-          <a href="/tag/algorithm">#algorithm</a>
-          <a href="/tag/boj">#boj</a>
-          <a href="/tag/bronze">#bronze</a>
-          <a href="/tag/sorting">#sorting</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <h1 id="백준-문제풀이-2750번-수-정렬하기"><center>[백준 문제풀이] 2750번 수 정렬하기</center></h1>
-
-<hr />
-
-<h2 id="2750번-수-정렬하기-bronze-1">2750번 수 정렬하기 (Bronze 1)</h2>
-
-<h3 id="문제">문제</h3>
-
-<p>https://www.acmicpc.net/problem/2750
-
-<p>N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로그램을 작성하시오.
-
-<h3 id="입력">입력</h3>
-
-<p>첫째 줄에 수의 개수 N(1 ≤ N ≤ 1,000)이 주어진다. 둘째 줄부터 N개의 줄에는 수 주어진다. 이 수는 절댓값이 1,000보다 작거나 같은 정수이다. 수는 중복되지 않는다.
-
-<h3 id="출력">출력</h3>
-
-<p>첫째 줄부터 N개의 줄에 오름차순으로 정렬한 결과를 한 줄에 하나씩 출력한다.
-
-<h3 id="첫번째-풀이">첫번째 풀이</h3>
-
-<p>시간 복잡도가 O(n^2)인 풀이라고 해서, sort 메서드를 이용해서 쉽게 풀었다.
-
-<h3 id="첫번째-풀이-소스코드">첫번째 풀이 소스코드</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
-<span class="nx">input</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">el</span><span class="p">));</span>
-
-<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
-
-<span class="kr">const</span> <span class="nx">answerArr</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answerArr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
-</pre></table>
-</div>
-</div>
-
-<h3 id="두번째-풀이">두번째 풀이</h3>
-
-<p>2751번을 풀다가 해당 문제에서는 메서드를 사용하는 것이 아니었다는걸 알고, 다시 버블 정렬로 풀었다.
-
-<h3 id="두번째-풀이-소스코드">두번째 풀이 소스코드</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">"/dev/stdin"</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">);</span>
-<span class="nx">input</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">el</span><span class="p">));</span>
-
-<span class="kr">const</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">swap</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
-      <span class="nx">swap</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-      <span class="nx">input</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
-      <span class="nx">input</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">swap</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">swap</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
-</pre></table>
-</div>
-</div>
-
- <div class="readmore">
-    <a href="/posts/boj-number-sorting" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">
