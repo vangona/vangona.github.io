@@ -38,13 +38,13 @@
 />
 <link
   rel="canonical"
-  href="http://localhost:4000/page-16/"
+  href="http://vangona.github.io/page-16/"
 />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Blog" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
-<meta name="twitter:image" content="http://localhost:4000" />
+<meta name="twitter:image" content="http://vangona.github.io" />
 <meta name="author" content="" />
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
@@ -54,7 +54,7 @@
 " />
 <meta
   property="og:url"
-  content="http://localhost:4000/page-16/"
+  content="http://vangona.github.io/page-16/"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -346,11 +346,11 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
-  .example-content {
+  .boj-cat {
     margin-bottom: 2em;
   }
-  .example-content::before {
-    background-image: url('https://source.unsplash.com/collection/145103/');
+  .boj-cat::before {
+    background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
     content:'';
@@ -360,33 +360,33 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .example-content::after {
+  .boj-cat::after {
     content:'';
     position:absolute;
     width: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(100,255,0,0.8);
+    background-color: rgba(100,0,255,0.8);
     /*mix-blend-mode: darken;
     mix-blend-mode: color-burn;
     mix-blend-mode: hard-light;*/
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .example-content-container,
-  .example-content-container::before,
-  .example-content-container::after {
+  .boj-cat-container,
+  .boj-cat-container::before,
+  .boj-cat-container::after {
     height: 25rem;
   }
-  .example-content-bleed-container,
-  .example-content-bleed-container::before,
-  .example-content-bleed-container::after {
+  .boj-cat-bleed-container,
+  .boj-cat-bleed-container::before,
+  .boj-cat-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .example-content-container,
-        .example-content-container::before,
-        .example-content-container::after{
+        .boj-cat-container,
+        .boj-cat-container::before,
+        .boj-cat-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -395,35 +395,423 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        example-content example-content-container hero-hov
+        boj-cat boj-cat-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/example-content" title="Example content"
-          >Example content</a
+        <a href="/posts/boj-cat" title="2021.10.29 백준 문제풀이"
+          >2021.10.29 백준 문제풀이</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2017/01/20</span>
+        <span>2021/10/29</span>
         <span>
-          <a href="/tag/jekyll">#jekyll</a>
-          <a href="/tag/dactl">#dactl</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/boj">#boj</a>
+          <a href="/tag/bronze">#bronze</a>
         </span>
      </div>
    </div>
  </div>
-   <p class="lead">Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+   <h1 id="20211029-백준-문제풀이"><center>2021.10.29. 백준 문제풀이</center></h1>
 
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+<hr />
+
+<h2 id="10171번-고양이-bronze-5">10171번 고양이 (Bronze 5)</h2>
+
+<h3 id="문제">문제</h3>
+
+<p>https://www.acmicpc.net/problem/10171
+
+<h3 id="배운-것">배운 것</h3>
+
+<p>문자열 이스케이프 문자, 역슬래시(\) :
+어떤 한 문자를 코드가 아닌 문자로 만들어주는 문자
+
+<p>역슬래시를 문자 그대로 쓰려면 \\ 와 같은 형태로 작성해야함. 이외에도<br />
+' : 작은따옴표<br />
+" : 큰따옴표<br />
+\n : 개행<br />
+\t : 탭
+
+<hr />
+
+<h2 id="1000번-a--b-bronze-5">1000번 A + B (Bronze 5)</h2>
+
+<h3 id="문제-1">문제</h3>
+
+<p>https://www.acmicpc.net/problem/1000
+
+<h3 id="배운-것-1">배운 것</h3>
+
+<p>브라우저에서 작동되는 js 언어는 값을 입력받을 수 없어서, Node.js의 fs 모듈을 이용해서 진행해야한다.
+
+<p>fs 모듈 : FileSystem 모듈로, 파일 처리와 관련된 작업을 한다.
+
+<p>fs.readFile(filename, [options], callback) : filename의 파일을 [options]의 방식으로 읽은 후 callback으로 전달된 함수를 호출함. (비동기적)
+
+<p>fs.readFileSync(filename, [options]) : filename의 파일을 [options]의 방식으로 읽은 후 문자열을 반환함.(동기적)
+
+<p>fs 모듈로 stdin을 로드
+fs 모듈을 이용하여 표준입력(stdin) 파일을 동기적으로 불러오는 방법<br />
+=&gt; 한 칸 띄어쓰기로 구분되게 된다.
+
+<p>fs 모듈을 통해 문자열로 불러와졌기 때문에, parseInt를 통해 숫자로 변환해주어야 한다.
+
+<hr />
+
+<h2 id="10869번-사칙-연산-bronze-5">10869번 사칙 연산 (Bronze 5)</h2>
+
+<h3 id="문제-2">문제</h3>
+
+<p>https://www.acmicpc.net/problem/10869
+
+<h3 id="느낀-점">느낀 점</h3>
+
+<p>문제에서 예제 출력을 잘 읽고, 출력형태가 어떤지 확인해서 Type이나 소수점을 신경써주자.
+
+ <div class="readmore">
+    <a href="/posts/boj-cat" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
+  .what-is-big-o {
+    margin-bottom: 2em;
+  }
+  .what-is-big-o::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .what-is-big-o::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .what-is-big-o-container,
+  .what-is-big-o-container::before,
+  .what-is-big-o-container::after {
+    height: 25rem;
+  }
+  .what-is-big-o-bleed-container,
+  .what-is-big-o-bleed-container::before,
+  .what-is-big-o-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .what-is-big-o-container,
+        .what-is-big-o-container::before,
+        .what-is-big-o-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        what-is-big-o what-is-big-o-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/what-is-big-o" title="Big(O)가 무엇일까?"
+          >Big(O)가 무엇일까?</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2021/10/22</span>
+        <span>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/theory">#theory</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="bigo가-무엇일까"><center>Big(O)가 무엇일까?</center></h1>
+
+<hr />
+
+<h2 id="bigo가-무엇일까-1">Big(O)가 무엇일까?</h2>
+
+ <div class="readmore">
+    <a href="/posts/what-is-big-o" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
+  .stack-and-queue {
+    margin-bottom: 2em;
+  }
+  .stack-and-queue::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .stack-and-queue::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .stack-and-queue-container,
+  .stack-and-queue-container::before,
+  .stack-and-queue-container::after {
+    height: 25rem;
+  }
+  .stack-and-queue-bleed-container,
+  .stack-and-queue-bleed-container::before,
+  .stack-and-queue-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .stack-and-queue-container,
+        .stack-and-queue-container::before,
+        .stack-and-queue-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        stack-and-queue stack-and-queue-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/stack-and-queue" title="스택과 큐"
+          >스택과 큐</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2021/10/22</span>
+        <span>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/theory">#theory</a>
+          <a href="/tag/data-sturcture">#data-sturcture</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="스택과-큐"><center>스택과 큐</center></h1>
+
+<hr />
+
+<h2 id="스택과-큐-1">스택과 큐</h2>
+
+ <div class="readmore">
+    <a href="/posts/stack-and-queue" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
+  .welcome-to-dactl {
+    margin-bottom: 2em;
+  }
+  .welcome-to-dactl::before {
+    background-image: url('https://source.unsplash.com/collection/430471/');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .welcome-to-dactl::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255,0,100,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .welcome-to-dactl-container,
+  .welcome-to-dactl-container::before,
+  .welcome-to-dactl-container::after {
+    height: 25rem;
+  }
+  .welcome-to-dactl-bleed-container,
+  .welcome-to-dactl-bleed-container::before,
+  .welcome-to-dactl-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .welcome-to-dactl-container,
+        .welcome-to-dactl-container::before,
+        .welcome-to-dactl-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        welcome-to-dactl welcome-to-dactl-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/welcome-to-dactl" title="Welcome to dactl!"
+          >Welcome to dactl!</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2017/03/22</span>
+        <span>
+          <a href="/tag/dactl">#dactl</a>
+          <a href="/tag/jekyll">#jekyll</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <p class="lead">You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>.
 
 
  <div class="readmore">
-    <a href="/posts/example-content" role="button">Read more</a>
+    <a href="/posts/welcome-to-dactl" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
+  .notices {
+    margin-bottom: 2em;
+  }
+  .notices::before {
+    background-image: url('https://source.unsplash.com/collection/345758/');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .notices::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .notices-container,
+  .notices-container::before,
+  .notices-container::after {
+    height: 25rem;
+  }
+  .notices-bleed-container,
+  .notices-bleed-container::before,
+  .notices-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .notices-container,
+        .notices-container::before,
+        .notices-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        notices notices-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/notices" title="Notice blocks"
+          >Notice blocks</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2017/03/20</span>
+        <span>
+          <a href="/tag/dactl">#dactl</a>
+          <a href="/tag/howto">#howto</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <p class="lead">By default dactl has a couple of special classes which will turn a paragraph into a notice block when added to it. Read on for information on how to use it.
+
+<h2 id="how-to-create-a-notice-block">How to create a notice block</h2>
+<p>Creating notices from your paragraphs works the same way as creating <a href="LINKILYNKI">leading post paragraphs</a>.<br />
+You need to add a correct class <strong>after</strong> the paragraph:
+
+
+ <div class="readmore">
+    <a href="/posts/notices" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">
@@ -432,7 +820,7 @@ href="/assets/css/bf.css">
    <li class="pagination-item-prev" >
         <a rel="prev" href="/page-15/">&laquo; Previous</a>
    <li class="pagination-item-next" >
-      <span>Next &raquo;</span>
+      <a rel="next" href="/page-17/">Next &raquo;</a>
  </ul>
 <hr/>
 </nav>

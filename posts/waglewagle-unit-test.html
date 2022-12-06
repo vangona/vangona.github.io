@@ -27,10 +27,12 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  Jekyll &#9642; vanGona
+  와글와글 단위 테스트 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="
+<meta name="description" content="Circle Packer 단위 테스트 코드 작성
+
+Trie Seacrh Engine 단위 테스트 코드 작성
 ">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
@@ -41,27 +43,27 @@
 />
 <meta
   name="keywords"
-  content=""
+  content="와글와글, 2차원 배치, 물리엔진"
 />
 <link
   rel="canonical"
-  href="http://localhost:4000/tag/jekyll/"
+  href="http://vangona.github.io/posts/waglewagle-unit-test"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Jekyll" />
+<meta name="twitter:title" content="와글와글 단위 테스트" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
-<meta name="twitter:image" content="http://localhost:4000" />
+<meta name="twitter:image" content="http://vangona.github.io" />
 <meta name="author" content="" />
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Jekyll" />
+<meta property="og:title" content="와글와글 단위 테스트" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://localhost:4000/tag/jekyll/"
+  content="http://vangona.github.io/posts/waglewagle-unit-test"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -351,21 +353,13 @@ href="/assets/css/bf.css">
    </ul>
  </div>
 </header>
- <div class="page-title-container">
- <div class="heading-container">
-   <h1>Jekyll</h1>
-    <span>  Articles
-tagged with <strong>‘#Jekyll’</strong>
- </span>
- </div>
-</div>
-<article class="blog">
+<article class="post">
 <style>
-  .welcome-to-dactl {
+  .waglewagle-unit-test {
     margin-bottom: 2em;
   }
-  .welcome-to-dactl::before {
-    background-image: url('https://source.unsplash.com/collection/430471/');
+  .waglewagle-unit-test::before {
+    background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
     content:'';
@@ -375,384 +369,92 @@ tagged with <strong>‘#Jekyll’</strong>
     top: 0;
     z-index: -2;
   }
-  .welcome-to-dactl::after {
+  .waglewagle-unit-test::after {
     content:'';
     position:absolute;
     width: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(255,0,100,0.8);
+    background-color: rgba(100,0,255,0.8);
     /*mix-blend-mode: darken;
     mix-blend-mode: color-burn;
     mix-blend-mode: hard-light;*/
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .welcome-to-dactl-container,
-  .welcome-to-dactl-container::before,
-  .welcome-to-dactl-container::after {
+  .waglewagle-unit-test-container,
+  .waglewagle-unit-test-container::before,
+  .waglewagle-unit-test-container::after {
     height: 25rem;
   }
-  .welcome-to-dactl-bleed-container,
-  .welcome-to-dactl-bleed-container::before,
-  .welcome-to-dactl-bleed-container::after {
+  .waglewagle-unit-test-bleed-container,
+  .waglewagle-unit-test-bleed-container::before,
+  .waglewagle-unit-test-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .welcome-to-dactl-container,
-        .welcome-to-dactl-container::before,
-        .welcome-to-dactl-container::after{
+        .waglewagle-unit-test-container,
+        .waglewagle-unit-test-container::before,
+        .waglewagle-unit-test-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
     }
 </style>
- <div
-    class="
-    post-title-container
-        welcome-to-dactl welcome-to-dactl-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
+ <div class="post-title-container
+  waglewagle-unit-test waglewagle-unit-test-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
      <h1>
-        <a href="/posts/welcome-to-dactl" title="Welcome to dactl!"
-          >Welcome to dactl!</a
-        >
+          와글와글 단위 테스트
      </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2017/03/22</span>
+     <div class="post-meta">
+        <span>06/12/2022</span>
         <span>
-          <a href="/tag/dactl">#dactl</a>
-          <a href="/tag/jekyll">#jekyll</a>
+              <a href="/tag/와글와글">#와글와글</a>
+              <a href="/tag/2차원 배치">#2차원 배치</a>
+              <a href="/tag/물리엔진">#물리엔진</a>
         </span>
      </div>
    </div>
  </div>
-   <p class="lead">You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>.
+   <h1 id="circle-packer-단위-테스트-코드-작성">Circle Packer 단위 테스트 코드 작성</h1>
 
+<h1 id="trie-seacrh-engine-단위-테스트-코드-작성">Trie Seacrh Engine 단위 테스트 코드 작성</h1>
 
- <div class="readmore">
-    <a href="/posts/welcome-to-dactl" role="button">Read more</a>
- </div>
 </article>
-<hr />
-<article class="blog">
-<style>
-  .config-settings {
-    margin-bottom: 2em;
-  }
-  .config-settings::before {
-    background-image: url('https://source.unsplash.com/collection/582860/');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .config-settings::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(255,0,100,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .config-settings-container,
-  .config-settings-container::before,
-  .config-settings-container::after {
-    height: 25rem;
-  }
-  .config-settings-bleed-container,
-  .config-settings-bleed-container::before,
-  .config-settings-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .config-settings-container,
-        .config-settings-container::before,
-        .config-settings-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        config-settings config-settings-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/config-settings" title="Layout settings and more in _config.yml"
-          >Layout settings and more in _config.yml</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2017/03/20</span>
-        <span>
-          <a href="/tag/jekyll">#jekyll</a>
-          <a href="/tag/dactl">#dactl</a>
-          <a href="/tag/howto">#howto</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <p class="lead">All of the dactl’s configurations has to be set in <code class="language-plaintext highlighter-rouge">_config.yml</code> file. Read on for explanation of all of the features that you can toggle, including configuring the layout.
-
-<p>I’ve split dactl’s <code class="language-plaintext highlighter-rouge">_config.yml</code> into two parts. First part should be configured by you, second contains important Jekyll &amp; build settings and you should leave it alone, unless you know what you are doing.
-
-
- <div class="readmore">
-    <a href="/posts/config-settings" role="button">Read more</a>
- </div>
-</article>
-<hr />
-<article class="blog">
-<style>
-  .yaml-frontmatter {
-    margin-bottom: 2em;
-  }
-  .yaml-frontmatter::before {
-    background-image: url('https://source.unsplash.com/collection/345758/');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .yaml-frontmatter::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(255,100,0,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .yaml-frontmatter-container,
-  .yaml-frontmatter-container::before,
-  .yaml-frontmatter-container::after {
-    height: 25rem;
-  }
-  .yaml-frontmatter-bleed-container,
-  .yaml-frontmatter-bleed-container::before,
-  .yaml-frontmatter-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .yaml-frontmatter-container,
-        .yaml-frontmatter-container::before,
-        .yaml-frontmatter-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        yaml-frontmatter yaml-frontmatter-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/yaml-frontmatter" title="YAML front matter in posts"
-          >YAML front matter in posts</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2017/03/19</span>
-        <span>
-          <a href="/tag/jekyll">#jekyll</a>
-          <a href="/tag/dactl">#dactl</a>
-          <a href="/tag/howto">#howto</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <p class="lead">In order to use dactl’s post images with overlays you’ll need to learn how to set them. You do that in post’s YAML frontmatter and I’ll show you how.
-
-<h2 id="yaml-front-matter">YAML Front matter</h2>
-<p>Each Jekyll post starts with YAML Front <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. For example, this is how this post would look like if I wanted to use all of the options:
-
-<div class="footnotes" role="doc-endnotes">
- <ol>
-   <li id="fn:1" role="doc-endnote">
-     <p>Everything in between those two <code class="language-plaintext highlighter-rouge">---</code> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a>
-    
- </ol>
-</div>
-
- <div class="readmore">
-    <a href="/posts/yaml-frontmatter" role="button">Read more</a>
- </div>
-</article>
-<hr />
-<article class="blog">
-<style>
-  .example-content {
-    margin-bottom: 2em;
-  }
-  .example-content::before {
-    background-image: url('https://source.unsplash.com/collection/145103/');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .example-content::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(100,255,0,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .example-content-container,
-  .example-content-container::before,
-  .example-content-container::after {
-    height: 25rem;
-  }
-  .example-content-bleed-container,
-  .example-content-bleed-container::before,
-  .example-content-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .example-content-container,
-        .example-content-container::before,
-        .example-content-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        example-content example-content-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/example-content" title="Example content"
-          >Example content</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2017/01/20</span>
-        <span>
-          <a href="/tag/jekyll">#jekyll</a>
-          <a href="/tag/dactl">#dactl</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <p class="lead">Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
-
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-
-
- <div class="readmore">
-    <a href="/posts/example-content" role="button">Read more</a>
- </div>
-</article>
-  <div class="tag-box">
-<hr/>
-<span>Check out other tags:</span>
-<ul>
-  <li>
-     <a href="/tag/algorithm/">#algorithm</a>
-  <li>
-     <a href="/tag/basic-math/">#basic-math</a>
-  <li>
-     <a href="/tag/boj/">#boj</a>
-  <li>
-     <a href="/tag/boostcourse/">#boostcourse</a>
-  <li>
-     <a href="/tag/bronze/">#bronze</a>
-  <li>
-     <a href="/tag/bruteforce/">#bruteforce</a>
-  <li>
-     <a href="/tag/cs/">#cs</a>
-  <li>
-     <a href="/tag/cs50/">#cs50</a>
-  <li>
-     <a href="/tag/dactl/">#dactl</a>
-  <li>
-     <a href="/tag/data-sturcture/">#data-sturcture</a>
-  <li>
-     <a href="/tag/dfs/">#dfs</a>
-  <li>
-     <a href="/tag/gold/">#gold</a>
-  <li>
-     <a href="/tag/howto/">#howto</a>
-  <li>
-     <a href="/tag/implementation/">#implementation</a>
-  <li>
-     <a href="/tag/jekyll/">#jekyll</a>
-  <li>
-     <a href="/tag/js/">#js</a>
-  <li>
-     <a href="/tag/number/">#number</a>
-  <li>
-     <a href="/tag/recursion/">#recursion</a>
-  <li>
-     <a href="/tag/silver/">#silver</a>
-  <li>
-     <a href="/tag/simulation/">#simulation</a>
-  <li>
-     <a href="/tag/sorting/">#sorting</a>
-  <li>
-     <a href="/tag/stack-queue/">#stack&queue</a>
-  <li>
-     <a href="/tag/theory/">#theory</a>
-  <li>
-     <a href="/tag/와글와글/">#와글와글</a>
-</ul>
-<hr/>
-</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dactl';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+   <li>
+    <a href="/posts/waglewagle-optimization">
+        <span>와글와글 성능 최적화</span>
+        <small>06/12</small>
+    </a>
+   <li>
+    <a href="/posts/trie-search-engine">
+        <span>Trie 자료구조를 활용한 검색엔진 만들기</span>
+        <small>06/12</small>
+    </a>
+   <li>
+    <a href="/posts/circlepacker-physics">
+        <span>와글와글 데이터 시각화를 위한 2차원 배치 물리엔진 만들기</span>
+        <small>06/12</small>
+    </a>
+</aside>
 <footer>
     <span>임상심리학자가 개발을 추구하는 건에 대해서
 </span>

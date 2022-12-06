@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+   <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+   </style>
+   <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+/>
+<title>
+  Engineering Humanities &#9642; vanGona
+</title>
+<!--
+<meta name="description" content="우리는 무엇까지 소프트웨어라고 생각할 수 있을까? 소프트웨어가 Soft + ware라면 우리의 삶까지 소프트웨어 아닐까? 삶을 엔지니어링하는 이야기
+">
+-->
+<link rel="icon" href="/assets/img/dactl.svg" />
+<meta
+  name="description"
+  content="우리는 무엇까지 소프트웨어라고 생각할 수 있을까? 소프트웨어가 Soft + ware라면 우리의 삶까지 소프트웨어 아닐까? 삶을 엔지니어링하는 이야기"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<link
+  rel="canonical"
+  href="http://vangona.github.io/tag/engineering-humanities/"
+/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Engineering Humanities" />
+<meta name="twitter:description" content="우리는 무엇까지 소프트웨어라고 생각할 수 있을까? 소프트웨어가 Soft + ware라면 우리의 삶까지 소프트웨어 아닐까? 삶을 엔지니어링하는 이야기
+" />
+<meta name="twitter:image" content="http://vangona.github.io" />
+<meta name="author" content="" />
+<link rel="author" href="" />
+<meta property="og:locale" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Engineering Humanities" />
+<meta property="og:description" content="우리는 무엇까지 소프트웨어라고 생각할 수 있을까? 소프트웨어가 Soft + ware라면 우리의 삶까지 소프트웨어 아닐까? 삶을 엔지니어링하는 이야기
+" />
+<meta
+  property="og:url"
+  content="http://vangona.github.io/tag/engineering-humanities/"
+/>
+<meta property="og:site_name" content="vanGona" />
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic"
+/>
+<style>
+  html {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  }
+</style>
+<link rel="stylesheet"
+href="/assets/css/bf.css"> 
+ <body>
+   <div class="wrapper" id="blep">
+    <header>
+ <div class="menu">
+   <div class="logo">
+      <a href="/">vanGona</a>
+      <object
+        type="image/svg+xml"
+        data="/assets/img/dactl.svg"
+        class="logosvg"
+      >
+        Your browser does not support svg images
+      </object>
+   </div>
+    <input id="mobile-nav__toggle" type="checkbox" />
+   <ul class="mobile-nav">
+      <label class="toggle-nav" for="mobile-nav__toggle">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+     <div class="nav__profile">vanGona</div>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/humanities-coding">
+            - 코딩과 인문학</a
+          >
+          <a class="dropdown-item" href="/tag/humanities-cs">
+            - 컴퓨터공학과 인문학</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/boj">
+            - 백준 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/programmers">
+            - 프로그래머스 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/theory">
+            - 알고리즘 & 자료구조 이론</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/html-css">
+            - HTML & CSS</a
+          >
+          <a class="dropdown-item" href="/tag/js">
+            - Javascript</a
+          >
+          <a class="dropdown-item" href="/tag/etc">
+            - 이외</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/network">
+            - Network</a
+          >
+          <a class="dropdown-item" href="/tag/os">
+            - OS</a
+          >
+          <a class="dropdown-item" href="/tag/convention">
+            - Convention</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+        </a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/myowndrawer">
+            - 나만의 서랍장</a
+          >
+          <a class="dropdown-item" href="/tag/blueprint-maker">
+            - 청사진제작소</a
+          >
+          <a class="dropdown-item" href="/tag/word-dictionary">
+            - 나를 표현하는 단어들</a
+          >
+       </ul>
+   </ul>
+   <ul class="visible-links"> 
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/humanities-coding">
+            - 코딩과 인문학</a
+          >
+          <a class="dropdown-item" href="/tag/humanities-cs">
+            - 컴퓨터공학과 인문학</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/boj">
+            - 백준 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/programmers">
+            - 프로그래머스 문제풀이</a
+          >
+          <a class="dropdown-item" href="/tag/theory">
+            - 알고리즘 & 자료구조 이론</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/html-css">
+            - HTML & CSS</a
+          >
+          <a class="dropdown-item" href="/tag/js">
+            - Javascript</a
+          >
+          <a class="dropdown-item" href="/tag/etc">
+            - 이외</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/network">
+            - Network</a
+          >
+          <a class="dropdown-item" href="/tag/os">
+            - OS</a
+          >
+          <a class="dropdown-item" href="/tag/convention">
+            - Convention</a
+          >
+       </ul>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+       <ul class="dropdown-content">
+          <a class="dropdown-item" href="/tag/myowndrawer">
+            - 나만의 서랍장</a
+          >
+          <a class="dropdown-item" href="/tag/blueprint-maker">
+            - 청사진제작소</a
+          >
+          <a class="dropdown-item" href="/tag/word-dictionary">
+            - 나를 표현하는 단어들</a
+          >
+       </ul>
+   </ul>
+ </div>
+ <div class="social">
+   <ul>
+     <li>
+        <a
+          href="https://github.com/vangona"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-github"></span>
+        </a>
+     <li>
+        <a
+          href="https://youtube.com/뜬구름 공작소"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-youtube"></span>
+        </a>
+     <li>
+        <a
+          href="https://instagram.com/my_own_drawer_"
+          target="_blank"
+          class="smaller"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+     <li>
+        <a href="mailto:rlarhksrud14@gmail.com" target="_blank">
+          <span class="icon-mail_outline"></span>
+        </a>
+     <li>
+        <a href="#" onclick="switchTheme()" title="Switch theme?">
+          <span class="icon-invert_colors" id="theme-switcher"></span>
+        </a>
+   </ul>
+ </div>
+</header>
+ <div class="page-title-container">
+ <div class="heading-container">
+   <h1>개발과 인문학</h1>
+    <span>  <p>우리는 무엇까지 소프트웨어라고 생각할 수 있을까? 소프트웨어가 Soft + ware라면 우리의 삶까지 소프트웨어 아닐까? 삶을 엔지니어링하는 이야기
+  </span>
+ </div>
+</div>
+<p>There are no posts in this tag.
+<div class="tag-box">
+<hr/>
+<span>Check out other tags:</span>
+<ul>
+  <li>
+     <a href="/tag/2차원-배치/">#2차원 배치</a>
+  <li>
+     <a href="/tag/ci-cd/">#CI / CD</a>
+  <li>
+     <a href="/tag/next-js/">#Next.js</a>
+  <li>
+     <a href="/tag/algorithm/">#algorithm</a>
+  <li>
+     <a href="/tag/basic-math/">#basic-math</a>
+  <li>
+     <a href="/tag/boj/">#boj</a>
+  <li>
+     <a href="/tag/boostcourse/">#boostcourse</a>
+  <li>
+     <a href="/tag/bronze/">#bronze</a>
+  <li>
+     <a href="/tag/bruteforce/">#bruteforce</a>
+  <li>
+     <a href="/tag/cs/">#cs</a>
+  <li>
+     <a href="/tag/cs50/">#cs50</a>
+  <li>
+     <a href="/tag/dactl/">#dactl</a>
+  <li>
+     <a href="/tag/data-sturcture/">#data-sturcture</a>
+  <li>
+     <a href="/tag/dfs/">#dfs</a>
+  <li>
+     <a href="/tag/gold/">#gold</a>
+  <li>
+     <a href="/tag/howto/">#howto</a>
+  <li>
+     <a href="/tag/implementation/">#implementation</a>
+  <li>
+     <a href="/tag/jekyll/">#jekyll</a>
+  <li>
+     <a href="/tag/js/">#js</a>
+  <li>
+     <a href="/tag/number/">#number</a>
+  <li>
+     <a href="/tag/recursion/">#recursion</a>
+  <li>
+     <a href="/tag/silver/">#silver</a>
+  <li>
+     <a href="/tag/simulation/">#simulation</a>
+  <li>
+     <a href="/tag/sorting/">#sorting</a>
+  <li>
+     <a href="/tag/stack-queue/">#stack&queue</a>
+  <li>
+     <a href="/tag/tanstack-query/">#tanstack query</a>
+  <li>
+     <a href="/tag/theory/">#theory</a>
+  <li>
+     <a href="/tag/네이버-지도-api/">#네이버 지도 API</a>
+  <li>
+     <a href="/tag/누군가의-서랍장/">#누군가의 서랍장</a>
+  <li>
+     <a href="/tag/물리엔진/">#물리엔진</a>
+  <li>
+     <a href="/tag/와글와글/">#와글와글</a>
+  <li>
+     <a href="/tag/제주가이드/">#제주가이드</a>
+  <li>
+     <a href="/tag/지식공유/">#지식공유</a>
+  <li>
+     <a href="/tag/코드-품질/">#코드 품질</a>
+  <li>
+     <a href="/tag/크라우드펀딩/">#크라우드펀딩</a>
+</ul>
+<hr/>
+</div>
+<footer>
+    <span>임상심리학자가 개발을 추구하는 건에 대해서
+</span>
+    <span>written by Kim Kwan-kyoung</span>
+</footer>
+   </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+  
