@@ -756,11 +756,188 @@ href="/assets/css/bf.css">
      </div>
    </div>
  </div>
-   <h1 id="물리엔진-만들기">물리엔진 만들기</h1>
+   <h1 id="2차원-데이터-시각화를-해봅시다">2차원 데이터 시각화를 해봅시다.</h1>
 
-<h1 id="리액트스럽게-만들기">리액트스럽게 만들기</h1>
+<h2 id="문제의-발생과-접근">문제의 발생과 접근</h2>
 
-<h1 id="버그-수정하기">버그 수정하기</h1>
+<h3 id="데이터-시각화-기술적인-도전이란-무엇일까">데이터 시각화, 기술적인 도전이란 무엇일까?</h3>
+
+<ul>
+ <li>프로젝트를 진행하며 데이터 시각화(워드 클라우드)를 위한 라이브러리를 찾던 중, 프로젝트에 어울리는 방식으로 동작하는 데이터 시각화 라이브러리를 찾기가 어려웠다.
+ <li>필요한 동작에 비해 렌더링까지 라이브러리에서 맡고 있어서 UI 로직과의 분리가 어려워 리액트와의 합이 좋지 않거나, d3처럼 하나의 기능을 위해서 규모가 커졌다.
+ <li>데이터 시각화를 해주는 로직을 모른다면, 제대로 쓰고 있지 않다는 생각도 있었다. 핵심기능에 대한 기술적인 도전이라함은 단순히 라이브러리를 쓰는 것이 아니라 원리를 이해하는 것이라고 생각했다.
+</ul>
+
+<h3 id="문제-접근-탐구와-이해를-선호합니다">문제 접근, 탐구와 이해를 선호합니다.</h3>
+
+<ul>
+ <li>방법은 두 가지라고 생각했다. 하나는 라이브러리를 뜯어서 내부로직을 이해하면서 쓰는 것이고, 하나는 직접 만들어보는 쪽이었다.
+ <li>생각은 직접 만들어보는 쪽으로 움직였다.
+ <li>라이브러리를 뜯어서 본다면, 해당 라이브러리를 이해하게 되겠지만 우리가 직접 만들어본다면, 데이터 시각화에 대해 많은 것을 배울 수도 우리의 프로젝트에 맞게도 만들 수 있지 않을까?
+</ul>
+
+<h3 id="2차원-배치-알고리즘">2차원 배치 알고리즘</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206626971-2812c98e-a7fc-40db-a397-f3d4792ca0fb.png" alt="image" />
+(팀원분의 달팽이 순회로 2차원 사각형 적재 알고리즘 설계)
+
+<ul>
+ <li>처음에는 워드 클라우드의 형태로 만드려고 했었다보니, 2차원 사각형 적재 알고리즘을 중심으로 자료를 찾아보았다.
+ <li>하지만 이내 문제가 생겼는데 유저들의 키워드 관심사가 일정 수준 이상으로 길어진다면, 워드클라우드가 예쁘지 않다는 것이었다.
+ <li>워드클라우드는 공간을 꼼꼼히 채워 시각적인 완성감을 주는데, 그러기 위해서 긴 단어를 회전 시키는 등 2차원 사각형 적재 알고리즘을 사용한다.
+ <li>우리는 단순히 워드클라우드를 만드는 것이 아니라, 이것을 읽고 관심사로 생각하고 입장할 수 있어야했는데 회전을 시키는 것은 UX적으로 좋지 않다는 생각이 들었다.
+ <li>또한 회전을 시키지 않는다면, 글자가 길어진다면 사각형을 채워넣을 때 빈 공간이 애매해진다는 단점이 있었다.
+ <li>글자 수가 긴 글자가 글자 수가 짧고 인원 수가 많은 키워드보다 돋보일 수도 있다는 문제점도 있었다.
+</ul>
+
+<h3 id="우리-버블-차트로-바꿉시다">우리 버블 차트로 바꿉시다.</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206628218-17ffeba8-b5d0-4a06-90fe-7f5a423c6aa0.png" alt="image" />
+(버블차트 예시)
+
+<ul>
+ <li>버블 차트로 바꾼다면 어떨까? 버블 차트로 바꾼다면 위의 문제들이 해결되었다. 멤버수에 따라 radius를 주면 되고, 글자가 길어진다고 해도 키워드 버블 내부에 flex: wrap; 등으로 줄바꿈을 해주거나 elipsis 옵션을 주어서 해결할 수 있다고 생각했다.
+ <li>가독성도 더 좋아질 것 같았고, 더 ‘와글와글’한 UX를 줄 수 있다고 생각되었다.
+</ul>
+
+<h3 id="물리엔진의-도입">물리엔진의 도입</h3>
+
+<ul>
+ <li>처음에는 2차원 원형 적재 알고리즘을 사용하여 구현하려고 했으나, 2차원 원형 적재 알고리즘도 결국 겹침을 확인하고 일정 경로를 이동하여 다시 겹침을 확인해서 배치하는 것의 반복이었다. 이렇게 버블을 배치하면 인터랙티브한 데이터 시각화가 어렵고 유저 입장에서 UX가 지루할 수 있다는 생각이 들었다.
+ <li>물리엔진을 통해서 2차원 원형 배치를 구현한다면, 충돌력과 중력, 반발력등을 통해서 랜덤하고 동적인 변화를 준다면 지루해보일 수 있다는 문제를 해결할 수 있다는 아이디어가 떠올랐다.
+</ul>
+
+<h3 id="레퍼런스-라이브러리-찾아보기">레퍼런스 라이브러리 찾아보기</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206628520-9aac69e8-987d-44bc-a58d-c9a86dcaf49e.gif" alt="image" />
+(circlepacker 라이브러리 - 내부적으로 물리엔진이 있다.)
+
+<ul>
+ <li>실제로 우리가 생각한 이미지가 잘맞을지 기존의 여러 라이브러리를 찾아보았다.
+ <li>물리엔진을 구현한 matter.js 등이 있었는데, matter.js는 정말로 물리를 구현하기 위한 것이라서 프로젝트의 버블 차트와는 맞지 않았다. 사용하면 구현은 가능하겠지만, 프론트 엔드 개발이 아닌 matter.js 공부를 하게 될 것이라는 판단이었다.
+ <li>circlepacker라는 라이브러리가 있었는데, 해당 라이브러리는 자성을 주어서 circle이 멈추게 하는 정말 원형 적재를 위한 라이브러리였다.
+ <li>다만 확실히 우리가 바라는 동적인 느낌을 줄 수 있겠다는 생각이 들었다.
+</ul>
+
+<h3 id="연산만-하게-만듭시다">연산만 하게 만듭시다.</h3>
+
+<ul>
+ <li>우리가 리액트를 사용하고 있으니, 이 물리엔진이 canvas등을 통해서 화면에 그리게까지 만드는 것보다는 연산 로직만 담당하도록 만드는 것이 낫겠다는 판단을 했다.
+ <li>이렇게 한다면 이후 canvas, 직접 DOM 렌더링, 리액트 렌더링 등 여러 렌더링 방식의 성능을 비교해보기도 좋을 것 같았고 리액트의 설계 배경에 더 잘 맞았다.
+ <li>리액트의 동작원리를 생각해보면, 애니메이션이니 무조건 canvas를 쓰는 것보다 DOM 객체 정보를 활용하며 리렌더링을 하는 것이 오히려 성능상 이점을 가져올 수도 있다는 생각도 있었다.
+ <li>디버깅을 할 때 UI로직과 연산 로직이 분리되어 있으니 수월할 것이라는 판단도 있었다.
+</ul>
+
+<h1 id="그럼-이제-물리엔진을-만들어봅시다">그럼 이제 물리엔진을 만들어봅시다.</h1>
+
+<h2 id="ui를-먼저-그리기-프론트엔드의-장점">UI를 먼저 그리기, 프론트엔드의 장점</h2>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/203589182-59f36ad2-6a8f-445b-b017-3ea87e816b01.png" alt="image" />
+
+<ul>
+ <li>만들 예정인 버블 차트의 UI를 우선 리액트 컴포넌트로 먼저 만들고, radius, X 좌표, Y 좌표를 상태로 두어서 위치와 크기를 동적으로 변경할 수 있도록 했다. 이후 연산된 좌표가 제대로 동작하고 있는지를 시각적으로 보기 위함이었다.
+ <li>프론트엔드에서는 이렇게 UI를 만들어두면 연산이 제대로 동작하고 있는지 마치 테스트 코드와 유사하게 볼 수 있는 이점이 있다.
+</ul>
+
+<h3 id="물리엔진의-시작-속도를-만들기">물리엔진의 시작, 속도를 만들기</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206630630-1b81c5f6-f744-4815-8011-679a184f3add.gif" alt="203851155-26e145d2-f7d7-44b8-b95d-f45263007d71" />
+
+<ul>
+ <li>일단 우리 프로젝트에 필요한 힘을 생각해보고, 속도와 마찰력 충돌력을 중심으로 물리엔진을 구현하기로 했다.
+ <li>원들의 상태와 충돌등을 구현하고 이해하기 쉽도록 객체지향으로 구현하였다.
+ <li>초기의 위치는 전체 container의 넓이와 높이에 랜덤으로 설정하게 해주었으며, 해당 위치에서 중심점으로 초기 벡터를 가지고 움직이도록 하였다.
+</ul>
+
+<h3 id="자연스러운-움직임을-위해-힘을-만들기">자연스러운 움직임을 위해 힘을 만들기</h3>
+
+<ul>
+ <li>마찰력은 현재의 속력을 잃게 만드는 힘, 충돌력은 겹침이 발생했을 때 겹침을 해소하는 힘이라고 개념적인 모델링을 하고 물리엔진을 구현하였다.
+ <li>각각의 힘은 계수를 정해주어 이후에 변경이 쉽게 만들었다.
+</ul>
+
+<h3 id="수학과-과학의-도움을-받기">수학과 과학의 도움을 받기</h3>
+
+<ul>
+ <li>마찰력은 진행중인 벡터의 양을 줄여주어서 해결할 수 있었는데, 자연스러운 충돌을 위해서는 충돌량이 어떻게 발생하는지에 대해서 이해할 필요가 있었다.
+ <li>다행히 이런 부분에 대해서 연구하신 분들이 많아서, 우리는 2차원에서 발생하는 원형 사이의 충돌량에 대한 공식을 사용하였다.
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre><td class="code"><pre>  <span class="nx">caculateCollisionScala</span><span class="p">(</span>
+    <span class="nx">speedA</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+    <span class="nx">speedB</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+    <span class="nx">massA</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+    <span class="nx">massB</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+    <span class="nx">repulsiveForce</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">(</span><span class="nx">speedA</span> <span class="o">+</span>
+        <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nx">massB</span> <span class="o">*</span> <span class="p">(</span><span class="nx">speedB</span> <span class="o">-</span> <span class="nx">speedA</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="nx">massA</span> <span class="o">+</span> <span class="nx">massB</span><span class="p">)</span> <span class="o">+</span>
+        <span class="nx">repulsiveForce</span> <span class="o">*</span> <span class="nx">REPULSIVE_COEFFICIENT</span><span class="p">)</span> <span class="o">*</span>
+      <span class="nx">COLLISION_COEFFICIENT</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</pre></table>
+</div>
+</div>
+
+<p><a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;blogId=eunmikorea&amp;logNo=221344714516">참고자료 : 물체의 운동과 2차원 충돌</a>
+
+<h3 id="문제-발생">문제 발생</h3>
+
+<ul>
+ <li>충돌력이 예상보다 강했고, 세부조정을 거치면서 마찰력만으로는 충돌력을 서서히 감소시켜주는 것이 어렵다는 것을 알게되었다.
+ <li>충돌력을 줄이기 위해서는 초기 벡터를 줄여야했지만, 그렇게 하면 중앙으로 모이는 것이 너무 느렸다. 충돌력과 별개로 반발계수를 추가하여 실험해봤지만 맘에 드는 모양으로 움직이지 않았다.
+ <li>이 모든 부분을 해결해줄 수 있는 것은 중력이라는 판단을 할 수 있었다.
+</ul>
+
+<h3 id="중력-구현">중력 구현</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206631059-1d64ed84-2279-4eb9-b7ce-568b1eaba8b5.gif" alt="204280957-1cda2268-5290-414f-a50b-a91830ef28cf" />
+
+<ul>
+ <li>중력을 구현하고 나니 원하는 모양에 가까워졌다.
+ <li>다만 아직은 와글와글보다는 왁자지껄에 가까운 것이 만들어졌다.
+ <li>미세한 수치 조정을 거치면 원하는 결과가 생길 수 있을 것 같았다.
+</ul>
+
+<h1 id="결과">결과</h1>
+
+<h3 id="결과물">결과물</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206632520-50e4d3a2-3158-4f71-aa76-890331a45dec.gif" alt="image2" />
+
+<ul>
+ <li>미세한 수치 조정을 거치고, transition을 통해서 성능 문제도 해결하였다.
+</ul>
+
+<h3 id="성능-비교">성능 비교</h3>
+
+<ul>
+ <li>여러 성능 비교를 하면서 알게 된 것은 적은 움직임 연산에서는 차라리 DOM과 리액트 리렌더링이 나을 수 있다는 것이었다.
+ <li>결국 canvas를 그리기 위해서는 requestAnimationFrame이나 setInterval의 간격을 짧게 주어서 매 프레임마다 충돌연산이 되어야하는데, 거기에서 소모되는 CPU 연산 비용이 아주 크기 때문에 DOM의 개수가 최소 세자리수가 되지 않는다면 리액트 리렌더링을 하는 것이 CPU 사용량의 성능이 훨씬 좋다는 것이었다.
+ <li>심지어 세자리수가 되더라도 연산해야하는 충돌량이 늘어나기 때문에, 리액트 리렌더링에서 transition을 통해 버블 차트의 움직임을 최적화시키고 나니 canvas를 통해 애니메이션을 만드는 것보다 성능이 훨씬 좋았다.
+ <li>버블 200개 기준 canvas로 requestAnimationFrame을 사용하면 CPU 사용량이 90%를 넘어갔지만, 리렌더링 + transition, setInterval 0.5s를 사용하면 움직임도 부드럽고 GPU도 더 많이 사용하며 CPU 사용량도 12%로 충분했다.
+</ul>
+
+<h3 id="의의">의의</h3>
+
+<ul>
+ <li>리액트의 설계 원칙을 공부하면 JS에 대해 더 깊게 이해할 수 있다고는 생각했었지만, 막상 해보고 나니 UI로직과 연산 로직이 분리되는 것이 얼마나 중요한지 다시 느낄 수 있었다.
+</ul>
 
  <div class="readmore">
     <a href="/posts/circlepacker-physics" role="button">Read more</a>
