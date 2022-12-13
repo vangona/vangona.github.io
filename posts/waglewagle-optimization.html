@@ -30,7 +30,7 @@
   와글와글 성능 최적화 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="라이트 하우스 점수 개선 Next.js의 코드스플리팅, SSR, SSG과 폰트 파일 압축 및 캐싱을 통해 성능 점수를 60점에서 94점으로 개선할 수 있었다. 스크린 리더에 기본 언어를 명시하고자 lang 태그를 사용하고 배경색과 글자색의 대비를 높여 접근성 점수를 73점에서 100점으로 개선할 수 있었다. meta 태그와 라이트하우스 SEO 점수를 85점에서 100점으로 개선할 수 있었다....">
+<meta name="description" content="와글와글 성능 개선 기록 라이트 하우스 점수 개선 성능 Next.js의 코드스플리팅, SSR, SSG과 폰트 파일 압축 및 캐싱을 통해 성능 점수를 60점에서 94점으로 개선할 수 있었다. 접근성 데이터 시각화를 canvas가 아닌 리액트로 렌더링하고 있었고, 스크린 리더에 기본 언어를 명시하고자 lang 태그를 사용하고 배경색과 글자색의 대비를 높여 접근성 점수를 73점에서 100점으로...">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -303,7 +303,7 @@ href="/assets/css/bf.css">
           와글와글 성능 최적화
      </h1>
      <div class="post-meta">
-        <span>06/12/2022</span>
+        <span>05/12/2022</span>
         <span>
               <a href="/tag/와글와글">#와글와글</a>
               <a href="/tag/라이트하우스">#라이트하우스</a>
@@ -313,27 +313,53 @@ href="/assets/css/bf.css">
      </div>
    </div>
  </div>
-   <h1 id="라이트-하우스-점수-개선">라이트 하우스 점수 개선</h1>
+   <h1 id="와글와글-성능-개선-기록">와글와글 성능 개선 기록</h1>
+
+<h2 id="라이트-하우스-점수-개선">라이트 하우스 점수 개선</h2>
 
 <p><img src="https://user-images.githubusercontent.com/69471032/207239469-4cdf7b57-925c-454a-96ae-c265205f6bfc.png" alt="image" />
 
+<h3 id="성능">성능</h3>
+
 <ul>
  <li>Next.js의 코드스플리팅, SSR, SSG과 폰트 파일 압축 및 캐싱을 통해 성능 점수를 <strong>60점</strong>에서 <strong>94점으로 개선</strong>할 수 있었다.
- <li>스크린 리더에 기본 언어를 명시하고자 lang 태그를 사용하고 배경색과 글자색의 대비를 높여 접근성 점수를 <strong>73점</strong>에서 <strong>100점으로 개선</strong>할 수 있었다.
+</ul>
+
+<h3 id="접근성">접근성</h3>
+
+<ul>
+ <li>데이터 시각화를 canvas가 아닌 리액트로 렌더링하고 있었고, 스크린 리더에 기본 언어를 명시하고자 lang 태그를 사용하고 배경색과 글자색의 대비를 높여 접근성 점수를 <strong>73점</strong>에서 <strong>100점으로 개선</strong>할 수 있었다.
+</ul>
+
+<h3 id="seo">SEO</h3>
+
+<ul>
  <li>meta 태그와 라이트하우스 SEO 점수를 <strong>85점</strong>에서 <strong>100점으로 개선</strong>할 수 있었다.
 </ul>
 
-<h1 id="크롬-개발자-도구-성능-측정-및-개선">크롬 개발자 도구 성능 측정 및 개선</h1>
+<h2 id="크롬-개발자-도구-성능-측정-및-개선">크롬 개발자 도구 성능 측정 및 개선</h2>
 
 <ul>
- <li>크롬 개발자 도구를 통해서 버블차트의 특정 상태로 인해 사용되지 않는 EventListener가 지속적으로 쌓이고 있는 버그를 발견, 해당 상태를 제거하는 로직으로 버그를 해결하여 <strong>최대 800</strong>까지 쌓이던 EventListener를 <strong>400 이하로 유지</strong>하고 <strong>JS Heap 메모리</strong>를 <strong>최대 60mb</strong>에서 <strong>35mb로 감소</strong>시킬 수 있었다.
+ <li>크롬 개발자 도구 성능 모니터를 통해서 버블차트의 특정 상태로 인해 사용되지 않는 EventListener가 지속적으로 쌓이고 있는 버그를 발견, 해당 상태를 제거하는 로직으로 버그를 해결하여 <strong>최대 800</strong>까지 쌓이던 EventListener를 <strong>400 이하로 유지</strong>하고 <strong>JS Heap 메모리</strong>를 <strong>최대 60mb</strong>에서 <strong>35mb로 감소</strong>시킬 수 있었다.
 </ul>
 
-<h1 id="api-데이터-리렌더링-성능-개선">API 데이터 리렌더링 성능 개선</h1>
+<h2 id="api-데이터-리렌더링-성능-개선">API 데이터 리렌더링 성능 개선</h2>
+
+<h3 id="short-polling과-리렌더링">short polling과 리렌더링</h3>
 
 <ul>
- <li>서비스에 맞는 실시간성을 유지하기 위해서 Short Polling을 사용하였습니다. 그리고 이에 따라서 요청 주기마다 API 응답에 의해 리렌더링이 발생했다.
- <li>Tanstack Query의 Caching 기능과 렌더링 최적화를 통해서 <strong>1초마다 발생하던 리렌더링</strong>을 *<em>데이터가 변경되었을 때만 하도록 개선</em> 할 수 있었다.
+ <li>서비스에 맞는 실시간성을 유지하기 위해서 Short Polling을 사용했는데, 이에 따라서 요청 주기마다 API 응답에 의해 리액트 버블 차트의 데이터들이 전부 변경되며 리렌더링이 발생했다.
+</ul>
+
+<h3 id="tanstack-query-활용하기">Tanstack Query 활용하기</h3>
+
+<ul>
+ <li>Tanstack Query의 Caching 기능과 렌더링 최적화를 통해서 <strong>1초마다 발생하던 리렌더링</strong>을 *<em>데이터가 서버에서 변경되었을 때만 하도록 개선</em> 할 수 있었다.
+</ul>
+
+<h3 id="변경된-데이터만-리렌더링하기">변경된 데이터만 리렌더링하기</h3>
+
+<ul>
  <li>이후 UI 로직을 수정하여, 변경된 데이터가 수신되었더라도 <strong>전체 버블차트가 리렌더링</strong> 되는 것이 아니라 <strong>변경된 키워드 버블만 리렌더링</strong> <strong>될 수 있도록 최적화</strong>시킬 수 있었다.
 </ul>
 

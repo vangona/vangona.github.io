@@ -242,10 +242,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
-  .your-own-drawer {
+  .as-a-project-leader {
     margin-bottom: 2em;
   }
-  .your-own-drawer::before {
+  .as-a-project-leader::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -256,7 +256,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .your-own-drawer::after {
+  .as-a-project-leader::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -269,20 +269,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .your-own-drawer-container,
-  .your-own-drawer-container::before,
-  .your-own-drawer-container::after {
+  .as-a-project-leader-container,
+  .as-a-project-leader-container::before,
+  .as-a-project-leader-container::after {
     height: 25rem;
   }
-  .your-own-drawer-bleed-container,
-  .your-own-drawer-bleed-container::before,
-  .your-own-drawer-bleed-container::after {
+  .as-a-project-leader-bleed-container,
+  .as-a-project-leader-bleed-container::before,
+  .as-a-project-leader-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .your-own-drawer-container,
-        .your-own-drawer-container::before,
-        .your-own-drawer-container::after{
+        .as-a-project-leader-container,
+        .as-a-project-leader-container::before,
+        .as-a-project-leader-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -291,121 +291,191 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        your-own-drawer your-own-drawer-container hero-hov
+        as-a-project-leader as-a-project-leader-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/your-own-drawer" title="누군가의 서랍장"
-          >누군가의 서랍장</a
+        <a href="/posts/as-a-project-leader" title="프로젝트 리더로 도전하기, 와글와글 개발기"
+          >프로젝트 리더로 도전하기, 와글와글 개발기</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/12/06</span>
+        <span>2022/12/14</span>
         <span>
-          <a href="/tag/누군가의 서랍장">#누군가의 서랍장</a>
-          <a href="/tag/크라우드펀딩">#크라우드펀딩</a>
-          <a href="/tag/지식공유">#지식공유</a>
+          <a href="/tag/와글와글">#와글와글</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="누군가의-서랍장"><center>누군가의 서랍장</center></h1>
+   <h1 id="프로젝트-리더로-도전하기-와글와글-개발기"><center>프로젝트 리더로 도전하기, 와글와글 개발기</center></h1>
 
-<p><img src="https://user-images.githubusercontent.com/69471032/207241570-87e8813c-5176-47c4-8dc0-1c2fac3c52c4.png" alt="image" />
+<h2 id="-week01-서로를-알아가기">👨‍👨‍👧‍👧 Week01. 서로를 알아가기</h2>
 
-<h2 id="-생각정리를-위한-공간과-책-그리고-sns">/ 생각정리를 위한, 공간과 책 그리고 SNS</h2>
+<h3 id="생각이-많은-사람들">생각이 많은 사람들</h3>
 
-<hr />
+<ul>
+ <li>undefined가 모인 배경에는 ‘근거있는 선택’이 있었다. 주제를 먼저 정한 것이 아니라, 프로젝트에 임하는 마음가짐이 같은 사람들이 모였다.
+</ul>
 
-<h3 id="1-생각정리를-위한-공간">1. 생각정리를 위한 공간</h3>
+<h3 id="아이디어가-넘쳤습니다">아이디어가 넘쳤습니다.</h3>
 
-<p><img src="https://user-images.githubusercontent.com/69471032/207241725-7cd252e9-ee1a-4d1f-80c8-75da063c05cc.png" alt="image" />
+<ul>
+ <li>많은 아이디어가 공유되는 것은 좋았지만 그로인해 너무 많은 아이디어가 회의 시간동안 나뉘어졌고, 기획동안 회의가 샌다는 의견이 팀 내에 공유되었다.
+ <li>역할과 규칙이 꼭 필요했다.
+</ul>
 
-<p>이러한 질문에서 시작했습니다.
-사람들이 생각할 여유를 만들고 싶었습니다.
+<h3 id="역할과-규칙을-만듭시다">역할과 규칙을 만듭시다.</h3>
 
-<p>프로젝트 기획자는 생각 정리를 위한 공간을 운영하고 있습니다.
+<ul>
+ <li>프로젝트 리더로써 프로젝트의 전체 리딩을 맡고, 프론트엔드와 백엔드 각각의 파트 리더를 선정하여 각 파트의 진행 역할을 분리했다. 또한 일정과 문서 기록 담당을 한 명 두어서 프로젝트 전체 리딩에 빈틈이 생기지 않도록 했다.
+ <li>규칙을 정했는데, 규칙이 오버엔지니어링이 되지 않도록 첫주차에는 틀을 정하는데에 중점을 두고 세부사항은 이후에 논의하기로 했다. (<em>규칙에도 근거가 필요합니다.</em>)
+</ul>
 
-<p>누군가는 이곳에서 복잡한 머리를,
-누군가는 답답한 감정을,
-누군가는 묻혀있던 바램을 정리합니다.
+<h3 id="개발환경과-코딩-컨벤션을-만듭시다">개발환경과 코딩 컨벤션을 만듭시다.</h3>
 
-<p>그리고 이곳에서 글, 그림, 사진 또는 무언가로
-정리된 생각들을 모아 책을 만들고 있습니다.
-도움이 되길 바라며 질문을 더해서요.
+<ul>
+ <li>개발환경, 개발 도구, 코딩 컨벤션, Github 규칙 같은 것들을 정했다. (바빠지면 바빠질수록 뼈져리게 느꼈다.)
+ <li>내가 맡은 부분이 아니더라도, 코드 리뷰를 하여 다양한 분야의 지식 공유를 진행하기로 했다. 근거있는 선택에 모두가 함께하기 위해서였다.
+</ul>
 
-<p><strong>하늘의 색을 기억하고 계신가요?</strong>
+<h2 id="-week02-협업에-익숙해지기">🤼 Week02. 협업에 익숙해지기</h2>
 
-<p><strong>당신께 행복은 무엇이신가요?</strong>
+<h3 id="파트-분리">파트 분리</h3>
 
-<h3 id="2-생각정리를-위한-책-나만의-서랍장">2. 생각정리를 위한 책, 나만의 서랍장</h3>
+<ul>
+ <li>각자의 영역에 도전하고 싶은 부분들이 많았기 때문에, 백엔드와 프론트엔드를 나누어서 개발했다.
+ <li>프로젝트의 리딩을 함에 있어서 어려워질 것은 알았지만, 어렵다고 포기하기에는 모두 바라는 것이 있었고 거기에 대해서 커뮤니케이션을 핸들링하고 개발에 집중하도록 의사결정의 주도권을 잡아서 보조하는 것이 리더의 역할이라고 생각했다.
+ <li>다만 작은 팀에서 일이 너무 분리되지 않도록, 파트별 기록과 진행 상황 공유를 통해서 서로의 진행상황을 꾸준히 공유하기로 했다.
+</ul>
 
-<p>사람은 때로 일기를 쓰거나 질문지를 쓰며 생각을 정리하려는 시도를 합니다.
-몇몇 생각에는 감정과 바램이 함께 담겨있기 때문에 혼자서 정리가 어렵습니다.
-그래서 자기연민에 빠지거나 자신의 생각에 갇혀버리기도 합니다.
-그건 어렵고 아픈 과정입니다. 돕고 싶었습니다.
+<h3 id="트러블-슈팅을-정리합시다">트러블 슈팅을 정리합시다.</h3>
 
-<p>50여명의 사람들이 정리한 100여개의 생각들을 추려 책으로 엮었습니다.
-적절한 질문과 답변 페이지를 두어서, 책을 읽으며 떠오른 자신의 생각을
-정리할 수 있도록 돕습니다. 위로를 받되 스스로에게 갇히지 않으면서요.
+<ul>
+ <li>팀 프로젝트 기간 동안은 특히 더, 단순한 구현보다는 과정이 더 중요하다고 생각했다.
+ <li>각자의 트러블 슈팅을 정리하면 단순히 코드 리뷰 때 읽을 수 없는 과정을 이해할 수 있다고 생각이 들어서 트러블 슈팅을 정리하기 시작했다.
+</ul>
 
-<p>정답을 쓰려 하지 말고, 질문을 보고
-떠오르는 것들을 다 적은 다음
-그다음 버릴 생각을 버리고,
-예쁘게 정리하시면 됩니다.
+<p><a href="https://enormous-iguanadon-33a.notion.site/undefined-7e022b5e21e04954a9849d9b2ea92c10">와글와글 트러블 슈팅</a>
 
-<p>생각에 얽매이지도, 피하지도 않도록 잘 정리해두는
-나만의 서랍장인 것입니다.
+<h3 id="구현보다-의사결정이-중요합니다--마무리-스크럼">구현보다 의사결정이 중요합니다 : 마무리 스크럼</h3>
 
-<p><strong>영감은 대단한 것이 아니라 솔직한 곳에서 온다.</strong>
+<ul>
+ <li>시간이 갈수록 협업은 단순한 개인 개발과는 다른 것이라는 걸 느꼈다. 파트가 분리된 것도 영향을 주었고, 이에 따라 구현보다는 의사결정과 그것의 싱크를 맞추는 것이 정말 필요하다는 생각을 했다.
+ <li>이를 위해 하루가 종료되고, 마무리 스크럼을 진행하기로 결정되었다.
+ <li>데일리 스크럼과 유사하게 하루 동안 어떤 작업이 진행되었는지, 내일을 위해 어떤 작업을 추가로 진행할 것인지 나누어 서로가 어떤 작업을 하고 있는지 공유할 수 있도록 했다.
+</ul>
 
-<h3 id="3-정리된-생각을-나누는-sns">3. 정리된 생각을 나누는 SNS</h3>
+<h3 id="차량은-생산성을-높여줍니다--유머와-여유의-탄생">차량은 생산성을 높여줍니다 : 유머와 여유의 탄생</h3>
 
-<h2 id="-창업-과정">/ 창업 과정</h2>
+<p><img src="https://user-images.githubusercontent.com/69471032/202074041-da91a700-e87a-4ce9-a380-41eb96044131.png" alt="https://user-images.githubusercontent.com/69471032/202074041-da91a700-e87a-4ce9-a380-41eb96044131.png" />
 
-<hr />
+<ul>
+ <li>어느 날 게더타운에 고카트가 있다는 것을 알게되었는데, 그 뒤로 카트는 우리팀의 슬리퍼가 되었다.
+ <li>단순히 게임 내의 요소보다는 긴장된 회의가 끝난 이후 서로의 긴장을 푸는 장치가 되어주었고, Week03의 커뮤니케이션 트러블 슈팅의 중요한 도움이 되었다.
+</ul>
 
-<h3 id="청년창업지원사업">청년창업지원사업</h3>
+<h3 id="기술적인-도전이란-무엇일까">기술적인 도전이란 무엇일까?</h3>
 
-<h3 id="공간을-만들기">공간을 만들기</h3>
+<ul>
+ <li>나는 부스트캠프가 시작할 때부터 팀 프로젝트때까지 계속 기술적인 도전에 대해 고민했었다. 단순히 남들이 모르는 기술을 사용하는 것보다는 문제를 나의 힘으로 해결할 수 있는 힘을 기르는게 도전이라고 생각했었다.
+ <li>알고보니 팀원들도 다들 크기가 다르지만, 같은 고민을 가지고 있었다. Week02때부터 팀 내에서 기술적인 도전과 탐구는 무엇인지에 대한 이야기를 나누기 시작했다.
+</ul>
 
-<h3 id="책을-만들기">책을 만들기</h3>
+<h2 id="-week03-컨디션-관리-유머와-여유-챙기기">💁 Week03. 컨디션 관리, 유머와 여유 챙기기</h2>
 
-<h3 id="코로나와-sns">코로나와 SNS</h3>
+<h3 id="컨디션-관리의-중요성">컨디션 관리의 중요성</h3>
 
-<h2 id="-폐업-신고">/ 폐업 신고</h2>
+<ul>
+ <li>3주차가 되자, 컨디션 관리의 중요성이 나타나기 시작했다. 다들 긴장이 많이 되었었고, 긴장감은 판단력을 흐리게 만들었다.
+ <li>이건 팀 일정 관리로는 어려웠으며, 멘탈적인 부분이었기 때문에 많은 고민이 되었다.
+ <li>아침에 일부러 TMI를 나누고 낮잠시간을 만들었다.
+ <li>많은 휴식은 긴장을 풀게 만들지만, 너무 딱딱한 경직감도 마찬가지로 생산성을 저하시킨다.
+</ul>
 
-<p>무언가를 포기해야 하는 도전을 할 때는, 포기해야 하는 것보다 더 얻을게 있는 것 같다는 판단이 섰을 때 도전했다. 내 나이에서 우선순위는 성취보다 배움이 먼저라고 생각했다.
+<h3 id="wiki-작성">Wiki 작성</h3>
 
-<p>창업지원사업에 지원하며 기대했던 것은 좋은 실패였다.
+<ul>
+ <li>시간이 지날수록 작업내용이 공유되지 않았고, 프로젝트 초반부에 작업내용이 공유되지 않으니 기획의 싱크가 많지 않는 경우가 종종 생겼다.
+ <li>기획의 싱크를 맞출 때가 한 번 되었다고 생각했고, 다 같이 Wiki를 쓰자는 제안을 했다.
+ <li>다 같이 Wiki의 내용을 읽으며, 기획에 대한 생각이 다른 부분이 있다면 나누고 싱크를 맞추어 개발 목표를 다시 맞출 수 있었다.
+</ul>
 
-<p>성공에 대한 기대는 분명 있었다. ‘나는 부자가 될거야!’ 라는 기대보다는, 나의 비전과 가치관에 맞는 무언가를 새롭게 만들어서 가치전달 한다는 것 때문에 창업이 끌렸다.
+<h3 id="절반에서-돌아보기--포스트-모템">절반에서 돌아보기 : 포스트 모템</h3>
 
-<p>다만 창업의 선택은 많은 것을 포기해야 하는 것이었는데, ‘상담을 전공하는 대학생, 놀라운 아이디어로 한 번에 사업 성공을 거두다!’ 같이 꿈 같은 확률을 쫓는 것은 적어도 나한테는 타산이 안 맞았다.
+<ul>
+ <li>지난 주에 이어 우리는 충분한 기술적 도전을 하고 있는가에 대해서 나뉘어지기도 했다.
+ <li>그렇게 제대로 가지 못하고 있는 부분에 대해서는 남은 시간을 계산하고, 조금 되돌아가기도 더 나아가야할 부분이 있다면 방향을 다잡으며 오버엔지니어링과 매몰을 경계했다.
+</ul>
 
-<p>창업의 평균 지속률은 매우 낮았고, 그 이야기는 창업이 자신감과 노력만으로 되는 것은 아니라는 것이었다.
+<h2 id="-week04-문서-레이아웃-개선">📒 Week04. 문서 레이아웃 개선</h2>
 
-<p>성공한 사람들은 한 번 이상의 실패를 겪었다는 통계적 사실이 있었다. 시행착오 없는 성공은 불안정한 모래성 같았다는 경험적 사실이 있었다.
+<h3 id="문서-레이아웃-수정">문서 레이아웃 수정</h3>
 
-<p>그런 사고 과정으로 나는 첫 창업을 통해 배워야 하는 가장 중요한 배움은 창업 실패라는 요상한 결론을 내렸다.
+<ul>
+ <li>컨디션 관리가 어려워지자, 서로의 문서를 읽기 어려워졌다. 이것을 UX적으로 해결할 수 없는 부분이 없을까 고민해보았다.
+ <li>중요한 문서는 depth를 낮추거나 다단을 사용해서 레이아웃이 한 눈에 들어오게 하는 등의 개선안을 간단히 준비해서 문서의 가독성을 높일 수 있었다.
+</ul>
 
-<p>좋은 실패를 위해서 열심히 할 수 있었다. 많은 돈이 들어가거나 인력이 더 필요하지 않은 사이클의 개괄적인 작업은 모두 해봤다. 기획, 사업계획서, 지원사업진행, 예산 사용, 서비스 운영, 고객 응대, 서비스 개선, 디자인, 제품 생산과 온라인 판매, 웹 개발까지 해봤다.
+<h3 id="github을-더-적극적으로-활용합시다">Github을 더 적극적으로 활용합시다.</h3>
 
-<p>내 자본이 들어가지 않았음에도 실패에 대해 내가 충분히 슬퍼할 수 있었던 이유는 아마도 일정수준 이상의 노력과 적절한 성공, 적절한 실패와 내 행동의 이유에 대한 완고함, 그리고 그 모든 것이 어쩌면 기획단계부터 틀렸다는 것을 받아들이는 과정을 모두 겪었기 때문인 것 같다.
+<ul>
+ <li>Github의 Issue가 Feature만을 관리하기 위해 사용되고 있었다. Github이 아니라 Git처럼 사용되고 있었다.
+ <li>Github을 더 적극적으로 활용하면, 서로의 작업 진행상황을 매번 공유하지 않아도 작업 내용을 이해할 수 있다고 생각되었다.
+ <li>따라 매일 하나의 Issue를 닫고, PR을 날리자는 규칙을 만들었다.
+ <li>그 정도로 작업 단위가 나뉘어지지 않고 있다면, 작업 크기가 너무 크지는 않은지 다시 점검하고 서로의 상태와 트러블을 매일 확인할 수 있게하기 위함이었다.
+ <li>또한 단순히 전달만으로는 휘발될 수 있는 트러블들을 Issue에 문서화하면서 전달하여 의사소통이 원활하도록 했다.
+</ul>
 
-<p>이런 과정을 통해 실패를 해본 사람과 해보지 않은 사람의 차이를 아주 조금 이해하게 된다. 가치는 완벽한 기획안이 아니라 끊임없는 개선에서 온다는 애자일 방법론에 대한 체험적인 이해다.
+<h3 id="문서로-대화하기">문서로 대화하기</h3>
 
-<p>비즈니스로 보면 시장에 대한 겸손함일 수도 있겠고, 심리학으로 보면 삶의 행복은 단 순간의 성취가 아니라 가치를 정하고 계속 개선해나가며 생기는 꾸준한 안정감을 통해서 온다는 삶의 조각에 대한 깨달음이었을 수도 있겠다.
+<ul>
+ <li>프로젝트가 진행되고 커뮤니케이션이 원활해지며 문서만 가지고도 대화를 할 수 있는 것들이 많아졌다.
+ <li>이에 따라 이전까지 있던 워크 플로우에 불필요한 부분을 줄여낼 수 있었다.
+</ul>
 
-<p>나는 이렇게 폐업 신고를 하며 나의 첫 창업이 성공적이었다고 쓴다. 행복은 견고한 일상에 영감 한 스푼. 여전히 내 꿈은 행복한 사람이다.
+<h3 id="의사결정에-대해-다시-알리기">의사결정에 대해 다시 알리기</h3>
+
+<ul>
+ <li>단순히 구현에 매몰되면 안된다는 것이 공유되었다.
+ <li>현재 이력서 작성등으로 마음이 조급한 상황에서 피곤해지면, 목적과 우선순위를 잃고 구현에 매몰되기도 하기때문에 낮잠을 자서라도 판단력을 명료하게 만들자는 각오를 다졌다.
+</ul>
+
+<h2 id="️-week05-열심히-달리기">🏃‍♀️ Week05. 열심히 달리기</h2>
+
+<h3 id="커뮤니케이션-적응">커뮤니케이션 적응</h3>
+
+<ul>
+ <li>5주차가 되니, 다들 협업에 조금 익숙해졌다.
+ <li>이전보다 말하는 것이 줄어도 문서와 Github을 통해서 서로의 맥락을 이해할 수 있었고, 지금까지 쌓아놓은 것들 덕분에 커뮤니케이션 비용이 줄어들었다.
+ <li>Github의 브랜치 전략에 대해서도 훨씬 익숙해져서 어느 상황에 conflict를 조심해야하는지, PR과 커밋 단위는 어느정도가 되어야 남이 읽기 좋은지에 대해서도 이해하게 되었다.
+</ul>
+
+<h3 id="컨디션과-멘탈관리-이력서를-같이-씁시다">컨디션과 멘탈관리, 이력서를 같이 씁시다.</h3>
+
+<ul>
+ <li>문제는 할 일은 많다는 것이었다.
+ <li>프로젝트가 막바지에 이르니 원래 설정해둔 기능 구현 뿐만 아니라 프로젝트 소개와 이력서, 컴퍼니 데이 등 추가적으로 해야할 일이 많았다.
+ <li>프로젝트 소개와 이력서를 백로그의 우선순위 최상으로 설정하여 어떤 기능 우선순위보다도 먼저 처리할 수 있도록하였다.
+ <li>이 과정에서 필요하다면 기능 다이어트도 진행하였다. 개인의 문제더라도 팀이 다 같이 겪고 있다면 팀의 문제라고 생각했다.
+</ul>
+
+<h2 id="-week06-유종의-미-거두기">🏁 Week06. 유종의 미 거두기</h2>
+
+<h3 id="리더로써">리더로써</h3>
+
+<ul>
+ <li>팀원들이 야근을 많이하는게 보이면 일정과 필요한 구현기능의 우선순위 확인하고 내가 할 수 있는 일을 도와서 낮잠시간을 가지도록 했다.
+ <li>프로젝트가 마무리 되어가며, 피곤함과 조급함과 일정관리의 모호함이 섞이면서 판단력이 흐려지고 감정문제가 생기는 것은 정말 큰 문제라는 판단이었다.
+ <li>(나도 옆에서 누가 확인하고 피곤해보이면 일 뺏어간다음 낮잠자고 오라고하면 좋겠다고 생각했다. <strong><em>‘하지만… 그것이, 리더니까’</em></strong>)
+</ul>
 
  <div class="readmore">
-    <a href="/posts/your-own-drawer" role="button">Read more</a>
+    <a href="/posts/as-a-project-leader" role="button">Read more</a>
  </div>
 </article>
 <hr />
@@ -474,7 +544,7 @@ href="/assets/css/bf.css">
      <div
         class=" post-meta "
       >
-        <span>2022/12/06</span>
+        <span>2022/12/11</span>
         <span>
           <a href="/tag/와글와글">#와글와글</a>
           <a href="/tag/Parellex">#Parellex</a>
@@ -530,6 +600,268 @@ href="/assets/css/bf.css">
 
  <div class="readmore">
     <a href="/posts/waglewagle-parellex-scroll" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
+  .circlepacker-physics {
+    margin-bottom: 2em;
+  }
+  .circlepacker-physics::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .circlepacker-physics::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .circlepacker-physics-container,
+  .circlepacker-physics-container::before,
+  .circlepacker-physics-container::after {
+    height: 25rem;
+  }
+  .circlepacker-physics-bleed-container,
+  .circlepacker-physics-bleed-container::before,
+  .circlepacker-physics-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .circlepacker-physics-container,
+        .circlepacker-physics-container::before,
+        .circlepacker-physics-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        circlepacker-physics circlepacker-physics-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/circlepacker-physics" title="와글와글 데이터 시각화를 위한 2차원 배치 물리엔진 만들기"
+          >와글와글 데이터 시각화를 위한 2차원 배치 물리엔진 만들기</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2022/12/06</span>
+        <span>
+          <a href="/tag/와글와글">#와글와글</a>
+          <a href="/tag/2차원 배치">#2차원 배치</a>
+          <a href="/tag/물리엔진">#물리엔진</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="2차원-데이터-시각화를-해봅시다"><center>2차원 데이터 시각화를 해봅시다.</center></h1>
+
+<h2 id="문제의-발생과-접근">문제의 발생과 접근</h2>
+
+<h3 id="데이터-시각화-기술적인-도전이란-무엇일까">데이터 시각화, 기술적인 도전이란 무엇일까?</h3>
+
+<ul>
+ <li>프로젝트를 진행하며 데이터 시각화(워드 클라우드)를 위한 라이브러리를 찾던 중, 프로젝트에 어울리는 방식으로 동작하는 데이터 시각화 라이브러리를 찾기가 어려웠다.
+ <li>필요한 동작에 비해 렌더링까지 라이브러리에서 맡고 있어서 UI 로직과의 분리가 어려워 리액트와의 합이 좋지 않거나, d3처럼 하나의 기능을 위해서 규모가 커졌다.
+ <li>데이터 시각화를 해주는 로직을 모른다면, 제대로 쓰고 있지 않다는 생각도 있었다. 핵심기능에 대한 기술적인 도전이라함은 단순히 라이브러리를 쓰는 것이 아니라 원리를 이해하는 것이라고 생각했다.
+</ul>
+
+<h3 id="문제-접근-탐구와-이해를-선호합니다">문제 접근, 탐구와 이해를 선호합니다.</h3>
+
+<ul>
+ <li>방법은 두 가지라고 생각했다. 하나는 라이브러리를 뜯어서 내부로직을 이해하면서 쓰는 것이고, 하나는 직접 만들어보는 쪽이었다.
+ <li>생각은 직접 만들어보는 쪽으로 움직였다.
+ <li>라이브러리를 뜯어서 본다면, 해당 라이브러리를 이해하게 되겠지만 우리가 직접 만들어본다면, 데이터 시각화에 대해 많은 것을 배울 수도 우리의 프로젝트에 맞게도 만들 수 있지 않을까?
+</ul>
+
+<h3 id="2차원-배치-알고리즘">2차원 배치 알고리즘</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206626971-2812c98e-a7fc-40db-a397-f3d4792ca0fb.png" alt="image" />
+(팀원분의 달팽이 순회로 2차원 사각형 적재 알고리즘 설계)
+
+<ul>
+ <li>처음에는 워드 클라우드의 형태로 만드려고 했었다보니, 2차원 사각형 적재 알고리즘을 중심으로 자료를 찾아보았다.
+ <li>하지만 이내 문제가 생겼는데 유저들의 키워드 관심사가 일정 수준 이상으로 길어진다면, 워드클라우드가 예쁘지 않다는 것이었다.
+ <li>워드클라우드는 공간을 꼼꼼히 채워 시각적인 완성감을 주는데, 그러기 위해서 긴 단어를 회전 시키는 등 2차원 사각형 적재 알고리즘을 사용한다.
+ <li>우리는 단순히 워드클라우드를 만드는 것이 아니라, 이것을 읽고 관심사로 생각하고 입장할 수 있어야했는데 회전을 시키는 것은 UX적으로 좋지 않다는 생각이 들었다.
+ <li>또한 회전을 시키지 않는다면, 글자가 길어진다면 사각형을 채워넣을 때 빈 공간이 애매해진다는 단점이 있었다.
+ <li>글자 수가 긴 글자가 글자 수가 짧고 인원 수가 많은 키워드보다 돋보일 수도 있다는 문제점도 있었다.
+</ul>
+
+<h3 id="우리-버블-차트로-바꿉시다">우리 버블 차트로 바꿉시다.</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206628218-17ffeba8-b5d0-4a06-90fe-7f5a423c6aa0.png" alt="image" />
+(버블차트 예시)
+
+<ul>
+ <li>버블 차트로 바꾼다면 어떨까? 버블 차트로 바꾼다면 위의 문제들이 해결되었다. 멤버수에 따라 radius를 주면 되고, 글자가 길어진다고 해도 키워드 버블 내부에 flex: wrap; 등으로 줄바꿈을 해주거나 elipsis 옵션을 주어서 해결할 수 있다고 생각했다.
+ <li>가독성도 더 좋아질 것 같았고, 더 ‘와글와글’한 UX를 줄 수 있다고 생각되었다.
+</ul>
+
+<h3 id="물리엔진의-도입">물리엔진의 도입</h3>
+
+<ul>
+ <li>처음에는 2차원 원형 적재 알고리즘을 사용하여 구현하려고 했으나, 2차원 원형 적재 알고리즘도 결국 겹침을 확인하고 일정 경로를 이동하여 다시 겹침을 확인해서 배치하는 것의 반복이었다. 이렇게 버블을 배치하면 인터랙티브한 데이터 시각화가 어렵고 유저 입장에서 UX가 지루할 수 있다는 생각이 들었다.
+ <li>물리엔진을 통해서 2차원 원형 배치를 구현한다면, 충돌력과 중력, 반발력등을 통해서 랜덤하고 동적인 변화를 준다면 지루해보일 수 있다는 문제를 해결할 수 있다는 아이디어가 떠올랐다.
+</ul>
+
+<h3 id="레퍼런스-라이브러리-찾아보기">레퍼런스 라이브러리 찾아보기</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206628520-9aac69e8-987d-44bc-a58d-c9a86dcaf49e.gif" alt="image" />
+(circlepacker 라이브러리 - 내부적으로 물리엔진이 있다.)
+
+<ul>
+ <li>실제로 우리가 생각한 이미지가 잘맞을지 기존의 여러 라이브러리를 찾아보았다.
+ <li>물리엔진을 구현한 matter.js 등이 있었는데, matter.js는 정말로 물리를 구현하기 위한 것이라서 프로젝트의 버블 차트와는 맞지 않았다. 사용하면 구현은 가능하겠지만, 프론트 엔드 개발이 아닌 matter.js 공부를 하게 될 것이라는 판단이었다.
+ <li>circlepacker라는 라이브러리가 있었는데, 해당 라이브러리는 자성을 주어서 circle이 멈추게 하는 정말 원형 적재를 위한 라이브러리였다.
+ <li>다만 확실히 우리가 바라는 동적인 느낌을 줄 수 있겠다는 생각이 들었다.
+</ul>
+
+<h3 id="연산만-하게-만듭시다">연산만 하게 만듭시다.</h3>
+
+<ul>
+ <li>우리가 리액트를 사용하고 있으니, 이 물리엔진이 canvas등을 통해서 화면에 그리게까지 만드는 것보다는 연산 로직만 담당하도록 만드는 것이 낫겠다는 판단을 했다.
+ <li>이렇게 한다면 이후 canvas, 직접 DOM 렌더링, 리액트 렌더링 등 여러 렌더링 방식의 성능을 비교해보기도 좋을 것 같았고 리액트의 설계 배경에 더 잘 맞았다.
+ <li>리액트의 동작원리를 생각해보면, 애니메이션이니 무조건 canvas를 쓰는 것보다 DOM 객체 정보를 활용하며 리렌더링을 하는 것이 오히려 성능상 이점을 가져올 수도 있다는 생각도 있었다.
+ <li>디버깅을 할 때 UI로직과 연산 로직이 분리되어 있으니 수월할 것이라는 판단도 있었다.
+</ul>
+
+<h1 id="그럼-이제-물리엔진을-만들어봅시다">그럼 이제 물리엔진을 만들어봅시다.</h1>
+
+<h2 id="ui를-먼저-그리기-프론트엔드의-장점">UI를 먼저 그리기, 프론트엔드의 장점</h2>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/203589182-59f36ad2-6a8f-445b-b017-3ea87e816b01.png" alt="image" />
+
+<ul>
+ <li>만들 예정인 버블 차트의 UI를 우선 리액트 컴포넌트로 먼저 만들고, radius, X 좌표, Y 좌표를 상태로 두어서 위치와 크기를 동적으로 변경할 수 있도록 했다. 이후 연산된 좌표가 제대로 동작하고 있는지를 시각적으로 보기 위함이었다.
+ <li>프론트엔드에서는 이렇게 UI를 만들어두면 연산이 제대로 동작하고 있는지 마치 테스트 코드와 유사하게 볼 수 있는 이점이 있다.
+</ul>
+
+<h3 id="물리엔진의-시작-속도를-만들기">물리엔진의 시작, 속도를 만들기</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206630630-1b81c5f6-f744-4815-8011-679a184f3add.gif" alt="203851155-26e145d2-f7d7-44b8-b95d-f45263007d71" />
+
+<ul>
+ <li>일단 우리 프로젝트에 필요한 힘을 생각해보고, 속도와 마찰력 충돌력을 중심으로 물리엔진을 구현하기로 했다.
+ <li>원들의 상태와 충돌등을 구현하고 이해하기 쉽도록 객체지향으로 구현하였다.
+ <li>초기의 위치는 전체 container의 넓이와 높이에 랜덤으로 설정하게 해주었으며, 해당 위치에서 중심점으로 초기 벡터를 가지고 움직이도록 하였다.
+</ul>
+
+<h3 id="자연스러운-움직임을-위해-힘을-만들기">자연스러운 움직임을 위해 힘을 만들기</h3>
+
+<ul>
+ <li>마찰력은 현재의 속력을 잃게 만드는 힘, 충돌력은 겹침이 발생했을 때 겹침을 해소하는 힘이라고 개념적인 모델링을 하고 물리엔진을 구현하였다.
+ <li>각각의 힘은 계수를 정해주어 이후에 변경이 쉽게 만들었다.
+</ul>
+
+<h3 id="수학과-과학의-도움을-받기">수학과 과학의 도움을 받기</h3>
+
+<ul>
+ <li>마찰력은 진행중인 벡터의 양을 줄여주어서 해결할 수 있었는데, 자연스러운 충돌을 위해서는 충돌량이 어떻게 발생하는지에 대해서 이해할 필요가 있었다.
+ <li>다행히 이런 부분에 대해서 연구하신 분들이 많아서, 우리는 2차원에서 발생하는 원형 사이의 충돌량에 대한 공식을 사용하였다.
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre><td class="code"><pre>  <span class="nx">caculateCollisionScala</span><span class="p">(</span>
+    <span class="nx">speedA</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+    <span class="nx">speedB</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+    <span class="nx">massA</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+    <span class="nx">massB</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+    <span class="nx">repulsiveForce</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">(</span><span class="nx">speedA</span> <span class="o">+</span>
+        <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nx">massB</span> <span class="o">*</span> <span class="p">(</span><span class="nx">speedB</span> <span class="o">-</span> <span class="nx">speedA</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="nx">massA</span> <span class="o">+</span> <span class="nx">massB</span><span class="p">)</span> <span class="o">+</span>
+        <span class="nx">repulsiveForce</span> <span class="o">*</span> <span class="nx">REPULSIVE_COEFFICIENT</span><span class="p">)</span> <span class="o">*</span>
+      <span class="nx">COLLISION_COEFFICIENT</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</pre></table>
+</div>
+</div>
+
+<p><a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;blogId=eunmikorea&amp;logNo=221344714516">참고자료 : 물체의 운동과 2차원 충돌</a>
+
+<h3 id="문제-발생">문제 발생</h3>
+
+<ul>
+ <li>충돌력이 예상보다 강했고, 세부조정을 거치면서 마찰력만으로는 충돌력을 서서히 감소시켜주는 것이 어렵다는 것을 알게되었다.
+ <li>충돌력을 줄이기 위해서는 초기 벡터를 줄여야했지만, 그렇게 하면 중앙으로 모이는 것이 너무 느렸다. 충돌력과 별개로 반발계수를 추가하여 실험해봤지만 맘에 드는 모양으로 움직이지 않았다.
+ <li>이 모든 부분을 해결해줄 수 있는 것은 중력이라는 판단을 할 수 있었다.
+</ul>
+
+<h3 id="중력-구현">중력 구현</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206631059-1d64ed84-2279-4eb9-b7ce-568b1eaba8b5.gif" alt="204280957-1cda2268-5290-414f-a50b-a91830ef28cf" />
+
+<ul>
+ <li>중력을 구현하고 나니 원하는 모양에 가까워졌다.
+ <li>다만 아직은 와글와글보다는 왁자지껄에 가까운 것이 만들어졌다.
+ <li>미세한 수치 조정을 거치면 원하는 결과가 생길 수 있을 것 같았다.
+</ul>
+
+<h1 id="결과">결과</h1>
+
+<h3 id="결과물">결과물</h3>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/206632520-50e4d3a2-3158-4f71-aa76-890331a45dec.gif" alt="image2" />
+
+<ul>
+ <li>미세한 수치 조정을 거치고, transition을 통해서 성능 문제도 해결하였다.
+</ul>
+
+<h3 id="성능-비교">성능 비교</h3>
+
+<ul>
+ <li>여러 성능 비교를 하면서 알게 된 것은 적은 움직임 연산에서는 차라리 DOM과 리액트 리렌더링이 나을 수 있다는 것이었다.
+ <li>결국 canvas를 그리기 위해서는 requestAnimationFrame이나 setInterval의 간격을 짧게 주어서 매 프레임마다 충돌연산이 되어야하는데, 거기에서 소모되는 CPU 연산 비용이 아주 크기 때문에 DOM의 개수가 최소 세자리수가 되지 않는다면 리액트 리렌더링을 하는 것이 CPU 사용량의 성능이 훨씬 좋다는 것이었다.
+ <li>심지어 세자리수가 되더라도 연산해야하는 충돌량이 늘어나기 때문에, 리액트 리렌더링에서 transition을 통해 버블 차트의 움직임을 최적화시키고 나니 canvas를 통해 애니메이션을 만드는 것보다 성능이 훨씬 좋았다.
+ <li>버블 200개 기준 canvas로 requestAnimationFrame을 사용하면 CPU 사용량이 90%를 넘어갔지만, 리렌더링 + transition, setInterval 0.5s를 사용하면 움직임도 부드럽고 GPU도 더 많이 사용하며 CPU 사용량도 12%로 충분했다.
+</ul>
+
+<h3 id="의의">의의</h3>
+
+<ul>
+ <li>리액트의 설계 원칙을 공부하면 JS에 대해 더 깊게 이해할 수 있다고는 생각했었지만, 막상 해보고 나니 UI로직과 연산 로직이 분리되는 것이 얼마나 중요한지 다시 느낄 수 있었다.
+</ul>
+
+ <div class="readmore">
+    <a href="/posts/circlepacker-physics" role="button">Read more</a>
  </div>
 </article>
 <hr />
@@ -598,7 +930,7 @@ href="/assets/css/bf.css">
      <div
         class=" post-meta "
       >
-        <span>2022/12/06</span>
+        <span>2022/12/05</span>
         <span>
           <a href="/tag/와글와글">#와글와글</a>
           <a href="/tag/라이트하우스">#라이트하우스</a>
@@ -608,27 +940,53 @@ href="/assets/css/bf.css">
      </div>
    </div>
  </div>
-   <h1 id="라이트-하우스-점수-개선">라이트 하우스 점수 개선</h1>
+   <h1 id="와글와글-성능-개선-기록">와글와글 성능 개선 기록</h1>
+
+<h2 id="라이트-하우스-점수-개선">라이트 하우스 점수 개선</h2>
 
 <p><img src="https://user-images.githubusercontent.com/69471032/207239469-4cdf7b57-925c-454a-96ae-c265205f6bfc.png" alt="image" />
 
+<h3 id="성능">성능</h3>
+
 <ul>
  <li>Next.js의 코드스플리팅, SSR, SSG과 폰트 파일 압축 및 캐싱을 통해 성능 점수를 <strong>60점</strong>에서 <strong>94점으로 개선</strong>할 수 있었다.
- <li>스크린 리더에 기본 언어를 명시하고자 lang 태그를 사용하고 배경색과 글자색의 대비를 높여 접근성 점수를 <strong>73점</strong>에서 <strong>100점으로 개선</strong>할 수 있었다.
+</ul>
+
+<h3 id="접근성">접근성</h3>
+
+<ul>
+ <li>데이터 시각화를 canvas가 아닌 리액트로 렌더링하고 있었고, 스크린 리더에 기본 언어를 명시하고자 lang 태그를 사용하고 배경색과 글자색의 대비를 높여 접근성 점수를 <strong>73점</strong>에서 <strong>100점으로 개선</strong>할 수 있었다.
+</ul>
+
+<h3 id="seo">SEO</h3>
+
+<ul>
  <li>meta 태그와 라이트하우스 SEO 점수를 <strong>85점</strong>에서 <strong>100점으로 개선</strong>할 수 있었다.
 </ul>
 
-<h1 id="크롬-개발자-도구-성능-측정-및-개선">크롬 개발자 도구 성능 측정 및 개선</h1>
+<h2 id="크롬-개발자-도구-성능-측정-및-개선">크롬 개발자 도구 성능 측정 및 개선</h2>
 
 <ul>
- <li>크롬 개발자 도구를 통해서 버블차트의 특정 상태로 인해 사용되지 않는 EventListener가 지속적으로 쌓이고 있는 버그를 발견, 해당 상태를 제거하는 로직으로 버그를 해결하여 <strong>최대 800</strong>까지 쌓이던 EventListener를 <strong>400 이하로 유지</strong>하고 <strong>JS Heap 메모리</strong>를 <strong>최대 60mb</strong>에서 <strong>35mb로 감소</strong>시킬 수 있었다.
+ <li>크롬 개발자 도구 성능 모니터를 통해서 버블차트의 특정 상태로 인해 사용되지 않는 EventListener가 지속적으로 쌓이고 있는 버그를 발견, 해당 상태를 제거하는 로직으로 버그를 해결하여 <strong>최대 800</strong>까지 쌓이던 EventListener를 <strong>400 이하로 유지</strong>하고 <strong>JS Heap 메모리</strong>를 <strong>최대 60mb</strong>에서 <strong>35mb로 감소</strong>시킬 수 있었다.
 </ul>
 
-<h1 id="api-데이터-리렌더링-성능-개선">API 데이터 리렌더링 성능 개선</h1>
+<h2 id="api-데이터-리렌더링-성능-개선">API 데이터 리렌더링 성능 개선</h2>
+
+<h3 id="short-polling과-리렌더링">short polling과 리렌더링</h3>
 
 <ul>
- <li>서비스에 맞는 실시간성을 유지하기 위해서 Short Polling을 사용하였습니다. 그리고 이에 따라서 요청 주기마다 API 응답에 의해 리렌더링이 발생했다.
- <li>Tanstack Query의 Caching 기능과 렌더링 최적화를 통해서 <strong>1초마다 발생하던 리렌더링</strong>을 *<em>데이터가 변경되었을 때만 하도록 개선</em> 할 수 있었다.
+ <li>서비스에 맞는 실시간성을 유지하기 위해서 Short Polling을 사용했는데, 이에 따라서 요청 주기마다 API 응답에 의해 리액트 버블 차트의 데이터들이 전부 변경되며 리렌더링이 발생했다.
+</ul>
+
+<h3 id="tanstack-query-활용하기">Tanstack Query 활용하기</h3>
+
+<ul>
+ <li>Tanstack Query의 Caching 기능과 렌더링 최적화를 통해서 <strong>1초마다 발생하던 리렌더링</strong>을 *<em>데이터가 서버에서 변경되었을 때만 하도록 개선</em> 할 수 있었다.
+</ul>
+
+<h3 id="변경된-데이터만-리렌더링하기">변경된 데이터만 리렌더링하기</h3>
+
+<ul>
  <li>이후 UI 로직을 수정하여, 변경된 데이터가 수신되었더라도 <strong>전체 버블차트가 리렌더링</strong> 되는 것이 아니라 <strong>변경된 키워드 버블만 리렌더링</strong> <strong>될 수 있도록 최적화</strong>시킬 수 있었다.
 </ul>
 
@@ -702,7 +1060,7 @@ href="/assets/css/bf.css">
      <div
         class=" post-meta "
       >
-        <span>2022/12/06</span>
+        <span>2022/11/25</span>
         <span>
           <a href="/tag/와글와글">#와글와글</a>
           <a href="/tag/Next.js">#Next.js</a>
@@ -711,155 +1069,93 @@ href="/assets/css/bf.css">
      </div>
    </div>
  </div>
-   <h1 id="nextjs">Next.js</h1>
+   <h1 id="nextjs-배포">Next.js 배포</h1>
 
-<h1 id="bff">BFF</h1>
+<h2 id="ncloud-platform">NCloud Platform</h2>
 
-<h1 id="ci--cd">CI / CD</h1>
+<ul>
+ <li>프로젝트 기간동안 사용할 수 있는 ncp 무료 크레딧이 있어서, 여러 설정이 용이하도록 직접 배포하였다.
+ <li>이전에 몇 번 배포 경험이 있어서, 이번 기회에 CI / CD까지 직접해볼 수 있는 좋은 기회라는 생각이 들었다.
+</ul>
+
+<h2 id="배포-과정">배포 과정</h2>
+
+<ul>
+ <li>평소에도 배포할 때 github을 ssh key로 연결했기 때문에, CI / CD를 진행한다고 해도 큰 차이는 없었다.
+ <li>인스턴스를 생성하고, ACG를 통해서 사용할 port를 열어준 뒤 인스턴스를 띄웠다.
+ <li>이후에 nvm을 통해 node를 설치하고, ssh key를 통해 github을 연결하여 github에서 코드를 받아서 배포할 수 있었다.
+</ul>
+
+<h2 id="bff-backend-for-frontend">BFF (Backend For Frontend)</h2>
+
+<ul>
+ <li>이번 프로젝트에서 NGinx 서버가 별도로 있지만 클라이언트의 서버를 띄운 이유는 Next.js의 SSR을 위해서였다.
+ <li>Next.js에서의 SSR은 HTTP 요청이 들어왔을 때, 필요한 HTML을 서버에서 렌더링해서 응답해주는 방식인데 이를 위해서는 BFF가 필요하다.
+ <li>이를 통해서 클라이언트 기기에 덜 의존적인 렌더링이 가능하며, 여러 보안적인 이점도 있다.
+</ul>
+
+<h1 id="nextjs-ci--cd를-위해-산넘고-물건너기">Next.js CI / CD를 위해 산넘고 물건너기</h1>
+
+<h2 id="push-이벤트-감지-안됨">push 이벤트 감지 안됨</h2>
+
+<hr />
+
+<h3 id="꿀잠-잘-기대에-가득찬-ci--cd">꿀잠 잘 기대에 가득찬 CI / CD</h3>
+
+<ul>
+ <li>기대에 가득 차서 push를 했지만, 어림도 없지 push 이벤트는 동작하지 않았다.
+</ul>
+
+<h3 id="이-문제는-잠시-뒤로-미룹시다">이 문제는 잠시 뒤로 미룹시다.</h3>
+
+<ul>
+ <li>workflow dispatch 명령어를 yaml 파일에 추가하여 수동으로 먼저 동작했다.
+ <li>수동으로 job 동작을 확인한 뒤, 여러가지 실험을 진행했다.
+</ul>
+
+<h3 id="문제-해결">문제 해결</h3>
+
+<ul>
+ <li>알고보니 이벤트가 발생하는 해당 브랜치에도 workflow 폴더와 yaml 파일이 있어야했다.
+ <li>이를 통해 해결되었다.
+</ul>
+
+<h2 id="github-actions에서만-npm이-없다고-뜨는-에러">github actions에서만 npm이 없다고 뜨는 에러</h2>
+
+<hr />
+
+<h3 id="고난의-시작">고난의 시작</h3>
+
+<ul>
+ <li>수동으로 job 동작을 확인하는데, npm이 없다는 에러가 떴다.
+</ul>
+
+<h3 id="원인-파악---nvm-제거-후-nodejs-수동-설치">원인 파악 - nvm 제거 후 nodejs 수동 설치</h3>
+
+<ul>
+ <li>이전 트러블 때, github actions에서 nvm의 nodejs에는 접근을 할 수 없었다.
+ <li>이를 위해 nvm의 nodejs를 삭제하고, 따로 nodejs를 직접 설치해야했다.
+ <li>이를 통해 nodejs에 접근이 가능해지고, npm install이 정상적으로 동작하는 걸 확인하였다.
+</ul>
+
+<h3 id="다시-찾아온-문제---nvm-환경변수">다시 찾아온 문제 - nvm 환경변수</h3>
+
+<ul>
+ <li>갑자기 pm2가 동작하지 않았다.
+ <li>확인해보니 클라우드 서버에서는 pm2가 npm global로 설정이 되어있었다.
+ <li>github actions에서 npm ls -g를 찍어보니 pm2가 없었다.
+ <li>다시 조사해보니 nvm에서 설정해둔 $PATH 환경변수가 남아있었다.
+ <li>bashrc에서 $PATH 환경변수를 지우고 putty를 재실행해서 환경변수를 초기화하였다.
+</ul>
+
+<h3 id="문제-해결-1">문제 해결</h3>
+
+<ul>
+ <li>이후 nvm의 $PATH가 아닌 새로 설치한 nodejs의 $PATH가 되며 해결되었다.
+</ul>
 
  <div class="readmore">
     <a href="/posts/waglewagle-bff-deploy" role="button">Read more</a>
- </div>
-</article>
-<hr />
-<article class="blog">
-<style>
-  .trie-search-engine {
-    margin-bottom: 2em;
-  }
-  .trie-search-engine::before {
-    background-image: url('https://source.unsplash.com/random');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .trie-search-engine::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(100,0,255,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .trie-search-engine-container,
-  .trie-search-engine-container::before,
-  .trie-search-engine-container::after {
-    height: 25rem;
-  }
-  .trie-search-engine-bleed-container,
-  .trie-search-engine-bleed-container::before,
-  .trie-search-engine-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .trie-search-engine-container,
-        .trie-search-engine-container::before,
-        .trie-search-engine-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        trie-search-engine trie-search-engine-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/trie-search-engine" title="Trie 자료구조를 활용한 검색엔진 만들기"
-          >Trie 자료구조를 활용한 검색엔진 만들기</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2022/12/06</span>
-        <span>
-          <a href="/tag/와글와글">#와글와글</a>
-          <a href="/tag/2차원 배치">#2차원 배치</a>
-          <a href="/tag/물리엔진">#물리엔진</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <h1 id="trie-자료구조로-자동완성-검색엔진-만들기"><center>Trie 자료구조로 자동완성 검색엔진 만들기</center></h1>
-
-<p><img src="https://user-images.githubusercontent.com/69471032/207239708-2ec55698-4d49-476b-b0b8-e68ca5fd9093.png" alt="image" />
-
-<h3 id="problem">Problem</h3>
-
-<ul>
- <li>소그룹의 활성도를 위해 키워드를 등록하고자 할 때 비슷한 키워드의 중복 생성 방지하여 그룹의 인원이 분할되지 않도록 하는 작업이 필요하게 되었다.
-</ul>
-
-<h3 id="think">Think</h3>
-
-<ul>
- <li>처음에는 정규 표현식을 통해서 검색어가 바뀔 때마다 모든 키워드를 탐색하고자 하였으나 성능적으로 비효율 적이라고 생각되어서 알고리즘의 변화가 필요했다.
-</ul>
-
-<h3 id="solution">Solution</h3>
-
-<ul>
- <li>검색 엔진에서 사용되는 알고리즘들을 조사, 비교하여 현재 프로젝트에 가장 적절한 알고리즘을 결정했다.
-</ul>
-
-<h3 id="process">Process</h3>
-
-<ul>
- <li>정규 표현식과, 이진 탐색, 트라이 등의 방법을 고려하여 시간 복잡도를 분석하니 아래와 같은 결과가 나왔다.
-</ul>
-
-<table>
-<thead>
-   <tr>
-     <th>N = 단어의 개수, M = 문자열 길이
-     <th>사전 작업 시간 복잡도
-     <th>탐색 시간 복잡도
-    
-  
- <tbody>
-   <tr>
-     <td>전체 탐색(정규 표현식)
-     <td>X
-     <td>O(M * N)
-    
-   <tr>
-     <td>이진 탐색
-     <td>O(N _ M _ logN) (정렬)
-     <td>O(M * logN)
-    
-   <tr>
-     <td>트라이
-     <td>O(N * M) (트라이 생성)
-     <td>O(M)
-    
-  
-</table>
-
-<h3 id="result">Result</h3>
-
-<ul>
- <li>사전 생성 시간이 있고, 메모리를 많이 차지하는 단점이 있지만, 커뮤니티 접속 시 한번만 실행하면 되고, 탐색이 빈번하게 발생하는 검색 엔진 특성상 트라이가 가장 효율적이라고 결론을 내릴 수 있었다.
- <li>결과적으로 탐색 시간 복잡도를 O(M * N)에서 O(M)까지 감소시킬 수 있었다.(M: 문자열 길이, N: 단어의 개수)
-</ul>
-
- <div class="readmore">
-    <a href="/posts/trie-search-engine" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">
