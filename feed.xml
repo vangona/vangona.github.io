@@ -6,8 +6,8 @@
 </description>
     <link>http://vangona.github.io/</link>
     <atom:link href="http://vangona.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Dec 2022 15:44:14 +0900</pubDate>
-    <lastBuildDate>Tue, 13 Dec 2022 15:44:14 +0900</lastBuildDate>
+    <pubDate>Tue, 13 Dec 2022 15:48:41 +0900</pubDate>
+    <lastBuildDate>Tue, 13 Dec 2022 15:48:41 +0900</lastBuildDate>
     <generator>Jekyll v3.9.2</generator>
     
       <item>
@@ -937,7 +937,7 @@
         <category>Javascript</category>
         
         
-        <category>languages</category>
+        <category>Languages</category>
         
       </item>
     
