@@ -6,8 +6,8 @@
 </description>
     <link>http://vangona.github.io/</link>
     <atom:link href="http://vangona.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Dec 2022 15:37:33 +0900</pubDate>
-    <lastBuildDate>Tue, 13 Dec 2022 15:37:33 +0900</lastBuildDate>
+    <pubDate>Tue, 13 Dec 2022 15:44:14 +0900</pubDate>
+    <lastBuildDate>Tue, 13 Dec 2022 15:44:14 +0900</lastBuildDate>
     <generator>Jekyll v3.9.2</generator>
     
       <item>
@@ -843,7 +843,7 @@
       </item>
     
       <item>
-        <title>DeepDiveJS, Chapter 09. 타입 변환과 단축 평가</title>
+        <title>DeepDiveJS Chapter 09. 타입 변환과 단축 평가</title>
         <description>&lt;h1 id=&quot;09장-타입-변환과-단축-평가&quot;&gt;[09장. 타입 변환과 단축 평가]&lt;/h1&gt;
 
 &lt;p&gt;&amp;lt;/br&amp;gt;&lt;/p&gt;
@@ -895,7 +895,7 @@
       </item>
     
       <item>
-        <title>DeepDiveJS, Chapter 13. 스코프</title>
+        <title>DeepDiveJS Chapter 13. 스코프</title>
         <description>&lt;h1 id=&quot;13장-스코프&quot;&gt;[13장. 스코프]&lt;/h1&gt;
 
 &lt;p&gt;&amp;lt;/br&amp;gt;&lt;/p&gt;
