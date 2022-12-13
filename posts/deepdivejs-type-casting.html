@@ -27,23 +27,10 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  실행 컨텍스트와 클로져에 담긴 철학 &#9642; vanGona
+  DeepDiveJS, Chapter 09. 타입 변환과 단축 평가 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="인간이 언제 죽는다고 생각하나?
-
-맹독 버섯 스프를 마셨을 때?
-
-
-
-실행 컨텍스트
-
-유효 범위 (렉시컬 스코프 - Lexical Scope)
-
-자유 변수
-
-클로져
-">
+<meta name="description" content="[09장. 타입 변환과 단축 평가] &lt;/br&gt; ✏️ 자바스크립트의 알아서 잘하는 타입변환   근데 알아서 하는건 종종 오해를 낳는다. 그러니 자바스크립트가 어떤 때에 알아서 잘하는지 하는지 아는게 필요하다. 자바스크립트에는 두 가지의 타입 변환이 있다. 명시적 타입 변환 (타입 캐스팅) 암묵적 타입 변환 (타입 강제 변환) 명시적 타입변환은 toString() 메서드와 같이, 타입을...">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -53,14 +40,14 @@
 />
 <meta
   name="keywords"
-  content="js"
+  content="DeepDiveJS, Javascript"
 />
 <link
   rel="canonical"
-  href="http://vangona.github.io/posts/js-closure"
+  href="http://vangona.github.io/posts/deepdivejs-type-casting"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="실행 컨텍스트와 클로져에 담긴 철학" />
+<meta name="twitter:title" content="DeepDiveJS, Chapter 09. 타입 변환과 단축 평가" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta name="twitter:image" content="http://vangona.github.io" />
@@ -68,12 +55,12 @@
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="실행 컨텍스트와 클로져에 담긴 철학" />
+<meta property="og:title" content="DeepDiveJS, Chapter 09. 타입 변환과 단축 평가" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://vangona.github.io/posts/js-closure"
+  content="http://vangona.github.io/posts/deepdivejs-type-casting"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -118,14 +105,6 @@ href="/assets/css/bf.css">
           href="/humanities"
           >HUMANITIES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -136,17 +115,6 @@ href="/assets/css/bf.css">
           href="/algorithm"
           >ALGORITHM
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -157,17 +125,6 @@ href="/assets/css/bf.css">
           href="/languages"
           >LANGUAGES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -178,17 +135,6 @@ href="/assets/css/bf.css">
           href="/cs"
           >SCIENCE
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -199,17 +145,6 @@ href="/assets/css/bf.css">
           href="/projects"
           >PROJECTS
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
    <ul class="visible-links"> 
      <li class="dropdown ">
@@ -224,14 +159,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -244,17 +171,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -267,17 +183,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -290,17 +195,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -313,17 +207,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
  </div>
  <div class="social">
@@ -365,10 +248,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="post">
 <style>
-  .js-closure {
+  .deepdivejs-type-casting {
     margin-bottom: 2em;
   }
-  .js-closure::before {
+  .deepdivejs-type-casting::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -379,7 +262,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .js-closure::after {
+  .deepdivejs-type-casting::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -392,54 +275,78 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .js-closure-container,
-  .js-closure-container::before,
-  .js-closure-container::after {
+  .deepdivejs-type-casting-container,
+  .deepdivejs-type-casting-container::before,
+  .deepdivejs-type-casting-container::after {
     height: 25rem;
   }
-  .js-closure-bleed-container,
-  .js-closure-bleed-container::before,
-  .js-closure-bleed-container::after {
+  .deepdivejs-type-casting-bleed-container,
+  .deepdivejs-type-casting-bleed-container::before,
+  .deepdivejs-type-casting-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .js-closure-container,
-        .js-closure-container::before,
-        .js-closure-container::after{
+        .deepdivejs-type-casting-container,
+        .deepdivejs-type-casting-container::before,
+        .deepdivejs-type-casting-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
     }
 </style>
  <div class="post-title-container
-  js-closure js-closure-bleed-container bleed-hero-container
+  deepdivejs-type-casting deepdivejs-type-casting-bleed-container bleed-hero-container
     ">
     <!--Post hero image source-->
    <div class="heading-container hero-heading hero-heading-post">
      <h1>
-          실행 컨텍스트와 클로져에 담긴 철학
+          DeepDiveJS, Chapter 09. 타입 변환과 단축 평가
      </h1>
      <div class="post-meta">
-        <span>08/04/2022</span>
+        <span>02/07/2022</span>
         <span>
-              <a href="/tag/js">#js</a>
+              <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
+              <a href="/tag/Javascript">#Javascript</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="인간이-언제-죽는다고-생각하나"><center>인간이 언제 죽는다고 생각하나?</center></h1>
+   <h1 id="09장-타입-변환과-단축-평가">[09장. 타입 변환과 단축 평가]</h1>
 
-<h1 id="맹독-버섯-스프를-마셨을-때"><center>맹독 버섯 스프를 마셨을 때?</center></h1>
+<p>&lt;/br&gt;
+
+<h3 id="️-자바스크립트의-알아서-잘하는-타입변환">✏️ 자바스크립트의 알아서 잘하는 타입변환</h3>
 
 <hr />
 
-<h2 id="실행-컨텍스트">실행 컨텍스트</h2>
+<p>  근데 알아서 하는건 종종 오해를 낳는다. 그러니 자바스크립트가 어떤 때에 알아서 잘하는지 하는지 아는게 필요하다.
 
-<h2 id="유효-범위-렉시컬-스코프---lexical-scope">유효 범위 (렉시컬 스코프 - Lexical Scope)</h2>
+<p>자바스크립트에는 두 가지의 타입 변환이 있다.
 
-<h2 id="자유-변수">자유 변수</h2>
+<ol>
+ <li>명시적 타입 변환 (타입 캐스팅)
+ <li>암묵적 타입 변환 (타입 강제 변환)
+</ol>
 
-<h2 id="클로져">클로져</h2>
+<p>명시적 타입변환은 toString() 메서드와 같이, 타입을 변환하는 것을 명시적으로 명령하는 것이다.
+
+<p>반대로 암묵적 타입 변환은, 명시적으로 명령하지 않지만 자바스크립트 엔진이 맥락을 평가하고 타입을 변환하는 것을 말한다.
+
+<p>예를 들어, ‘1’ + 1;이라는 문장은 ‘1’이 암묵적으로 숫자형으로 변환되어서 2라고 평가되어진다.
+
+<p>각각의 타입변환에는 장단점이 존재한다.
+
+<p>앞의 내용에서 언급했듯이 암묵적이고, 맥락에 의한 처리는 종종 오해를 발생시킨다. 다만, 가독성이 좋아질 수 있다.
+
+<p>암묵적 타입변환을 효과적으로 사용하기 위해서, 각각의 타입에서 암묵적 타입변환이 어떻게 발생하는지 아는 것이 도움된다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-반복되는건-짧게-쓸-수-있도록-합의합시다">✏️ 반복되는건 짧게 쓸 수 있도록 합의합시다.</h3>
+
+<hr />
+
+<p>  타입이나 논리를 확인 후 그에 따라 명령을 실행하는 문에 매번 같은 조건문에서 값을 비교하는 것은 효율적이지 못할 것이다. 이를 위해서 자바스크립트는 미리 합의를 통해 몇가지 단축평가 문법을 제안하여 개발자로 하여금 코드를 작성하기 쉽게 돕는다.
 
 </article>
 <div id="disqus_thread"></div>
@@ -457,6 +364,26 @@ href="/assets/css/bf.css">
 <aside class="related">
 <h2>Related posts</h2>
 <ul class="related-posts">
+   <li>
+    <a href="/posts/deepdivejs-scope">
+        <span>DeepDiveJS, Chapter 13. 스코프</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-primitive-value-object">
+        <span>DeepDiveJS, Chapter 11. 원시 값과 객체의 비교</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-object-literal">
+        <span>DeepDiveJS, Chapter 10. 객체 리터럴</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-global-variables-problem">
+        <span>DeepDiveJS, Chapter 14. 전역 변수의 문제점</span>
+        <small>02/07</small>
+    </a>
 </aside>
 <footer>
     <span>임상심리학자가 개발을 추구하는 건에 대해서

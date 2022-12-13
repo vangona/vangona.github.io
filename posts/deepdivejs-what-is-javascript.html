@@ -27,13 +27,10 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  와글와글 단위 테스트 &#9642; vanGona
+  DeepDiveJS, Chapter 02. 자바스크립트란? &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="Circle Packer 단위 테스트 코드 작성
-
-Trie Seacrh Engine 단위 테스트 코드 작성
-">
+<meta name="description" content="[02장. 자바스크립트란?] &lt;/br&gt; ✏️ 웹페이지와 자바스크립트   자바스크립트는 웹페이지와 상호작용 할 수 있도록 만들어진 언어이다. 어떤 기술이 그러하듯, 자바스크립트 만으로는 해결할 수 없는 많은 문제들이 생기게 되었다. &lt;/br&gt; ✏️ 자바스크립트의 보완   어떤 기술이 그러하듯, 자바스크립트도 자바스크립트 코어 엔진만으로는 할 수 없는 한계에 부딪히게 되었다. 자바스크립트의 싱글 스레드 동작 특성으로...">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -43,14 +40,14 @@ Trie Seacrh Engine 단위 테스트 코드 작성
 />
 <meta
   name="keywords"
-  content="와글와글, 2차원 배치, 물리엔진"
+  content="DeepDiveJS, Javascript"
 />
 <link
   rel="canonical"
-  href="http://vangona.github.io/posts/waglewagle-unit-test"
+  href="http://vangona.github.io/posts/deepdivejs-what-is-javascript"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="와글와글 단위 테스트" />
+<meta name="twitter:title" content="DeepDiveJS, Chapter 02. 자바스크립트란?" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta name="twitter:image" content="http://vangona.github.io" />
@@ -58,12 +55,12 @@ Trie Seacrh Engine 단위 테스트 코드 작성
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="와글와글 단위 테스트" />
+<meta property="og:title" content="DeepDiveJS, Chapter 02. 자바스크립트란?" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://vangona.github.io/posts/waglewagle-unit-test"
+  content="http://vangona.github.io/posts/deepdivejs-what-is-javascript"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -108,14 +105,6 @@ href="/assets/css/bf.css">
           href="/humanities"
           >HUMANITIES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -126,17 +115,6 @@ href="/assets/css/bf.css">
           href="/algorithm"
           >ALGORITHM
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -147,17 +125,6 @@ href="/assets/css/bf.css">
           href="/languages"
           >LANGUAGES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -168,17 +135,6 @@ href="/assets/css/bf.css">
           href="/cs"
           >SCIENCE
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -189,17 +145,6 @@ href="/assets/css/bf.css">
           href="/projects"
           >PROJECTS
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
    <ul class="visible-links"> 
      <li class="dropdown ">
@@ -214,14 +159,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -234,17 +171,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -257,17 +183,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -280,17 +195,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -303,17 +207,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
  </div>
  <div class="social">
@@ -355,10 +248,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="post">
 <style>
-  .waglewagle-unit-test {
+  .deepdivejs-what-is-javascript {
     margin-bottom: 2em;
   }
-  .waglewagle-unit-test::before {
+  .deepdivejs-what-is-javascript::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -369,7 +262,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .waglewagle-unit-test::after {
+  .deepdivejs-what-is-javascript::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -382,46 +275,75 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .waglewagle-unit-test-container,
-  .waglewagle-unit-test-container::before,
-  .waglewagle-unit-test-container::after {
+  .deepdivejs-what-is-javascript-container,
+  .deepdivejs-what-is-javascript-container::before,
+  .deepdivejs-what-is-javascript-container::after {
     height: 25rem;
   }
-  .waglewagle-unit-test-bleed-container,
-  .waglewagle-unit-test-bleed-container::before,
-  .waglewagle-unit-test-bleed-container::after {
+  .deepdivejs-what-is-javascript-bleed-container,
+  .deepdivejs-what-is-javascript-bleed-container::before,
+  .deepdivejs-what-is-javascript-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .waglewagle-unit-test-container,
-        .waglewagle-unit-test-container::before,
-        .waglewagle-unit-test-container::after{
+        .deepdivejs-what-is-javascript-container,
+        .deepdivejs-what-is-javascript-container::before,
+        .deepdivejs-what-is-javascript-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
     }
 </style>
  <div class="post-title-container
-  waglewagle-unit-test waglewagle-unit-test-bleed-container bleed-hero-container
+  deepdivejs-what-is-javascript deepdivejs-what-is-javascript-bleed-container bleed-hero-container
     ">
     <!--Post hero image source-->
    <div class="heading-container hero-heading hero-heading-post">
      <h1>
-          와글와글 단위 테스트
+          DeepDiveJS, Chapter 02. 자바스크립트란?
      </h1>
      <div class="post-meta">
-        <span>06/12/2022</span>
+        <span>27/06/2022</span>
         <span>
-              <a href="/tag/와글와글">#와글와글</a>
-              <a href="/tag/2차원 배치">#2차원 배치</a>
-              <a href="/tag/물리엔진">#물리엔진</a>
+              <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
+              <a href="/tag/Javascript">#Javascript</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="circle-packer-단위-테스트-코드-작성">Circle Packer 단위 테스트 코드 작성</h1>
+   <h1 id="02장-자바스크립트란">[02장. 자바스크립트란?]</h1>
 
-<h1 id="trie-seacrh-engine-단위-테스트-코드-작성">Trie Seacrh Engine 단위 테스트 코드 작성</h1>
+<p>&lt;/br&gt;
+
+<h3 id="️-웹페이지와-자바스크립트">✏️ 웹페이지와 자바스크립트</h3>
+
+<hr />
+
+<p>  자바스크립트는 웹페이지와 상호작용 할 수 있도록 만들어진 언어이다.
+
+<p>어떤 기술이 그러하듯, 자바스크립트 만으로는 해결할 수 없는 많은 문제들이 생기게 되었다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-자바스크립트의-보완">✏️ 자바스크립트의 보완</h3>
+
+<hr />
+
+<p>  어떤 기술이 그러하듯, 자바스크립트도 자바스크립트 코어 엔진만으로는 할 수 없는 한계에 부딪히게 되었다.
+
+<p>자바스크립트의 싱글 스레드 동작 특성으로 인한 동기적인 처리를 해결하기 위해 Ajax가 등장하였고, DOM을 쉽게 제어할 수 있도록 JQuery가 추가되는 등, 발생되는 문제들을 처리하기 위해서 많은 역사적인 순간들을 거쳐 현재의 자바스크립트가 되었다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-모든-기술의-한계">✏️ 모든 기술의 한계</h3>
+
+<hr />
+
+<p> 앞으로도 현재에 있는 기술들은, 언제든지 대체될 수 있을 것이다. 프로그래밍은 단순히 현재에 머무를 수 있는 지식이 아니다. 더 나은 수단이 나오면 언제든지 가치판단해서 변경해야하는 지식이다.
+
+<p>이를 위해서, 프로그래밍 지식의 역사와 정의 그리고 어떤 문제를 해결하려 했는지를 중심적으로 공부하려고 한다.
+
+<p>언젠가 다시 유연하게 대처해야할 날들을 위해서 말이다.
 
 </article>
 <div id="disqus_thread"></div>
@@ -440,19 +362,24 @@ href="/assets/css/bf.css">
 <h2>Related posts</h2>
 <ul class="related-posts">
    <li>
-    <a href="/posts/waglewagle-optimization">
-        <span>와글와글 성능 최적화</span>
-        <small>06/12</small>
+    <a href="/posts/deepdivejs-type-casting">
+        <span>DeepDiveJS, Chapter 09. 타입 변환과 단축 평가</span>
+        <small>02/07</small>
     </a>
    <li>
-    <a href="/posts/trie-search-engine">
-        <span>Trie 자료구조를 활용한 검색엔진 만들기</span>
-        <small>06/12</small>
+    <a href="/posts/deepdivejs-scope">
+        <span>DeepDiveJS, Chapter 13. 스코프</span>
+        <small>02/07</small>
     </a>
    <li>
-    <a href="/posts/circlepacker-physics">
-        <span>와글와글 데이터 시각화를 위한 2차원 배치 물리엔진 만들기</span>
-        <small>06/12</small>
+    <a href="/posts/deepdivejs-primitive-value-object">
+        <span>DeepDiveJS, Chapter 11. 원시 값과 객체의 비교</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-object-literal">
+        <span>DeepDiveJS, Chapter 10. 객체 리터럴</span>
+        <small>02/07</small>
     </a>
 </aside>
 <footer>

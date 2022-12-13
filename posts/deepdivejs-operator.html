@@ -27,12 +27,10 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  Welcome to dactl! &#9642; vanGona
+  DeepDiveJS, Chapter 07. 연산자 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve.
-
-">
+<meta name="description" content="[07장. 연산자] &lt;/br&gt; ✏️ 연산자의 우선순위   연산자의 우선순위를 헷갈리게 되면, 종종 코드를 짤 때 오류가 발생하게 된다. 코드의 연산자는 단순히 생각하는 사칙연산 뿐만 아니라 할당, 삼항 연산, 심지어 쉼표를 통한 구분까지 있다. 우선순위 내용 1 () 2 new(매개변수 존재), .(점), [ ](프로퍼티 접근), ( )(함수 호출), ?.(옵셔널 체이닝 연산자)...">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -42,14 +40,14 @@
 />
 <meta
   name="keywords"
-  content="dactl, jekyll"
+  content="DeepDiveJS, Javascript"
 />
 <link
   rel="canonical"
-  href="http://vangona.github.io/posts/welcome-to-dactl"
+  href="http://vangona.github.io/posts/deepdivejs-operator"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Welcome to dactl!" />
+<meta name="twitter:title" content="DeepDiveJS, Chapter 07. 연산자" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta name="twitter:image" content="http://vangona.github.io" />
@@ -57,12 +55,12 @@
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Welcome to dactl!" />
+<meta property="og:title" content="DeepDiveJS, Chapter 07. 연산자" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://vangona.github.io/posts/welcome-to-dactl"
+  content="http://vangona.github.io/posts/deepdivejs-operator"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -107,14 +105,6 @@ href="/assets/css/bf.css">
           href="/humanities"
           >HUMANITIES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -125,17 +115,6 @@ href="/assets/css/bf.css">
           href="/algorithm"
           >ALGORITHM
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -146,17 +125,6 @@ href="/assets/css/bf.css">
           href="/languages"
           >LANGUAGES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -167,17 +135,6 @@ href="/assets/css/bf.css">
           href="/cs"
           >SCIENCE
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -188,17 +145,6 @@ href="/assets/css/bf.css">
           href="/projects"
           >PROJECTS
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
    <ul class="visible-links"> 
      <li class="dropdown ">
@@ -213,14 +159,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -233,17 +171,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -256,17 +183,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -279,17 +195,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -302,17 +207,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
  </div>
  <div class="social">
@@ -354,11 +248,11 @@ href="/assets/css/bf.css">
 </header>
 <article class="post">
 <style>
-  .welcome-to-dactl {
+  .deepdivejs-operator {
     margin-bottom: 2em;
   }
-  .welcome-to-dactl::before {
-    background-image: url('https://source.unsplash.com/collection/430471/');
+  .deepdivejs-operator::before {
+    background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
     content:'';
@@ -368,77 +262,166 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .welcome-to-dactl::after {
+  .deepdivejs-operator::after {
     content:'';
     position:absolute;
     width: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(255,0,100,0.8);
+    background-color: rgba(100,0,255,0.8);
     /*mix-blend-mode: darken;
     mix-blend-mode: color-burn;
     mix-blend-mode: hard-light;*/
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .welcome-to-dactl-container,
-  .welcome-to-dactl-container::before,
-  .welcome-to-dactl-container::after {
+  .deepdivejs-operator-container,
+  .deepdivejs-operator-container::before,
+  .deepdivejs-operator-container::after {
     height: 25rem;
   }
-  .welcome-to-dactl-bleed-container,
-  .welcome-to-dactl-bleed-container::before,
-  .welcome-to-dactl-bleed-container::after {
+  .deepdivejs-operator-bleed-container,
+  .deepdivejs-operator-bleed-container::before,
+  .deepdivejs-operator-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .welcome-to-dactl-container,
-        .welcome-to-dactl-container::before,
-        .welcome-to-dactl-container::after{
+        .deepdivejs-operator-container,
+        .deepdivejs-operator-container::before,
+        .deepdivejs-operator-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
     }
 </style>
  <div class="post-title-container
-  welcome-to-dactl welcome-to-dactl-bleed-container bleed-hero-container
+  deepdivejs-operator deepdivejs-operator-bleed-container bleed-hero-container
     ">
     <!--Post hero image source-->
    <div class="heading-container hero-heading hero-heading-post">
      <h1>
-          Welcome to dactl!
+          DeepDiveJS, Chapter 07. 연산자
      </h1>
      <div class="post-meta">
-        <span>22/03/2017</span>
+        <span>29/06/2022</span>
         <span>
-              <a href="/tag/dactl">#dactl</a>
-              <a href="/tag/jekyll">#jekyll</a>
+              <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
+              <a href="/tag/Javascript">#Javascript</a>
         </span>
      </div>
    </div>
  </div>
-   <p class="lead">You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>.
-<p>
-This launches a web server and auto-regenerates your site when a file is updated.<br />
-To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+   <h1 id="07장-연산자">[07장. 연산자]</h1>
 
-<p>Jekyll also offers powerful support for code snippets:
+<p>&lt;/br&gt;
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5</pre><td class="code"><pre><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
-</pre></table>
-</div>
-</div>
+<h3 id="️-연산자의-우선순위">✏️ 연산자의 우선순위</h3>
 
-<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.
+<hr />
 
+<p>  연산자의 우선순위를 헷갈리게 되면, 종종 코드를 짤 때 오류가 발생하게 된다. 코드의 연산자는 단순히 생각하는 사칙연산 뿐만 아니라 할당, 삼항 연산, 심지어 쉼표를 통한 구분까지 있다.
+
+<table>
+<thead>
+   <tr>
+     <th style="text-align: center">우선순위
+     <th style="text-align: left">내용
+    
+  
+ <tbody>
+   <tr>
+     <td style="text-align: center">1
+     <td style="text-align: left">()
+    
+   <tr>
+     <td style="text-align: center">2
+     <td style="text-align: left">new(매개변수 존재), .(점), [ ](프로퍼티 접근), ( )(함수 호출), ?.(옵셔널 체이닝 연산자)
+    
+   <tr>
+     <td style="text-align: center">3
+     <td style="text-align: left">new(매개변수 미존재)
+    
+   <tr>
+     <td style="text-align: center">4
+     <td style="text-align: left">x++, x–
+    
+   <tr>
+     <td style="text-align: center">5
+     <td style="text-align: left">!x, +x, -x, ++x, –x, typeof, delete
+    
+   <tr>
+     <td style="text-align: center">6
+     <td style="text-align: left">**(이항 연산자 중 우선순위가 가장 높음)
+    
+   <tr>
+     <td style="text-align: center">7
+     <td style="text-align: left">*, /, %
+    
+   <tr>
+     <td style="text-align: center">8
+     <td style="text-align: left">+, -
+    
+   <tr>
+     <td style="text-align: center">9
+     <td style="text-align: left">&lt;, &lt;=, &gt;, &gt;=, in, instanceof
+    
+   <tr>
+     <td style="text-align: center">10
+     <td style="text-align: left">==, !=, ===, !==
+    
+   <tr>
+     <td style="text-align: center">11
+     <td style="text-align: left">??(null 병합 연산자)
+    
+   <tr>
+     <td style="text-align: center">12
+     <td style="text-align: left">&amp;&amp;
+    
+   <tr>
+     <td style="text-align: center">13
+     <td style="text-align: left">||
+    
+   <tr>
+     <td style="text-align: center">14
+     <td style="text-align: left">? … : … (삼항 연산자)
+    
+   <tr>
+     <td style="text-align: center">15
+     <td style="text-align: left">=, +=, -=, …(구조 분해 할당) (할당 연산자)
+    
+   <tr>
+     <td style="text-align: center">16
+     <td style="text-align: left">,
+    
+  
+</table>
+
+<p>&lt;/br&gt;
+
+<h3 id="️-연산자의-결합-순서">✏️ 연산자의 결합 순서</h3>
+
+<hr />
+
+<p>  연산자에 따라서 왼쪽부터 읽히는 것도, 오른쪽부터 읽히는 것도 있다.
+
+<table>
+<thead>
+   <tr>
+     <th style="text-align: center">결합 순서
+     <th style="text-align: left">연산자
+    
+  
+ <tbody>
+   <tr>
+     <td style="text-align: center">좌 -&gt; 우
+     <td style="text-align: left">+, -, /, %, &lt;, &lt;=, &gt;, &gt;=, &amp;&amp;, ||, ., [], (), ??, ?, in, instanceof
+    
+   <tr>
+     <td style="text-align: center">우 -&gt; 좌
+     <td style="text-align: left">++, –, 할당 연산자(=, +=, -=, …), !x, +x, -x, ++x, –x, typeof, delete, ? … : … (삼항 연산자)
+    
+  
+</table>
 
 </article>
 <div id="disqus_thread"></div>
@@ -457,19 +440,24 @@ To add new posts, simply add a file in the <code class="language-plaintext highl
 <h2>Related posts</h2>
 <ul class="related-posts">
    <li>
-    <a href="/posts/config-settings">
-        <span>Layout settings and more in _config.yml</span>
-        <small>20/03</small>
+    <a href="/posts/deepdivejs-type-casting">
+        <span>DeepDiveJS, Chapter 09. 타입 변환과 단축 평가</span>
+        <small>02/07</small>
     </a>
    <li>
-    <a href="/posts/yaml-frontmatter">
-        <span>YAML front matter in posts</span>
-        <small>19/03</small>
+    <a href="/posts/deepdivejs-scope">
+        <span>DeepDiveJS, Chapter 13. 스코프</span>
+        <small>02/07</small>
     </a>
    <li>
-    <a href="/posts/example-content">
-        <span>Example content</span>
-        <small>20/01</small>
+    <a href="/posts/deepdivejs-primitive-value-object">
+        <span>DeepDiveJS, Chapter 11. 원시 값과 객체의 비교</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-object-literal">
+        <span>DeepDiveJS, Chapter 10. 객체 리터럴</span>
+        <small>02/07</small>
     </a>
 </aside>
 <footer>

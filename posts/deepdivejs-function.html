@@ -27,15 +27,10 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  와글와글 정적 테스트와 코딩 스타일 &#9642; vanGona
+  DeepDiveJS, Chapter 12. 함수 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="코드 컨벤션
-
-Typescript
-
-Eslint
-">
+<meta name="description" content="[12장. 함수] &lt;/br&gt; ✏️ 일련의 과정을 반복할거라면, 묶어서 이름 붙여 씁시다.   프로그래밍 언어에서 함수란 일련의 과정을 문으로 구현하고, 이걸 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것을 말한다. &lt;/br&gt; ✏️ 출근도 함수입니다.   일상 생활의 예를 들어보자면 출근도 함수다. 출근이라는 행위는 여러 일련의 행위를 묶어서 반복하기 편하게 만든 함수다....">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -45,14 +40,14 @@ Eslint
 />
 <meta
   name="keywords"
-  content="와글와글, 코드 품질"
+  content="DeepDiveJS, Javascript"
 />
 <link
   rel="canonical"
-  href="http://vangona.github.io/posts/typescript-eslint-static-test"
+  href="http://vangona.github.io/posts/deepdivejs-function"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="와글와글 정적 테스트와 코딩 스타일" />
+<meta name="twitter:title" content="DeepDiveJS, Chapter 12. 함수" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta name="twitter:image" content="http://vangona.github.io" />
@@ -60,12 +55,12 @@ Eslint
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="와글와글 정적 테스트와 코딩 스타일" />
+<meta property="og:title" content="DeepDiveJS, Chapter 12. 함수" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://vangona.github.io/posts/typescript-eslint-static-test"
+  content="http://vangona.github.io/posts/deepdivejs-function"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -110,14 +105,6 @@ href="/assets/css/bf.css">
           href="/humanities"
           >HUMANITIES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -128,17 +115,6 @@ href="/assets/css/bf.css">
           href="/algorithm"
           >ALGORITHM
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -149,17 +125,6 @@ href="/assets/css/bf.css">
           href="/languages"
           >LANGUAGES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -170,17 +135,6 @@ href="/assets/css/bf.css">
           href="/cs"
           >SCIENCE
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -191,17 +145,6 @@ href="/assets/css/bf.css">
           href="/projects"
           >PROJECTS
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
    <ul class="visible-links"> 
      <li class="dropdown ">
@@ -216,14 +159,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -236,17 +171,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -259,17 +183,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -282,17 +195,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -305,17 +207,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
  </div>
  <div class="social">
@@ -357,10 +248,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="post">
 <style>
-  .typescript-eslint-static-test {
+  .deepdivejs-function {
     margin-bottom: 2em;
   }
-  .typescript-eslint-static-test::before {
+  .deepdivejs-function::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -371,7 +262,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .typescript-eslint-static-test::after {
+  .deepdivejs-function::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -384,47 +275,99 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .typescript-eslint-static-test-container,
-  .typescript-eslint-static-test-container::before,
-  .typescript-eslint-static-test-container::after {
+  .deepdivejs-function-container,
+  .deepdivejs-function-container::before,
+  .deepdivejs-function-container::after {
     height: 25rem;
   }
-  .typescript-eslint-static-test-bleed-container,
-  .typescript-eslint-static-test-bleed-container::before,
-  .typescript-eslint-static-test-bleed-container::after {
+  .deepdivejs-function-bleed-container,
+  .deepdivejs-function-bleed-container::before,
+  .deepdivejs-function-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .typescript-eslint-static-test-container,
-        .typescript-eslint-static-test-container::before,
-        .typescript-eslint-static-test-container::after{
+        .deepdivejs-function-container,
+        .deepdivejs-function-container::before,
+        .deepdivejs-function-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
     }
 </style>
  <div class="post-title-container
-  typescript-eslint-static-test typescript-eslint-static-test-bleed-container bleed-hero-container
+  deepdivejs-function deepdivejs-function-bleed-container bleed-hero-container
     ">
     <!--Post hero image source-->
    <div class="heading-container hero-heading hero-heading-post">
      <h1>
-          와글와글 정적 테스트와 코딩 스타일
+          DeepDiveJS, Chapter 12. 함수
      </h1>
      <div class="post-meta">
-        <span>06/12/2022</span>
+        <span>02/07/2022</span>
         <span>
-              <a href="/tag/와글와글">#와글와글</a>
-              <a href="/tag/코드 품질">#코드 품질</a>
+              <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
+              <a href="/tag/Javascript">#Javascript</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="코드-컨벤션">코드 컨벤션</h1>
+   <h1 id="12장-함수">[12장. 함수]</h1>
 
-<h1 id="typescript">Typescript</h1>
+<p>&lt;/br&gt;
 
-<h1 id="eslint">Eslint</h1>
+<h3 id="️-일련의-과정을-반복할거라면-묶어서-이름-붙여-씁시다">✏️ 일련의 과정을 반복할거라면, 묶어서 이름 붙여 씁시다.</h3>
+
+<hr />
+
+<p>  프로그래밍 언어에서 함수란 일련의 과정을 문으로 구현하고, 이걸 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것을 말한다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-출근도-함수입니다">✏️ 출근도 함수입니다.</h3>
+
+<hr />
+
+<p>  일상 생활의 예를 들어보자면 출근도 함수다.
+
+<p>출근이라는 행위는 여러 일련의 행위를 묶어서 반복하기 편하게 만든 함수다. 사람의 뇌도 컴퓨터 메모리와 별반 다르지 않다.
+
+<p>구체적인 행위로 기억하면 어렵기 때문에, 자연스레 묶어서 기억하게 된다.
+
+<p>사람이 컴퓨터보다 똑똑하고 값지다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-자바스크립트에서는-함수도-객체다">✏️ 자바스크립트에서는 함수도 객체다.</h3>
+
+<hr />
+
+<p>  자바스크립트에서는 함수는 객체 타입의 값이다.
+
+<p>뿐만 아니라, 변수에 할당하거나 프로퍼티 값이 되거나, 배열의 요소가 되거나 매개변수로 전달할 수도 있다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-함수의-호이스팅">✏️ 함수의 호이스팅</h3>
+
+<hr />
+
+<p>  var로 선언된 변수처럼, function으로 만들어진 함수도 호이스팅이 된다.
+
+<p>차이가 있다면, var의 경우 평가 단계에서 변수가 할당되지 않고 선언만 되기 때문에 호이스팅 되어도 undefined가 되지만 함수의 경우는 실행이 가능하다.
+
+<p>다만, 코드의 흐름이 비정상적이기 때문에 이런 코드 스타일을 장려되지 않는다고 한다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-순수함수와-비순수함수">✏️ 순수함수와 비순수함수</h3>
+
+<hr />
+
+<p>  자바스크립트는 멀티 패러다임 언어로서, 함수형 프로그래밍을 할 수 있다.
+
+<p>함수형 프로그래밍에서 중요한 것이 순수 함수인데, 이는 외부 상태를 변경하거나 의존하지 않고 매개변수에만 의존하는 함수를 말한다.
+
+<p>이러한 순수함수는 함수의 부수효과를 줄여주며, 버그의 발생시 원인파악을 용이하게 한다.
 
 </article>
 <div id="disqus_thread"></div>
@@ -443,9 +386,24 @@ href="/assets/css/bf.css">
 <h2>Related posts</h2>
 <ul class="related-posts">
    <li>
-    <a href="/posts/waglewagle-code-quality">
-        <span>와글와글 프론트엔드 코드 품질 관리</span>
-        <small>06/12</small>
+    <a href="/posts/deepdivejs-type-casting">
+        <span>DeepDiveJS, Chapter 09. 타입 변환과 단축 평가</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-scope">
+        <span>DeepDiveJS, Chapter 13. 스코프</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-primitive-value-object">
+        <span>DeepDiveJS, Chapter 11. 원시 값과 객체의 비교</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-object-literal">
+        <span>DeepDiveJS, Chapter 10. 객체 리터럴</span>
+        <small>02/07</small>
     </a>
 </aside>
 <footer>

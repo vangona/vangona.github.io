@@ -27,15 +27,10 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  Big(O)가 무엇일까? &#9642; vanGona
+  DeepDiveJS, Chapter 05. 표현식과 문 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="Big(O)가 무엇일까?
-
-
-
-Big(O)가 무엇일까?
-">
+<meta name="description" content="[05장. 표현식과 문] &lt;/br&gt; ✏️ 사용할 말이 쓰기 어렵다면, 쉽게 쓸 수 있도록 사회적인 합의를 거칩시다.   컴퓨터는 데이터를 0과 1로만 이해할 수 있다. 이러한 0과 1을 통해 문자, 숫자, 기호등을 모두 표현하게 된다. 사람들이 이렇게 데이터를 표현하는 것은 효율적이지 못하기 때문에, 사회적인 합의를 거쳐서 이해할 수 있는 문자 또는...">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -45,14 +40,14 @@ Big(O)가 무엇일까?
 />
 <meta
   name="keywords"
-  content="algorithm, theory"
+  content="DeepDiveJS, Javascript"
 />
 <link
   rel="canonical"
-  href="http://vangona.github.io/posts/what-is-big-o"
+  href="http://vangona.github.io/posts/deepdivejs-expression-statement"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Big(O)가 무엇일까?" />
+<meta name="twitter:title" content="DeepDiveJS, Chapter 05. 표현식과 문" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta name="twitter:image" content="http://vangona.github.io" />
@@ -60,12 +55,12 @@ Big(O)가 무엇일까?
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Big(O)가 무엇일까?" />
+<meta property="og:title" content="DeepDiveJS, Chapter 05. 표현식과 문" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://vangona.github.io/posts/what-is-big-o"
+  content="http://vangona.github.io/posts/deepdivejs-expression-statement"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -110,14 +105,6 @@ href="/assets/css/bf.css">
           href="/humanities"
           >HUMANITIES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -128,17 +115,6 @@ href="/assets/css/bf.css">
           href="/algorithm"
           >ALGORITHM
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -149,17 +125,6 @@ href="/assets/css/bf.css">
           href="/languages"
           >LANGUAGES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -170,17 +135,6 @@ href="/assets/css/bf.css">
           href="/cs"
           >SCIENCE
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -191,17 +145,6 @@ href="/assets/css/bf.css">
           href="/projects"
           >PROJECTS
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
    <ul class="visible-links"> 
      <li class="dropdown ">
@@ -216,14 +159,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -236,17 +171,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -259,17 +183,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -282,17 +195,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -305,17 +207,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
  </div>
  <div class="social">
@@ -357,10 +248,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="post">
 <style>
-  .what-is-big-o {
+  .deepdivejs-expression-statement {
     margin-bottom: 2em;
   }
-  .what-is-big-o::before {
+  .deepdivejs-expression-statement::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -371,7 +262,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .what-is-big-o::after {
+  .deepdivejs-expression-statement::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -384,47 +275,91 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .what-is-big-o-container,
-  .what-is-big-o-container::before,
-  .what-is-big-o-container::after {
+  .deepdivejs-expression-statement-container,
+  .deepdivejs-expression-statement-container::before,
+  .deepdivejs-expression-statement-container::after {
     height: 25rem;
   }
-  .what-is-big-o-bleed-container,
-  .what-is-big-o-bleed-container::before,
-  .what-is-big-o-bleed-container::after {
+  .deepdivejs-expression-statement-bleed-container,
+  .deepdivejs-expression-statement-bleed-container::before,
+  .deepdivejs-expression-statement-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .what-is-big-o-container,
-        .what-is-big-o-container::before,
-        .what-is-big-o-container::after{
+        .deepdivejs-expression-statement-container,
+        .deepdivejs-expression-statement-container::before,
+        .deepdivejs-expression-statement-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
     }
 </style>
  <div class="post-title-container
-  what-is-big-o what-is-big-o-bleed-container bleed-hero-container
+  deepdivejs-expression-statement deepdivejs-expression-statement-bleed-container bleed-hero-container
     ">
     <!--Post hero image source-->
    <div class="heading-container hero-heading hero-heading-post">
      <h1>
-          Big(O)가 무엇일까?
+          DeepDiveJS, Chapter 05. 표현식과 문
      </h1>
      <div class="post-meta">
-        <span>22/10/2021</span>
+        <span>27/06/2022</span>
         <span>
-              <a href="/tag/algorithm">#algorithm</a>
-              <a href="/tag/theory">#theory</a>
+              <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
+              <a href="/tag/Javascript">#Javascript</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="bigo가-무엇일까"><center>Big(O)가 무엇일까?</center></h1>
+   <h1 id="05장-표현식과-문">[05장. 표현식과 문]</h1>
+
+<p>&lt;/br&gt;
+
+<h3 id="️-사용할-말이-쓰기-어렵다면-쉽게-쓸-수-있도록-사회적인-합의를-거칩시다">✏️ 사용할 말이 쓰기 어렵다면, 쉽게 쓸 수 있도록 사회적인 합의를 거칩시다.</h3>
 
 <hr />
 
-<h2 id="bigo가-무엇일까-1">Big(O)가 무엇일까?</h2>
+<p>  컴퓨터는 데이터를 0과 1로만 이해할 수 있다. 이러한 0과 1을 통해 문자, 숫자, 기호등을 모두 표현하게 된다.
+
+<p>사람들이 이렇게 데이터를 표현하는 것은 효율적이지 못하기 때문에, 사회적인 합의를 거쳐서 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하게 된다.
+
+<p>이것을 <strong>리터럴</strong>이라고 부른다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-값과-표현식과-문">✏️ 값과 표현식과 문</h3>
+
+<hr />
+
+<p>  <strong>표현식</strong>은 값으로 평가될 수 있는 문(문장)이다.
+
+<p><strong>문</strong>은 프로그램에게 주는 명령이다. 이것은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다.
+
+<p><strong>값</strong>은 식(표현식)이 평가되어 생성된 결과이다.
+
+<p>이 세 가지 정의를 통해서 내용을 정리해보자면, 프로그래머는 <strong>문</strong>을 통해서 명령을 하고, 그 중에 <strong>값</strong>이 될 수 있는 것은 <strong>표현식</strong>이라고 한다.
+
+<p>‘모든 문은 값이 될 수 있는 것 아닌가?’라는 의문이 들 수 있는데, var x;와 같이 변수를 선언하는 선언문도 <strong>문</strong>이지만, 값으로 평가될 수는 없다. 이런 경우 표현식이 아닌 문이 된다.
+
+<p>그러니, 컴퓨터에게 주는 말 중에 변수에 할당할 수 있는 것은 값이 되는 것이다.
+
+<p>‘사과’라는 말은 변수라는 바구니에 담을 수 있다. 그런데 ‘if (사과의 개수 &gt; 8)’이라는 ‘조건’은 바구니에 담을 수 없을 것이다.
+
+<p>값, 표현식, 문은 조금 헷갈릴 수 있는 것 같은데, 알아볼 수 있는 가장 간단한 방법은 변수에 할당해보는 것이다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-편리함에는-책임이-따른다">✏️ 편리함에는 책임이 따른다.</h3>
+
+<hr />
+
+<p>  자바스크립트는 여러가지 편리한 기능을 제공하는데, 그 중 하나는 <strong>세미콜론 자동 삽입 기능</strong>이다.
+
+<p>세미콜론은 문의 종료를 나타내는 기호인데, 자바스크립트 엔진은 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 붙여주는 기능이 암묵적으로 실행된다.
+
+<p>암묵적이라는 말에서 느낄 수 있듯이, 종종 이 동작은 프로그래머의 예측과 일치하지 않는 경우가 생긴다.
+
+<p>세미콜론을 사용하는가, 사용하지 않는가에 대해서는 종종 논란이 있지만, ECMAScript 기술 위원회에서는 세미콜론 사용을 권장하는 분위기이다.
 
 </article>
 <div id="disqus_thread"></div>
@@ -443,9 +378,24 @@ href="/assets/css/bf.css">
 <h2>Related posts</h2>
 <ul class="related-posts">
    <li>
-    <a href="/posts/stack-and-queue">
-        <span>스택과 큐</span>
-        <small>22/10</small>
+    <a href="/posts/deepdivejs-type-casting">
+        <span>DeepDiveJS, Chapter 09. 타입 변환과 단축 평가</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-scope">
+        <span>DeepDiveJS, Chapter 13. 스코프</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-primitive-value-object">
+        <span>DeepDiveJS, Chapter 11. 원시 값과 객체의 비교</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-object-literal">
+        <span>DeepDiveJS, Chapter 10. 객체 리터럴</span>
+        <small>02/07</small>
     </a>
 </aside>
 <footer>

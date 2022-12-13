@@ -27,15 +27,10 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  스택과 큐 &#9642; vanGona
+  DeepDiveJS, Chapter 08. 제어문 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="스택과 큐
-
-
-
-스택과 큐
-">
+<meta name="description" content="[08장. 제어문] &lt;/br&gt; ✏️ 패턴화된 명령의 제어   [01장. 프로그래밍]에서 프로그래머는 문제를 작은 단위로 분해해서 패턴화해야한다고 나왔었다. 제어문은, 이렇게 분해된 코드 블록의 실행 흐름을 제어하는 명령문이 된다. 이러한 제어문은 코드를 간결하게 만들어줄 수 있지만, 진행의 흐름을 제어하기 때문에 가독성이 떨어질 수 있다. 코드블록은 조건에 따라 실행하는 조건문, 코드블록은 반복 실행하는...">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -45,14 +40,14 @@
 />
 <meta
   name="keywords"
-  content="algorithm, theory, data-sturcture"
+  content="DeepDiveJS, Javascript"
 />
 <link
   rel="canonical"
-  href="http://vangona.github.io/posts/stack-and-queue"
+  href="http://vangona.github.io/posts/deepdivejs-control-statement"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="스택과 큐" />
+<meta name="twitter:title" content="DeepDiveJS, Chapter 08. 제어문" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta name="twitter:image" content="http://vangona.github.io" />
@@ -60,12 +55,12 @@
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="스택과 큐" />
+<meta property="og:title" content="DeepDiveJS, Chapter 08. 제어문" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://vangona.github.io/posts/stack-and-queue"
+  content="http://vangona.github.io/posts/deepdivejs-control-statement"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -110,14 +105,6 @@ href="/assets/css/bf.css">
           href="/humanities"
           >HUMANITIES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -128,17 +115,6 @@ href="/assets/css/bf.css">
           href="/algorithm"
           >ALGORITHM
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -149,17 +125,6 @@ href="/assets/css/bf.css">
           href="/languages"
           >LANGUAGES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -170,17 +135,6 @@ href="/assets/css/bf.css">
           href="/cs"
           >SCIENCE
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -191,17 +145,6 @@ href="/assets/css/bf.css">
           href="/projects"
           >PROJECTS
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
    <ul class="visible-links"> 
      <li class="dropdown ">
@@ -216,14 +159,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -236,17 +171,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -259,17 +183,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -282,17 +195,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -305,17 +207,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
  </div>
  <div class="social">
@@ -357,10 +248,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="post">
 <style>
-  .stack-and-queue {
+  .deepdivejs-control-statement {
     margin-bottom: 2em;
   }
-  .stack-and-queue::before {
+  .deepdivejs-control-statement::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -371,7 +262,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .stack-and-queue::after {
+  .deepdivejs-control-statement::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -384,48 +275,57 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .stack-and-queue-container,
-  .stack-and-queue-container::before,
-  .stack-and-queue-container::after {
+  .deepdivejs-control-statement-container,
+  .deepdivejs-control-statement-container::before,
+  .deepdivejs-control-statement-container::after {
     height: 25rem;
   }
-  .stack-and-queue-bleed-container,
-  .stack-and-queue-bleed-container::before,
-  .stack-and-queue-bleed-container::after {
+  .deepdivejs-control-statement-bleed-container,
+  .deepdivejs-control-statement-bleed-container::before,
+  .deepdivejs-control-statement-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .stack-and-queue-container,
-        .stack-and-queue-container::before,
-        .stack-and-queue-container::after{
+        .deepdivejs-control-statement-container,
+        .deepdivejs-control-statement-container::before,
+        .deepdivejs-control-statement-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
     }
 </style>
  <div class="post-title-container
-  stack-and-queue stack-and-queue-bleed-container bleed-hero-container
+  deepdivejs-control-statement deepdivejs-control-statement-bleed-container bleed-hero-container
     ">
     <!--Post hero image source-->
    <div class="heading-container hero-heading hero-heading-post">
      <h1>
-          스택과 큐
+          DeepDiveJS, Chapter 08. 제어문
      </h1>
      <div class="post-meta">
-        <span>22/10/2021</span>
+        <span>29/06/2022</span>
         <span>
-              <a href="/tag/algorithm">#algorithm</a>
-              <a href="/tag/theory">#theory</a>
-              <a href="/tag/data-sturcture">#data-sturcture</a>
+              <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
+              <a href="/tag/Javascript">#Javascript</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="스택과-큐"><center>스택과 큐</center></h1>
+   <h1 id="08장-제어문">[08장. 제어문]</h1>
+
+<p>&lt;/br&gt;
+
+<h3 id="️-패턴화된-명령의-제어">✏️ 패턴화된 명령의 제어</h3>
 
 <hr />
 
-<h2 id="스택과-큐-1">스택과 큐</h2>
+<p>  [01장. 프로그래밍]에서 프로그래머는 문제를 <strong>작은 단위로 분해</strong>해서 패턴화해야한다고 나왔었다.
+
+<p>제어문은, 이렇게 분해된 코드 블록의 실행 흐름을 제어하는 명령문이 된다.
+
+<p>이러한 제어문은 코드를 간결하게 만들어줄 수 있지만, 진행의 흐름을 제어하기 때문에 가독성이 떨어질 수 있다.
+
+<p>코드블록은 조건에 따라 실행하는 <strong>조건문</strong>, 코드블록은 반복 실행하는 <strong>반복문</strong>이 있다.
 
 </article>
 <div id="disqus_thread"></div>
@@ -444,9 +344,24 @@ href="/assets/css/bf.css">
 <h2>Related posts</h2>
 <ul class="related-posts">
    <li>
-    <a href="/posts/what-is-big-o">
-        <span>Big(O)가 무엇일까?</span>
-        <small>22/10</small>
+    <a href="/posts/deepdivejs-type-casting">
+        <span>DeepDiveJS, Chapter 09. 타입 변환과 단축 평가</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-scope">
+        <span>DeepDiveJS, Chapter 13. 스코프</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-primitive-value-object">
+        <span>DeepDiveJS, Chapter 11. 원시 값과 객체의 비교</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-object-literal">
+        <span>DeepDiveJS, Chapter 10. 객체 리터럴</span>
+        <small>02/07</small>
     </a>
 </aside>
 <footer>

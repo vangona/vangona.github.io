@@ -30,10 +30,7 @@
   와글와글 성능 최적화 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="크롬 개발자 도구
-
-라이트 하우스
-">
+<meta name="description" content="라이트 하우스 점수 개선 Next.js의 코드스플리팅, SSR, SSG과 폰트 파일 압축 및 캐싱을 통해 성능 점수를 60점에서 94점으로 개선할 수 있었다. 스크린 리더에 기본 언어를 명시하고자 lang 태그를 사용하고 배경색과 글자색의 대비를 높여 접근성 점수를 73점에서 100점으로 개선할 수 있었다. meta 태그와 라이트하우스 SEO 점수를 85점에서 100점으로 개선할 수 있었다....">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -43,7 +40,7 @@
 />
 <meta
   name="keywords"
-  content="와글와글, 2차원 배치, 물리엔진"
+  content="와글와글, 라이트하우스, 크롬 개발자 도구, Tanstack Query"
 />
 <link
   rel="canonical"
@@ -108,14 +105,6 @@ href="/assets/css/bf.css">
           href="/humanities"
           >HUMANITIES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -126,17 +115,6 @@ href="/assets/css/bf.css">
           href="/algorithm"
           >ALGORITHM
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -147,17 +125,6 @@ href="/assets/css/bf.css">
           href="/languages"
           >LANGUAGES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -168,17 +135,6 @@ href="/assets/css/bf.css">
           href="/cs"
           >SCIENCE
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -189,17 +145,6 @@ href="/assets/css/bf.css">
           href="/projects"
           >PROJECTS
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
    <ul class="visible-links"> 
      <li class="dropdown ">
@@ -214,14 +159,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -234,17 +171,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -257,17 +183,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -280,17 +195,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -303,17 +207,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
  </div>
  <div class="social">
@@ -413,15 +306,36 @@ href="/assets/css/bf.css">
         <span>06/12/2022</span>
         <span>
               <a href="/tag/와글와글">#와글와글</a>
-              <a href="/tag/2차원 배치">#2차원 배치</a>
-              <a href="/tag/물리엔진">#물리엔진</a>
+              <a href="/tag/라이트하우스">#라이트하우스</a>
+              <a href="/tag/크롬 개발자 도구">#크롬 개발자 도구</a>
+              <a href="/tag/Tanstack Query">#Tanstack Query</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="크롬-개발자-도구">크롬 개발자 도구</h1>
+   <h1 id="라이트-하우스-점수-개선">라이트 하우스 점수 개선</h1>
 
-<h1 id="라이트-하우스">라이트 하우스</h1>
+<p><img src="https://user-images.githubusercontent.com/69471032/207239469-4cdf7b57-925c-454a-96ae-c265205f6bfc.png" alt="image" />
+
+<ul>
+ <li>Next.js의 코드스플리팅, SSR, SSG과 폰트 파일 압축 및 캐싱을 통해 성능 점수를 <strong>60점</strong>에서 <strong>94점으로 개선</strong>할 수 있었다.
+ <li>스크린 리더에 기본 언어를 명시하고자 lang 태그를 사용하고 배경색과 글자색의 대비를 높여 접근성 점수를 <strong>73점</strong>에서 <strong>100점으로 개선</strong>할 수 있었다.
+ <li>meta 태그와 라이트하우스 SEO 점수를 <strong>85점</strong>에서 <strong>100점으로 개선</strong>할 수 있었다.
+</ul>
+
+<h1 id="크롬-개발자-도구-성능-측정-및-개선">크롬 개발자 도구 성능 측정 및 개선</h1>
+
+<ul>
+ <li>크롬 개발자 도구를 통해서 버블차트의 특정 상태로 인해 사용되지 않는 EventListener가 지속적으로 쌓이고 있는 버그를 발견, 해당 상태를 제거하는 로직으로 버그를 해결하여 <strong>최대 800</strong>까지 쌓이던 EventListener를 <strong>400 이하로 유지</strong>하고 <strong>JS Heap 메모리</strong>를 <strong>최대 60mb</strong>에서 <strong>35mb로 감소</strong>시킬 수 있었다.
+</ul>
+
+<h1 id="api-데이터-리렌더링-성능-개선">API 데이터 리렌더링 성능 개선</h1>
+
+<ul>
+ <li>서비스에 맞는 실시간성을 유지하기 위해서 Short Polling을 사용하였습니다. 그리고 이에 따라서 요청 주기마다 API 응답에 의해 리렌더링이 발생했다.
+ <li>Tanstack Query의 Caching 기능과 렌더링 최적화를 통해서 <strong>1초마다 발생하던 리렌더링</strong>을 *<em>데이터가 변경되었을 때만 하도록 개선</em> 할 수 있었다.
+ <li>이후 UI 로직을 수정하여, 변경된 데이터가 수신되었더라도 <strong>전체 버블차트가 리렌더링</strong> 되는 것이 아니라 <strong>변경된 키워드 버블만 리렌더링</strong> <strong>될 수 있도록 최적화</strong>시킬 수 있었다.
+</ul>
 
 </article>
 <div id="disqus_thread"></div>
@@ -439,21 +353,6 @@ href="/assets/css/bf.css">
 <aside class="related">
 <h2>Related posts</h2>
 <ul class="related-posts">
-   <li>
-    <a href="/posts/waglewagle-unit-test">
-        <span>와글와글 단위 테스트</span>
-        <small>06/12</small>
-    </a>
-   <li>
-    <a href="/posts/trie-search-engine">
-        <span>Trie 자료구조를 활용한 검색엔진 만들기</span>
-        <small>06/12</small>
-    </a>
-   <li>
-    <a href="/posts/circlepacker-physics">
-        <span>와글와글 데이터 시각화를 위한 2차원 배치 물리엔진 만들기</span>
-        <small>06/12</small>
-    </a>
 </aside>
 <footer>
     <span>임상심리학자가 개발을 추구하는 건에 대해서

@@ -27,17 +27,10 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  API 호출 최적화 &#9642; vanGona
+  DeepDiveJS, Chapter 14. 전역 변수의 문제점 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="Short Polling
-
-Tanstack Query
-
-Caching
-
-렌더링 최적화
-">
+<meta name="description" content="[14장. 전역 변수의 문제점] &lt;/br&gt; ✏️ 오해를 줄이려면, 문맥이 구체적이어야한다.   앞서 말했듯, 단어가 사용되는 범위가 넓으면 오해가 생기기 쉽다. 전역변수도 이와 같다. 전역변수는 전역변수의 네임스페이스를 오염시킬 수 있으며, 자바스크립트는 기본적으로 전체 스크립트가 전역 스코프를 공유하기 때문에 이로 인해 여러 문제가 발생할 수 있다. 또한, 전역변수는 생명주기가 길기 때문에 메모리...">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -47,14 +40,14 @@ Caching
 />
 <meta
   name="keywords"
-  content="와글와글, tanstack query"
+  content="DeepDiveJS, Javascript"
 />
 <link
   rel="canonical"
-  href="http://vangona.github.io/posts/api-call-optimization"
+  href="http://vangona.github.io/posts/deepdivejs-global-variables-problem"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="API 호출 최적화" />
+<meta name="twitter:title" content="DeepDiveJS, Chapter 14. 전역 변수의 문제점" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta name="twitter:image" content="http://vangona.github.io" />
@@ -62,12 +55,12 @@ Caching
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="API 호출 최적화" />
+<meta property="og:title" content="DeepDiveJS, Chapter 14. 전역 변수의 문제점" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://vangona.github.io/posts/api-call-optimization"
+  content="http://vangona.github.io/posts/deepdivejs-global-variables-problem"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -112,14 +105,6 @@ href="/assets/css/bf.css">
           href="/humanities"
           >HUMANITIES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -130,17 +115,6 @@ href="/assets/css/bf.css">
           href="/algorithm"
           >ALGORITHM
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -151,17 +125,6 @@ href="/assets/css/bf.css">
           href="/languages"
           >LANGUAGES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -172,17 +135,6 @@ href="/assets/css/bf.css">
           href="/cs"
           >SCIENCE
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -193,17 +145,6 @@ href="/assets/css/bf.css">
           href="/projects"
           >PROJECTS
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
    <ul class="visible-links"> 
      <li class="dropdown ">
@@ -218,14 +159,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -238,17 +171,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -261,17 +183,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -284,17 +195,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -307,17 +207,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
  </div>
  <div class="social">
@@ -359,10 +248,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="post">
 <style>
-  .api-call-optimization {
+  .deepdivejs-global-variables-problem {
     margin-bottom: 2em;
   }
-  .api-call-optimization::before {
+  .deepdivejs-global-variables-problem::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -373,7 +262,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .api-call-optimization::after {
+  .deepdivejs-global-variables-problem::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -386,49 +275,97 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .api-call-optimization-container,
-  .api-call-optimization-container::before,
-  .api-call-optimization-container::after {
+  .deepdivejs-global-variables-problem-container,
+  .deepdivejs-global-variables-problem-container::before,
+  .deepdivejs-global-variables-problem-container::after {
     height: 25rem;
   }
-  .api-call-optimization-bleed-container,
-  .api-call-optimization-bleed-container::before,
-  .api-call-optimization-bleed-container::after {
+  .deepdivejs-global-variables-problem-bleed-container,
+  .deepdivejs-global-variables-problem-bleed-container::before,
+  .deepdivejs-global-variables-problem-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .api-call-optimization-container,
-        .api-call-optimization-container::before,
-        .api-call-optimization-container::after{
+        .deepdivejs-global-variables-problem-container,
+        .deepdivejs-global-variables-problem-container::before,
+        .deepdivejs-global-variables-problem-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
     }
 </style>
  <div class="post-title-container
-  api-call-optimization api-call-optimization-bleed-container bleed-hero-container
+  deepdivejs-global-variables-problem deepdivejs-global-variables-problem-bleed-container bleed-hero-container
     ">
     <!--Post hero image source-->
    <div class="heading-container hero-heading hero-heading-post">
      <h1>
-          API 호출 최적화
+          DeepDiveJS, Chapter 14. 전역 변수의 문제점
      </h1>
      <div class="post-meta">
-        <span>06/12/2022</span>
+        <span>02/07/2022</span>
         <span>
-              <a href="/tag/와글와글">#와글와글</a>
-              <a href="/tag/tanstack query">#tanstack query</a>
+              <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
+              <a href="/tag/Javascript">#Javascript</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="short-polling">Short Polling</h1>
+   <h1 id="14장-전역-변수의-문제점">[14장. 전역 변수의 문제점]</h1>
 
-<h1 id="tanstack-query">Tanstack Query</h1>
+<p>&lt;/br&gt;
 
-<h2 id="caching">Caching</h2>
+<h3 id="️-오해를-줄이려면-문맥이-구체적이어야한다">✏️ 오해를 줄이려면, 문맥이 구체적이어야한다.</h3>
 
-<h2 id="렌더링-최적화">렌더링 최적화</h2>
+<hr />
+
+<p>  앞서 말했듯, 단어가 사용되는 범위가 넓으면 오해가 생기기 쉽다.
+
+<p>전역변수도 이와 같다. 전역변수는 전역변수의 네임스페이스를 오염시킬 수 있으며, 자바스크립트는 기본적으로 전체 스크립트가 전역 스코프를 공유하기 때문에 이로 인해 여러 문제가 발생할 수 있다.
+
+<p>또한, 전역변수는 생명주기가 길기 때문에 메모리 적인 부분으로도 비효율적이며 스코프 체인상 종점에 있기 때문에 검색 속도에서도 비효율적이다.
+
+<p>사용할 수 있다면, 최대한 지역 변수를 사용하는 것이 좋다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-이외-전역변수의-단점을-보완하는-방법">✏️ 이외 전역변수의 단점을 보완하는 방법</h3>
+
+<hr />
+
+<p> 
+
+<ol>
+ <li>즉시 실행 함수를 사용
+</ol>
+
+<ul>
+ <li>즉시 실행 함수는 한 번만 호출된다. 라이브러리 등에 자주 사용된다.
+</ul>
+
+<ol>
+ <li>네임스페이스 객체 사용
+</ol>
+
+<ul>
+ <li>네임스페이스 객체를 사용, 변수가 혼용되지 않도록 함.
+</ul>
+
+<ol>
+ <li>모듈 패턴
+</ol>
+
+<ul>
+ <li>클로저를 기반으로 정보 은닉
+</ul>
+
+<ol>
+ <li>ES6 모듈
+</ol>
+
+<ul>
+ <li>script type에 module을 사용해서 모듈 스코프를 사용
+</ul>
 
 </article>
 <div id="disqus_thread"></div>
@@ -446,6 +383,26 @@ href="/assets/css/bf.css">
 <aside class="related">
 <h2>Related posts</h2>
 <ul class="related-posts">
+   <li>
+    <a href="/posts/deepdivejs-type-casting">
+        <span>DeepDiveJS, Chapter 09. 타입 변환과 단축 평가</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-scope">
+        <span>DeepDiveJS, Chapter 13. 스코프</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-primitive-value-object">
+        <span>DeepDiveJS, Chapter 11. 원시 값과 객체의 비교</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-object-literal">
+        <span>DeepDiveJS, Chapter 10. 객체 리터럴</span>
+        <small>02/07</small>
+    </a>
 </aside>
 <footer>
     <span>임상심리학자가 개발을 추구하는 건에 대해서

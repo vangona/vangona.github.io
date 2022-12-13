@@ -27,15 +27,10 @@
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
 />
 <title>
-  제주 가이드, 제주 로컬 맛집 가이드 &#9642; vanGona
+  DeepDiveJS, Chapter 04. 변수 &#9642; vanGona
 </title>
 <!--
-<meta name="description" content="내 삶에 찾아온 불편
-
-내 반응을 자동화시키자
-
-네이버 지도 API
-">
+<meta name="description" content="[04장. 변수] &lt;/br&gt; ✏️ 내가 그의 이름을 불러주기 전에는 그는 다만 하나의 몸짓에 지나지 않았다.   무언가를 식별하기 위해 단어를 만드는 이유는 무언가를 지칭할 때 매번 구체적으로 묘사해야하면 기억하기 어렵기 때문에, 추상화 시키기 위해서이다. 프로그래밍 언어에서 변수도 유사하게 사용되어진다. 변수는 하나의 값을 저장하기 위해 확보한 메모리 공간 또는 메모리 공간을...">
 -->
 <link rel="icon" href="/assets/img/dactl.svg" />
 <meta
@@ -45,14 +40,14 @@
 />
 <meta
   name="keywords"
-  content="제주가이드, 네이버 지도 API"
+  content="DeepDiveJS, Javascript"
 />
 <link
   rel="canonical"
-  href="http://vangona.github.io/posts/jeju-guide"
+  href="http://vangona.github.io/posts/deepdivejs-variables"
 />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="제주 가이드, 제주 로컬 맛집 가이드" />
+<meta name="twitter:title" content="DeepDiveJS, Chapter 04. 변수" />
 <meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta name="twitter:image" content="http://vangona.github.io" />
@@ -60,12 +55,12 @@
 <link rel="author" href="" />
 <meta property="og:locale" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="제주 가이드, 제주 로컬 맛집 가이드" />
+<meta property="og:title" content="DeepDiveJS, Chapter 04. 변수" />
 <meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
 " />
 <meta
   property="og:url"
-  content="http://vangona.github.io/posts/jeju-guide"
+  content="http://vangona.github.io/posts/deepdivejs-variables"
 />
 <meta property="og:site_name" content="vanGona" />
 <link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
@@ -110,14 +105,6 @@ href="/assets/css/bf.css">
           href="/humanities"
           >HUMANITIES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -128,17 +115,6 @@ href="/assets/css/bf.css">
           href="/algorithm"
           >ALGORITHM
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -149,17 +125,6 @@ href="/assets/css/bf.css">
           href="/languages"
           >LANGUAGES
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -170,17 +135,6 @@ href="/assets/css/bf.css">
           href="/cs"
           >SCIENCE
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -191,17 +145,6 @@ href="/assets/css/bf.css">
           href="/projects"
           >PROJECTS
         </a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
    <ul class="visible-links"> 
      <li class="dropdown ">
@@ -216,14 +159,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/humanities-coding">
-            - 코딩과 인문학</a
-          >
-          <a class="dropdown-item" href="/tag/humanities-cs">
-            - 컴퓨터공학과 인문학</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -236,17 +171,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/boj">
-            - 백준 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/programmers">
-            - 프로그래머스 문제풀이</a
-          >
-          <a class="dropdown-item" href="/tag/theory">
-            - 알고리즘 & 자료구조 이론</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -259,17 +183,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/html-css">
-            - HTML & CSS</a
-          >
-          <a class="dropdown-item" href="/tag/js">
-            - Javascript</a
-          >
-          <a class="dropdown-item" href="/tag/etc">
-            - 이외</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -282,17 +195,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/network">
-            - Network</a
-          >
-          <a class="dropdown-item" href="/tag/os">
-            - OS</a
-          >
-          <a class="dropdown-item" href="/tag/convention">
-            - Convention</a
-          >
-       </ul>
      <li class="dropdown ">
         <a
           class="dropdown-toggle"
@@ -305,17 +207,6 @@ href="/assets/css/bf.css">
           <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
           ><span class="caret"></span
         ></a>
-       <ul class="dropdown-content">
-          <a class="dropdown-item" href="/tag/myowndrawer">
-            - 나만의 서랍장</a
-          >
-          <a class="dropdown-item" href="/tag/blueprint-maker">
-            - 청사진제작소</a
-          >
-          <a class="dropdown-item" href="/tag/word-dictionary">
-            - 나를 표현하는 단어들</a
-          >
-       </ul>
    </ul>
  </div>
  <div class="social">
@@ -357,10 +248,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="post">
 <style>
-  .jeju-guide {
+  .deepdivejs-variables {
     margin-bottom: 2em;
   }
-  .jeju-guide::before {
+  .deepdivejs-variables::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -371,7 +262,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .jeju-guide::after {
+  .deepdivejs-variables::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -384,47 +275,79 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .jeju-guide-container,
-  .jeju-guide-container::before,
-  .jeju-guide-container::after {
+  .deepdivejs-variables-container,
+  .deepdivejs-variables-container::before,
+  .deepdivejs-variables-container::after {
     height: 25rem;
   }
-  .jeju-guide-bleed-container,
-  .jeju-guide-bleed-container::before,
-  .jeju-guide-bleed-container::after {
+  .deepdivejs-variables-bleed-container,
+  .deepdivejs-variables-bleed-container::before,
+  .deepdivejs-variables-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .jeju-guide-container,
-        .jeju-guide-container::before,
-        .jeju-guide-container::after{
+        .deepdivejs-variables-container,
+        .deepdivejs-variables-container::before,
+        .deepdivejs-variables-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
     }
 </style>
  <div class="post-title-container
-  jeju-guide jeju-guide-bleed-container bleed-hero-container
+  deepdivejs-variables deepdivejs-variables-bleed-container bleed-hero-container
     ">
     <!--Post hero image source-->
    <div class="heading-container hero-heading hero-heading-post">
      <h1>
-          제주 가이드, 제주 로컬 맛집 가이드
+          DeepDiveJS, Chapter 04. 변수
      </h1>
      <div class="post-meta">
-        <span>06/12/2022</span>
+        <span>27/06/2022</span>
         <span>
-              <a href="/tag/제주가이드">#제주가이드</a>
-              <a href="/tag/네이버 지도 API">#네이버 지도 API</a>
+              <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
+              <a href="/tag/Javascript">#Javascript</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="내-삶에-찾아온-불편">내 삶에 찾아온 불편</h1>
+   <h1 id="04장-변수">[04장. 변수]</h1>
 
-<h1 id="내-반응을-자동화시키자">내 반응을 자동화시키자</h1>
+<p>&lt;/br&gt;
 
-<h1 id="네이버-지도-api">네이버 지도 API</h1>
+<h3 id="️-내가-그의-이름을-불러주기-전에는-그는-다만-하나의-몸짓에-지나지-않았다">✏️ 내가 그의 이름을 불러주기 전에는 그는 다만 하나의 몸짓에 지나지 않았다.</h3>
+
+<hr />
+
+<p>  무언가를 식별하기 위해 단어를 만드는 이유는 무언가를 지칭할 때 매번 구체적으로 묘사해야하면 기억하기 어렵기 때문에, 추상화 시키기 위해서이다.
+
+<p>프로그래밍 언어에서 변수도 유사하게 사용되어진다.
+
+<p><strong>변수는 하나의 값을 저장하기 위해 확보한 메모리 공간 또는 메모리 공간을 식별하기 위해 붙인 이름을 말한다.</strong>
+
+<p>바구니에 무언가를 담고 바구니 뚜껑을 닫아버리면 찾기 불편하니까 바구니 뚜껑에 이름표를 붙여서 바구니를 쓰기 편하게 하는 것이다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-변수의-호이스팅">✏️ 변수의 호이스팅</h3>
+
+<hr />
+
+<p>  변수 호이스팅은 한 줄 씩 코드가 실행되는 중, 현재 실행되고 있는 곳보다 나중에 선언되는 변수에 접근할 수 있는 현상을 말한다.
+
+<p>자바스크립트는 코드를 실행하기 전에, 소스코드의 평가를 먼저 진행하게 된다. 변수의 선언문은 이 평가 과정에서 실행되게 된다.
+
+<p>이런 이유로 호이스팅이 발생하게 된다. 다만, 변수 바구니에 내용을 담는 ‘할당’은 코드의 실행 단계에서 진행된다.
+
+<p>&lt;/br&gt;
+
+<h3 id="️-var-const-let">✏️ var, const, let</h3>
+
+<hr />
+
+<p>  자바스크립트는 원래 var를 이용해서 변수를 선언했었는데, var를 이용한 선언문에서 발생하는 호이스팅과 같은 유연함 때문에 ES6에서는 const와 let를 이용한 변수 선언문이 추가되었다.
+
+<p>이에 대해서는 15장에 구체적인 내용이 등장하게 된다.
 
 </article>
 <div id="disqus_thread"></div>
@@ -442,6 +365,26 @@ href="/assets/css/bf.css">
 <aside class="related">
 <h2>Related posts</h2>
 <ul class="related-posts">
+   <li>
+    <a href="/posts/deepdivejs-type-casting">
+        <span>DeepDiveJS, Chapter 09. 타입 변환과 단축 평가</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-scope">
+        <span>DeepDiveJS, Chapter 13. 스코프</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-primitive-value-object">
+        <span>DeepDiveJS, Chapter 11. 원시 값과 객체의 비교</span>
+        <small>02/07</small>
+    </a>
+   <li>
+    <a href="/posts/deepdivejs-object-literal">
+        <span>DeepDiveJS, Chapter 10. 객체 리터럴</span>
+        <small>02/07</small>
+    </a>
 </aside>
 <footer>
     <span>임상심리학자가 개발을 추구하는 건에 대해서
