@@ -242,6 +242,101 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
+  .boostcourse-cs50-chapter2 {
+    margin-bottom: 2em;
+  }
+  .boostcourse-cs50-chapter2::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .boostcourse-cs50-chapter2::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .boostcourse-cs50-chapter2-container,
+  .boostcourse-cs50-chapter2-container::before,
+  .boostcourse-cs50-chapter2-container::after {
+    height: 25rem;
+  }
+  .boostcourse-cs50-chapter2-bleed-container,
+  .boostcourse-cs50-chapter2-bleed-container::before,
+  .boostcourse-cs50-chapter2-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .boostcourse-cs50-chapter2-container,
+        .boostcourse-cs50-chapter2-container::before,
+        .boostcourse-cs50-chapter2-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div
+    class="
+    post-title-container
+        boostcourse-cs50-chapter2 boostcourse-cs50-chapter2-container hero-hov
+  "
+  >
+   <div
+      class="heading-container hero-heading hero-heading-blog"
+    >
+     <h1>
+        <a href="/posts/boostcourse-cs50-chapter2" title="CS50 Chapter 2. C언어"
+          >CS50 Chapter 2. C언어</a
+        >
+     </h1>
+     <div
+        class=" post-meta "
+      >
+        <span>2022/05/09</span>
+        <span>
+          <a href="/tag/boostcourse">#boostcourse</a>
+          <a href="/tag/cs50">#cs50</a>
+          <a href="/tag/cs">#cs</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="cs50-chapter-2-c언어"><center>[CS50] Chapter 2. C언어</center></h1>
+
+<hr />
+
+<h2 id="1-c언어-기초">1) C언어 기초</h2>
+
+<h2 id="2-문자열">2) 문자열</h2>
+
+<h2 id="3-조건문과-루프">3) 조건문과 루프</h2>
+
+<h2 id="4-자료형-형식-지정자-연산자">4) 자료형, 형식 지정자, 연산자</h2>
+
+<h2 id="5-사용자-정의-함수-중첩-루프">5) 사용자 정의 함수, 중첩 루프</h2>
+
+<h2 id="6-하드웨어의-한계">6) 하드웨어의 한계</h2>
+
+ <div class="readmore">
+    <a href="/posts/boostcourse-cs50-chapter2" role="button">Read more</a>
+ </div>
+</article>
+<hr />
+<article class="blog">
+<style>
   .boj-8979 {
     margin-bottom: 2em;
   }
@@ -1101,161 +1196,6 @@ P 5 h 3 k x
 
  <div class="readmore">
     <a href="/posts/boj-10798" role="button">Read more</a>
- </div>
-</article>
-<hr />
-<article class="blog">
-<style>
-  .your-own-drawer {
-    margin-bottom: 2em;
-  }
-  .your-own-drawer::before {
-    background-image: url('https://source.unsplash.com/random');
-    background-size: cover;
-    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -2;
-  }
-  .your-own-drawer::after {
-    content:'';
-    position:absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(100,0,255,0.8);
-    /*mix-blend-mode: darken;
-    mix-blend-mode: color-burn;
-    mix-blend-mode: hard-light;*/
-    mix-blend-mode: overlay;
-    z-index: -1;
-  }
-  .your-own-drawer-container,
-  .your-own-drawer-container::before,
-  .your-own-drawer-container::after {
-    height: 25rem;
-  }
-  .your-own-drawer-bleed-container,
-  .your-own-drawer-bleed-container::before,
-  .your-own-drawer-bleed-container::after {
-    height: 35rem;
-  }
-    @media (max-width: 48rem) {
-        .your-own-drawer-container,
-        .your-own-drawer-container::before,
-        .your-own-drawer-container::after{
-            height: 20rem;
-            margin-bottom: 3rem;
-        }
-    }
-</style>
- <div
-    class="
-    post-title-container
-        your-own-drawer your-own-drawer-container hero-hov
-  "
-  >
-   <div
-      class="heading-container hero-heading hero-heading-blog"
-    >
-     <h1>
-        <a href="/posts/your-own-drawer" title="누군가의 서랍장"
-          >누군가의 서랍장</a
-        >
-     </h1>
-     <div
-        class=" post-meta "
-      >
-        <span>2022/02/24</span>
-        <span>
-          <a href="/tag/누군가의 서랍장">#누군가의 서랍장</a>
-          <a href="/tag/크라우드펀딩">#크라우드펀딩</a>
-          <a href="/tag/지식공유">#지식공유</a>
-        </span>
-     </div>
-   </div>
- </div>
-   <h1 id="누군가의-서랍장"><center>누군가의 서랍장</center></h1>
-
-<p><img src="https://user-images.githubusercontent.com/69471032/207241570-87e8813c-5176-47c4-8dc0-1c2fac3c52c4.png" alt="image" />
-
-<h2 id="-생각정리를-위한-공간과-책-그리고-sns">/ 생각정리를 위한, 공간과 책 그리고 SNS</h2>
-
-<hr />
-
-<h3 id="1-생각정리를-위한-공간">1. 생각정리를 위한 공간</h3>
-
-<p><img src="https://user-images.githubusercontent.com/69471032/207241725-7cd252e9-ee1a-4d1f-80c8-75da063c05cc.png" alt="image" />
-
-<p>이러한 질문에서 시작했습니다.
-사람들이 생각할 여유를 만들고 싶었습니다.
-
-<p>프로젝트 기획자는 생각 정리를 위한 공간을 운영하고 있습니다.
-
-<p>누군가는 이곳에서 복잡한 머리를,
-누군가는 답답한 감정을,
-누군가는 묻혀있던 바램을 정리합니다.
-
-<p>그리고 이곳에서 글, 그림, 사진 또는 무언가로
-정리된 생각들을 모아 책을 만들고 있습니다.
-도움이 되길 바라며 질문을 더해서요.
-
-<p><strong>하늘의 색을 기억하고 계신가요?</strong>
-
-<p><strong>당신께 행복은 무엇이신가요?</strong>
-
-<h3 id="2-생각정리를-위한-책-나만의-서랍장">2. 생각정리를 위한 책, 나만의 서랍장</h3>
-
-<p><strong>영감은 대단한 것이 아니라 솔직한 곳에서 온다.</strong>
-
-<p>사람은 때로 일기를 쓰거나 질문지를 쓰며 생각을 정리하려는 시도를 합니다.
-몇몇 생각에는 감정과 바램이 함께 담겨있기 때문에 혼자서 정리가 어렵습니다.
-그래서 자기연민에 빠지거나 자신의 생각에 갇혀버리기도 합니다.
-그건 어렵고 아픈 과정입니다. 돕고 싶었습니다.
-
-<p>50여명의 사람들이 정리한 100여개의 생각들을 추려 책으로 엮었습니다.
-적절한 질문과 답변 페이지를 두어서, 책을 읽으며 떠오른 자신의 생각을
-정리할 수 있도록 돕습니다. 위로를 받되 스스로에게 갇히지 않으면서요.
-
-<p>정답을 쓰려 하지 말고, 질문을 보고
-떠오르는 것들을 다 적은 다음
-그다음 버릴 생각을 버리고,
-예쁘게 정리하시면 됩니다.
-
-<p>생각에 얽매이지도, 피하지도 않도록 잘 정리해두는
-나만의 서랍장인 것입니다.
-
-<h2 id="-폐업-신고">/ 폐업 신고</h2>
-
-<p>무언가를 포기해야 하는 도전을 할 때는, 포기해야 하는 것보다 더 얻을게 있는 것 같다는 판단이 섰을 때 도전했다. 내 나이에서 우선순위는 성취보다 배움이 먼저라고 생각했다.
-
-<p>창업지원사업에 지원하며 기대했던 것은 좋은 실패였다.
-
-<p>성공에 대한 기대는 분명 있었다. ‘나는 부자가 될거야!’ 라는 기대보다는, 나의 비전과 가치관에 맞는 무언가를 새롭게 만들어서 가치전달 한다는 것 때문에 창업이 끌렸다.
-
-<p>다만 창업의 선택은 많은 것을 포기해야 하는 것이었는데, ‘상담을 전공하는 대학생, 놀라운 아이디어로 한 번에 사업 성공을 거두다!’ 같이 꿈 같은 확률을 쫓는 것은 적어도 나한테는 타산이 안 맞았다.
-
-<p>창업의 평균 지속률은 매우 낮았고, 그 이야기는 창업이 자신감과 노력만으로 되는 것은 아니라는 것이었다.
-
-<p>성공한 사람들은 한 번 이상의 실패를 겪었다는 통계적 사실이 있었다. 시행착오 없는 성공은 불안정한 모래성 같았다는 경험적 사실이 있었다.
-
-<p>그런 사고 과정으로 나는 첫 창업을 통해 배워야 하는 가장 중요한 배움은 창업 실패라는 요상한 결론을 내렸다.
-
-<p>좋은 실패를 위해서 열심히 할 수 있었다. 많은 돈이 들어가거나 인력이 더 필요하지 않은 사이클의 개괄적인 작업은 모두 해봤다. 기획, 사업계획서, 지원사업진행, 예산 사용, 서비스 운영, 고객 응대, 서비스 개선, 디자인, 제품 생산과 온라인 판매, 웹 개발까지 해봤다.
-
-<p>내 자본이 들어가지 않았음에도 실패에 대해 내가 충분히 슬퍼할 수 있었던 이유는 아마도 일정수준 이상의 노력과 적절한 성공, 적절한 실패와 내 행동의 이유에 대한 완고함, 그리고 그 모든 것이 어쩌면 기획단계부터 틀렸다는 것을 받아들이는 과정을 모두 겪었기 때문인 것 같다.
-
-<p>이런 과정을 통해 실패를 해본 사람과 해보지 않은 사람의 차이를 아주 조금 이해하게 된다. 가치는 완벽한 기획안이 아니라 끊임없는 개선에서 온다는 애자일 방법론에 대한 체험적인 이해다.
-
-<p>비즈니스로 보면 시장에 대한 겸손함일 수도 있겠고, 심리학으로 보면 삶의 행복은 단 순간의 성취가 아니라 가치를 정하고 계속 개선해나가며 생기는 꾸준한 안정감을 통해서 온다는 삶의 조각에 대한 깨달음이었을 수도 있겠다.
-
-<p>나는 이렇게 폐업 신고를 하며 나의 첫 창업이 성공적이었다고 쓴다. 행복은 견고한 일상에 영감 한 스푼. 여전히 내 꿈은 행복한 사람이다.
-
- <div class="readmore">
-    <a href="/posts/your-own-drawer" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">
