@@ -242,10 +242,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
-  .waglewagle-bff-deploy {
+  .programmers-cut-save-array {
     margin-bottom: 2em;
   }
-  .waglewagle-bff-deploy::before {
+  .programmers-cut-save-array::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -256,7 +256,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .waglewagle-bff-deploy::after {
+  .programmers-cut-save-array::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -269,20 +269,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .waglewagle-bff-deploy-container,
-  .waglewagle-bff-deploy-container::before,
-  .waglewagle-bff-deploy-container::after {
+  .programmers-cut-save-array-container,
+  .programmers-cut-save-array-container::before,
+  .programmers-cut-save-array-container::after {
     height: 25rem;
   }
-  .waglewagle-bff-deploy-bleed-container,
-  .waglewagle-bff-deploy-bleed-container::before,
-  .waglewagle-bff-deploy-bleed-container::after {
+  .programmers-cut-save-array-bleed-container,
+  .programmers-cut-save-array-bleed-container::before,
+  .programmers-cut-save-array-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .waglewagle-bff-deploy-container,
-        .waglewagle-bff-deploy-container::before,
-        .waglewagle-bff-deploy-container::after{
+        .programmers-cut-save-array-container,
+        .programmers-cut-save-array-container::before,
+        .programmers-cut-save-array-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -291,125 +291,89 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        waglewagle-bff-deploy waglewagle-bff-deploy-container hero-hov
+        programmers-cut-save-array programmers-cut-save-array-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/waglewagle-bff-deploy" title="와글와글 Next.js 서버 배포와 CI / CD 적용기"
-          >와글와글 Next.js 서버 배포와 CI / CD 적용기</a
+        <a href="/posts/programmers-cut-save-array" title="Programmers, 잘라서 배열로 저장하기"
+          >Programmers, 잘라서 배열로 저장하기</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/11/25</span>
+        <span>2022/12/27</span>
         <span>
-          <a href="/tag/와글와글">#와글와글</a>
-          <a href="/tag/Next.js">#Next.js</a>
-          <a href="/tag/CI / CD">#CI / CD</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="nextjs-배포">Next.js 배포</h1>
+    <center>
 
-<h2 id="ncloud-platform">NCloud Platform</h2>
+# Level 0. 잘라서 배열로 저장하기
 
-<ul>
- <li>프로젝트 기간동안 사용할 수 있는 ncp 무료 크레딧이 있어서, 여러 설정이 용이하도록 직접 배포하였다.
- <li>이전에 몇 번 배포 경험이 있어서, 이번 기회에 CI / CD까지 직접해볼 수 있는 좋은 기회라는 생각이 들었다.
-</ul>
-
-<h2 id="배포-과정">배포 과정</h2>
-
-<ul>
- <li>평소에도 배포할 때 github을 ssh key로 연결했기 때문에, CI / CD를 진행한다고 해도 큰 차이는 없었다.
- <li>인스턴스를 생성하고, ACG를 통해서 사용할 port를 열어준 뒤 인스턴스를 띄웠다.
- <li>이후에 nvm을 통해 node를 설치하고, ssh key를 통해 github을 연결하여 github에서 코드를 받아서 배포할 수 있었다.
-</ul>
-
-<h2 id="bff-backend-for-frontend">BFF (Backend For Frontend)</h2>
-
-<ul>
- <li>이번 프로젝트에서 NGinx 서버가 별도로 있지만 클라이언트의 서버를 띄운 이유는 Next.js의 SSR을 위해서였다.
- <li>Next.js에서의 SSR은 HTTP 요청이 들어왔을 때, 필요한 HTML을 서버에서 렌더링해서 응답해주는 방식인데 이를 위해서는 BFF가 필요하다.
- <li>이를 통해서 클라이언트 기기에 덜 의존적인 렌더링이 가능하며, 여러 보안적인 이점도 있다.
-</ul>
-
-<h1 id="nextjs-ci--cd를-위해-산넘고-물건너기">Next.js CI / CD를 위해 산넘고 물건너기</h1>
-
-<h2 id="push-이벤트-감지-안됨">push 이벤트 감지 안됨</h2>
+</center>
 
 <hr />
 
-<h3 id="꿀잠-잘-기대에-가득찬-ci--cd">꿀잠 잘 기대에 가득찬 CI / CD</h3>
+<h2 id="잘라서-배열로-저장하기">잘라서 배열로 저장하기</h2>
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>문자열 my_str과 n이 매개변수로 주어질 때, my_str을 길이 n씩 잘라서 저장한 배열을 return하도록 solution 함수를 완성해주세요.
+
+<h3 id="제한사항">제한사항</h3>
 
 <ul>
- <li>기대에 가득 차서 push를 했지만, 어림도 없지 push 이벤트는 동작하지 않았다.
+ <li>1 ≤ my_str의 길이 ≤ 100
+ <li>1 ≤ n ≤ my_str의 길이
+ <li>my_str은 알파벳 소문자, 대문자, 숫자로 이루어져 있습니다.
 </ul>
 
-<h3 id="이-문제는-잠시-뒤로-미룹시다">이 문제는 잠시 뒤로 미룹시다.</h3>
+<h3 id="문제풀이">문제풀이</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">my_str</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">index</span> <span class="o">&lt;</span> <span class="nx">my_str</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">my_str</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">index</span> <span class="o">+</span> <span class="nx">n</span><span class="p">));</span>
+    <span class="nx">index</span> <span class="o">+=</span> <span class="nx">n</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
 
 <ul>
- <li>workflow dispatch 명령어를 yaml 파일에 추가하여 수동으로 먼저 동작했다.
- <li>수동으로 job 동작을 확인한 뒤, 여러가지 실험을 진행했다.
-</ul>
-
-<h3 id="문제-해결">문제 해결</h3>
-
-<ul>
- <li>알고보니 이벤트가 발생하는 해당 브랜치에도 workflow 폴더와 yaml 파일이 있어야했다.
- <li>이를 통해 해결되었다.
-</ul>
-
-<h2 id="github-actions에서만-npm이-없다고-뜨는-에러">github actions에서만 npm이 없다고 뜨는 에러</h2>
-
-<hr />
-
-<h3 id="고난의-시작">고난의 시작</h3>
-
-<ul>
- <li>수동으로 job 동작을 확인하는데, npm이 없다는 에러가 떴다.
-</ul>
-
-<h3 id="원인-파악---nvm-제거-후-nodejs-수동-설치">원인 파악 - nvm 제거 후 nodejs 수동 설치</h3>
-
-<ul>
- <li>이전 트러블 때, github actions에서 nvm의 nodejs에는 접근을 할 수 없었다.
- <li>이를 위해 nvm의 nodejs를 삭제하고, 따로 nodejs를 직접 설치해야했다.
- <li>이를 통해 nodejs에 접근이 가능해지고, npm install이 정상적으로 동작하는 걸 확인하였다.
-</ul>
-
-<h3 id="다시-찾아온-문제---nvm-환경변수">다시 찾아온 문제 - nvm 환경변수</h3>
-
-<ul>
- <li>갑자기 pm2가 동작하지 않았다.
- <li>확인해보니 클라우드 서버에서는 pm2가 npm global로 설정이 되어있었다.
- <li>github actions에서 npm ls -g를 찍어보니 pm2가 없었다.
- <li>다시 조사해보니 nvm에서 설정해둔 $PATH 환경변수가 남아있었다.
- <li>bashrc에서 $PATH 환경변수를 지우고 putty를 재실행해서 환경변수를 초기화하였다.
-</ul>
-
-<h3 id="문제-해결-1">문제 해결</h3>
-
-<ul>
- <li>이후 nvm의 $PATH가 아닌 새로 설치한 nodejs의 $PATH가 되며 해결되었다.
+ <li>요구사항대로 구현함.
 </ul>
 
  <div class="readmore">
-    <a href="/posts/waglewagle-bff-deploy" role="button">Read more</a>
+    <a href="/posts/programmers-cut-save-array" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .trie-search-engine {
+  .programmers-character-pos {
     margin-bottom: 2em;
   }
-  .trie-search-engine::before {
+  .programmers-character-pos::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -420,7 +384,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .trie-search-engine::after {
+  .programmers-character-pos::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -433,20 +397,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .trie-search-engine-container,
-  .trie-search-engine-container::before,
-  .trie-search-engine-container::after {
+  .programmers-character-pos-container,
+  .programmers-character-pos-container::before,
+  .programmers-character-pos-container::after {
     height: 25rem;
   }
-  .trie-search-engine-bleed-container,
-  .trie-search-engine-bleed-container::before,
-  .trie-search-engine-bleed-container::after {
+  .programmers-character-pos-bleed-container,
+  .programmers-character-pos-bleed-container::before,
+  .programmers-character-pos-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .trie-search-engine-container,
-        .trie-search-engine-container::before,
-        .trie-search-engine-container::after{
+        .programmers-character-pos-container,
+        .programmers-character-pos-container::before,
+        .programmers-character-pos-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -455,102 +419,123 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        trie-search-engine trie-search-engine-container hero-hov
+        programmers-character-pos programmers-character-pos-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/trie-search-engine" title="Trie 자료구조를 활용한 검색엔진 만들기"
-          >Trie 자료구조를 활용한 검색엔진 만들기</a
+        <a href="/posts/programmers-character-pos" title="Programmers, 캐릭터의 좌표"
+          >Programmers, 캐릭터의 좌표</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/11/22</span>
+        <span>2022/12/27</span>
         <span>
-          <a href="/tag/와글와글">#와글와글</a>
-          <a href="/tag/2차원 배치">#2차원 배치</a>
-          <a href="/tag/물리엔진">#물리엔진</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="trie-자료구조로-자동완성-검색엔진-만들기"><center>Trie 자료구조로 자동완성 검색엔진 만들기</center></h1>
+    <center>
 
-<p><img src="https://user-images.githubusercontent.com/69471032/207239708-2ec55698-4d49-476b-b0b8-e68ca5fd9093.png" alt="image" />
+# Level 0. 캐릭터의 좌표
 
-<h3 id="problem">Problem</h3>
+</center>
+
+<hr />
+
+<h2 id="캐릭터의-좌표">캐릭터의 좌표</h2>
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>머쓱이는 RPG게임을 하고 있습니다. 게임에는 up, down, left, right 방향키가 있으며 각 키를 누르면 위, 아래, 왼쪽, 오른쪽으로 한 칸씩 이동합니다. 예를 들어 [0,0]에서 up을 누른다면 캐릭터의 좌표는 [0, 1], down을 누른다면 [0, -1], left를 누른다면 [-1, 0], right를 누른다면 [1, 0]입니다. 머쓱이가 입력한 방향키의 배열 keyinput와 맵의 크기 board이 매개변수로 주어집니다. 캐릭터는 항상 [0,0]에서 시작할 때 키 입력이 모두 끝난 뒤에 캐릭터의 좌표 [x, y]를 return하도록 solution 함수를 완성해주세요.
 
 <ul>
- <li>소그룹의 활성도를 위해 키워드를 등록하고자 할 때 비슷한 키워드의 중복 생성 방지하여 그룹의 인원이 분할되지 않도록 하는 작업이 필요하게 되었다.
+ <li>[0, 0]은 board의 정 중앙에 위치합니다. 예를 들어 board의 가로 크기가 9라면 캐릭터는 왼쪽으로 최대 [-4, 0]까지 오른쪽으로 최대 [4, 0]까지 이동할 수 있습니다.
 </ul>
 
-<h3 id="think">Think</h3>
+<h3 id="제한사항">제한사항</h3>
 
 <ul>
- <li>처음에는 정규 표현식을 통해서 검색어가 바뀔 때마다 모든 키워드를 탐색하고자 하였으나 성능적으로 비효율 적이라고 생각되어서 알고리즘의 변화가 필요했다.
+ <li>board은 [가로 크기, 세로 크기] 형태로 주어집니다.
+ <li>board의 가로 크기와 세로 크기는 홀수입니다.
+ <li>board의 크기를 벗어난 방향키 입력은 무시합니다.
+ <li>0 ≤ keyinput의 길이 ≤ 50
+ <li>1 ≤ board[0] ≤ 99
+ <li>1 ≤ board[1] ≤ 99
+ <li>keyinput은 항상 up, down, left, right만 주어집니다.
 </ul>
 
-<h3 id="solution">Solution</h3>
+<h3 id="문제풀이">문제풀이</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">keyinput</span><span class="p">,</span> <span class="nx">board</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+  <span class="kr">const</span> <span class="nx">halfWidth</span> <span class="o">=</span> <span class="p">(</span><span class="nx">board</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">halfHeigth</span> <span class="o">=</span> <span class="p">(</span><span class="nx">board</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="nx">keyinput</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="s2">"left"</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">character</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="nx">halfWidth</span><span class="p">)</span> <span class="nx">character</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="s2">"right"</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">character</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">halfWidth</span><span class="p">)</span> <span class="nx">character</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="s2">"down"</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">character</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="nx">halfHeigth</span><span class="p">)</span> <span class="nx">character</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="s2">"up"</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">character</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">halfHeigth</span><span class="p">)</span> <span class="nx">character</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">character</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
 
 <ul>
- <li>검색 엔진에서 사용되는 알고리즘들을 조사, 비교하여 현재 프로젝트에 가장 적절한 알고리즘을 결정했다.
-</ul>
-
-<h3 id="process">Process</h3>
-
-<ul>
- <li>정규 표현식과, 이진 탐색, 트라이 등의 방법을 고려하여 시간 복잡도를 분석하니 아래와 같은 결과가 나왔다.
-</ul>
-
-<table>
-<thead>
-   <tr>
-     <th>N = 단어의 개수, M = 문자열 길이
-     <th>사전 작업 시간 복잡도
-     <th>탐색 시간 복잡도
-    
-  
- <tbody>
-   <tr>
-     <td>전체 탐색(정규 표현식)
-     <td>X
-     <td>O(M * N)
-    
-   <tr>
-     <td>이진 탐색
-     <td>O(N _ M _ logN) (정렬)
-     <td>O(M * logN)
-    
-   <tr>
-     <td>트라이
-     <td>O(N * M) (트라이 생성)
-     <td>O(M)
-    
-  
-</table>
-
-<h3 id="result">Result</h3>
-
-<ul>
- <li>사전 생성 시간이 있고, 메모리를 많이 차지하는 단점이 있지만, 커뮤니티 접속 시 한번만 실행하면 되고, 탐색이 빈번하게 발생하는 검색 엔진 특성상 트라이가 가장 효율적이라고 결론을 내릴 수 있었다.
- <li>결과적으로 탐색 시간 복잡도를 O(M * N)에서 O(M)까지 감소시킬 수 있었다.(M: 문자열 길이, N: 단어의 개수)
+ <li>요구사항대로 풀이함
 </ul>
 
  <div class="readmore">
-    <a href="/posts/trie-search-engine" role="button">Read more</a>
+    <a href="/posts/programmers-character-pos" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .human-as-object {
+  .programmers-str-in-str {
     margin-bottom: 2em;
   }
-  .human-as-object::before {
+  .programmers-str-in-str::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -561,7 +546,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .human-as-object::after {
+  .programmers-str-in-str::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -574,20 +559,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .human-as-object-container,
-  .human-as-object-container::before,
-  .human-as-object-container::after {
+  .programmers-str-in-str-container,
+  .programmers-str-in-str-container::before,
+  .programmers-str-in-str-container::after {
     height: 25rem;
   }
-  .human-as-object-bleed-container,
-  .human-as-object-bleed-container::before,
-  .human-as-object-bleed-container::after {
+  .programmers-str-in-str-bleed-container,
+  .programmers-str-in-str-bleed-container::before,
+  .programmers-str-in-str-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .human-as-object-container,
-        .human-as-object-container::before,
-        .human-as-object-container::after{
+        .programmers-str-in-str-container,
+        .programmers-str-in-str-container::before,
+        .programmers-str-in-str-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -596,180 +581,78 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        human-as-object human-as-object-container hero-hov
+        programmers-str-in-str programmers-str-in-str-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/human-as-object" title="개발과 인문학 두번째 모임, 사람이라는 객체"
-          >개발과 인문학 두번째 모임, 사람이라는 객체</a
+        <a href="/posts/programmers-str-in-str" title="Programmers, 문자열안에 문자열"
+          >Programmers, 문자열안에 문자열</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/09/23</span>
+        <span>2022/12/26</span>
         <span>
-          <a href="/tag/객체지향프로그래밍">#객체지향프로그래밍</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="-사람이라는-객체">👥 사람이라는 객체</h1>
+    <center>
 
-<aside>
-💡 오늘의 한 줄 : 고3 때 친구들과 하는게 많았는데, 대학에 진학하며 그 분리를 겪기가 힘들었다. OOP에서 응집도를 높여야하는 것처럼, 나라는 사람도 의존성을 낮추고 스스로로서 응집도를 높이는 것이 필요하지는 않은가 생각이 든다.
+# Level 0. 문자열안에 문자열
 
-</aside>
+</center>
 
-<h2 id="-어디까지-소프트웨어라고-할-수-있을까">🌐 어디까지 소프트웨어라고 할 수 있을까?</h2>
+<hr />
 
-<h3 id="시와-코드-변수명-짓기">시와 코드, 변수명 짓기</h3>
+<h2 id="문자열안에-문자열">문자열안에 문자열</h2>
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>문자열 str1, str2가 매개변수로 주어집니다. str1 안에 str2가 있다면 1을 없다면 2를 return하도록 solution 함수를 완성해주세요.
+
+<h3 id="제한사항">제한사항</h3>
 
 <ul>
- <li>같은 점 : 메세지를 추상화 시켜서 단어에 담는다.
- <li>다른 점 : 시는 의미를 각자가 다르게 느껴도 되지만, 변수명은 명확한 의미가 필요하다.
+ <li>1 ≤ str1의 길이 ≤ 100
+ <li>1 ≤ str2의 길이 ≤ 100
 </ul>
 
-<h3 id="노하우가-생길-수-있는-모든-것은-소프트웨어-아닐까">노하우가 생길 수 있는 모든 것은 소프트웨어 아닐까?</h3>
+<h3 id="문제-풀이">문제 풀이</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">str1</span><span class="p">,</span> <span class="nx">str2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">strRegExp</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">str2</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">strRegExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str1</span><span class="p">)</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
 
 <ul>
- <li>체계화해서 반복 사용할 수 있는 것들이 노하우가 되는데, 그렇다면 그것을 아키텍처로 생각한다면 노하우가 생길 수 있는 모든 것은 소프트웨어가 아닐까?
-</ul>
-
-<h3 id="이름-짓기와-상수-enum-활용">이름 짓기와 상수 Enum 활용</h3>
-
-<ul>
- <li>상담에는 이름 짓기라는 기법이 존재하는데, 내가 회피하고 있거나 구체화시키지 못하고 있는 대상에 이름을 지어서 그것을 스스로에게 분리해서 바라볼 수 있도록 한다. 이것도 상수 모듈을 분리해서 Enum을 사용하는 것 같지 않을까?
- <li>장점 : 식별이 편해진다. ⇒ 반복적으로 발생하는 삶의 문제에 대해 이름을 지으면, 비슷한 장점을 가질 수 있지 않을까?
- <li>단점 : 선언해야한다. ⇒ 삶의 문제에 이름을 지었을 때 추상화를 잘못한다면, 해당 문제가 아닌 문제들도 해당 변수명으로 합리화 할 수도 있겠다. (ex. 나는 MBTI가 ~라서 그래.)
-</ul>
-
-<h3 id="소프트웨어는-문제-해결-이-방법론을-삶에-적용시키면-개발도-더-빨리-늘지-않을까">소프트웨어는 문제 해결, 이 방법론을 삶에 적용시키면 개발도 더 빨리 늘지 않을까?</h3>
-
-<ul>
- <li>무언가를 통해 내 삶의 문제가 해결되면 빨리 배운다. 어른들이 말씀하시던, ‘필요하면 다 하게 되어있다.’라는 말씀이 이런 것 아니었을까-
-</ul>
-
-<h2 id="️-프로그래밍-언어와-커뮤니케이션">🗣️ 프로그래밍 언어와 커뮤니케이션</h2>
-
-<h3 id="여러가지-프로그래밍-언어">여러가지 프로그래밍 언어</h3>
-
-<ul>
- <li>여러가지 프로그래밍 언어를 객체화해본다면 서로의 차이점을 통해 각 언어의 본질에 접근해볼 수 있지 않을까?
- <li>캠프동안 처음으로 JS를 접했었는데, 마구 튀어다니는 JS가 처음에는 적응이 어려웠지만 적응되니 너무 좋았다. 이제는 C언어가 사람이었다면 너무 깐깐해서 친해지기 힘들었을 것 같다. 😄
-</ul>
-
-<h3 id="얄미운-사람-얄미운-js">얄미운 사람, 얄미운 JS</h3>
-
-<ul>
- <li>사람과 JS만 암묵적인 타입변환을 하는 것 같다. 사람도 JS도 종종 야속하다.
- <li>반대로, 그렇기 때문에 사람간의 커뮤니케이션에 신뢰가 중요한 것처럼 JS 코드도 예측가능하게 써야겠다는 생각이 든다.
-</ul>
-
-<h2 id="-사람을-소프트웨어로-접근한다면">👤 사람을 소프트웨어로 접근한다면?</h2>
-
-<h3 id="나를-소프트웨어로-본다면-우리는-다들-버전업하면서-살고-있지는-않을까">나를 소프트웨어로 본다면, 우리는 다들 버전업하면서 살고 있지는 않을까?</h3>
-
-<ul>
- <li>다들 메서드나 프로퍼티를 추가하면서 살고 있는 것 아닐까?
- <li>흑역사는 리팩토링하면서 새로운 나를 맞이하고, 이전에 가지고 있었던 생각들을 고쳐나가며 버전업하는 것은 아닐까?
-/ 참고자료
-<a href="https://www.notion.so/aebc9668a1f74539a477ea5f4397bf5b">https://innovative-phosphorus-e4b.notion.site/aebc9668a1f74539a477ea5f4397bf5b</a>
-</ul>
-
-<h3 id="인간도-머신러닝과-비슷한-것-같다">인간도 머신러닝과 비슷한 것 같다.</h3>
-
-<ul>
- <li>우리도 많은 경험과 사례, 표본을 통해서 성장해야 좋은 방향으로 성장 할 수 있지 않을까?
-</ul>
-
-<h3 id="여러-메서드가-의존하고-있는-프로퍼티에-큰-수정이-발생하면-여러-문제가-생긴다-사람도-이런-경우가-있을까">여러 메서드가 의존하고 있는 프로퍼티에 큰 수정이 발생하면 여러 문제가 생긴다. 사람도 이런 경우가 있을까?</h3>
-
-<ul>
- <li>사람은 누구나 ‘인간’이라는 객체에 의해 여러 메소드와 프로퍼티를 기본적으로 상속받는다.
- <li>객체에서 this.property를 이용해서 메서드를 작성한 경우, 해당 프로퍼티의 내용이나 자료형등이 바뀌게 되면 해당 프로퍼티에 의존하는 여러 메서드가 영향을 받게되는데 사람이 이런 경우는 없을까?
- <li>키가 확 자라나면, 갑자기 변한 내 삶의 환경들에 적응하기 어려웠다. 큰 변화가 생기면, 삶에서도 리팩토링이 필요했던 것 같다.
- <li>그럼 삶에서 했던 리팩토링을 이용해서 코드 리팩토링을 쉽게할 수 있는 방법은 없을까?
-</ul>
-
-<h3 id="사람만-스스로-버그-수정과-리팩토링을-한다">사람만 스스로 버그 수정과 리팩토링을 한다.</h3>
-
-<ul>
- <li>병원이나 물리치료를 받는 것이 이슈를 잡아서 리팩토링 하는 것 같다.
- <li>그런데 코드와 다른 점이 있다면, 인간만 직접 리팩토링을 하는 것 같다.
- <li>또한 이런 리팩토링의 접근도 다 달랐다. 자신의 문제를 해결하기 위해서 누군가는 공부를 하고, 누군가는 운동을 하고, 누군가는 또 다른 것들을 했다.
- <li>사람을 개인의 상위 객체로 표현한다면, 우리는 어떤 메서드나 프로퍼티를 오버라이딩 하면서 살고 있는건 아닐까?
-</ul>
-
-<h2 id="-사람을-객체화해본다면">💊 사람을 객체화해본다면?</h2>
-
-<h3 id="사람을-객체로-접근">사람을 객체로 접근</h3>
-
-<ul>
- <li>개인이 인간이라는 상위클래스에게서 상속 받는 것이 무엇이 있을까?
- <li>인간이라는 클래스가 동물이라는 상위클래스에게서 상속 받은 것이 아니라, 인간이라는 클래스에서 작성된 메서드가 무엇이 있을까? 이게 인간과 동물을 나눠줄 수 있지 않을까?
- <li>그럼 개인이 인간이라는 클래스에게서 상속 받은 것과 아닌 것은 무엇이 있을까?
- <li>이 고민이 고민을 위한 고민이 아니라 실제 삶에 적용할 수 있으려면 어떤 이야기를 나눠보아야할까?
-</ul>
-
-<h3 id="아까-나왔던-사람과-의존성으로-돌아가봅시다">아까 나왔던, 사람과 의존성으로 돌아가봅시다.</h3>
-
-<ul>
- <li>상위 클래스인 ‘인간’에서 새로운 메서드와 프로퍼티를 가지는 것이 개성이 만들어지는 과정 아닐까?
- <li>개인이 상위 클래스에서 받은 ‘상식’, ‘사회가 가지고 있는 통념’ 같은 것들에 스스로가 강하게 결합되어 있으면 개성을 가지거나 확장하기 어려워지는 것 같다.
-</ul>
-
-<h3 id="생각-정리와-매몰"><strong>생각 정리와 매몰</strong></h3>
-
-<ul>
- <li>사회 속 상징등에 갇히게 되는 경우가 많았다. 아는 만큼 보는 것도 같은 맥락인 것 같다.
- <li>무언가가 인상적이었다면 그것에 끼어맞추며 생각하게 되는 경우도 있는 것 같다.
- <li>종종 내가 정리하고 정의한 것에 매몰되어서 합리화하는 경우도 생겼다.
-</ul>
-
-<h3 id="내가-안다고-생각하지만-사실-상속받은-것"><strong>내가 안다고 생각하지만 사실 상속받은 것</strong></h3>
-
-<ul>
- <li>종종 개인은 상위클래스에게서 무얼 받았는지 잊고, 내가 아는 것이라고 생각하는 경우도 있는 것 같다.
- <li>사람은 정보은닉이 너무 잘되어 있는 것 같다. 문제는 this에서도 그 정보를 모른다는 점이다.
-</ul>
-
-<h3 id="사람-클래스의-의존성">사람 클래스의 의존성</h3>
-
-<ul>
- <li>사람의 의존은 다른 사람들과 가장 크게 연관되어 있는 것 같다.
- <li>어디에 크게 의존하고 있는지 인지하는게 중요한 것 같다. 이것을 인지할 수 있는게, 말해보자면 의존성 주입의 가능 아닐까?
- <li>그럼 사람이 의존하는 관계에는 어떤게 있을까?
- <li>내가 소중히 생각하는 많은 것에 결합도가 높아지는 것 같다. 사람 뿐만 아니라 책임감, 사랑, 우정, 애착이 가는것까지 나라는 사람이 의존해서 결합도가 높아진 것 같다.
- <li>고3 때 친구들과 하는게 많았는데, 대학에 진학하며 그 분리를 겪기가 힘들었다. OOP에서 응집도를 높여야하는 것처럼, 나라는 사람도 의존성을 낮추고 스스로로서 응집도를 높이는 것이 필요하지는 않은가 생각이 든다.
- <li>누군가라는 외부에 의존하게 되면 나라는 객체를 수정하는게 쉽지 않아지는 것 같다. 의존성 주입이 중요한 것 같다.
-</ul>
-
-<h2 id="️-소감">❤️ 소감</h2>
-
-<ul>
- <li>다들 코딩에 미쳐있다. 광기가 눈에 보인다.
- <li>다들 광기가 있었다. 다른데에서는 하지 못하는 말들을 할 수 있어서 좋았다.
- <li>언어유희가 많아서 재미있었고, 다들 비유를 잘했다. 앞으로 많이 배우고 싶다.
- <li>처음에는 긴가민가 했는데, 재미있었다. ‘어디서 나라는 사람이 추상화가 잘되어있어.’ 같은 말을 할까
- <li>재미있었습니다. (이후 관계와 의존성 주제 발제)
- <li>일상에서 얻을 수 있는 영감과, 응집도 있는 집단 속 광기에서 얻을 수 있는 영감이 다르다고 생각한다. 광기 속 많은 영감을 얻을 수 있어서 너무 좋았다.
+ <li>요구사항대로 풀이함.
 </ul>
 
  <div class="readmore">
-    <a href="/posts/human-as-object" role="button">Read more</a>
+    <a href="/posts/programmers-str-in-str" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .deepdivejs-type-casting {
+  .programmers-sort-string-2 {
     margin-bottom: 2em;
   }
-  .deepdivejs-type-casting::before {
+  .programmers-sort-string-2::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -780,7 +663,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .deepdivejs-type-casting::after {
+  .programmers-sort-string-2::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -793,20 +676,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .deepdivejs-type-casting-container,
-  .deepdivejs-type-casting-container::before,
-  .deepdivejs-type-casting-container::after {
+  .programmers-sort-string-2-container,
+  .programmers-sort-string-2-container::before,
+  .programmers-sort-string-2-container::after {
     height: 25rem;
   }
-  .deepdivejs-type-casting-bleed-container,
-  .deepdivejs-type-casting-bleed-container::before,
-  .deepdivejs-type-casting-bleed-container::after {
+  .programmers-sort-string-2-bleed-container,
+  .programmers-sort-string-2-bleed-container::before,
+  .programmers-sort-string-2-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .deepdivejs-type-casting-container,
-        .deepdivejs-type-casting-container::before,
-        .deepdivejs-type-casting-container::after{
+        .programmers-sort-string-2-container,
+        .programmers-sort-string-2-container::before,
+        .programmers-sort-string-2-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -815,76 +698,71 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        deepdivejs-type-casting deepdivejs-type-casting-container hero-hov
+        programmers-sort-string-2 programmers-sort-string-2-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/deepdivejs-type-casting" title="DeepDiveJS Chapter 09. 타입 변환과 단축 평가"
-          >DeepDiveJS Chapter 09. 타입 변환과 단축 평가</a
+        <a href="/posts/programmers-sort-string-2" title="Programmers, 문자열 정렬하기 (2)"
+          >Programmers, 문자열 정렬하기 (2)</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/07/02</span>
+        <span>2022/12/26</span>
         <span>
-          <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
-          <a href="/tag/Javascript">#Javascript</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="09장-타입-변환과-단축-평가">[09장. 타입 변환과 단축 평가]</h1>
+    <center>
 
-<p>&lt;/br&gt;
+# Level 0. 문자열 정렬하기 (2)
 
-<h3 id="️-자바스크립트의-알아서-잘하는-타입변환">✏️ 자바스크립트의 알아서 잘하는 타입변환</h3>
-
-<hr />
-
-<p>  근데 알아서 하는건 종종 오해를 낳는다. 그러니 자바스크립트가 어떤 때에 알아서 잘하는지 하는지 아는게 필요하다.
-
-<p>자바스크립트에는 두 가지의 타입 변환이 있다.
-
-<ol>
- <li>명시적 타입 변환 (타입 캐스팅)
- <li>암묵적 타입 변환 (타입 강제 변환)
-</ol>
-
-<p>명시적 타입변환은 toString() 메서드와 같이, 타입을 변환하는 것을 명시적으로 명령하는 것이다.
-
-<p>반대로 암묵적 타입 변환은, 명시적으로 명령하지 않지만 자바스크립트 엔진이 맥락을 평가하고 타입을 변환하는 것을 말한다.
-
-<p>예를 들어, ‘1’ + 1;이라는 문장은 ‘1’이 암묵적으로 숫자형으로 변환되어서 2라고 평가되어진다.
-
-<p>각각의 타입변환에는 장단점이 존재한다.
-
-<p>앞의 내용에서 언급했듯이 암묵적이고, 맥락에 의한 처리는 종종 오해를 발생시킨다. 다만, 가독성이 좋아질 수 있다.
-
-<p>암묵적 타입변환을 효과적으로 사용하기 위해서, 각각의 타입에서 암묵적 타입변환이 어떻게 발생하는지 아는 것이 도움된다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-반복되는건-짧게-쓸-수-있도록-합의합시다">✏️ 반복되는건 짧게 쓸 수 있도록 합의합시다.</h3>
+</center>
 
 <hr />
 
-<p>  타입이나 논리를 확인 후 그에 따라 명령을 실행하는 문에 매번 같은 조건문에서 값을 비교하는 것은 효율적이지 못할 것이다. 이를 위해서 자바스크립트는 미리 합의를 통해 몇가지 단축평가 문법을 제안하여 개발자로 하여금 코드를 작성하기 쉽게 돕는다.
+<h2 id="문자열-정렬하기-2">문자열 정렬하기 (2)</h2>
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>영어 대소문자로 이루어진 문자열 my_string이 매개변수로 주어질 때, my_string을 모두 소문자로 바꾸고 알파벳 순서대로 정렬한 문자열을 return 하도록 solution 함수를 완성해보세요.
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+ <li>0 &lt; my_string 길이 &lt; 100
+</ul>
+
+<h3 id="문제풀이">문제풀이</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">my_string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">my_string</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">).</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
 
  <div class="readmore">
-    <a href="/posts/deepdivejs-type-casting" role="button">Read more</a>
+    <a href="/posts/programmers-sort-string-2" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .deepdivejs-scope {
+  .programmers-ox-quiz {
     margin-bottom: 2em;
   }
-  .deepdivejs-scope::before {
+  .programmers-ox-quiz::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -895,7 +773,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .deepdivejs-scope::after {
+  .programmers-ox-quiz::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -908,20 +786,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .deepdivejs-scope-container,
-  .deepdivejs-scope-container::before,
-  .deepdivejs-scope-container::after {
+  .programmers-ox-quiz-container,
+  .programmers-ox-quiz-container::before,
+  .programmers-ox-quiz-container::after {
     height: 25rem;
   }
-  .deepdivejs-scope-bleed-container,
-  .deepdivejs-scope-bleed-container::before,
-  .deepdivejs-scope-bleed-container::after {
+  .programmers-ox-quiz-bleed-container,
+  .programmers-ox-quiz-bleed-container::before,
+  .programmers-ox-quiz-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .deepdivejs-scope-container,
-        .deepdivejs-scope-container::before,
-        .deepdivejs-scope-container::after{
+        .programmers-ox-quiz-container,
+        .programmers-ox-quiz-container::before,
+        .programmers-ox-quiz-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -930,62 +808,88 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        deepdivejs-scope deepdivejs-scope-container hero-hov
+        programmers-ox-quiz programmers-ox-quiz-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/deepdivejs-scope" title="DeepDiveJS Chapter 13. 스코프"
-          >DeepDiveJS Chapter 13. 스코프</a
+        <a href="/posts/programmers-ox-quiz" title="Programmers, OX퀴즈"
+          >Programmers, OX퀴즈</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/07/02</span>
+        <span>2022/12/26</span>
         <span>
-          <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
-          <a href="/tag/Javascript">#Javascript</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="13장-스코프">[13장. 스코프]</h1>
+    <center>
 
-<p>&lt;/br&gt;
+# Level 0. OX퀴즈
 
-<h3 id="️-말이-쓰일-범위를-모르면-오해가-생깁니다">✏️ 말이 쓰일 범위를 모르면 오해가 생깁니다.</h3>
-
-<hr />
-
-<p>  pr이라는 단어를 듣는다면 뭐가 떠오를까?
-
-<ol>
- <li>마케팅에서는 PR을 Public Relations로 말하며, 대중과의 긍정적인 관계를 형성하기 위해 하는 활동을 말한다.
- <li>헬스에서는 PR을 Personal Record라고해서 개인 기록을 말한다.
- <li>개발에서는 PR을 Pull Request의 의미로 사용하며, 깃허브에서 내 작업물이 브랜치로의 병합될 수 있도록 요청하는 것을 말한다.
-</ol>
-
-<p>사람은 편의를 위해 축약어나 단어를 사용하고, 범위가 넓어지게 되면 동음이의어가 생기게 된다.
-
-<p>코드도 똑같다. 코드에서도 변수의 사용범위가 뒤죽박죽이고 변수를 읽는 순서가 다르다면 오해가 생길 수 있을 것이다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-이를-위해-스코프scope가-있어요">✏️ 이를 위해 스코프(Scope)가 있어요.</h3>
+</center>
 
 <hr />
 
-<p>  이러한 오해를 막기위해서 스코프가 존재한다.
+<h2 id="ox퀴즈">OX퀴즈</h2>
 
-<p>변수를 선언하면 해당 변수가 사용될 수 있는 스코프 내의 객체에 식별자로 등록되게 되며, 변수를 호출했을 때 호출한 스코프에 해당 변수가 없다면 하나씩 상위 스코프를 탐색하게 된다.
+<h3 id="문제-설명">문제 설명</h3>
 
-<p>이러한 이유로 사용상의 편의를 위해 무턱대로 전역변수에 변수를 선언하는 것은 좋지 않다. 이는 14장. 전역 변수의 문제점에서 다뤄진다.
+<p>덧셈, 뺄셈 수식들이 ‘X [연산자] Y = Z’ 형태로 들어있는 문자열 배열 quiz가 매개변수로 주어집니다. 수식이 옳다면 “O”를 틀리다면 “X”를 순서대로 담은 배열을 return하도록 solution 함수를 완성해주세요.
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+ <li>연산 기호와 숫자 사이는 항상 하나의 공백이 존재합니다. 단 음수를 표시하는 마이너스 기호와 숫자 사이에는 공백이 존재하지 않습니다.
+ <li>1 ≤ quiz의 길이 ≤ 10
+ <li>X, Y, Z는 각각 0부터 9까지 숫자로 이루어진 정수를 의미하며, 각 숫자의 맨 앞에 마이너스 기호가 하나 있을 수 있고 이는 음수를 의미합니다.
+ <li>X, Y, Z는 0을 제외하고는 0으로 시작하지 않습니다.
+ <li>-10,000 ≤ X, Y ≤ 10,000
+ <li>-20,000 ≤ Z ≤ 20,000
+ <li>[연산자]는 + 와 - 중 하나입니다.
+</ul>
+
+<h3 id="문제풀이">문제풀이</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre><td class="code"><pre><span class="kr">const</span> <span class="nx">getExpressionResult</span> <span class="o">=</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">X</span><span class="p">,</span> <span class="nx">operator</span><span class="p">,</span> <span class="nx">Y</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">Z</span><span class="p">]</span> <span class="o">=</span> <span class="nx">expression</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">X</span> <span class="o">*</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="nx">result</span> <span class="o">+=</span> <span class="nx">operator</span> <span class="o">===</span> <span class="s2">"+"</span> <span class="p">?</span> <span class="nx">Y</span> <span class="o">*</span> <span class="mi">1</span> <span class="p">:</span> <span class="nx">Y</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">result</span> <span class="o">===</span> <span class="nx">Z</span> <span class="o">*</span> <span class="mi">1</span> <span class="p">?</span> <span class="s2">"O"</span> <span class="p">:</span> <span class="s2">"X"</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">solution</span> <span class="o">=</span> <span class="p">(</span><span class="nx">quiz</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">quiz</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">expression</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">getExpressionResult</span><span class="p">(</span><span class="nx">expression</span><span class="p">));</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></table>
+</div>
+</div>
+
+<ul>
+ <li>요구사항대로 풀이함.
+</ul>
 
  <div class="readmore">
-    <a href="/posts/deepdivejs-scope" role="button">Read more</a>
+    <a href="/posts/programmers-ox-quiz" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+   <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+   </style>
+   <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+/>
+<title>
+  Programmers, 가장 큰 수 찾기 &#9642; vanGona
+</title>
+<!--
+<meta name="description" content="# Level 0. 가장 큰 수 찾기 가장 큰 수 찾기 문제 설명 정수 배열 array가 매개변수로 주어질 때, 가장 큰 수와 그 수의 인덱스를 담은 배열을 return 하도록 solution 함수를 완성해보세요. 제한사항 1 ≤ array의 길이 ≤ 100 0 ≤ array 원소 ≤ 1,000 array에 중복된 숫자는 없습니다. 문제...">
+-->
+<link rel="icon" href="/assets/img/dactl.svg" />
+<meta
+  name="description"
+  content="임상심리학자가 개발을 추구하는 건에 대해서
+"
+/>
+<meta
+  name="keywords"
+  content="algorithm, programmers, level0"
+/>
+<link
+  rel="canonical"
+  href="http://vangona.github.io/posts/programmers-max-number"
+/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Programmers, 가장 큰 수 찾기" />
+<meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta name="twitter:image" content="http://vangona.github.io" />
+<meta name="author" content="" />
+<link rel="author" href="" />
+<meta property="og:locale" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Programmers, 가장 큰 수 찾기" />
+<meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta
+  property="og:url"
+  content="http://vangona.github.io/posts/programmers-max-number"
+/>
+<meta property="og:site_name" content="vanGona" />
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic"
+/>
+<style>
+  html {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  }
+</style>
+<link rel="stylesheet"
+href="/assets/css/bf.css"> 
+ <body>
+   <div class="wrapper" id="blep">
+    <header>
+ <div class="menu">
+   <div class="logo">
+      <a href="/">vanGona</a>
+      <object
+        type="image/svg+xml"
+        data="/assets/img/dactl.svg"
+        class="logosvg"
+      >
+        Your browser does not support svg images
+      </object>
+   </div>
+    <input id="mobile-nav__toggle" type="checkbox" />
+   <ul class="mobile-nav">
+      <label class="toggle-nav" for="mobile-nav__toggle">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+     <div class="nav__profile">vanGona</div>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+        </a>
+   </ul>
+   <ul class="visible-links"> 
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+   </ul>
+ </div>
+ <div class="social">
+   <ul>
+     <li>
+        <a
+          href="https://github.com/vangona"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-github"></span>
+        </a>
+     <li>
+        <a
+          href="https://youtube.com/뜬구름 공작소"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-youtube"></span>
+        </a>
+     <li>
+        <a
+          href="https://instagram.com/my_own_drawer_"
+          target="_blank"
+          class="smaller"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+     <li>
+        <a href="mailto:rlarhksrud14@gmail.com" target="_blank">
+          <span class="icon-mail_outline"></span>
+        </a>
+     <li>
+        <a href="#" onclick="switchTheme()" title="Switch theme?">
+          <span class="icon-invert_colors" id="theme-switcher"></span>
+        </a>
+   </ul>
+ </div>
+</header>
+<article class="post">
+<style>
+  .programmers-max-number {
+    margin-bottom: 2em;
+  }
+  .programmers-max-number::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .programmers-max-number::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .programmers-max-number-container,
+  .programmers-max-number-container::before,
+  .programmers-max-number-container::after {
+    height: 25rem;
+  }
+  .programmers-max-number-bleed-container,
+  .programmers-max-number-bleed-container::before,
+  .programmers-max-number-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .programmers-max-number-container,
+        .programmers-max-number-container::before,
+        .programmers-max-number-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  programmers-max-number programmers-max-number-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          Programmers, 가장 큰 수 찾기
+     </h1>
+     <div class="post-meta">
+        <span>25/12/2022</span>
+        <span>
+              <a href="/tag/algorithm">#algorithm</a>
+              <a href="/tag/programmers">#programmers</a>
+              <a href="/tag/level0">#level0</a>
+        </span>
+     </div>
+   </div>
+ </div>
+    <center>
+
+# Level 0. 가장 큰 수 찾기
+
+</center>
+
+<hr />
+
+<h2 id="가장-큰-수-찾기">가장 큰 수 찾기</h2>
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>정수 배열 array가 매개변수로 주어질 때, 가장 큰 수와 그 수의 인덱스를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+ <li>1 ≤ array의 길이 ≤ 100
+ <li>0 ≤ array 원소 ≤ 1,000
+ <li>array에 중복된 숫자는 없습니다.
+</ul>
+
+<h3 id="문제-풀이">문제 풀이</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">array</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">max</span><span class="p">,</span> <span class="nx">array</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">max</span><span class="p">)];</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
+
+<ul>
+ <li>요구사항대로 풀이함.
+</ul>
+
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dactl';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+   <li>
+    <a href="/posts/programmers-rectangle-area">
+        <span>Programmers, 직사각형 넓이 구하기</span>
+        <small>27/12</small>
+    </a>
+   <li>
+    <a href="/posts/programmers-polynomial">
+        <span>Programmers, 다항식 더하기</span>
+        <small>27/12</small>
+    </a>
+   <li>
+    <a href="/posts/programmers-numbers-of-seven">
+        <span>Programmers, 7의 개수</span>
+        <small>27/12</small>
+    </a>
+   <li>
+    <a href="/posts/programmers-max-number-2">
+        <span>Programmers, 최댓값 만들기 (2)</span>
+        <small>27/12</small>
+    </a>
+</aside>
+<footer>
+    <span>임상심리학자가 개발을 추구하는 건에 대해서
+</span>
+    <span>written by Kim Kwan-kyoung</span>
+</footer>
+   </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+  

@@ -242,10 +242,10 @@ href="/assets/css/bf.css">
 </header>
 <article class="blog">
 <style>
-  .deepdivejs-primitive-value-object {
+  .programmers-get-multiples {
     margin-bottom: 2em;
   }
-  .deepdivejs-primitive-value-object::before {
+  .programmers-get-multiples::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -256,7 +256,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .deepdivejs-primitive-value-object::after {
+  .programmers-get-multiples::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -269,20 +269,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .deepdivejs-primitive-value-object-container,
-  .deepdivejs-primitive-value-object-container::before,
-  .deepdivejs-primitive-value-object-container::after {
+  .programmers-get-multiples-container,
+  .programmers-get-multiples-container::before,
+  .programmers-get-multiples-container::after {
     height: 25rem;
   }
-  .deepdivejs-primitive-value-object-bleed-container,
-  .deepdivejs-primitive-value-object-bleed-container::before,
-  .deepdivejs-primitive-value-object-bleed-container::after {
+  .programmers-get-multiples-bleed-container,
+  .programmers-get-multiples-bleed-container::before,
+  .programmers-get-multiples-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .deepdivejs-primitive-value-object-container,
-        .deepdivejs-primitive-value-object-container::before,
-        .deepdivejs-primitive-value-object-container::after{
+        .programmers-get-multiples-container,
+        .programmers-get-multiples-container::before,
+        .programmers-get-multiples-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -291,152 +291,99 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        deepdivejs-primitive-value-object deepdivejs-primitive-value-object-container hero-hov
+        programmers-get-multiples programmers-get-multiples-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/deepdivejs-primitive-value-object" title="DeepDiveJS Chapter 11. 원시 값과 객체의 비교"
-          >DeepDiveJS Chapter 11. 원시 값과 객체의 비교</a
+        <a href="/posts/programmers-get-multiples" title="Programmers, n의 배수 고르기"
+          >Programmers, n의 배수 고르기</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/07/02</span>
+        <span>2022/12/26</span>
         <span>
-          <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
-          <a href="/tag/Javascript">#Javascript</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="11장-원시-값과-객체의-비교">[11장. 원시 값과 객체의 비교]</h1>
+    <center>
 
-<p>&lt;/br&gt;
+# Level 0. n의 배수 고르기
 
-<h3 id="️-자바스크립트의-값">✏️ 자바스크립트의 값</h3>
-
-<hr />
-
-<p>  자바스크립트에서 사용되는 값의 타입을 여러 개로 나누었었다.
-
-<p>이것들을 메모리와 소통하는 방식에 따라서 분류해보면 원시 타입과 참조 타입(객체 타입)으로 나눌 수 있다.
-
-<ol>
- <li>원시 타입의 값을 변수에 할당하면, 변수에는 실체 값이 저장되며 변경이 불가능하다.
- <li>참조 타입의 값을 변수에 할당하면, 변수에는 내용이 저장된 메모리 공간의 주소가 저장되며 참조된 내용은 변경이 가능하다.
-</ol>
-
-<p>자바스크립트에서 변수에 저장된 원시 타입의 값들은 변경이 불가능하다. 사실 개발자가 원시 타입이 저장된 변수에 값을 수정하면, 같은 메모리 주소에 있는 값을 변경하는 것이 아니라 다른 주소에 새로운 값으로 재할당하게 되는 것이다.
-
-<p>반면에 객체 타입의 값은 변수에 주소를 저장하며, 주소가 가리키고 있는 값이 변경 가능하다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-바구니를-통째로-버리기">✏️ 바구니를 통째로 버리기</h3>
+</center>
 
 <hr />
 
-<p>  메모리를 바구니에, 변수를 바구니에 지은 이름으로 생각해서 본다면.
+<h2 id="n의-배수-고르기">n의 배수 고르기</h2>
 
-<ol>
- <li>원시 타입
-</ol>
+<h3 id="문제-설명">문제 설명</h3>
 
-<blockquote>
- <p>바구니에 담긴 내용물은 변하지 않으며, 내용물을 바꾸고 싶으면 기존의 바구니를 버리고 새로운 바구니를 준비해서 새로운 내용물을 담고 같은 이름표를 붙이는 것이다.
-</blockquote>
+<p>정수 n과 정수 배열 numlist가 매개변수로 주어질 때, numlist에서 n의 배수가 아닌 수들을 제거한 배열을 return하도록 solution 함수를 완성해주세요.
 
-<ol>
- <li>참조 타입
-</ol>
+<h3 id="제한사항">제한사항</h3>
 
-<blockquote>
- <p>참조 타입의 바구니에는 얼마나 많은 내용물이 들어있을지 모른다. 통째로 버렸다가 새로 만드는데에는 비용이 너무 많이 들기 때문에, 내용물을 바꿀 수 있도록 하자.
-</blockquote>
+<ul>
+ <li>1 ≤ n ≤ 10,000
+ <li>1 ≤ numlist의 크기 ≤ 100
+ <li>1 ≤ numlist의 원소 ≤ 100,000
+</ul>
 
-<p><em>대체 왜 이런 복잡하고 값마다 다르고 말도안되는 방식으로 값을 변경할까?</em>
-
-<p>&lt;/br&gt;
-
-<h3 id="️-원시-타입-값의-불변성">✏️ 원시 타입 값의 불변성</h3>
-
-<hr />
-
-<p>  메모리에 저장되어 있는 메모리를 재할당 하지 않고, 수정이 가능하도록 한다면 다른 메모리 활동 중에 충돌이 발생하거나 예기치 않게 수정될 수가 있기 때문이다.
-
-<p>컴퓨터는 커다란 알고리즘이고 시스템이기 때문에, 컴퓨터와 소통하는 프로그래밍 언어들 또한 오류를 최소화하려고 한다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-참조-타입-값의-가변성과-문제점">✏️ 참조 타입 값의 가변성과 문제점</h3>
-
-<hr />
-
-<p>  참조 타입의 값도 원시 타입의 값과 같은 문제를 공유하지만, 재생성에 너무 많이 비용이 들기 때문에 단점을 감수하고 변경이 가능하도록 선택되었다.
-
-<p>그렇기 때문에 변경이 불가능한 원시 값이 변경가능 했을 때 발생할 문제를 참조 값에서 유사하게 관찰해볼 수 있다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-배열의-얕은-복사와-값의-공유">✏️ 배열의 얕은 복사와 값의 공유</h3>
-
-<hr />
-
-<p>  자바스크립트에서 배열은 참조 타입의 값이다.
-
-<p>그렇기 때문에 자바스크립트에서 배열을 복사하면 <strong>배열의 내용이 아니라, 배열의 내용을 가리키는 주소</strong>를 복사해서 붙여넣게된다.
-
-<p>이렇게해서 발생하게 되는 문제가 얕은 복사에 의한 값의 공유이다.
+<h3 id="문제-풀이">문제 풀이</h3>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre><td class="code"><pre><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">copiedArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">;</span>
+2
+3</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">numlist</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">numlist</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="nx">n</span><span class="p">));</span>
+<span class="p">}</span>
 </pre></table>
 </div>
 </div>
 
-<p>이와 같이 배열을 선언했다고 하자.
+<ul>
+ <li>요구사항대로 풀이함.
+ <li>자바스크립트의 암묵적 타입변환을 이용함.
+</ul>
 
-<p>arr는 [1, 2, 3]이라는 배열을, copiedArr는 arr의 [1, 2, 3]이라는 내용을 복사한 것만 같지만.
-
-<p>사실 arr는 [1, 2, 3]이라는 배열을 가리키는 메모리 주소를 저장하고 있었으며, copiedArr에 복사하는 과정에서 이 메모리 주소를 복사한 것이 된다.
+<h3 id="두번째-문제-풀이">두번째 문제 풀이</h3>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre><td class="code"><pre><span class="nx">copiedArr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span> <span class="c1">// [3, 2, 3];</span>
+2
+3
+4
+5
+6</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">numlist</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">numlist</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="nx">n</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">}</span>
 </pre></table>
 </div>
 </div>
 
-<p>그렇기 때문에, 복사된 배열의 값을 변경하면 기존 배열의 값 또한 변경되는 것이다.
-
-<p>이렇듯 주소로 배열을 복사하는 것을 얕은 복사라고 하며, 값이 공유되는 현상이 나타난다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-모든-문제를-해결해주는-해결책은-없다">✏️ 모든 문제를 해결해주는 해결책은 없다.</h3>
-
-<hr />
-
-<p>  이런 단점이 있음에도 불구하고 값의 변경을 허용한 이유는 결국 효율성 때문이다. 객체의 특성상 메모리 주소가 어디까지 사용될지도, 얼마나 많은 내용을 담고 있는지도 모르기 때문에 원시 타입의 값과 같이 매번 재생성하고 재할당하는 것이 더 비효율적이다.
-
-<p>모든 문제를 해결해주는 해결책은 없다. 해결할 문제가 무엇인지, 각각의 문제 중 어떤 것에 집중하고 리스크를 안아야하는지 선택할 뿐인 것 같다.
+<ul>
+ <li>암묵적 타입변환을 사용하지 않는 풀이방식
+</ul>
 
  <div class="readmore">
-    <a href="/posts/deepdivejs-primitive-value-object" role="button">Read more</a>
+    <a href="/posts/programmers-get-multiples" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .deepdivejs-object-literal {
+  .programmers-find-number {
     margin-bottom: 2em;
   }
-  .deepdivejs-object-literal::before {
+  .programmers-find-number::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -447,7 +394,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .deepdivejs-object-literal::after {
+  .programmers-find-number::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -460,20 +407,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .deepdivejs-object-literal-container,
-  .deepdivejs-object-literal-container::before,
-  .deepdivejs-object-literal-container::after {
+  .programmers-find-number-container,
+  .programmers-find-number-container::before,
+  .programmers-find-number-container::after {
     height: 25rem;
   }
-  .deepdivejs-object-literal-bleed-container,
-  .deepdivejs-object-literal-bleed-container::before,
-  .deepdivejs-object-literal-bleed-container::after {
+  .programmers-find-number-bleed-container,
+  .programmers-find-number-bleed-container::before,
+  .programmers-find-number-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .deepdivejs-object-literal-container,
-        .deepdivejs-object-literal-container::before,
-        .deepdivejs-object-literal-container::after{
+        .programmers-find-number-container,
+        .programmers-find-number-container::before,
+        .programmers-find-number-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -482,99 +429,114 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        deepdivejs-object-literal deepdivejs-object-literal-container hero-hov
+        programmers-find-number programmers-find-number-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/deepdivejs-object-literal" title="DeepDiveJS Chapter 10. 객체 리터럴"
-          >DeepDiveJS Chapter 10. 객체 리터럴</a
+        <a href="/posts/programmers-find-number" title="Programmers, 숫자 찾기"
+          >Programmers, 숫자 찾기</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/07/02</span>
+        <span>2022/12/26</span>
         <span>
-          <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
-          <a href="/tag/Javascript">#Javascript</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="10장-객체-리터럴">[10장. 객체 리터럴]</h1>
+    <center>
 
-<p>&lt;/br&gt;
+# Level 0. 숫자 찾기
 
-<h3 id="️-추상화란">✏️ 추상화란?</h3>
-
-<hr />
-
-<p>  객체를 쓰기 전에, 추상화를 설명하지 않을 수가 없었다.
-
-<blockquote>
- <p><em>추상화는, 공통적인 속성이나 기능을 가지는 것을 묶어서 이름 붙이는 것이다.</em>
-</blockquote>
-
-<p>이게 무슨 말인가. 우리는 추상화라는 단어를 처음 들어보지만 매일 추상화를 하며 살고 있으며, 삶에 추상화가 없으면 우리는 모두 불편한 설명충이 된다.
-
-<p>우리가 <strong>집</strong>이라고 부르는 개념은 <strong>거주가능한 공간을 제공하며…</strong> 라는 등의 <strong>공통적인 기능과 속성을 가지는 어떤 개념</strong>들을 <strong>묶어서 설명</strong>하기 위해 이름 붙인 개념이다.
-
-<p>인간은 여러 복잡한 개념들을 효율적으로 설명하고 전달하는 의사소통의 수단으로 추상화를 선택했고, 이를 통해 놀랄만한 성장을 이뤄냈다.
-
-<p>그러니 이 추상화된 언어라는건 인류가 세상을 지배한만큼 오래되어서, <strong>추상화</strong>라는 단어는 설명을 듣는 것조차 부담스러울만큼 추상화되어 익숙해진 것이다.
-
-<p>인간은 컴퓨터와 소통하고, 컴퓨터에 쓰여진 명령을 이해하는데에도 이런 추상화의 능력을 사용하고자 했다. 이것이 <strong>객체 지향 프로그래밍</strong>이라는 패러다임이며, 이를 위해 도입된 개념이 후의 설명될 <strong>객체</strong>이다.
-
-<h3 id="️-객체란">✏️ 객체란?</h3>
+</center>
 
 <hr />
 
-<p>  객체는 다른 객체와 구분되게, 상태나 동작을 공유할 수 있도록 개념을 묶어서 추상화한 것을 말한다.
+<h2 id="숫자-찾기">숫자 찾기</h2>
 
-<p>다르게 말하자면, 물리적으로 존재하거나 추상적으로 생각할 수 있는 것 중에서 다른 것과 식별 가능한 것을 말한다.
+<h3 id="문제-설명">문제 설명</h3>
 
-<p>사실 계속 공부하면서 느끼는 건, 객체는 딱 떨어지게 설명할 수 있는 것이라기보다는 개념에 가까운 것 같다.
+<p>정수 num과 k가 매개변수로 주어질 때, num을 이루는 숫자 중에 k가 있으면 num의 그 숫자가 있는 자리 수를 return하고 없으면 -1을 return 하도록 solution 함수를 완성해보세요.
 
-<p>‘이건 객체, 이건 객체가 아니야.’ 라고 구분할 수 있다기보다는 ‘이건 객체로 표현하는게 효율적일 수 있겠다.’ 라고 구분하는 것이 더 적당한 것을 객체로 표현한다.
+<h3 id="제한사항">제한사항</h3>
 
-<p>추상화와 객체 자체가 효율적인 의사소통을 위해 만들어진, 합의된 개념이라 당연한 것 같기도 하다.
+<ul>
+ <li>0 &lt; num &lt; 1,000,000
+ <li>0 ≤ k &lt; 10
+ <li>num에 k가 여러 개 있으면 가장 처음 나타나는 자리를 return 합니다.
+</ul>
 
-<p>&lt;/br&gt;
+<h3 id="첫번째-문제-풀이">첫번째 문제 풀이</h3>
 
-<h3 id="️-프로퍼티와-메서드-컴퓨터에서-객체를-사용하는-방법">✏️ 프로퍼티와 메서드, 컴퓨터에서 객체를 사용하는 방법</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">numArr</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+  <span class="kr">const</span> <span class="nx">strK</span> <span class="o">=</span> <span class="nx">k</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">numArr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">strK</span><span class="p">))</span> <span class="k">return</span> <span class="nx">numArr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">strK</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
 
-<hr />
+<ul>
+ <li>단순히 요구사항대로 구현함.
+</ul>
 
-<p>  컴퓨터에서는 객체를 다루기 위해 <strong>프로퍼티</strong>와 <strong>메서드</strong>를 사용한다.
+<h3 id="두번째-문제-풀이">두번째 문제 풀이</h3>
 
-<p>위의 설명을 축약하자면 추상화는 공통적인 <strong>속성이나 기능</strong>을 묶어서 이름 붙이는 것이며, 그렇게 묶여서 이름 붙은 것이 <strong>객체</strong>라는 것인데.
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">===</span> <span class="nx">k</span><span class="p">)</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">length</span> <span class="o">-</span> <span class="nx">index</span><span class="p">;</span>
+    <span class="nx">num</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">num</span> <span class="o">/</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="nx">index</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
 
-<p>여기서 말하는 공통적인 속성의 상태를 프로퍼티라고 하며, 공통적인 기능을 메서드라고 한다.
-
-<p>객체의 프로퍼티와 메서드는 객체를 어떤 관점으로보고 어떤 기능과 속성을 공통적으로 보았는지에 따라서 달라지게 된다.
-
-<blockquote>
- <p><strong>개발자가 제일 어려워하는건 변수명 짓기이다.</strong>
-</blockquote>
-
-<p>라는 말의 일부분에는 이런 맥락이 있다. 어디까지 추상화해야할지, 추상화한 내용을 어떻게 표현할지가 굉장히 어렵고 중요하다.
-
-<p>이렇듯 이러한 속성의 상태나 기능을 어떻게 묶어서 표현할지는 개발자의 능력에 달렸으며, 이런 부분을 보완하기 위해 디자인 패턴을 학습하게 된다.
+<ul>
+ <li>요구사항대로 구현하되 배열이 아닌 숫자의 성질을 이용해서 풀이함.
+</ul>
 
  <div class="readmore">
-    <a href="/posts/deepdivejs-object-literal" role="button">Read more</a>
+    <a href="/posts/programmers-find-number" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .deepdivejs-global-variables-problem {
+  .programmers-bacterial-growth {
     margin-bottom: 2em;
   }
-  .deepdivejs-global-variables-problem::before {
+  .programmers-bacterial-growth::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -585,7 +547,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .deepdivejs-global-variables-problem::after {
+  .programmers-bacterial-growth::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -598,20 +560,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .deepdivejs-global-variables-problem-container,
-  .deepdivejs-global-variables-problem-container::before,
-  .deepdivejs-global-variables-problem-container::after {
+  .programmers-bacterial-growth-container,
+  .programmers-bacterial-growth-container::before,
+  .programmers-bacterial-growth-container::after {
     height: 25rem;
   }
-  .deepdivejs-global-variables-problem-bleed-container,
-  .deepdivejs-global-variables-problem-bleed-container::before,
-  .deepdivejs-global-variables-problem-bleed-container::after {
+  .programmers-bacterial-growth-bleed-container,
+  .programmers-bacterial-growth-bleed-container::before,
+  .programmers-bacterial-growth-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .deepdivejs-global-variables-problem-container,
-        .deepdivejs-global-variables-problem-container::before,
-        .deepdivejs-global-variables-problem-container::after{
+        .programmers-bacterial-growth-container,
+        .programmers-bacterial-growth-container::before,
+        .programmers-bacterial-growth-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -620,95 +582,76 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        deepdivejs-global-variables-problem deepdivejs-global-variables-problem-container hero-hov
+        programmers-bacterial-growth programmers-bacterial-growth-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/deepdivejs-global-variables-problem" title="DeepDiveJS Chapter 14. 전역 변수의 문제점"
-          >DeepDiveJS Chapter 14. 전역 변수의 문제점</a
+        <a href="/posts/programmers-bacterial-growth" title="Programmers, 세균 증식"
+          >Programmers, 세균 증식</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/07/02</span>
+        <span>2022/12/26</span>
         <span>
-          <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
-          <a href="/tag/Javascript">#Javascript</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="14장-전역-변수의-문제점">[14장. 전역 변수의 문제점]</h1>
+    <center>
 
-<p>&lt;/br&gt;
+# Level 0. 세균 증식
 
-<h3 id="️-오해를-줄이려면-문맥이-구체적이어야한다">✏️ 오해를 줄이려면, 문맥이 구체적이어야한다.</h3>
-
-<hr />
-
-<p>  앞서 말했듯, 단어가 사용되는 범위가 넓으면 오해가 생기기 쉽다.
-
-<p>전역변수도 이와 같다. 전역변수는 전역변수의 네임스페이스를 오염시킬 수 있으며, 자바스크립트는 기본적으로 전체 스크립트가 전역 스코프를 공유하기 때문에 이로 인해 여러 문제가 발생할 수 있다.
-
-<p>또한, 전역변수는 생명주기가 길기 때문에 메모리 적인 부분으로도 비효율적이며 스코프 체인상 종점에 있기 때문에 검색 속도에서도 비효율적이다.
-
-<p>사용할 수 있다면, 최대한 지역 변수를 사용하는 것이 좋다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-이외-전역변수의-단점을-보완하는-방법">✏️ 이외 전역변수의 단점을 보완하는 방법</h3>
+</center>
 
 <hr />
 
-<p> 
+<h2 id="세균-증식">세균 증식</h2>
 
-<ol>
- <li>즉시 실행 함수를 사용
-</ol>
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>어떤 세균은 1시간에 두배만큼 증식한다고 합니다. 처음 세균의 마리수 n과 경과한 시간 t가 매개변수로 주어질 때 t시간 후 세균의 수를 return하도록 solution 함수를 완성해주세요.
+
+<h3 id="제한사항">제한사항</h3>
 
 <ul>
- <li>즉시 실행 함수는 한 번만 호출된다. 라이브러리 등에 자주 사용된다.
+ <li>1 ≤ n ≤ 10
+ <li>1 ≤ t ≤ 15
 </ul>
 
-<ol>
- <li>네임스페이스 객체 사용
-</ol>
+<h3 id="문제풀이">문제풀이</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nx">t</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
 
 <ul>
- <li>네임스페이스 객체를 사용, 변수가 혼용되지 않도록 함.
-</ul>
-
-<ol>
- <li>모듈 패턴
-</ol>
-
-<ul>
- <li>클로저를 기반으로 정보 은닉
-</ul>
-
-<ol>
- <li>ES6 모듈
-</ol>
-
-<ul>
- <li>script type에 module을 사용해서 모듈 스코프를 사용
+ <li>요구사항대로 풀이함.
 </ul>
 
  <div class="readmore">
-    <a href="/posts/deepdivejs-global-variables-problem" role="button">Read more</a>
+    <a href="/posts/programmers-bacterial-growth" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .deepdivejs-function {
+  .programmers-single-letter {
     margin-bottom: 2em;
   }
-  .deepdivejs-function::before {
+  .programmers-single-letter::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -719,7 +662,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .deepdivejs-function::after {
+  .programmers-single-letter::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -732,20 +675,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .deepdivejs-function-container,
-  .deepdivejs-function-container::before,
-  .deepdivejs-function-container::after {
+  .programmers-single-letter-container,
+  .programmers-single-letter-container::before,
+  .programmers-single-letter-container::after {
     height: 25rem;
   }
-  .deepdivejs-function-bleed-container,
-  .deepdivejs-function-bleed-container::before,
-  .deepdivejs-function-bleed-container::after {
+  .programmers-single-letter-bleed-container,
+  .programmers-single-letter-bleed-container::before,
+  .programmers-single-letter-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .deepdivejs-function-container,
-        .deepdivejs-function-container::before,
-        .deepdivejs-function-container::after{
+        .programmers-single-letter-container,
+        .programmers-single-letter-container::before,
+        .programmers-single-letter-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -754,97 +697,94 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        deepdivejs-function deepdivejs-function-container hero-hov
+        programmers-single-letter programmers-single-letter-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/deepdivejs-function" title="DeepDiveJS Chapter 12. 함수"
-          >DeepDiveJS Chapter 12. 함수</a
+        <a href="/posts/programmers-single-letter" title="Programmers, 한 번만 등장한 문자"
+          >Programmers, 한 번만 등장한 문자</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/07/02</span>
+        <span>2022/12/25</span>
         <span>
-          <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
-          <a href="/tag/Javascript">#Javascript</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="12장-함수">[12장. 함수]</h1>
+    <center>
 
-<p>&lt;/br&gt;
+# Level 0. 한 번만 등장한 문자
 
-<h3 id="️-일련의-과정을-반복할거라면-묶어서-이름-붙여-씁시다">✏️ 일련의 과정을 반복할거라면, 묶어서 이름 붙여 씁시다.</h3>
-
-<hr />
-
-<p>  프로그래밍 언어에서 함수란 일련의 과정을 문으로 구현하고, 이걸 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것을 말한다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-출근도-함수입니다">✏️ 출근도 함수입니다.</h3>
+</center>
 
 <hr />
 
-<p>  일상 생활의 예를 들어보자면 출근도 함수다.
+<h2 id="한-번만-등장한-문자">한 번만 등장한 문자</h2>
 
-<p>출근이라는 행위는 여러 일련의 행위를 묶어서 반복하기 편하게 만든 함수다. 사람의 뇌도 컴퓨터 메모리와 별반 다르지 않다.
+<h3 id="문제-설명">문제 설명</h3>
 
-<p>구체적인 행위로 기억하면 어렵기 때문에, 자연스레 묶어서 기억하게 된다.
+<p>문자열 s가 매개변수로 주어집니다. s에서 한 번만 등장하는 문자를 사전 순으로 정렬한 문자열을 return 하도록 solution 함수를 완성해보세요. 한 번만 등장하는 문자가 없을 경우 빈 문자열을 return 합니다.
 
-<p>사람이 컴퓨터보다 똑똑하고 값지다.
+<h3 id="제한사항">제한사항</h3>
 
-<p>&lt;/br&gt;
+<ul>
+ <li>0 &lt; s의 길이 &lt; 1,000
+ <li>s는 소문자로만 이루어져 있습니다.
+</ul>
 
-<h3 id="️-자바스크립트에서는-함수도-객체다">✏️ 자바스크립트에서는 함수도 객체다.</h3>
+<h3 id="문제-풀이">문제 풀이</h3>
 
-<hr />
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">countArray</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">32</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">countArray</span><span class="p">[</span><span class="nx">s</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">97</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">countArray</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">count</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">97</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
 
-<p>  자바스크립트에서는 함수는 객체 타입의 값이다.
-
-<p>뿐만 아니라, 변수에 할당하거나 프로퍼티 값이 되거나, 배열의 요소가 되거나 매개변수로 전달할 수도 있다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-함수의-호이스팅">✏️ 함수의 호이스팅</h3>
-
-<hr />
-
-<p>  var로 선언된 변수처럼, function으로 만들어진 함수도 호이스팅이 된다.
-
-<p>차이가 있다면, var의 경우 평가 단계에서 변수가 할당되지 않고 선언만 되기 때문에 호이스팅 되어도 undefined가 되지만 함수의 경우는 실행이 가능하다.
-
-<p>다만, 코드의 흐름이 비정상적이기 때문에 이런 코드 스타일을 장려되지 않는다고 한다.
-
-<p>&lt;/br&gt;
-
-<h3 id="️-순수함수와-비순수함수">✏️ 순수함수와 비순수함수</h3>
-
-<hr />
-
-<p>  자바스크립트는 멀티 패러다임 언어로서, 함수형 프로그래밍을 할 수 있다.
-
-<p>함수형 프로그래밍에서 중요한 것이 순수 함수인데, 이는 외부 상태를 변경하거나 의존하지 않고 매개변수에만 의존하는 함수를 말한다.
-
-<p>이러한 순수함수는 함수의 부수효과를 줄여주며, 버그의 발생시 원인파악을 용이하게 한다.
+<ul>
+ <li>한 번만 등장하는 문자를 찾는다.
+ <li>사전순으로 정렬한다.
+ <li>계수배열과 알파벳 맵 둘 다 O(N)의 시간복잡도를 가지지만, 알파벳 맵은 알파벳 맵을 따로 만들어야하기에 계수배열로 풀이했다.
+</ul>
 
  <div class="readmore">
-    <a href="/posts/deepdivejs-function" role="button">Read more</a>
+    <a href="/posts/programmers-single-letter" role="button">Read more</a>
  </div>
 </article>
 <hr />
 <article class="blog">
 <style>
-  .deepdivejs-operator {
+  .programmers-max-number {
     margin-bottom: 2em;
   }
-  .deepdivejs-operator::before {
+  .programmers-max-number::before {
     background-image: url('https://source.unsplash.com/random');
     background-size: cover;
     -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
@@ -855,7 +795,7 @@ href="/assets/css/bf.css">
     top: 0;
     z-index: -2;
   }
-  .deepdivejs-operator::after {
+  .programmers-max-number::after {
     content:'';
     position:absolute;
     width: 100%;
@@ -868,20 +808,20 @@ href="/assets/css/bf.css">
     mix-blend-mode: overlay;
     z-index: -1;
   }
-  .deepdivejs-operator-container,
-  .deepdivejs-operator-container::before,
-  .deepdivejs-operator-container::after {
+  .programmers-max-number-container,
+  .programmers-max-number-container::before,
+  .programmers-max-number-container::after {
     height: 25rem;
   }
-  .deepdivejs-operator-bleed-container,
-  .deepdivejs-operator-bleed-container::before,
-  .deepdivejs-operator-bleed-container::after {
+  .programmers-max-number-bleed-container,
+  .programmers-max-number-bleed-container::before,
+  .programmers-max-number-bleed-container::after {
     height: 35rem;
   }
     @media (max-width: 48rem) {
-        .deepdivejs-operator-container,
-        .deepdivejs-operator-container::before,
-        .deepdivejs-operator-container::after{
+        .programmers-max-number-container,
+        .programmers-max-number-container::before,
+        .programmers-max-number-container::after{
             height: 20rem;
             margin-bottom: 3rem;
         }
@@ -890,142 +830,70 @@ href="/assets/css/bf.css">
  <div
     class="
     post-title-container
-        deepdivejs-operator deepdivejs-operator-container hero-hov
+        programmers-max-number programmers-max-number-container hero-hov
   "
   >
    <div
       class="heading-container hero-heading hero-heading-blog"
     >
      <h1>
-        <a href="/posts/deepdivejs-operator" title="DeepDiveJS Chapter 07. 연산자"
-          >DeepDiveJS Chapter 07. 연산자</a
+        <a href="/posts/programmers-max-number" title="Programmers, 가장 큰 수 찾기"
+          >Programmers, 가장 큰 수 찾기</a
         >
      </h1>
      <div
         class=" post-meta "
       >
-        <span>2022/06/29</span>
+        <span>2022/12/25</span>
         <span>
-          <a href="/tag/DeepDiveJS">#DeepDiveJS</a>
-          <a href="/tag/Javascript">#Javascript</a>
+          <a href="/tag/algorithm">#algorithm</a>
+          <a href="/tag/programmers">#programmers</a>
+          <a href="/tag/level0">#level0</a>
         </span>
      </div>
    </div>
  </div>
-   <h1 id="07장-연산자">[07장. 연산자]</h1>
+    <center>
 
-<p>&lt;/br&gt;
+# Level 0. 가장 큰 수 찾기
 
-<h3 id="️-연산자의-우선순위">✏️ 연산자의 우선순위</h3>
-
-<hr />
-
-<p>  연산자의 우선순위를 헷갈리게 되면, 종종 코드를 짤 때 오류가 발생하게 된다. 코드의 연산자는 단순히 생각하는 사칙연산 뿐만 아니라 할당, 삼항 연산, 심지어 쉼표를 통한 구분까지 있다.
-
-<table>
-<thead>
-   <tr>
-     <th style="text-align: center">우선순위
-     <th style="text-align: left">내용
-    
-  
- <tbody>
-   <tr>
-     <td style="text-align: center">1
-     <td style="text-align: left">()
-    
-   <tr>
-     <td style="text-align: center">2
-     <td style="text-align: left">new(매개변수 존재), .(점), [ ](프로퍼티 접근), ( )(함수 호출), ?.(옵셔널 체이닝 연산자)
-    
-   <tr>
-     <td style="text-align: center">3
-     <td style="text-align: left">new(매개변수 미존재)
-    
-   <tr>
-     <td style="text-align: center">4
-     <td style="text-align: left">x++, x–
-    
-   <tr>
-     <td style="text-align: center">5
-     <td style="text-align: left">!x, +x, -x, ++x, –x, typeof, delete
-    
-   <tr>
-     <td style="text-align: center">6
-     <td style="text-align: left">**(이항 연산자 중 우선순위가 가장 높음)
-    
-   <tr>
-     <td style="text-align: center">7
-     <td style="text-align: left">*, /, %
-    
-   <tr>
-     <td style="text-align: center">8
-     <td style="text-align: left">+, -
-    
-   <tr>
-     <td style="text-align: center">9
-     <td style="text-align: left">&lt;, &lt;=, &gt;, &gt;=, in, instanceof
-    
-   <tr>
-     <td style="text-align: center">10
-     <td style="text-align: left">==, !=, ===, !==
-    
-   <tr>
-     <td style="text-align: center">11
-     <td style="text-align: left">??(null 병합 연산자)
-    
-   <tr>
-     <td style="text-align: center">12
-     <td style="text-align: left">&amp;&amp;
-    
-   <tr>
-     <td style="text-align: center">13
-     <td style="text-align: left">||
-    
-   <tr>
-     <td style="text-align: center">14
-     <td style="text-align: left">? … : … (삼항 연산자)
-    
-   <tr>
-     <td style="text-align: center">15
-     <td style="text-align: left">=, +=, -=, …(구조 분해 할당) (할당 연산자)
-    
-   <tr>
-     <td style="text-align: center">16
-     <td style="text-align: left">,
-    
-  
-</table>
-
-<p>&lt;/br&gt;
-
-<h3 id="️-연산자의-결합-순서">✏️ 연산자의 결합 순서</h3>
+</center>
 
 <hr />
 
-<p>  연산자에 따라서 왼쪽부터 읽히는 것도, 오른쪽부터 읽히는 것도 있다.
+<h2 id="가장-큰-수-찾기">가장 큰 수 찾기</h2>
 
-<table>
-<thead>
-   <tr>
-     <th style="text-align: center">결합 순서
-     <th style="text-align: left">연산자
-    
-  
- <tbody>
-   <tr>
-     <td style="text-align: center">좌 -&gt; 우
-     <td style="text-align: left">+, -, /, %, &lt;, &lt;=, &gt;, &gt;=, &amp;&amp;, ||, ., [], (), ??, ?, in, instanceof
-    
-   <tr>
-     <td style="text-align: center">우 -&gt; 좌
-     <td style="text-align: left">++, –, 할당 연산자(=, +=, -=, …), !x, +x, -x, ++x, –x, typeof, delete, ? … : … (삼항 연산자)
-    
-  
-</table>
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>정수 배열 array가 매개변수로 주어질 때, 가장 큰 수와 그 수의 인덱스를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+ <li>1 ≤ array의 길이 ≤ 100
+ <li>0 ≤ array 원소 ≤ 1,000
+ <li>array에 중복된 숫자는 없습니다.
+</ul>
+
+<h3 id="문제-풀이">문제 풀이</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">array</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">max</span><span class="p">,</span> <span class="nx">array</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">max</span><span class="p">)];</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
+
+<ul>
+ <li>요구사항대로 풀이함.
+</ul>
 
  <div class="readmore">
-    <a href="/posts/deepdivejs-operator" role="button">Read more</a>
+    <a href="/posts/programmers-max-number" role="button">Read more</a>
  </div>
 </article>
 <nav class="pagination" role="navigation">

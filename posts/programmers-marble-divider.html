@@ -1,0 +1,32 @@
+<h3 id="백준-문제-풀이--구슬을-나누는-경우의-수">백준 문제 풀이 : 구슬을 나누는 경우의 수</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">balls</span><span class="p">,</span> <span class="nx">share</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">memo</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">balls</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="nx">memo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">BigInt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="nx">memo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">BigInt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="nx">memo</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="nx">BigInt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">memo</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">memo</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">BigInt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">*</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">balls</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="nx">memo</span><span class="p">[</span><span class="nx">balls</span> <span class="o">-</span> <span class="nx">share</span><span class="p">]</span> <span class="o">*</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">share</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>오랜만에 PS를 하니, BigInt의 존재를 잊고 있었다.</li>
+</ul>

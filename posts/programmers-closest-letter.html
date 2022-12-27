@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+   <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+   </style>
+   <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+/>
+<title>
+  Programmers, 가장 가까운 같은 글자 &#9642; vanGona
+</title>
+<!--
+<meta name="description" content="# Level 0. 가장 가까운 같은 글자 가장 가까운 같은 글자 문제 설명 문자열 s가 주어졌을 때, s의 각 위치마다 자신보다 앞에 나왔으면서, 자신과 가장 가까운 곳에 있는 같은 글자가 어디 있는지 알고 싶습니다. 예를 들어, s=”banana”라고 할 때, 각 글자들을 왼쪽부터 오른쪽으로 읽어 나가면서 다음과 같이 진행할 수 있습니다....">
+-->
+<link rel="icon" href="/assets/img/dactl.svg" />
+<meta
+  name="description"
+  content="임상심리학자가 개발을 추구하는 건에 대해서
+"
+/>
+<meta
+  name="keywords"
+  content="algorithm, programmers, level0"
+/>
+<link
+  rel="canonical"
+  href="http://vangona.github.io/posts/programmers-closest-letter"
+/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Programmers, 가장 가까운 같은 글자" />
+<meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta name="twitter:image" content="http://vangona.github.io" />
+<meta name="author" content="" />
+<link rel="author" href="" />
+<meta property="og:locale" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Programmers, 가장 가까운 같은 글자" />
+<meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta
+  property="og:url"
+  content="http://vangona.github.io/posts/programmers-closest-letter"
+/>
+<meta property="og:site_name" content="vanGona" />
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic"
+/>
+<style>
+  html {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  }
+</style>
+<link rel="stylesheet"
+href="/assets/css/bf.css"> 
+ <body>
+   <div class="wrapper" id="blep">
+    <header>
+ <div class="menu">
+   <div class="logo">
+      <a href="/">vanGona</a>
+      <object
+        type="image/svg+xml"
+        data="/assets/img/dactl.svg"
+        class="logosvg"
+      >
+        Your browser does not support svg images
+      </object>
+   </div>
+    <input id="mobile-nav__toggle" type="checkbox" />
+   <ul class="mobile-nav">
+      <label class="toggle-nav" for="mobile-nav__toggle">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+     <div class="nav__profile">vanGona</div>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+        </a>
+   </ul>
+   <ul class="visible-links"> 
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+   </ul>
+ </div>
+ <div class="social">
+   <ul>
+     <li>
+        <a
+          href="https://github.com/vangona"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-github"></span>
+        </a>
+     <li>
+        <a
+          href="https://youtube.com/뜬구름 공작소"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-youtube"></span>
+        </a>
+     <li>
+        <a
+          href="https://instagram.com/my_own_drawer_"
+          target="_blank"
+          class="smaller"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+     <li>
+        <a href="mailto:rlarhksrud14@gmail.com" target="_blank">
+          <span class="icon-mail_outline"></span>
+        </a>
+     <li>
+        <a href="#" onclick="switchTheme()" title="Switch theme?">
+          <span class="icon-invert_colors" id="theme-switcher"></span>
+        </a>
+   </ul>
+ </div>
+</header>
+<article class="post">
+<style>
+  .programmers-closest-letter {
+    margin-bottom: 2em;
+  }
+  .programmers-closest-letter::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .programmers-closest-letter::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .programmers-closest-letter-container,
+  .programmers-closest-letter-container::before,
+  .programmers-closest-letter-container::after {
+    height: 25rem;
+  }
+  .programmers-closest-letter-bleed-container,
+  .programmers-closest-letter-bleed-container::before,
+  .programmers-closest-letter-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .programmers-closest-letter-container,
+        .programmers-closest-letter-container::before,
+        .programmers-closest-letter-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  programmers-closest-letter programmers-closest-letter-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          Programmers, 가장 가까운 같은 글자
+     </h1>
+     <div class="post-meta">
+        <span>20/12/2022</span>
+        <span>
+              <a href="/tag/algorithm">#algorithm</a>
+              <a href="/tag/programmers">#programmers</a>
+              <a href="/tag/level0">#level0</a>
+        </span>
+     </div>
+   </div>
+ </div>
+    <center>
+
+# Level 0. 가장 가까운 같은 글자
+
+</center>
+
+<hr />
+
+<h2 id="가장-가까운-같은-글자">가장 가까운 같은 글자</h2>
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>문자열 s가 주어졌을 때, s의 각 위치마다 자신보다 앞에 나왔으면서, 자신과 가장 가까운 곳에 있는 같은 글자가 어디 있는지 알고 싶습니다.
+예를 들어, s=”banana”라고 할 때, 각 글자들을 왼쪽부터 오른쪽으로 읽어 나가면서 다음과 같이 진행할 수 있습니다.
+
+<ul>
+ <li>b는 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.
+ <li>a는 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.
+ <li>n은 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.
+ <li>a는 자신보다 두 칸 앞에 a가 있습니다. 이는 - 2로 표현합니다.
+ <li>n도 자신보다 두 칸 앞에 n이 있습니다. 이는 - 2로 표현합니다.
+ <li>a는 자신보다 두 칸, 네 칸 앞에 a가 - 있습니다. 이 중 가까운 것은 두 칸 앞이고, 이는 2로 표현합니다.
+ <li>따라서 최종 결과물은 [-1, -1, -1, 2, 2, 2]가 됩니다.
+</ul>
+
+<p>문자열 s이 주어질 때, 위와 같이 정의된 연산을 수행하는 함수 solution을 완성해주세요.
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+ <li>1 ≤ s의 길이 ≤ 10,000
+   <ul>
+     <li>s은 영어 소문자로만 이루어져 있습니다.
+   </ul>
+  
+</ul>
+
+<h3 id="문제풀이">문제풀이</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre><td class="code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kr">const</span> <span class="nx">charMap</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="kr">char</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">charMap</span><span class="p">[</span><span class="kr">char</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">answer</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+      <span class="nx">charMap</span><span class="p">[</span><span class="kr">char</span><span class="p">]</span> <span class="o">=</span> <span class="nx">index</span><span class="p">;</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">answer</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">index</span> <span class="o">-</span> <span class="nx">charMap</span><span class="p">[</span><span class="kr">char</span><span class="p">];</span>
+    <span class="nx">charMap</span><span class="p">[</span><span class="kr">char</span><span class="p">]</span> <span class="o">=</span> <span class="nx">index</span><span class="p">;</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table>
+</div>
+</div>
+
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dactl';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+   <li>
+    <a href="/posts/programmers-rectangle-area">
+        <span>Programmers, 직사각형 넓이 구하기</span>
+        <small>27/12</small>
+    </a>
+   <li>
+    <a href="/posts/programmers-polynomial">
+        <span>Programmers, 다항식 더하기</span>
+        <small>27/12</small>
+    </a>
+   <li>
+    <a href="/posts/programmers-numbers-of-seven">
+        <span>Programmers, 7의 개수</span>
+        <small>27/12</small>
+    </a>
+   <li>
+    <a href="/posts/programmers-max-number-2">
+        <span>Programmers, 최댓값 만들기 (2)</span>
+        <small>27/12</small>
+    </a>
+</aside>
+<footer>
+    <span>임상심리학자가 개발을 추구하는 건에 대해서
+</span>
+    <span>written by Kim Kwan-kyoung</span>
+</footer>
+   </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+  

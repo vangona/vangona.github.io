@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+   <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+   </style>
+   <meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+/>
+<title>
+  NomadCoder, WSL &#9642; vanGona
+</title>
+<!--
+<meta name="description" content="💡 리눅스를 사용해보았다. 리눅스와 윈도우의 충돌을 경험해보았다. WSL을 더 잘 써서 충돌을 줄일 방법은 없을까? 에서 출발한 여정 📺 결과물 예뻐진 WSL과 깊어진 WSL에 대한 이해도 ⬇️ 설치할 것 Window 10 wsl(윈도우 서브시스템)은 윈도우 10에서만 사용가능하다. 구글 크롬 구글 크롬은 디버깅 툴과 최신 API를 지원해준다. VSC Python Prettier ESLint Material...">
+-->
+<link rel="icon" href="/assets/img/dactl.svg" />
+<meta
+  name="description"
+  content="임상심리학자가 개발을 추구하는 건에 대해서
+"
+/>
+<meta
+  name="keywords"
+  content="OS, window, linux, wsl"
+/>
+<link
+  rel="canonical"
+  href="http://vangona.github.io/posts/nomadcoder-wsl"
+/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="NomadCoder, WSL" />
+<meta name="twitter:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta name="twitter:image" content="http://vangona.github.io" />
+<meta name="author" content="" />
+<link rel="author" href="" />
+<meta property="og:locale" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="NomadCoder, WSL" />
+<meta property="og:description" content="임상심리학자가 개발을 추구하는 건에 대해서
+" />
+<meta
+  property="og:url"
+  content="http://vangona.github.io/posts/nomadcoder-wsl"
+/>
+<meta property="og:site_name" content="vanGona" />
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css"><link rel="stylesheet" href="/assets/css/main.css"> 
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic"
+/>
+<style>
+  html {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  }
+</style>
+<link rel="stylesheet"
+href="/assets/css/bf.css"> 
+ <body>
+   <div class="wrapper" id="blep">
+    <header>
+ <div class="menu">
+   <div class="logo">
+      <a href="/">vanGona</a>
+      <object
+        type="image/svg+xml"
+        data="/assets/img/dactl.svg"
+        class="logosvg"
+      >
+        Your browser does not support svg images
+      </object>
+   </div>
+    <input id="mobile-nav__toggle" type="checkbox" />
+   <ul class="mobile-nav">
+      <label class="toggle-nav" for="mobile-nav__toggle">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+     <div class="nav__profile">vanGona</div>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+        </a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+        </a>
+   </ul>
+   <ul class="visible-links"> 
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/humanities"
+          >HUMANITIES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/algorithm"
+          >ALGORITHM
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/languages"
+          >LANGUAGES
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/cs"
+          >SCIENCE
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+     <li class="dropdown ">
+        <a
+          class="dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          href="/projects"
+          >PROJECTS
+          <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i
+          ><span class="caret"></span
+        ></a>
+   </ul>
+ </div>
+ <div class="social">
+   <ul>
+     <li>
+        <a
+          href="https://github.com/vangona"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-github"></span>
+        </a>
+     <li>
+        <a
+          href="https://youtube.com/뜬구름 공작소"
+          target="_blank"
+          class="smaller"
+        >
+          <span class="icon-youtube"></span>
+        </a>
+     <li>
+        <a
+          href="https://instagram.com/my_own_drawer_"
+          target="_blank"
+          class="smaller"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+     <li>
+        <a href="mailto:rlarhksrud14@gmail.com" target="_blank">
+          <span class="icon-mail_outline"></span>
+        </a>
+     <li>
+        <a href="#" onclick="switchTheme()" title="Switch theme?">
+          <span class="icon-invert_colors" id="theme-switcher"></span>
+        </a>
+   </ul>
+ </div>
+</header>
+<article class="post">
+<style>
+  .nomadcoder-wsl {
+    margin-bottom: 2em;
+  }
+  .nomadcoder-wsl::before {
+    background-image: url('https://source.unsplash.com/random');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .nomadcoder-wsl::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(100,0,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .nomadcoder-wsl-container,
+  .nomadcoder-wsl-container::before,
+  .nomadcoder-wsl-container::after {
+    height: 25rem;
+  }
+  .nomadcoder-wsl-bleed-container,
+  .nomadcoder-wsl-bleed-container::before,
+  .nomadcoder-wsl-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .nomadcoder-wsl-container,
+        .nomadcoder-wsl-container::before,
+        .nomadcoder-wsl-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  nomadcoder-wsl nomadcoder-wsl-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          NomadCoder, WSL
+     </h1>
+     <div class="post-meta">
+        <span>27/12/2022</span>
+        <span>
+              <a href="/tag/OS">#OS</a>
+              <a href="/tag/window">#window</a>
+              <a href="/tag/linux">#linux</a>
+              <a href="/tag/wsl">#wsl</a>
+        </span>
+     </div>
+   </div>
+ </div>
+    <center>
+<aside>
+💡 리눅스를 사용해보았다. 리눅스와 윈도우의 충돌을 경험해보았다.
+
+WSL을 더 잘 써서 충돌을 줄일 방법은 없을까? 에서 출발한 여정
+
+</aside>
+</center>
+
+<hr />
+
+<h1 id="-결과물">📺 결과물</h1>
+
+<p><img src="https://user-images.githubusercontent.com/69471032/209669204-12e57074-35c3-42d8-8e2f-537c75c2e45c.png" alt="image" />
+
+<ul>
+ <li>예뻐진 WSL과 깊어진 WSL에 대한 이해도
+</ul>
+
+<h1 id="️-설치할-것">⬇️ 설치할 것</h1>
+
+<ul>
+ <li>Window 10
+   <ul>
+     <li>wsl(윈도우 서브시스템)은 윈도우 10에서만 사용가능하다.
+   </ul>
+  
+ <li>구글 크롬
+   <ul>
+     <li>구글 크롬은 디버깅 툴과 최신 API를 지원해준다.
+   </ul>
+  
+ <li>VSC
+   <ul>
+     <li>Python
+     <li>Prettier
+     <li>ESLint
+     <li>Material Theme
+     <li>Material Icon Theme
+   </ul>
+  
+ <li>Git
+ <li>WSL2 &amp; ubuntu
+   <ul>
+     <li>윈도우에서 리눅스를 사용할 수 있도록 해준다.
+     <li>이를 통해 ubuntu를 사용할 수 있다.
+     <li>ubuntu에 username과 password를 별도로 설정해야한다.
+   </ul>
+  
+ <li>Chocolately
+   <ul>
+     <li>리눅스에서 Python등의 설치는 쉽지만 윈도우는 그렇지 않다.
+     <li>이런 것을 쉽게 만들어주는 것이 Chocolately이다.
+     <li>Powershell에서 동작한다.
+     <li>Chocolately에서 패키지를 찾아서 다운로드 할 수 있다.
+   </ul>
+  
+</ul>
+
+<h1 id="️-윈도우-터미널-커스터마이징">🖍️ 윈도우 터미널 커스터마이징</h1>
+
+<ul>
+ <li>VSC에서 Remote - WSL을 설치하면, WSL을 VSC 내에서 사용할 수 있도록 해준다.
+   <ul>
+     <li>이걸 사용하면 WSL 환경에서 VSC로 작업할 수 있도록 해준다.
+   </ul>
+  
+ <li>Windows Terminal의 기본 프로필을 설정하면, 기본으로 사용되는 터미널을 수정할 수 있다.
+   <ul>
+     <li>zsh &amp; oh my zsh도 설치해서 쓸 수 있다.
+<a href="https://www.zsh.org/">Zsh 공식 홈페이지</a>
+<a href="https://github.com/ohmyzsh/ohmyzsh">ohmyzsh 깃허브</a>
+   </ul>
+  
+ <li>터미널에서 code를 입력하면, wsl 내에서 VSC를 사용할 수 있다.
+ <li>터미널의 설정에서 글꼴, 색상, 터미널 초기 위치나 사용할 shell등 여러가지를 커스텀 할 수 있다.
+ <li>bashrc를 통해서 환경변수를 수정했던 것처럼 root 경로의 .zshrc를 통해서 환경변수를 설정할 수 있다.
+ <li>Powerlevel10k는 zsh의 테마 설정 도구이다.
+   <ul>
+     <li>이를 통해 설정하면 터미널의 여러 설정을 해줄 수 있다.
+     <li>p10k configure를 통해 재설정 할 수 있다.
+   </ul>
+  
+</ul>
+
+<h1 id="-wsl과-리눅스-콘솔-이해하기">🐧 WSL과 리눅스 콘솔 이해하기</h1>
+
+<h2 id="윈도우에서-wsl로-리눅스를-다룰-때-주의할-것">윈도우에서 WSL로 리눅스를 다룰 때 주의할 것</h2>
+
+<ul>
+ <li>wsl의 리눅스 부분과 윈도우 부분은 다른 루트를 가지고 있다.
+ <li>wsl의 mnt(mount) 폴더로 접근하면, 윈도우의 파일들에 접근할 수 있다.
+ <li>다만 wsl에 파일을 생성한다고 윈도우에도 생성되는 것은 아니다. 접근이 가능하기 때문에 윈도우에서 파일을 생성하고 접근하는 것이 좋다.
+ <li>반대로 윈도우에서 리눅스 파일을 건드리면 문제가 생길 수 있으니 건드리지 않는 것이 좋다.
+</ul>
+
+<h2 id="wsl-리눅스로-언어-설치하기">WSL 리눅스로 언어 설치하기</h2>
+
+<h3 id="apt-get으로-설치하기">apt-get으로 설치하기</h3>
+
+<ul>
+ <li>리눅스에서는 apt-get을 통해 설치할 수 있다.
+</ul>
+
+<p><a href="https://github.com/nodesource/distributions/blob/master/README.md">nodejs 설치하기</a>
+
+<h3 id="ppa와-wsl의-python">PPA와 WSL의 Python</h3>
+
+<ul>
+ <li>WSL의 많은 부분이 python2.7에 의존하기 때문에 지우면 안된다.
+ <li>apt는 패키지를 설치할 수 있도록 도와주지만, 우리의 데이터베이스에 해당 패키지가 없을 수 있다. 이런 때에는 PPA(personal package archive)를 추가한다.
+ <li>deadsnake는 이러한 ppa의 하나이다.
+</ul>
+
+<p><a href="https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa">deadsnakes로 python 설치하기</a>
+
+<ul>
+ <li>apt-get update는 ppa가 추가된 등의 상황에서 apt의 데이터베이스를 갱신한다.
+ <li>zshrc에 alias를 추가하면 명령어의 별칭을 만들어줄 수 있다.
+</ul>
+
+<h3 id="wsl과-윈도우의-환경의-차이">WSL과 윈도우의 환경의 차이</h3>
+
+<ul>
+ <li>WSL의 VSC에는 확장프로그램을 별도로 설정해야한다.
+ <li>종종 WSL의 리눅스에만 설치하면 정상동작하지 않고, 윈도우에 설치하고 접근해야 정상동작하는 경우가 있다. (MongoDB가 그렇다)
+</ul>
+
+<h3 id="wsl과-git-github-cli">WSL과 Git, Github CLI</h3>
+
+<ul>
+ <li>Github CLI를 사용하면 Github을 CLI로 사용할 수 있다.
+</ul>
+
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dactl';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+</aside>
+<footer>
+    <span>임상심리학자가 개발을 추구하는 건에 대해서
+</span>
+    <span>written by Kim Kwan-kyoung</span>
+</footer>
+   </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+  
